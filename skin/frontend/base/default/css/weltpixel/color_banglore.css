@@ -1,0 +1,64 @@
+
+
+
+
+
+    .customer-account-login #page-body-section-02, .customer-account-forgotpassword #page-body-section-02, .customer-account-create #page-body-section-02  {
+    background-image: url(http://localhost/rentram/media/cleo/default/bg.jpg.png);
+    }
+
+
+
+
+
+    #wrapper { max-width: 100%; margin:0 auto; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#wpmm-nav li.nav-1 > a {
+}
+li.nav-1 > .wpmm-nav-content {
+    background-size: cover;
+}
+#wpmm-nav li.nav-1-1 > a {
+}
+#wpmm-nav li.nav-2 > a {
+}
+li.nav-2 > .wpmm-nav-content {
+    background-size: cover;
+}

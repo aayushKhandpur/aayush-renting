@@ -26,7 +26,7 @@
     </wp_quickview>
     <cms_page>
         <update handle="wp_quickview" />
-    </cms_page>   
+    </cms_page>
     <catalog_category_layered>
         <update handle="wp_quickview" />
     </catalog_category_layered>
@@ -52,7 +52,7 @@
             <action method="setIsHandle"><applied>1</applied></action>
         </reference>
         <reference name="head">
-            
+
             <!-- remove unnecesary js, css files -->
             <action method="removeItem"><type>skin_js</type><name>js/weltpixel/ajaxsearch.js</name></action>
             <action method="removeItem"><type>skin_js</type><name>js/weltpixel/megamenu.js</name></action>
@@ -63,8 +63,8 @@
             <action method="removeItem"><type>skin_js</type><name>js/jquery.cloud-zoom-1.0.3.js</name></action>
             <action method="removeItem"><type>skin_js</type><name>js/jquery.magnific-popup-0.9.9.js</name></action>
             <action method="removeItem"><type>skin_js</type><name>js/weltpixel/jquery.easydropdown.js</name></action>
-            
-            
+
+
             <action method="removeItem"><type>skin_css</type><name>css/weltpixel/ajaxsearch.css</name></action>
             <action method="removeItem"><type>skin_css</type><name>css/weltpixel/megamenu.css</name></action>
             <action method="removeItem"><type>skin_css</type><name>css/weltpixel/easydropdown.css</name></action>
@@ -73,7 +73,7 @@
             <action method="removeItem"><type>skin_css</type><name>css/vendor/magnific-popup/magnific-popup.css</name></action>
             <action method="removeItem"><type>skin_css</type><name>css/weltpixel/megamenu-mobile.css</name></action>
 
-                                 
+
             <action method="addItem" ifconfig="weltpixel_selector/productpageoptions/ajax_add_to_compare">
                 <type>skin_js</type>
                 <name>js/weltpixel/ajaxcompare.js</name>

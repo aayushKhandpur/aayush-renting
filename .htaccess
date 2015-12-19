@@ -230,5 +230,19 @@
 
         Order allow,deny
         Deny from all
-
     </Files>
+
+#    SetEnvIf Host localhost\rentram\jaipur MAGE_RUN_CODE = jaipur_store_view
+#    SetEnvIf Host localhost\rentram\jaipur MAGE_RUN_TYPE = store
+#    SetEnvIf Host ^jaipur MAGE_RUN_CODE = jaipur_store_view
+#    SetEnvIf Host ^jaipur MAGE_RUN_TYPE = store
+
+#    SetEnvIf Host localhost\rentram\delhi MAGE_RUN_CODE = delhi_store_view
+#    SetEnvIf Host localhost\rentram\delhi MAGE_RUN_TYPE = store
+#    SetEnvIf Host ^delhi MAGE_RUN_CODE = delhi_store_view
+#    SetEnvIf Host ^delhi MAGE_RUN_TYPE = store
+
+#    SetEnvIf Host localhost\rentram\kolcata MAGE_RUN_CODE = kolcata_store_view
+#    SetEnvIf Host localhost\rentram\kolcata MAGE_RUN_TYPE = store
+#    SetEnvIf Host ^kolcata MAGE_RUN_CODE = kolcata_store_view
+#    SetEnvIf Host ^kolcata MAGE_RUN_TYPE = store
