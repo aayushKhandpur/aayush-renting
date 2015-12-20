@@ -62,12 +62,8 @@ endif;
                     <div class="panel-b">
                       <div style="width:73%;float:left;"><?php  echo $_productPrice; ?></div>
                        <div  style="width:100%;    font: 16px 'Brandon Medium';">  <?php
-                        Mage::log($_product->debug(),Zend_log::INFO,'layout.log',true);
-                         if($_product->getData('renttype')==6){
-                          $msg= "Per Month";
-                        }elseif($_product->getData('renttype')==7){
-                          $msg= "Per Day";
-                        }; echo $msg; ?></div>
+                       $att = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
+                         echo $att; ?></div>
                         <br/>
                       <div>  <?php echo $_productReviews; ?></div>
                     </div>

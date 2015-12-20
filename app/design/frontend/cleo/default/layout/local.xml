@@ -156,8 +156,6 @@
                     </action>
                 </block>
                 <block type="core/template" name="quick_access" as="quickAccess" template="page/html/quick-access.phtml" />
-                <block as="store_switcher" name="store_switcher" type="page/switch"   template="page/switch/stores.phtml"/>
-            
                 <block as="store_language_flag" name="store_language_flag" template="page/switch/flags.phtml" type="page/switch" />
                 <block type="directory/currency" name="custom_currency_selector" template="page/switch/currency.phtml"/>
                 <block type="page/html_wrapper" name="top.container" as="topContainer" translate="label">

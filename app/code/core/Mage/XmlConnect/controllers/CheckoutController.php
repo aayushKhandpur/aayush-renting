@@ -382,6 +382,7 @@ class Mage_XmlConnect_CheckoutController extends Mage_XmlConnect_Controller_Acti
      */
     public function saveMethodAction()
     {
+      Mage::log('chck out con in onepage save  method',Zend_log::INFO,'layout.log',true);
         if ($this->getRequest()->isPost()) {
             $method = (string) $this->getRequest()->getPost('method');
             $result = $this->getOnepage()->saveCheckoutMethod($method);
@@ -435,7 +436,7 @@ class Mage_XmlConnect_CheckoutController extends Mage_XmlConnect_Controller_Acti
      * @return null
      */
     public function savePaymentAction()
-    {
+    {   Mage::log('chck out con in onepage save  savePaymentAction',Zend_log::INFO,'layout.log',true);
         if (!$this->getRequest()->isPost()) {
             $this->_message($this->__('Specified invalid data.'), self::MESSAGE_STATUS_ERROR);
             return;
@@ -484,6 +485,7 @@ class Mage_XmlConnect_CheckoutController extends Mage_XmlConnect_Controller_Acti
      */
     public function orderReviewAction()
     {
+      Mage::log('chck out con in onepage save  orderReviewAction',Zend_log::INFO,'layout.log',true);
         $this->getOnepage()->getQuote()->collectTotals()->save();
         try {
             $this->loadLayout(false);
@@ -521,7 +523,7 @@ class Mage_XmlConnect_CheckoutController extends Mage_XmlConnect_Controller_Acti
      * @return null
      */
     public function saveOrderAction()
-    {
+    {   Mage::log('chck out con in onepage save  saveOrderAction',Zend_log::INFO,'layout.log',true);
         if (!$this->getRequest()->isPost()) {
             $this->_message($this->__('Specified invalid data.'), self::MESSAGE_STATUS_ERROR);
             return;

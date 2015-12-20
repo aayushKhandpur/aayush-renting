@@ -40,7 +40,7 @@
         <col width="1" />
         <thead>
             <tr class="headings">
-                <th><?php echo $this->helper('sales')->__('Product') ?></th>
+                <th><?php  Mage::log($this->debug(),Zend_log::INFO,'layout.log',true); echo $this->helper('sales')->__('Product') ?></th>
                 <th><span class="nobr"><?php echo $this->helper('sales')->__('Item Status') ?></span></th>
                 <th><span class="nobr"><?php echo $this->helper('sales')->__('Original Price') ?></span></th>
                 <th><?php echo $this->helper('sales')->__('Price') ?></th>

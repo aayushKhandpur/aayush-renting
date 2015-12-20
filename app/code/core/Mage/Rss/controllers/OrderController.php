@@ -36,6 +36,7 @@ class Mage_Rss_OrderController extends Mage_Core_Controller_Front_Action
 {
     public function newAction()
     {
+        Mage::log('in order',Zend_log::INFO,'layout.log',true);
         $this->getResponse()->setHeader('Content-type', 'text/xml; charset=UTF-8');
         $this->loadLayout(false);
         $this->renderLayout();

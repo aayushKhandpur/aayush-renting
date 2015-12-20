@@ -22,6 +22,21 @@
                 <type>skin_js</type>
                 <name>js/weltpixel/ajaxcompare.js</name>
             </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/custom/datepicker.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/custom/datepicker.js</name>
+            </action>
+            <action method="addJs">
+                <script>weltpixel/jquery-1.11.1.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/custom/addToCart.js</name>
+            </action>
         </reference>
     </wp_quickview>
     <cms_page>

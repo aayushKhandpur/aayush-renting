@@ -7,16 +7,16 @@ $theme = Mage::getDesign()->getTheme('frontend');
 <div class="opc-wrapper-opc design_package_<?php echo $package;?> design_theme_<?php echo $theme;?>">
     <h2><?php echo $this->__('Checkout')?></h2>
 	<div class="opc-menu">
-	
+
 	    <?php echo $this->getChildHtml('paypal.button')?>
-	            
+
         <?php if (!Mage::getSingleton('customer/session')->isLoggedIn()):?>
-    		<?php echo $this->getChildHtml('login');?>	
+    		<?php echo $this->getChildHtml('login');?>
     	<?php endif;?>
-    	
-    	
+
+
     	<div class="right review-menu-block">
-    	  <a class="review-total"><?php echo Mage::helper('opc')->getGrandTotal()?></a>   
+    	  <a class="review-total"><?php echo Mage::helper('opc')->getGrandTotal()?></a>
     	  <span class="polygon"></span>
     	  <div class="hidden" id="opc-review-block">
 		      <?php echo $this->_getReviewHtml()?>
@@ -24,18 +24,18 @@ $theme = Mage::getDesign()->getTheme('frontend');
 		</div>
 	   <div class="clear move-columns"></div>
 	</div>
-	
+
 	<div class="clear"></div>
 
     <div class="opc-col-left">
 		<form id="opc-address-form-billing" method="post">
         	<?php echo $this->getChildHtml('billing')?>
         </form>
-        	
+
         <form id="opc-address-form-shipping" class="hidden" method="post">
         <?php echo $this->getChildHtml('shipping')?>
         </form>
-		
+
     </div>
 
     <div class="opc-col-center">
@@ -47,7 +47,7 @@ $theme = Mage::getDesign()->getTheme('frontend');
 			</div>
 		</div>
 		<?php endif;?>
-		
+
 		<?php if(Mage::helper('opc')->isShowDiscount()):?>
 		<div class="discount-block">
 			<h3><?php echo $this->__('Discount Codes')?><span class='expand_plus'></span></h3>
@@ -67,7 +67,7 @@ $theme = Mage::getDesign()->getTheme('frontend');
 			<h3><?php echo $this->__('Payment Method')?></h3>
 			<?php echo $this->getChildHtml('payment')//$this->_getPaymentMethodsHtml();?>
 		</div>
-    
+
         <?php if (Mage::getConfig()->getModuleConfig('IWD_OnepageCheckoutSignature')->is('active', 'true')): ?>
             <div class="signature-block">
                 <h3><?php echo $this->__('Signature')?><span class='expand_plus'></span></h3>
@@ -90,7 +90,7 @@ $theme = Mage::getDesign()->getTheme('frontend');
 	IWD.OPC.Checkout.config = '<?php echo $this->getJsonConfig()?>';
 	<?php if ($this->getOnepage()->getQuote()->isVirtual()):?>
 	IWD.OPC.Checkout.isVirtual = true;
-	<?php endif;?>	 
+	<?php endif;?>
 </script>
 
 <div id="agree_error" style="display:none !important;"><?php echo $this->__('Please agree to all the terms and conditions before placing the order.');?></div>
@@ -108,7 +108,7 @@ $theme = Mage::getDesign()->getTheme('frontend');
 	</div>
 </div>
 <div class="opc-message-wrapper design_package_<?php echo $package;?> design_theme_<?php echo $theme;?>">
-	
+
 	<div class="opc-messages">
 		<a class="close-message-wrapper"></a>
 		<div class="opc-message-container"></div>

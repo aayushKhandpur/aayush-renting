@@ -31,7 +31,7 @@
  * @see Mage_Core_Block_Store_Switcher
  */
 ?>
-<?php Mage::log($this->debug(),Zend_log::INFO,'layout.log',true);  if(count($this->getGroups())>1): ?>
+<?php if(count($this->getGroups())>1): ?>
 <div class="form-language flags">
 
     <select class="dropdown flags" id="select-language" title="<?php echo $this->__('Your City') ?>" onchange="window.location.href=this.value">

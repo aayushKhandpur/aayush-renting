@@ -354,6 +354,18 @@
                 <name>css/catalog.css</name>
                 <group>data-group="catalog"</group>
             </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/custom/datepicker.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/custom/datepicker.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/custom/addToCart.js</name>
+            </action>
             <action method="addItem" ifconfig="weltpixel_selector/productpageoptions/ajax_add_to_compare">
                 <type>skin_css</type>
                 <name>css/weltpixel/lightbox.css</name>

@@ -346,7 +346,7 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
      * Save checkout method
      */
     public function saveMethodAction()
-    {
+    {   Mage::log('in onepage save  method',Zend_log::INFO,'layout.log',true);
         if ($this->_expireAjax()) {
             return;
         }
@@ -362,6 +362,7 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
      */
     public function saveBillingAction()
     {
+        Mage::log('in onepage biiling',Zend_log::INFO,'layout.log',true);
         if ($this->_expireAjax()) {
             return;
         }
@@ -404,6 +405,7 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
      */
     public function saveShippingAction()
     {
+        Mage::log('in onepage shipping 2',Zend_log::INFO,'layout.log',true);
         if ($this->_expireAjax()) {
             return;
         }
@@ -428,6 +430,7 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
      */
     public function saveShippingMethodAction()
     {
+        Mage::log('in onepage shipping',Zend_log::INFO,'layout.log',true);
         if ($this->_expireAjax()) {
             return;
         }
@@ -462,6 +465,7 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
      */
     public function savePaymentAction()
     {
+        Mage::log('in onepage payment',Zend_log::INFO,'layout.log',true);
         if ($this->_expireAjax()) {
             return;
         }
@@ -542,6 +546,7 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
      */
     public function saveOrderAction()
     {
+        Mage::log('in onepage save',Zend_log::INFO,'layout.log',true);
         if (!$this->_validateFormKey()) {
             $this->_redirect('*/*');
             return;
