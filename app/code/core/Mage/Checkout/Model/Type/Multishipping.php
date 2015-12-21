@@ -497,6 +497,7 @@ class Mage_Checkout_Model_Type_Multishipping extends Mage_Checkout_Model_Type_Ab
      */
     public function createOrders()
     {
+       Mage::log(' in onepage createOrders',Zend_log::INFO,'layout.log',true);
         $orderIds = array();
         $this->_validate();
         $shippingAddresses = $this->getQuote()->getAllShippingAddresses();

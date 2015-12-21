@@ -35,9 +35,9 @@ jQuery(document).ready(function(){
     jQuery(window).scroll(function() {
 
         if (jQuery(window).scrollTop()>1) {
-            jQuery('#page-header').addClass('sticky-header-moved');
+      //      jQuery('#page-header').addClass('sticky-header-moved');
         } else {
-           jQuery('#page-header').removeClass('sticky-header-moved');
+        //   jQuery('#page-header').removeClass('sticky-header-moved');
             jQuery('.header-options').removeClass('open');
             jQuery('.header-settings').removeClass('rotated');
         }
