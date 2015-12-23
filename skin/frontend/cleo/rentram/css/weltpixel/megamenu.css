@@ -451,11 +451,11 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
     top: 42px
 }
 .v2 #quick-search > li #wpas-form input {
-    width: 534px;
+    width: 633px;
     padding-left: 20px;
 	font: 18px 'Brandon';
 	background:none repeat scroll 0 0 rgba(0, 0,0, 0.5);
-	border-radius: 25px;
+	border-radius: 6px;
 }
 .v2 #quick-search > li .qa-link {
     width: 50px;
