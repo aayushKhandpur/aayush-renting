@@ -1,13 +1,19 @@
+    @import url(https://fonts.googleapis.com/css?family=Cantarell:300);
 
 
 
+    .product_swatch img { width: 30px; }
+    .product_swatch img { height: 30px; }
 
+    .swatches .filter_checkbox .swatch-container{ width: 30px; }
+    .swatches .filter_checkbox .swatch-container{ height: 30px; }
 
     .customer-account-login #page-body-section-02, .customer-account-forgotpassword #page-body-section-02, .customer-account-create #page-body-section-02  {
     background-image: url(http://localhost/rentram/media/cleo/default/bg.jpg.png);
     }
 
 
+    .w, .toolbar, .products-list, #wpmm-nav, .wpmm-nav-content-inner  {max-width: 1300px ; }
 
 
 
@@ -18,6 +24,15 @@
 
 
 
+    .v2 #page-header-section-01  { background-color:  #232323 !important; }
+    .v2 #page-header-section-01  { color:  #FFFFFF !important; }
+
+
+
+
+
+    #wpas-q { background-color:  #4564FF !important; }
+    #wpas-q { border: 1px solid #FEBD69 !important; }
 
 
 
@@ -35,13 +50,19 @@
 
 
 
+    body, p, input, select, textarea, th, td, b, strong, caption, th, td,
+    #product-info .product-description,
+    #product-reviews p, #product-reviews label
+    {
+            font-family: 'Cantarell', sans-serif !important;
+                font-weight: 300 !important;
+        }
 
 
-
-
-
-
-
+    body, input, select, textarea, th, td, b, strong, caption, th, td,
+    #product-info .product-description,
+    #product-reviews p, #product-reviews label
+    { font-size:  12px !important; }
 
 
 
