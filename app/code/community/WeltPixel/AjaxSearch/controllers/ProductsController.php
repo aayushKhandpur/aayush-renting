@@ -3,6 +3,7 @@
 class WeltPixel_AjaxSearch_ProductsController extends Mage_Core_Controller_Front_Action {
 
     public function indexAction() {
+
         $query = Mage::helper('catalogsearch')->getQuery();
 
         $query->setStoreId(Mage::app()->getStore()->getId());
@@ -27,7 +28,7 @@ class WeltPixel_AjaxSearch_ProductsController extends Mage_Core_Controller_Front
         $showShortDescription = $ajaxHelper->showShortDescription();
         $showPrice = $ajaxHelper->showPrice();
         $showThumbnail = $ajaxHelper->showImageThumbnail();
-        
+
         $searchResult = array(
             'resultcounts' => 0,
             'elements' => ''
@@ -55,7 +56,7 @@ class WeltPixel_AjaxSearch_ProductsController extends Mage_Core_Controller_Front
         Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
         Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($collection);
         $collection->addAttributeToSelect(array('name', 'short_description', 'thumbnail'));
-        
+
         $resultCount = $collection->getSize();
         $checkOutMore = '';
         if ($maxShownResult) {
@@ -74,7 +75,7 @@ class WeltPixel_AjaxSearch_ProductsController extends Mage_Core_Controller_Front
             $searchResult['resultcounts'] = $resultCount;
             foreach ($collection as $product) {
                 $thumbnailImage = '';
-                if ($showThumbnail) {                    
+                if ($showThumbnail) {
                     $image = Mage::helper('catalog/image')->init($product, 'thumbnail')->resize($imageWidth, $imageHeight);
                     $thumbnailImage = '<img width="' . $imageWidth . '" height="' . $imageHeight . '" src="' . $image . '" />';
                 }
@@ -99,11 +100,41 @@ class WeltPixel_AjaxSearch_ProductsController extends Mage_Core_Controller_Front
             }
 
             $result .= $checkOutMore;
-            
+
             $result .= '<script> if ($("advanced_search")) { $("advanced_search").observe("click", function(event) {  $("wpas-form").submit(); }); }</script>';
 
             $searchResult['elements'] = $result;
         }
+
+
+
+
+/*
+$result="";
+
+            $searchTerm =   Mage::helper('catalogsearch')->getEscapedQueryText();
+
+            $categories = Mage::helper('catalog/category')->getStoreCategories(false, true);
+
+            $count = 0;
+            $result+= "<div class=\"search-term-notice\">";
+            $result+= "The following product categories matched your search:";
+            foreach ($categories as $count_category) {
+                if (Mage::helper('catalog/category')->canShow($count_category) && stripos($count_category->getName(), $searchTerm) !== false){
+                        $result+= "<h3> > <a href='".$category->getUrl()."'>".$category->getName()."</a></h3></p>";
+                       $count++;
+                     }
+            }
+Mage::log($result->debug(),Zend_log::INFO,'layout.log',true);
+            if ($count > 0):
+
+
+
+
+            $result+= "</div>";
+            endif;
+$searchResult['elements'] = $result;
+*/
 
         $this->_sendResult($searchResult);
     }
