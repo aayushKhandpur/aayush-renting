@@ -117,6 +117,10 @@
                 </action>
                 <action method="addItem">
                     <type>skin_css</type>
+                    <name>css/vendor/features/font-awesome.css</name>
+                </action>
+                <action method="addItem">
+                    <type>skin_css</type>
                     <name>css/vendor/features/magnific-popup.css</name>
                 </action>
                 <action method="addItem">
