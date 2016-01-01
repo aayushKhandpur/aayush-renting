@@ -117,7 +117,7 @@
                 </action>
                 <action method="addItem">
                     <type>skin_css</type>
-                    <name>css/vendor/features/font-awesome.css</name>
+                    <name>css/font-awesome.min.css</name>
                 </action>
                 <action method="addItem">
                     <type>skin_css</type>
