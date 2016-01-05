@@ -13,15 +13,17 @@
  * Contact us Support does not guarantee correct work of this package
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
- * 
+ *
  * @category    Medma
  * @package     Medma_MarketPlace
 **/
 ?>
 
 <?php $vendorInfo = $this->getVendorInfo(); ?>
-<div class="box-collateral box-description">	
-	<div class="std"><a href="<?php echo $this->getVendorProfileUrl($vendorInfo->getId()); ?>"><?php echo $vendorInfo->getShopName(); ?></a></div>
+<div class="box-collateral box-description">
+	<div class="std"><a href="<?php echo $this->getVendorProfileUrl($vendorInfo->getId()); ?>">
+		<?php echo $vendorInfo->getShopName(); ?></a></div>
+
 	<div class="add-to-box">
 		<button type="button" title="<?php echo $this->__('Add to Favourite'); ?>" class="button"
 			onclick="setLocation('<?php echo $this->getAddFavouriteUrl($vendorInfo->getId()); ?>');">
@@ -29,5 +31,3 @@
 		</button>
 	</div>
 </div>
-
-
