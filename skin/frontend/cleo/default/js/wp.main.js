@@ -25,7 +25,7 @@ var WeltPixel = {};
                 if ( ! currentVal || currentVal == '' || currentVal == 'NaN') {
                     currentVal = 0;
                 }
-                
+
                 elem.val(currentVal + 1);
 
                 elem.removeAttr('disabled');
@@ -98,6 +98,43 @@ var WeltPixel = {};
                     });
                 }
             });
+            var renttime = jQuery('#renttime'),
+                renttimeparent = jQuery(this).parents('.renttime'),
+                renttimesuper_attribute_select = jQuery('.renttimesuper-attribute-select').eq(0);
+            jQuery('.renttime-inc').on('click', function() {
+                if (qty.size())
+                {
+                    increaseQuantity(renttime);
+                    jQuery(this).parent().find('.renttime-dec').removeClass('qty-disabled');
+                }
+                else if (renttimesuper_attribute_select)
+                {
+                    var qtys = jQuery('.renttime', renttimeparent);
+
+                    qtys.each(function(key, value) {
+                        increaseQuantity(jQuery(this));
+                    });
+                }
+            });
+
+            jQuery('.renttime-dec').on('click', function() {
+                if (renttime.size())
+                {
+                    if (decreaseQuantity(renttime, false)) {
+                        jQuery(this).addClass('qty-disabled');
+                    };
+                }
+                else if (renttimesuper_attribute_select)
+                {
+                    var qtys = jQuery('.renttime', renttimeparent);
+
+                    qtys.each(function(key, value) {
+                        decreaseQuantity(jQuery(this), true);
+                    });
+                }
+            });
+
+
         }
 
     };
@@ -141,7 +178,7 @@ var WeltPixel = {};
         })
     });
     jQuery(window).resize(function(){
-        
+
         if (Modernizr.mq('(max-width: 992px)')) {
              if(jQuery('.col-left')){
                 jQuery('.col-left').insertAfter('.col-main');
@@ -150,7 +187,7 @@ var WeltPixel = {};
                 jQuery('.col-right').insertAfter('.col-left');
             }
         }
-        
+
         if (Modernizr.mq('(min-width: 992px)')) {
              if(jQuery('.col-left')){
                 jQuery('.col-main').insertAfter('.col-left');

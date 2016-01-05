@@ -921,6 +921,9 @@ li.price-row-container input#pr_from, li.price-row-container input#pr_to {displa
 body.catalog-product-view .add-to-cart .qty {
     margin: 0
 }
+body.catalog-product-view .add-to-cart .renttime {
+    margin: 0
+}
 .add-to-cart label {
     float: left;
     font-size: 18px;
@@ -937,11 +940,31 @@ body.catalog-product-view .add-to-cart .qty {
     border: 1px solid #eee;
     line-height: 20px;
 }
+
+.add-to-cart .renttime {
+    height: 40px;
+    width: 40px;
+    margin: 0 15px;
+    padding: 9px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #eee;
+    line-height: 20px;
+}
 .add-to-cart .qty-dec, .add-to-cart .qty-inc {
     display: inline-block;
     width: 40px;
     font-size: 32px;
     vertical-align: middle
+}
+.add-to-cart .renttime-dec, .add-to-cart .renttime-inc {
+    display: inline-block;
+    width: 40px;
+    font-size: 32px;
+    vertical-align: middle
+}
+.add-to-cart .renttime-dec {
+    text-align: left
 }
 .add-to-cart .qty-dec {
     text-align: left
