@@ -208,38 +208,7 @@ class Medma_MarketPlace_Block_Adminhtml_Vendor_Edit_Form extends Mage_Adminhtml_
 				));
         }
 
-        $profile_fieldset->addField('admin_commission_percentage', 'text', array(
-            'name' => 'admin_commission_percentage',
-            'label' => Mage::helper('adminhtml')->__('Commission (in %)'),
-            'title' => Mage::helper('adminhtml')->__('Commission (in %)'),
-            'class' => 'validate-number',
-            'required' => true,
-            'value' => $profile->getAdminCommissionPercentage(),
-                )
-        );
-
-        $profile_fieldset->addField('total_admin_commission', 'text', array(
-            'name' => 'total_admin_commission',
-            'label' => Mage::helper('adminhtml')->__('Admin Earnings'),
-            'title' => Mage::helper('adminhtml')->__('Admin Earnings'),
-            'disabled' => true,
-            'style' => 'display:none;',
-            'value' => $profile->getTotalAdminCommission(),
-            'after_element_html' => '<b>' . $this->formatPrice($profile->getTotalAdminCommission()) . '</b>',
-                )
-        );
-
-        $profile_fieldset->addField('total_vendor_amount', 'text', array(
-            'name' => 'total_vendor_amount',
-            'label' => Mage::helper('adminhtml')->__('Vendor Balance'),
-            'title' => Mage::helper('adminhtml')->__('Vendor Balance'),
-            'disabled' => true,
-            'style' => 'display:none;',
-            'value' => number_format(($profile->getTotalVendorAmount() - $profile->getTotalVendorPaid()), 4, '.', ''),
-            'after_element_html' => '<b>' . $this->formatPrice(($profile->getTotalVendorAmount() - $profile->getTotalVendorPaid())) . '</b>',
-                )
-        );
-
+        
         $this->setForm($form);
 
         return parent::_prepareForm();

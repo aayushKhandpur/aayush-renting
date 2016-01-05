@@ -302,6 +302,14 @@
         </reference>
 
         <reference name="top.links">
+          <action method="addLink" translate="label title" module="customer">
+              <label>Rent With us?</label>
+              <url>marketplace/vendor/register/</url>
+              <title>Rent with us?</title>
+              <prepare/>
+              <urlParams/>
+              <position>14</position>
+          </action>
             <action method="removeLinkByUrl">
                 <url helper="customer/getAccountUrl"/>
             </action>

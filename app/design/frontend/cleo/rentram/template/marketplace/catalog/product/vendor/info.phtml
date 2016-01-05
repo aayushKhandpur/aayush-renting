@@ -1,0 +1,60 @@
+<?php
+/**
+ * Medma Marketplace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ *
+ * @category    Medma
+ * @package     Medma_MarketPlace
+**/
+?>
+
+<?php $vendorInfo = $this->getVendorInfo(); ?>
+<div class="box-collateral box-description">
+	<div class="std">
+
+
+
+		<table class="data-table" id="product-attribute-specs-table">
+		        <colgroup><col style="width: 25%">
+		        <col>
+		        </colgroup>
+						<tbody>
+		            <tr>
+		                <th class="label">Shop Name</th>
+		                <td class="data">
+												<a style="font-size: 17px; text-decoration: underline; color: cornflowerblue;" href="<?php echo $this->getVendorProfileUrl($vendorInfo->getId()); ?>" >
+													<?php Mage::log($vendorInfo->debug(),Zend_log::INFO,'layout.log',true);		echo $vendorInfo->getShopName(); ?>
+												</a>
+										</td>
+		            </tr>
+		            <tr>
+		                <th class="label">Contact Number</th>
+		                <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
+		            </tr>
+		            <tr>
+		                <th class="label">Description</th>
+		                <td class="data">	<?php 	echo $vendorInfo->getMessage(); ?></td>
+		            </tr>
+		        </tbody>
+		    </table>
+
+	</div>
+
+	<div class="add-to-box" style="text-align: center;  margin-top: 1%;">
+		<button type="button" title="<?php echo $this->__('Add to Favourite'); ?>" class="button"
+			onclick="setLocation('<?php echo $this->getAddFavouriteUrl($vendorInfo->getId()); ?>');">
+			<span><span><?php echo $this->__('Add to Favourite'); ?></span></span>
+		</button>
+	</div>
+</div>
