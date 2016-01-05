@@ -1,7 +1,7 @@
 <?php
 $_product = $this->getProduct();
 $_qty = $this->getProductDefaultQty() * 1;
-$_renttime = $this->getData('renttime')*1;
+$_renttime = $_product->getData('renttime')*1;
 Mage::log($_product->debug(),Zend_log::INFO,'layout.log',true);
 ?>
 

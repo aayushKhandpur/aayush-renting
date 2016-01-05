@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2016 at 03:42 PM
+-- Generation Time: Jan 05, 2016 at 09:42 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -8441,7 +8441,7 @@ CREATE TABLE IF NOT EXISTS `rradmin_user` (
 --
 
 INSERT INTO `rradmin_user` (`user_id`, `firstname`, `lastname`, `email`, `username`, `password`, `created`, `modified`, `logdate`, `lognum`, `reload_acl_flag`, `is_active`, `extra`, `rp_token`, `rp_token_created_at`) VALUES
-(1, 'aayush', 'khandpur', 'aayush.khandpur@gmail.com', 'admin', '6c05b09163a3cc61e02d8849d4048b70:MKferNYX7lysfyx9ZCwSyMIyVCu1w1Ew', '2015-12-08 14:12:29', '2015-12-08 14:12:29', '2016-01-05 08:09:49', 41, 0, 1, 'a:1:{s:11:"configState";a:63:{s:14:"design_package";s:1:"1";s:12:"design_theme";s:1:"1";s:11:"design_head";s:1:"0";s:13:"design_header";s:1:"0";s:13:"design_footer";s:1:"0";s:16:"design_watermark";s:1:"0";s:17:"design_pagination";s:1:"0";s:12:"design_email";s:1:"0";s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"1";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";s:28:"weltpixel_ajaxsearch_general";s:1:"1";s:34:"weltpixel_fontsettings_font_family";s:1:"1";s:32:"weltpixel_fontsettings_font_size";s:1:"1";s:32:"weltpixel_selector_headeroptions";s:1:"0";s:34:"weltpixel_selector_categoryoptions";s:1:"0";s:33:"weltpixel_selector_sidebaroptions";s:1:"0";s:37:"weltpixel_selector_productpageoptions";s:1:"1";s:41:"weltpixel_selector_customization_settings";s:1:"1";s:12:"dev_restrict";s:1:"1";s:9:"dev_debug";s:1:"1";s:12:"dev_template";s:1:"1";s:20:"dev_translate_inline";s:1:"1";s:7:"dev_log";s:1:"0";s:6:"dev_js";s:1:"0";s:7:"dev_css";s:1:"0";s:31:"weltpixel_colorsettings_general";s:1:"0";s:31:"weltpixel_colorsettings_buttons";s:1:"0";s:43:"weltpixel_colorsettings_new_and_sale_labels";s:1:"0";s:37:"weltpixel_colorsettings_misc_elements";s:1:"0";s:40:"weltpixel_colorsettings_header_version_1";s:1:"0";s:40:"weltpixel_colorsettings_header_version_2";s:1:"1";s:40:"weltpixel_colorsettings_header_version_3";s:1:"0";s:35:"weltpixel_colorsettings_header_menu";s:1:"0";s:34:"weltpixel_colorsettings_breadcrumb";s:1:"0";s:34:"weltpixel_colorsettings_search_box";s:1:"1";s:45:"weltpixel_colorsettings_dropdown_boxes_header";s:1:"0";s:30:"weltpixel_colorsettings_footer";s:1:"1";s:34:"weltpixel_colorsettings_pre_footer";s:1:"0";s:34:"weltpixel_colorsettings_sub_footer";s:1:"0";s:34:"weltpixel_colorsettings_ajaxsearch";s:1:"1";s:42:"weltpixel_colorsettings_layered_navigation";s:1:"1";s:42:"weltpixel_colorsettings_social_media_icons";s:1:"1";s:11:"cms_wysiwyg";s:1:"1";s:22:"configswatches_general";s:1:"1";s:40:"configswatches_product_detail_dimensions";s:1:"0";s:41:"configswatches_product_listing_dimensions";s:1:"0";s:37:"configswatches_layered_nav_dimensions";s:1:"0";s:31:"weltpixel_productswatch_general";s:1:"1";s:28:"weltpixel_newsletter_general";s:1:"1";s:19:"marketplace_general";s:1:"1";s:18:"marketplace_review";s:1:"0";s:31:"marketplace_vendor_registration";s:1:"0";s:17:"marketplace_email";s:1:"0";s:37:"marketplace_vendor_registration_email";s:1:"0";s:35:"marketplace_vendor_activation_email";s:1:"0";s:43:"marketplace_registration_confirmation_email";s:1:"0";}}', NULL, NULL),
+(1, 'aayush', 'khandpur', 'aayush.khandpur@gmail.com', 'admin', '6c05b09163a3cc61e02d8849d4048b70:MKferNYX7lysfyx9ZCwSyMIyVCu1w1Ew', '2015-12-08 14:12:29', '2015-12-08 14:12:29', '2016-01-05 12:58:44', 44, 0, 1, 'a:1:{s:11:"configState";a:63:{s:14:"design_package";s:1:"1";s:12:"design_theme";s:1:"1";s:11:"design_head";s:1:"0";s:13:"design_header";s:1:"0";s:13:"design_footer";s:1:"0";s:16:"design_watermark";s:1:"0";s:17:"design_pagination";s:1:"0";s:12:"design_email";s:1:"0";s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"1";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";s:28:"weltpixel_ajaxsearch_general";s:1:"1";s:34:"weltpixel_fontsettings_font_family";s:1:"1";s:32:"weltpixel_fontsettings_font_size";s:1:"1";s:32:"weltpixel_selector_headeroptions";s:1:"0";s:34:"weltpixel_selector_categoryoptions";s:1:"0";s:33:"weltpixel_selector_sidebaroptions";s:1:"1";s:37:"weltpixel_selector_productpageoptions";s:1:"0";s:41:"weltpixel_selector_customization_settings";s:1:"1";s:12:"dev_restrict";s:1:"1";s:9:"dev_debug";s:1:"1";s:12:"dev_template";s:1:"1";s:20:"dev_translate_inline";s:1:"1";s:7:"dev_log";s:1:"0";s:6:"dev_js";s:1:"0";s:7:"dev_css";s:1:"0";s:31:"weltpixel_colorsettings_general";s:1:"0";s:31:"weltpixel_colorsettings_buttons";s:1:"0";s:43:"weltpixel_colorsettings_new_and_sale_labels";s:1:"0";s:37:"weltpixel_colorsettings_misc_elements";s:1:"0";s:40:"weltpixel_colorsettings_header_version_1";s:1:"0";s:40:"weltpixel_colorsettings_header_version_2";s:1:"1";s:40:"weltpixel_colorsettings_header_version_3";s:1:"0";s:35:"weltpixel_colorsettings_header_menu";s:1:"0";s:34:"weltpixel_colorsettings_breadcrumb";s:1:"0";s:34:"weltpixel_colorsettings_search_box";s:1:"1";s:45:"weltpixel_colorsettings_dropdown_boxes_header";s:1:"0";s:30:"weltpixel_colorsettings_footer";s:1:"1";s:34:"weltpixel_colorsettings_pre_footer";s:1:"0";s:34:"weltpixel_colorsettings_sub_footer";s:1:"0";s:34:"weltpixel_colorsettings_ajaxsearch";s:1:"1";s:42:"weltpixel_colorsettings_layered_navigation";s:1:"1";s:42:"weltpixel_colorsettings_social_media_icons";s:1:"1";s:11:"cms_wysiwyg";s:1:"1";s:22:"configswatches_general";s:1:"1";s:40:"configswatches_product_detail_dimensions";s:1:"0";s:41:"configswatches_product_listing_dimensions";s:1:"0";s:37:"configswatches_layered_nav_dimensions";s:1:"0";s:31:"weltpixel_productswatch_general";s:1:"1";s:28:"weltpixel_newsletter_general";s:1:"1";s:19:"marketplace_general";s:1:"1";s:18:"marketplace_review";s:1:"0";s:31:"marketplace_vendor_registration";s:1:"0";s:17:"marketplace_email";s:1:"0";s:37:"marketplace_vendor_registration_email";s:1:"0";s:35:"marketplace_vendor_activation_email";s:1:"0";s:43:"marketplace_registration_confirmation_email";s:1:"0";}}', NULL, NULL),
 (2, 'vendor', '1', 'vendor@gmail.com', 'vendor1', '53df0b3fab71cf99f7717b356f78e1a1:M37m29zkxKmcCTcU8VkJ5JgGnyuDeSpo', '2015-12-19 11:39:58', '2015-12-19 11:39:58', '2015-12-30 12:01:13', 2, 1, 1, 'N;', NULL, NULL),
 (3, 'aayush', 'khandpur', 'aayush.khandpur@metacube.com', 'aayushk', '88305ba3991bf6f11c0e4bd2961b79d2:APPeTEvZ1ZxV2ZuPfmw6zyneI9CYgTBT', '2016-01-02 14:16:21', '2016-01-03 00:41:21', '2016-01-03 00:16:27', 2, 0, 1, 'N;', NULL, NULL);
 
@@ -9057,7 +9057,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalogsearch_fulltext` (
   PRIMARY KEY (`fulltext_id`),
   UNIQUE KEY `UNQ_RRCATALOGSEARCH_FULLTEXT_PRODUCT_ID_STORE_ID` (`product_id`,`store_id`),
   FULLTEXT KEY `FTI_RRCATALOGSEARCH_FULLTEXT_DATA_INDEX` (`data_index`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Catalog search result table' AUTO_INCREMENT=338 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Catalog search result table' AUTO_INCREMENT=342 ;
 
 --
 -- Dumping data for table `rrcatalogsearch_fulltext`
@@ -9119,7 +9119,7 @@ INSERT INTO `rrcatalogsearch_fulltext` (`fulltext_id`, `product_id`, `store_id`,
 (320, 3, 11, 'jcb123|None|jcb|high power and fine condition|single handed good condition|30000|1'),
 (325, 5, 10, 'venhical_1|None|hondai|luxy car|confort and look|50000|1'),
 (319, 1, 11, 'projector123|None|Projector|project your imagination with high resolution project 1900X1200 pixel|projector image quality is height and unbitable|200|1'),
-(337, 2, 10, 'bad123|None|double bad|2X2 wide and ful length|wooden and iron coating|500|1'),
+(341, 2, 10, 'bad123|None|double bad|2X2 wide and ful length|wooden and iron coating|500|1'),
 (331, 9, 10, 'music1|None|piyano|heart of music|20 hz, classic woodan|2000|1'),
 (332, 12, 10, 'table2|None|vibrating table|civil instar=aumtnt|civil instraut|200|1');
 
@@ -10709,8 +10709,8 @@ INSERT INTO `rrcatalog_eav_attribute` (`attribute_id`, `frontend_input_renderer`
 (148, NULL, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, NULL, 0, 0, 0, 0, 0, -1, 0),
 (150, NULL, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0),
 (151, NULL, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0),
-(152, NULL, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0),
-(153, NULL, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0),
+(152, NULL, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0),
+(153, NULL, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0),
 (154, NULL, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0),
 (155, NULL, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0),
 (156, NULL, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, NULL, 0, 0, 0, 0, 0, -1, 0),
@@ -10858,7 +10858,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity` (
 
 INSERT INTO `rrcatalog_product_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `type_id`, `sku`, `has_options`, `required_options`, `created_at`, `updated_at`) VALUES
 (1, 4, 4, 'simple', 'projector123', 0, 0, '2015-12-15 12:39:12', '2015-12-23 10:47:00'),
-(2, 4, 4, 'simple', 'bad123', 0, 0, '2015-12-15 22:17:37', '2016-01-05 08:31:07'),
+(2, 4, 4, 'simple', 'bad123', 0, 0, '2015-12-16 00:17:37', '2016-01-05 14:39:04'),
 (3, 4, 4, 'simple', 'jcb123', 0, 0, '2015-12-15 21:22:31', '2015-12-23 10:48:42'),
 (4, 4, 4, 'simple', 'room_1', 0, 0, '2015-12-19 06:04:46', '2015-12-23 10:49:51'),
 (5, 4, 4, 'simple', 'venhical_1', 0, 0, '2015-12-19 04:39:24', '2015-12-23 10:53:24'),
@@ -10888,7 +10888,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity_datetime` (
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DATETIME_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DATETIME_STORE_ID` (`store_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DATETIME_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Datetime Attribute Backend Table' AUTO_INCREMENT=243 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Datetime Attribute Backend Table' AUTO_INCREMENT=267 ;
 
 --
 -- Dumping data for table `rrcatalog_product_entity_datetime`
@@ -11034,7 +11034,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity_decimal` (
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DECIMAL_STORE_ID` (`store_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DECIMAL_ENTITY_ID` (`entity_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DECIMAL_ATTRIBUTE_ID` (`attribute_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Decimal Attribute Backend Table' AUTO_INCREMENT=103 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Decimal Attribute Backend Table' AUTO_INCREMENT=115 ;
 
 --
 -- Dumping data for table `rrcatalog_product_entity_decimal`
@@ -11149,7 +11149,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity_int` (
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_INT_STORE_ID` (`store_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_INT_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Integer Attribute Backend Table' AUTO_INCREMENT=201 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Integer Attribute Backend Table' AUTO_INCREMENT=221 ;
 
 --
 -- Dumping data for table `rrcatalog_product_entity_int`
@@ -11349,7 +11349,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity_text` (
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_TEXT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_TEXT_STORE_ID` (`store_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_TEXT_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Text Attribute Backend Table' AUTO_INCREMENT=105 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Text Attribute Backend Table' AUTO_INCREMENT=117 ;
 
 --
 -- Dumping data for table `rrcatalog_product_entity_text`
@@ -11456,7 +11456,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity_varchar` (
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_VARCHAR_STORE_ID` (`store_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Varchar Attribute Backend Table' AUTO_INCREMENT=1094 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Varchar Attribute Backend Table' AUTO_INCREMENT=1157 ;
 
 --
 -- Dumping data for table `rrcatalog_product_entity_varchar`
@@ -11493,7 +11493,7 @@ INSERT INTO `rrcatalog_product_entity_varchar` (`value_id`, `entity_type_id`, `a
 (155, 4, 119, 0, 2, '4'),
 (156, 4, 82, 0, 2, NULL),
 (157, 4, 84, 0, 2, NULL),
-(158, 4, 154, 0, 2, NULL),
+(158, 4, 154, 0, 2, '2'),
 (159, 4, 85, 0, 2, '/b/1/b1.jpg'),
 (160, 4, 86, 0, 2, '/b/1/b1.jpg'),
 (161, 4, 87, 0, 2, '/b/1/b1.jpg'),
@@ -11777,7 +11777,7 @@ INSERT INTO `rrcatalog_product_entity_varchar` (`value_id`, `entity_type_id`, `a
 (1080, 4, 119, 10, 2, '4'),
 (1081, 4, 150, 10, 2, '2'),
 (1082, 4, 151, 10, 2, '100'),
-(1083, 4, 154, 10, 2, '2');
+(1083, 4, 154, 10, 2, '4');
 
 -- --------------------------------------------------------
 
@@ -12567,8 +12567,8 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_index_website` (
 --
 
 INSERT INTO `rrcatalog_product_index_website` (`website_id`, `website_date`, `rate`) VALUES
-(2, '2016-01-05', 1),
-(3, '2016-01-05', 1);
+(2, '2016-01-06', 1),
+(3, '2016-01-06', 1);
 
 -- --------------------------------------------------------
 
@@ -13364,7 +13364,7 @@ INSERT INTO `rrcore_config_data` (`config_id`, `scope`, `scope_id`, `path`, `val
 (68, 'default', 0, 'weltpixel_selector/categoryoptions/addtowishlist', 'yes'),
 (69, 'default', 0, 'weltpixel_selector/categoryoptions/addtocompare', 'yes'),
 (70, 'default', 0, 'weltpixel_selector/categoryoptions/enablequickview', 'no'),
-(71, 'default', 0, 'weltpixel_selector/categoryoptions/addtocartbutton', 'page'),
+(71, 'default', 0, 'weltpixel_selector/categoryoptions/addtocartbutton', 'lightbox'),
 (72, 'default', 0, 'weltpixel_selector/categoryoptions/onelinetitle', 'yes'),
 (73, 'default', 0, 'weltpixel_selector/categoryoptions/equal_grid_images', '1'),
 (74, 'default', 0, 'weltpixel_selector/categoryoptions/grid_image_size', '400'),
@@ -13405,7 +13405,7 @@ INSERT INTO `rrcore_config_data` (`config_id`, `scope`, `scope_id`, `path`, `val
 (109, 'default', 0, 'weltpixel_selector/productpageoptions/disable_compare', '0'),
 (110, 'default', 0, 'weltpixel_selector/productpageoptions/display_additionalinfo', '1'),
 (111, 'default', 0, 'weltpixel_selector/productpageoptions/display_reviews', '1'),
-(112, 'default', 0, 'weltpixel_selector/productpageoptions/default_page_layout', 'two_columns_right'),
+(112, 'default', 0, 'weltpixel_selector/productpageoptions/default_page_layout', 'two_columns_right_merged_header'),
 (113, 'default', 0, 'weltpixel_selector/productpageoptions/preselect_configurable_options', '1'),
 (114, 'default', 0, 'weltpixel_selector/customization_settings/website_width', '1300px'),
 (115, 'default', 0, 'weltpixel_selector/customization_settings/display_mode', '0'),
@@ -13998,7 +13998,7 @@ CREATE TABLE IF NOT EXISTS `rrcore_url_rewrite` (
   KEY `IDX_RRCORE_URL_REWRITE_STORE_ID` (`store_id`),
   KEY `FK_RRCORE_URL_REWRITE_CTGR_ID_RRCAT_CTGR_ENTT_ENTT_ID` (`category_id`),
   KEY `FK_RRCORE_URL_REWRITE_PRD_ID_RRCAT_CTGR_ENTT_ENTT_ID` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=1115 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=1124 ;
 
 --
 -- Dumping data for table `rrcore_url_rewrite`
@@ -17375,8 +17375,8 @@ INSERT INTO `rrindex_event` (`event_id`, `type`, `entity`, `entity_pk`, `created
 (9, 'save', 'catalog_eav_attribute', 149, '2015-12-15 12:17:09', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
 (10, 'save', 'catalog_eav_attribute', 150, '2015-12-15 12:19:05', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
 (11, 'save', 'catalog_eav_attribute', 151, '2015-12-15 12:24:12', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
-(12, 'save', 'catalog_eav_attribute', 152, '2015-12-15 12:25:12', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
-(13, 'save', 'catalog_eav_attribute', 153, '2015-12-15 12:25:46', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
+(12, 'save', 'catalog_eav_attribute', 152, '2015-12-15 12:25:12', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:0;}'),
+(13, 'save', 'catalog_eav_attribute', 153, '2015-12-15 12:25:46', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:0;}'),
 (14, 'save', 'catalog_eav_attribute', 154, '2015-12-15 12:26:34', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
 (15, 'delete', 'catalog_eav_attribute', 149, '2015-12-15 12:32:52', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";s:1:"0";}'),
 (16, 'save', 'catalog_eav_attribute', 155, '2015-12-15 12:33:59', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:0;}'),
@@ -17484,15 +17484,15 @@ CREATE TABLE IF NOT EXISTS `rrindex_process` (
 --
 
 INSERT INTO `rrindex_process` (`process_id`, `indexer_code`, `status`, `started_at`, `ended_at`, `mode`) VALUES
-(1, 'catalog_product_attribute', 'pending', '2016-01-05 09:09:13', '2016-01-05 09:09:13', 'real_time'),
-(2, 'catalog_product_price', 'pending', '2016-01-05 08:31:09', '2016-01-05 08:31:10', 'real_time'),
-(3, 'catalog_url', 'pending', '2016-01-05 08:31:10', '2016-01-05 08:31:10', 'real_time'),
+(1, 'catalog_product_attribute', 'pending', '2016-01-05 14:39:05', '2016-01-05 14:39:05', 'real_time'),
+(2, 'catalog_product_price', 'pending', '2016-01-05 14:39:05', '2016-01-05 14:39:05', 'real_time'),
+(3, 'catalog_url', 'pending', '2016-01-05 14:39:05', '2016-01-05 14:39:05', 'real_time'),
 (4, 'catalog_product_flat', 'pending', '2015-12-08 14:56:54', '2015-12-08 14:56:55', 'real_time'),
 (5, 'catalog_category_flat', 'pending', '2015-12-23 10:58:03', '2015-12-23 10:58:03', 'real_time'),
-(6, 'catalog_category_product', 'pending', '2016-01-05 08:31:10', '2016-01-05 08:31:10', 'real_time'),
-(7, 'catalogsearch_fulltext', 'pending', '2016-01-05 08:31:10', '2016-01-05 08:31:10', 'real_time'),
-(8, 'cataloginventory_stock', 'pending', '2016-01-05 08:31:09', '2016-01-05 08:31:09', 'real_time'),
-(9, 'tag_summary', 'pending', '2016-01-05 08:31:10', '2016-01-05 08:31:10', 'real_time');
+(6, 'catalog_category_product', 'pending', '2016-01-05 14:39:05', '2016-01-05 14:39:05', 'real_time'),
+(7, 'catalogsearch_fulltext', 'pending', '2016-01-05 14:39:05', '2016-01-05 14:39:06', 'real_time'),
+(8, 'cataloginventory_stock', 'pending', '2016-01-05 14:39:05', '2016-01-05 14:39:05', 'real_time'),
+(9, 'tag_summary', 'pending', '2016-01-05 14:39:06', '2016-01-05 14:39:06', 'real_time');
 
 -- --------------------------------------------------------
 
@@ -17546,7 +17546,8 @@ CREATE TABLE IF NOT EXISTS `rrlog_quote` (
 INSERT INTO `rrlog_quote` (`quote_id`, `visitor_id`, `created_at`, `deleted_at`) VALUES
 (1, 957, '2015-12-15 13:47:48', NULL),
 (2, 1230, '2015-12-25 00:21:18', NULL),
-(3, 1280, '2015-12-25 01:39:43', NULL);
+(3, 1280, '2015-12-25 01:39:43', NULL),
+(4, 1464, '2016-01-05 14:37:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -19099,7 +19100,7 @@ INSERT INTO `rrlog_visitor` (`visitor_id`, `session_id`, `first_visit_at`, `last
 (1461, 's8vhfkpskd2dbp2itgmnhib662', '2016-01-02 12:45:10', '2016-01-02 15:10:12', 0, 10),
 (1462, 'g81gp45fv3jhddv3u57n6ors57', '2016-01-02 13:38:43', '2016-01-02 13:38:45', 0, 10),
 (1463, '1dqdjcu0h5dp3qpnn1klgfl2t4', '2016-01-02 13:38:46', '2016-01-02 13:38:47', 0, 10),
-(1464, 'e79a3b48ihg7nds0nt981n8p72', '2016-01-02 14:17:47', '2016-01-02 14:17:51', 0, 10),
+(1464, 'mi6ghimvhr3sf5ngc71l0oniv2', '2016-01-05 12:26:57', '2016-01-05 14:41:27', 0, 10),
 (1465, '68kp6cv9g15431sfkts6u8t3a3', '2016-01-03 00:07:45', '2016-01-03 00:41:45', 0, 10),
 (1466, '0mlejcbd91rdmcuubk00apbun5', '2016-01-03 00:17:34', '2016-01-03 00:17:38', 0, 10),
 (1467, 'e3ff1gklme5hukfh9p0hrbg5k3', '2016-01-03 05:35:31', '2016-01-03 05:35:35', 0, 10),
@@ -21477,7 +21478,7 @@ CREATE TABLE IF NOT EXISTS `rrreport_event` (
   KEY `IDX_RRREPORT_EVENT_OBJECT_ID` (`object_id`),
   KEY `IDX_RRREPORT_EVENT_SUBTYPE` (`subtype`),
   KEY `IDX_RRREPORT_EVENT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Event Table' AUTO_INCREMENT=46 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Event Table' AUTO_INCREMENT=60 ;
 
 --
 -- Dumping data for table `rrreport_event`
@@ -21528,7 +21529,21 @@ INSERT INTO `rrreport_event` (`event_id`, `logged_at`, `event_type_id`, `object_
 (42, '2016-01-05 09:01:15', 1, 2, 1469, 1, 10),
 (43, '2016-01-05 09:02:40', 1, 2, 1469, 1, 10),
 (44, '2016-01-05 09:03:04', 1, 2, 1469, 1, 10),
-(45, '2016-01-05 09:07:55', 1, 2, 1469, 1, 10);
+(45, '2016-01-05 09:07:55', 1, 2, 1469, 1, 10),
+(46, '2016-01-05 12:30:34', 1, 2, 1464, 1, 10),
+(47, '2016-01-05 12:49:30', 1, 2, 1464, 1, 10),
+(48, '2016-01-05 14:14:16', 1, 2, 1464, 1, 10),
+(49, '2016-01-05 14:15:25', 1, 2, 1464, 1, 10),
+(50, '2016-01-05 14:20:59', 1, 2, 1464, 1, 10),
+(51, '2016-01-05 14:23:55', 1, 2, 1464, 1, 10),
+(52, '2016-01-05 14:32:48', 1, 2, 1464, 1, 10),
+(53, '2016-01-05 14:34:21', 1, 2, 1464, 1, 10),
+(54, '2016-01-05 14:36:06', 1, 2, 1464, 1, 10),
+(55, '2016-01-05 14:36:39', 1, 2, 1464, 1, 10),
+(56, '2016-01-05 14:37:00', 4, 2, 1464, 1, 10),
+(57, '2016-01-05 14:38:50', 1, 2, 1464, 1, 10),
+(58, '2016-01-05 14:39:07', 4, 2, 1464, 1, 10),
+(59, '2016-01-05 14:39:19', 1, 2, 1464, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -21637,7 +21652,7 @@ CREATE TABLE IF NOT EXISTS `rrreport_viewed_product_index` (
   KEY `IDX_RRREPORT_VIEWED_PRODUCT_INDEX_STORE_ID` (`store_id`),
   KEY `IDX_RRREPORT_VIEWED_PRODUCT_INDEX_ADDED_AT` (`added_at`),
   KEY `IDX_RRREPORT_VIEWED_PRODUCT_INDEX_PRODUCT_ID` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Viewed Product Index Table' AUTO_INCREMENT=161 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Viewed Product Index Table' AUTO_INCREMENT=172 ;
 
 --
 -- Dumping data for table `rrreport_viewed_product_index`
@@ -21667,7 +21682,8 @@ INSERT INTO `rrreport_viewed_product_index` (`index_id`, `visitor_id`, `customer
 (137, 1461, NULL, 12, 10, '2016-01-02 12:47:43'),
 (138, 1461, NULL, 2, 10, '2016-01-02 15:10:09'),
 (140, 1465, NULL, 10, 10, '2016-01-03 00:24:47'),
-(141, 1469, NULL, 2, 10, '2016-01-05 09:07:54');
+(141, 1469, NULL, 2, 10, '2016-01-05 09:07:54'),
+(161, 1464, NULL, 2, 10, '2016-01-05 14:39:19');
 
 -- --------------------------------------------------------
 
@@ -22928,7 +22944,7 @@ CREATE TABLE IF NOT EXISTS `rrsales_flat_quote` (
   PRIMARY KEY (`entity_id`),
   KEY `IDX_RRSALES_FLAT_QUOTE_CUSTOMER_ID_STORE_ID_IS_ACTIVE` (`customer_id`,`store_id`,`is_active`),
   KEY `IDX_RRSALES_FLAT_QUOTE_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote' AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `rrsales_flat_quote`
@@ -22937,7 +22953,8 @@ CREATE TABLE IF NOT EXISTS `rrsales_flat_quote` (
 INSERT INTO `rrsales_flat_quote` (`entity_id`, `store_id`, `created_at`, `updated_at`, `converted_at`, `is_active`, `is_virtual`, `is_multi_shipping`, `items_count`, `items_qty`, `orig_order_id`, `store_to_base_rate`, `store_to_quote_rate`, `base_currency_code`, `store_currency_code`, `quote_currency_code`, `grand_total`, `base_grand_total`, `checkout_method`, `customer_id`, `customer_tax_class_id`, `customer_group_id`, `customer_email`, `customer_prefix`, `customer_firstname`, `customer_middlename`, `customer_lastname`, `customer_suffix`, `customer_dob`, `customer_note`, `customer_note_notify`, `customer_is_guest`, `remote_ip`, `applied_rule_ids`, `reserved_order_id`, `password_hash`, `coupon_code`, `global_currency_code`, `base_to_global_rate`, `base_to_quote_rate`, `customer_taxvat`, `customer_gender`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `is_changed`, `trigger_recollect`, `ext_shipping_info`, `gift_message_id`, `is_persistent`) VALUES
 (1, 10, '2015-12-24 02:47:38', '2015-12-24 02:47:58', NULL, 1, 0, 0, 0, '0.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '0.0000', '0.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', 1, 0, NULL, NULL, 0),
 (2, 10, '2015-12-25 00:21:15', '2015-12-25 00:21:30', NULL, 1, 0, 0, 1, '2.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '2800.0000', '2800.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '2800.0000', '2800.0000', '2800.0000', '2800.0000', 1, 0, NULL, NULL, 0),
-(3, 10, '2015-12-25 01:39:41', '2015-12-25 02:06:49', NULL, 1, 0, 0, 1, '1.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '1100.0000', '1100.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '1100.0000', '1100.0000', '1100.0000', '1100.0000', 1, 0, NULL, NULL, 0);
+(3, 10, '2015-12-25 01:39:41', '2015-12-25 02:06:49', NULL, 1, 0, 0, 1, '1.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '1100.0000', '1100.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '1100.0000', '1100.0000', '1100.0000', '1100.0000', 1, 0, NULL, NULL, 0),
+(4, 10, '2016-01-05 14:36:58', '2016-01-05 14:41:25', NULL, 1, 0, 0, 1, '1.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '2100.0000', '2100.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '2100.0000', '2100.0000', '2100.0000', '2100.0000', 1, 0, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -23010,7 +23027,7 @@ CREATE TABLE IF NOT EXISTS `rrsales_flat_quote_address` (
   `gift_message_id` int(11) DEFAULT NULL COMMENT 'Gift Message Id',
   PRIMARY KEY (`address_id`),
   KEY `IDX_RRSALES_FLAT_QUOTE_ADDRESS_QUOTE_ID` (`quote_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Address' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Address' AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `rrsales_flat_quote_address`
@@ -23022,7 +23039,9 @@ INSERT INTO `rrsales_flat_quote_address` (`address_id`, `quote_id`, `created_at`
 (3, 2, '2015-12-25 00:21:16', '2015-12-25 00:21:31', NULL, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
 (4, 2, '2015-12-25 00:21:17', '2015-12-25 00:21:31', NULL, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '40.0000', '2800.0000', '2800.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2800.0000', '2800.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '2800.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
 (5, 3, '2015-12-25 01:39:42', '2015-12-25 02:06:50', NULL, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'US', NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 3, '2015-12-25 01:39:42', '2015-12-25 02:06:50', NULL, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'US', NULL, NULL, 1, 0, 0, NULL, NULL, '30.0000', '1100.0000', '1100.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '1100.0000', '1100.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '1100.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL);
+(6, 3, '2015-12-25 01:39:42', '2015-12-25 02:06:50', NULL, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'US', NULL, NULL, 1, 0, 0, NULL, NULL, '30.0000', '1100.0000', '1100.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '1100.0000', '1100.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '1100.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 4, '2016-01-05 14:37:00', '2016-01-05 14:41:26', NULL, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 4, '2016-01-05 14:37:00', '2016-01-05 14:41:26', NULL, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '30.0000', '2100.0000', '2100.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2100.0000', '2100.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '2100.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -23144,7 +23163,7 @@ CREATE TABLE IF NOT EXISTS `rrsales_flat_quote_item` (
   KEY `IDX_RRSALES_FLAT_QUOTE_ITEM_PRODUCT_ID` (`product_id`),
   KEY `IDX_RRSALES_FLAT_QUOTE_ITEM_QUOTE_ID` (`quote_id`),
   KEY `IDX_RRSALES_FLAT_QUOTE_ITEM_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item' AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item' AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `rrsales_flat_quote_item`
@@ -23152,7 +23171,8 @@ CREATE TABLE IF NOT EXISTS `rrsales_flat_quote_item` (
 
 INSERT INTO `rrsales_flat_quote_item` (`item_id`, `quote_id`, `created_at`, `updated_at`, `product_id`, `store_id`, `parent_item_id`, `is_virtual`, `sku`, `name`, `description`, `applied_rule_ids`, `additional_data`, `free_shipping`, `is_qty_decimal`, `no_discount`, `weight`, `qty`, `price`, `base_price`, `custom_price`, `discount_percent`, `discount_amount`, `base_discount_amount`, `tax_percent`, `tax_amount`, `base_tax_amount`, `row_total`, `base_row_total`, `row_total_with_discount`, `row_weight`, `product_type`, `base_tax_before_discount`, `tax_before_discount`, `original_custom_price`, `redirect_url`, `base_cost`, `price_incl_tax`, `base_price_incl_tax`, `row_total_incl_tax`, `base_row_total_incl_tax`, `hidden_tax_amount`, `base_hidden_tax_amount`, `gift_message_id`, `weee_tax_disposition`, `weee_tax_row_disposition`, `base_weee_tax_disposition`, `base_weee_tax_row_disposition`, `weee_tax_applied`, `weee_tax_applied_amount`, `weee_tax_applied_row_amount`, `base_weee_tax_applied_amount`, `base_weee_tax_applied_row_amnt`, `vendor_id`, `commission_amount`) VALUES
 (1, 2, '2015-12-25 00:21:17', '2015-12-25 00:21:17', 12, 10, NULL, 0, 'table2', 'vibrating table', NULL, NULL, NULL, 0, 0, 0, '20.0000', '2.0000', '200.0000', '200.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2800.0000', '2800.0000', '0.0000', '40.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '1400.0000', '1400.0000', '2800.0000', '2800.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL),
-(4, 3, '2015-12-25 02:04:23', '2015-12-25 02:04:23', 2, 10, NULL, 0, 'bad123', 'double bad', NULL, NULL, NULL, 0, 0, 0, '30.0000', '1.0000', '500.0000', '500.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '1100.0000', '1100.0000', '0.0000', '30.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '1100.0000', '1100.0000', '1100.0000', '1100.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL);
+(4, 3, '2015-12-25 02:04:23', '2015-12-25 02:04:23', 2, 10, NULL, 0, 'bad123', 'double bad', NULL, NULL, NULL, 0, 0, 0, '30.0000', '1.0000', '500.0000', '500.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '1100.0000', '1100.0000', '0.0000', '30.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '1100.0000', '1100.0000', '1100.0000', '1100.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL),
+(6, 4, '2016-01-05 14:39:07', '2016-01-05 14:39:07', 2, 10, NULL, 0, 'bad123', 'double bad', NULL, NULL, NULL, 0, 0, 0, '30.0000', '1.0000', '500.0000', '500.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2100.0000', '2100.0000', '0.0000', '30.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '2100.0000', '2100.0000', '2100.0000', '2100.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL, '2', NULL);
 
 -- --------------------------------------------------------
 
@@ -23168,7 +23188,7 @@ CREATE TABLE IF NOT EXISTS `rrsales_flat_quote_item_option` (
   `value` text COMMENT 'Value',
   PRIMARY KEY (`option_id`),
   KEY `IDX_RRSALES_FLAT_QUOTE_ITEM_OPTION_ITEM_ID` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item Option' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item Option' AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `rrsales_flat_quote_item_option`
@@ -23179,7 +23199,9 @@ INSERT INTO `rrsales_flat_quote_item_option` (`option_id`, `item_id`, `product_i
 (2, 1, 12, 'info_buyRequest', 'a:8:{s:4:"uenc";s:76:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L3ZpYnJhdGluZy10YWJsZS5odG1s";s:7:"product";s:2:"12";s:8:"form_key";s:16:"LbNkATom5kDllKf4";s:15:"related_product";s:0:"";s:3:"qty";s:1:"2";s:8:"fromdate";s:10:"25-12-2015";s:6:"todate";s:10:"23-02-2016";s:8:"renttime";i:2;}'),
 (3, 2, 10, 'info_buyRequest', 'a:8:{s:4:"uenc";s:84:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2VsZWN0cm9uaWNzL2dyYW1waG9yZS5odG1s";s:7:"product";s:2:"10";s:8:"form_key";s:16:"8NBUTPXMe9oSTNDw";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"fromdate";s:10:"25-12-2015";s:6:"todate";s:10:"23-02-2016";s:8:"renttime";i:2;}'),
 (4, 3, 2, 'info_buyRequest', 'a:8:{s:4:"uenc";s:72:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2RvdWJsZS1iYWQuaHRtbA,,";s:7:"product";s:1:"2";s:8:"form_key";s:16:"8NBUTPXMe9oSTNDw";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"fromdate";s:10:"25-12-2015";s:6:"todate";s:10:"09-03-2016";s:8:"renttime";d:2.5;}'),
-(5, 4, 2, 'info_buyRequest', 'a:8:{s:4:"uenc";s:92:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2hvbWUtZnVybmlzaGluZy9kb3VibGUtYmFkLmh0bWw,";s:7:"product";s:1:"2";s:8:"form_key";s:16:"8NBUTPXMe9oSTNDw";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"fromdate";s:10:"25-12-2015";s:6:"todate";s:10:"23-02-2016";s:8:"renttime";i:2;}');
+(5, 4, 2, 'info_buyRequest', 'a:8:{s:4:"uenc";s:92:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2hvbWUtZnVybmlzaGluZy9kb3VibGUtYmFkLmh0bWw,";s:7:"product";s:1:"2";s:8:"form_key";s:16:"8NBUTPXMe9oSTNDw";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"fromdate";s:10:"25-12-2015";s:6:"todate";s:10:"23-02-2016";s:8:"renttime";i:2;}'),
+(6, 5, 2, 'info_buyRequest', 'a:6:{s:4:"uenc";s:92:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2hvbWUtZnVybmlzaGluZy9kb3VibGUtYmFkLmh0bWw,";s:7:"product";s:1:"2";s:8:"form_key";s:16:"qoRIHAMVmWtoFf0e";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"renttime";s:1:"2";}'),
+(7, 6, 2, 'info_buyRequest', 'a:6:{s:4:"uenc";s:92:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2hvbWUtZnVybmlzaGluZy9kb3VibGUtYmFkLmh0bWw,";s:7:"product";s:1:"2";s:8:"form_key";s:16:"qoRIHAMVmWtoFf0e";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"renttime";s:1:"4";}');
 
 -- --------------------------------------------------------
 
