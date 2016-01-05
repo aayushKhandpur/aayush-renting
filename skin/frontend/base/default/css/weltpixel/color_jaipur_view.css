@@ -1,9 +1,11 @@
-    @import url(https://fonts.googleapis.com/css?family=Cantarell:300);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin);
 
 
 
-    .product_swatch img { width: 30px; }
-    .product_swatch img { height: 30px; }
+    .product_swatch img { border-radius: 1px; -moz-border-radius: 1px; -webkit-border-radius: 1px; -ms-border-radius: 1px; }
+    .product_swatch img { width: 20px; }
+    .product_swatch img { height: 20px; }
 
     .swatches .filter_checkbox .swatch-container{ width: 30px; }
     .swatches .filter_checkbox .swatch-container{ height: 30px; }
@@ -54,20 +56,39 @@
     #product-info .product-description,
     #product-reviews p, #product-reviews label
     {
-            font-family: 'Cantarell', sans-serif !important;
+            font-family: 'Open Sans', sans-serif !important;
                 font-weight: 300 !important;
         }
 
+    address, caption, cite, code, dfn, h1, h2, h3, h4, h5, h6, var,
+    .features h4,
+    .category-intro .category-description h4,
+    #page-footer-section-02 h4,
+    .product-essential,
+    #product-reviews h4,
+    #product-view .product-info dt,
+    .add-to-cart .button span
+    {
+            font-family: 'Open Sans', sans-serif !important;
+                font-weight: 300 !important;
+        }
 
     body, input, select, textarea, th, td, b, strong, caption, th, td,
     #product-info .product-description,
     #product-reviews p, #product-reviews label
-    { font-size:  12px !important; }
+    { font-size:  10px !important; }
 
+    h1,#product-info h1 { font-size:  18px !important;}
 
+    h2 { font-size:  16px !important;}
 
+    h3, #product-reviews h3 { font-size:  14px !important;}
 
+    h4 { font-size:  13px !important;}
 
+    #product-view .product-info dt, #product-reviews h4 span { font-size:  18px !important;}
 
+    .products-grid .item h4, .products-list .item h4 { font-size:  18px !important;}
 
+    .category-intro .category-description h4 { font-size:  18px !important;}
 

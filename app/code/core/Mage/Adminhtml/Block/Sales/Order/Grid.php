@@ -63,7 +63,7 @@ class Mage_Adminhtml_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Widget_
 
     protected function _prepareColumns()
     {
-
+      
         $this->addColumn('real_order_id', array(
             'header'=> Mage::helper('sales')->__('Order #'),
             'width' => '80px',
