@@ -19,7 +19,7 @@
 **/
 ?>
 
-<?php $vendorInfo = $this->getVendorInfo(); ?>
+<?php $vendorInfo = $this->getVendorInfo(); if($vendorInfo): ?>
 <div class="box-collateral box-description">
 	<div class="std">
 
@@ -58,3 +58,5 @@
 		</button>
 	</div>
 </div>
+
+<?php endif; ?>

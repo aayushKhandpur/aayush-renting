@@ -192,13 +192,13 @@ $_product= Mage::getSingleton('catalog/product')->load($_item->getProductId());
     </td>
     <td class="product-cart-info" style="text-align:center;">
       <span class="cart-price"><?php
-if($_product->getData('renttype')==6){
-    $nameLabel=' Months';
-}else if($_product->getData('renttype')==7){
-  $nameLabel=' Days';
-}else{
-  $nameLabel=' ';
-}
+  $att = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
+      if($att=='Per Month'){
+        $nameLabel=' Months';
+      }else{
+        $nameLabel=' Days';
+      }
+
       echo number_format($_product->getData('renttime')) .$nameLabel;
   ?></span>
   </td>

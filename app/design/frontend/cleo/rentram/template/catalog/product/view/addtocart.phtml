@@ -13,12 +13,28 @@ Mage::log($_product->debug(),Zend_log::INFO,'layout.log',true);
         <input type="number" name="qty" id="qty" value="<?php echo $_qty; ?>" title="" class="input-text qty" />
         <a href="javascript: void(0);" class="qty-inc"><i class="icon-angle-right"></i></a>
         <?php endif; ?>
-        <div class="row">
-            <label for="mintime"><?php echo $this->__('Min time:'); ?></label>
-                <label class="label pull-right"><?php echo  $_product->getData('mintime') ?> Months</label>
-        </div>
+      <!--  <div class="row">
+            <label for="mintime"><php echo $this->__('Min time:'); ?></label>
+                <label class="label pull-right"><php
+                $att = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
+                if($att=='Per Month'){
+                  $att=' Months';
+                }else{
+                  $att=' Days';
+                }
+
+                echo  $_product->getData('mintime').$att ?> </label>
+        </div> -->
         <div class="row" style="margin-bottom: 2%;">
-                <label for="renttime"><?php echo $this->__('Duration:'); ?></label>
+                <label for="renttime"><?php echo $this->__('Duration');
+                $att = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
+                if($att=='Per Month'){
+                  $att=' Months';
+                }else{
+                  $att=' Days';
+                }
+
+                echo  ' ('.$att.' ):' ?></label>
                 <a href="javascript: void(0);" class="renttime-dec qty-disabled"><i class="icon-angle-left"></i></a>
                 <input type="number" name="renttime" id="renttime" value="<?php echo $_renttime; ?>" title="" class="input-text renttime" />
                 <a href="javascript: void(0);" class="renttime-inc"><i class="icon-angle-right"></i></a>
@@ -32,9 +48,18 @@ Mage::log($_product->debug(),Zend_log::INFO,'layout.log',true);
                       <input type="text" class="form-control" name="todate" id="todate">
                   </div>  -->
         </div>
-        <div>
+        <div class="row">
             <label for="security"><?php echo $this->__('Security:'); ?></label>
-              <label class="label pull-right"><?php echo  number_format($_product->getData('security')) ?> </label>
+              <label style="font-weight: bold;" class="label pull-right">₹<?php echo  number_format($_product->getData('security')) ?> </label>
+        </div>
+        <div class="row">
+            <label for="notice"><?php echo $this->__('Notice Period:'); ?></label>
+              <label style="font-weight: bold;" class="label pull-right">
+                <?php  if($_product->getData('noticeperiod')){
+                              echo  $_product->getData('noticeperiod');
+                          }else{
+                          echo  ' N/A';} ?>
+              </label>
         </div>
         <div class="actions">
             <button type="button" class="button" id="product-addtocart-button" onclick="productAddToCartForm.submit(this)">
