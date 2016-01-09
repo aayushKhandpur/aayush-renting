@@ -13,18 +13,18 @@
  * Contact us Support does not guarantee correct work of this package
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
- * 
+ *
  * @category    Medma
  * @package     Medma_MarketPlace
 **/
 class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Adminhtml_Block_System_Account_Edit_Form {
-    
+
     protected function _prepareForm() {
 
         $userId = Mage::getSingleton('admin/session')->getUser()->getId();
         $user = Mage::getModel('admin/user')
                 ->load($userId);
-        $user->unsetData('password');      
+        $user->unsetData('password');
 
         //$form = new Varien_Data_Form();
         $form = new Varien_Data_Form(array(
@@ -90,7 +90,7 @@ class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Ad
         $form->setValues($user->getData());
 
         $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
-		
+
         // $role = Mage::getModel('admin/roles')->load($roleId);
 
         $current_user = Mage::getSingleton('admin/session')->getUser();
@@ -101,10 +101,10 @@ class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Ad
 
             $profile = Mage::getModel('marketplace/profile');
             if ($profileCollection->count() > 0)
-                $profile->load($profileCollection->getFirstItem()->getId());            
+                $profile->load($profileCollection->getFirstItem()->getId());
 
             $fieldset = $form->addFieldset('profile_fieldset', array('legend' => Mage::helper('adminhtml')->__('Profile Information')));
-            
+
             $fieldset->addField('shop_name', 'text', array(
 				'name' => 'shop_name',
 				'label' => Mage::helper('adminhtml')->__('Shop Name'),
@@ -113,53 +113,53 @@ class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Ad
 				'value' => $profile->getShopName(),
 					)
 			);
-			
+
 			$fieldset->addField('message', 'textarea', array(
 				'name' => 'message',
 				'label' => Mage::helper('adminhtml')->__('Message'),
-				'title' => Mage::helper('adminhtml')->__('Message'),				
+				'title' => Mage::helper('adminhtml')->__('Message'),
 				'value' => $profile->getMessage(),
 				'style'	=> 'width: 400px; height: 90px;'
 					)
 			);
-			
+
 			$fieldset->addField('contact_number', 'text', array(
 					'name' => 'contact_number',
 					'label' => Mage::helper('adminhtml')->__('Contact Number'),
-					'title' => Mage::helper('adminhtml')->__('Contact Number'),				
+					'title' => Mage::helper('adminhtml')->__('Contact Number'),
 					'value' => $profile->getContactNumber(),
 					'required' => true,
 					'class' => 'validate-phoneLax'
 						)
 				);
-				
+
 			$fieldset->addField('country', 'select', array(
 					'name' => 'country',
-					'label' => Mage::helper('adminhtml')->__('Country'),                
+					'label' => Mage::helper('adminhtml')->__('Country'),
 					'title' => Mage::helper('adminhtml')->__('Country'),
-					'class' => 'input-select', 
+					'class' => 'input-select',
 					'required' => true,
 					'value' => $profile->getCountry(),
 					'options' => $this->_getCountryList()
 				));
-            
+
             $fieldset->addField('image', 'file', array(
                 'name' => 'image',
                 'label' => Mage::helper('adminhtml')->__('Profile Picture'),
                 'title' => Mage::helper('adminhtml')->__('Profile Picture'),
                 'after_element_html' => '<br />' . $this->_getImage($profile->getImage())
             ));
-            
+
             $proofList = Mage::helper('marketplace')->getVarificationProofTypeList();
-            
+
 			if(count($proofList) > 1)
 			{
 				$fieldset->addField('proof_type', 'text', array(
 						'name' => 'proof_type',
-						'label' => Mage::helper('adminhtml')->__('Proof Type'),                
-						'title' => Mage::helper('adminhtml')->__('Proof Type'),												
+						'label' => Mage::helper('adminhtml')->__('Proof Type'),
+						'title' => Mage::helper('adminhtml')->__('Proof Type'),
 						'value' => $profile->getProofType(),
-						'style' => 'display: none;',						
+						'style' => 'display: none;',
 						'after_element_html' => $this->_getFiles($profile->getProofType(), $profile->getVarificationFiles())
 					));
 			}
@@ -212,7 +212,7 @@ class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Ad
     protected function _getImage($image_name) {
         if (!isset($image_name) || $image_name == '')
             return '';
-            
+
         $dir_name = 'vendor' . DS . 'images';
         $dir_path = Mage::helper('marketplace')->getImagesUrl($dir_name);
 
@@ -224,19 +224,19 @@ class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Ad
     protected function formatPrice($price) {
         return Mage::helper('core')->currency($price, true, false);
     }
-    
+
     protected function _getCountryList()
     {
 		$countries[''] = '';
-		
+
 		$coutryCollection = Mage::getResourceModel('directory/country_collection')->loadData()->toOptionArray(false);
-		
-		foreach($coutryCollection as $country)		
-			$countries[$country['value']] = $country['label'];		
-		
+
+		foreach($coutryCollection as $country)
+			$countries[$country['value']] = $country['label'];
+
 		return $countries;
 	}
-	
+
 	protected function _getFiles($proofType, $fileList)
 	{
 		$fileListArray = json_decode($fileList, true);
@@ -249,15 +249,15 @@ class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Ad
 			{
 				$dir_name = 'vendor' . DS . 'varifications';
 				$dir_url = Mage::helper('marketplace')->getImagesUrl($dir_name);
-							
+
 				$fileString .= '<div style="margin: 2px 0 1px;"><a href="' . $dir_url . $file . '" target="_blank">' . $file . '</a></div>';
 			}
 		}
 		else
-			$fileString = '<div style=""><b>N/A</b></div>';			
+			$fileString = '<div style=""><b>N/A</b></div>';
 		return $fileString;
 	}
-	
+
 }
 
 ?>
