@@ -147,6 +147,7 @@ class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Ad
             'name' => 'city',
             'label' => Mage::helper('adminhtml')->__('City'),
             'title' => Mage::helper('adminhtml')->__('City'),
+            'value' => $profile->getCity(),
             'required' => false,
                 )
         );
@@ -156,6 +157,7 @@ class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Ad
             'name' => 'state',
             'label' => Mage::helper('adminhtml')->__('State'),
             'title' => Mage::helper('adminhtml')->__('State'),
+            'value' => $profile->getState(),
             'required' => false,
                 )
         );
@@ -165,6 +167,7 @@ class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Ad
             'name' => 'pincode',
             'label' => Mage::helper('adminhtml')->__('Pin Code'),
             'title' => Mage::helper('adminhtml')->__('Pin Code'),
+            'value' => $profile->getPincode(),
             'required' => false,
                 )
         );
