@@ -6,30 +6,30 @@ $_logoSrc = $this->getLogoSrc();
 ?>
 
 
-<header id="page-header" class="row v2" style="background-color: white !important;">
-  <div class="col-md-1 col-xs-2 " >
+<header id="page-header" class="row v2" style="background-color: #1a1a1a !important; font-color:white !important;">
+  <div class="col-md-2 col-xs-6 " >
       <!--  <php echo $this->getChildHtml('logo'); ?>  -->
           <a href="<?php echo $_logoUrl; ?>"><img src="<?php echo $_logoSrc; ?>" alt="<?php echo $_logoAlt; ?>" style="width:100%;" /></a>
   </div>
-  <div class="col-md-10 col-xs-10">
-    <div id="page-header-section-01" style="background-color: white !important;">
+  <div class="col-md-10 col-xs-12">
+    <div id="page-header-section-01" style="background-color: #1a1a1a !important; color:white !important;">
         <div class="w header-container" style="margin-right: 0px;">
 
           <span  class="header-settings"><i class="icon-user"></i></span>
           <div class="header-options">
-
-              <?php echo $this->getChildHtml('website_switcher') ?>
-              <?php echo $this->getChildHtml('store_language_flag') ?>
-              <?php echo $this->getChildHtml('custom_currency_selector') ?>
-              <?php echo $this->getChildHtml('topLinks'); ?>
+			<?php echo $this->getChildHtml('topLinks'); ?>
+            <?php echo $this->getChildHtml('website_switcher') ?>
+            <?php echo $this->getChildHtml('store_language_flag') ?>
+            <?php echo $this->getChildHtml('custom_currency_selector') ?>
+             
           </div>
 
         </div>
     </div>
-    <div id="page-header-section-02">
+    <div id="page-header-section-02" style="background-color: #1a1a1a !important; color:white !important;">
 
 
-      <div class="col-md-9 col-xs-10">
+      <div class="col-md-10 col-xs-12">
 
   <?php echo $this->getChildHtml('search'); ?>
 
@@ -40,7 +40,7 @@ $_logoSrc = $this->getLogoSrc();
         </ul> -->
 
       </div>
-      <div class="col-md-3 col-xs-2 cartAddjust">
+      <div class="col-md-2 col-xs-2 cartAddjust pull-right" style="float:right !important;">
         <?php echo $this->getChildHtml('quickAccess'); ?>
       </div>
 

@@ -497,7 +497,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
     line-height: 30px
 }
 .v2 #top-links li a {
-    color: black;
+    color: white;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px
@@ -521,7 +521,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
     margin-top: 0
 }
 .v2 .form-language .selected {
-    color: black;
+    color: white;
     font-size: 14px;
     line-height: 24px
 }
@@ -683,6 +683,10 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
 .v3 #quick-access {
     top: 0;
 	right:0;
+}
+
+.icon  .icon-shopping-cart {
+	color: white !important;
 }
 
 .v3 #quick-access .mini-cart .summary span {
