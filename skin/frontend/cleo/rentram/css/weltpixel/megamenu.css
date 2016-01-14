@@ -609,7 +609,8 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
 .v2 #page-header-section-02 #logo {
     position: relative;
     left: 15px;
-    top: 10px;
+    top: 0px;
+	bottom:5px;
     float: left;
     z-index: 999;
 }
