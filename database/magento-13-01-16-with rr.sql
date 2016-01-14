@@ -16805,6 +16805,1581 @@ CREATE TABLE IF NOT EXISTS `rrwishlist_item_option` (
   KEY `FK_F8D6DDDC69F43652B840C62DF8D730EC` (`wishlist_item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Wishlist Item Option Table' AUTO_INCREMENT=1 ;
 
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `rradmin_rule`
+--
+ALTER TABLE `rradmin_rule`
+  ADD CONSTRAINT `FK_RRADMIN_RULE_ROLE_ID_RRADMIN_ROLE_ROLE_ID` FOREIGN KEY (`role_id`) REFERENCES `rradmin_role` (`role_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrapi2_acl_rule`
+--
+ALTER TABLE `rrapi2_acl_rule`
+  ADD CONSTRAINT `FK_RRAPI2_ACL_RULE_ROLE_ID_RRAPI2_ACL_ROLE_ENTITY_ID` FOREIGN KEY (`role_id`) REFERENCES `rrapi2_acl_role` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrapi2_acl_user`
+--
+ALTER TABLE `rrapi2_acl_user`
+  ADD CONSTRAINT `FK_RRAPI2_ACL_USER_ADMIN_ID_RRADMIN_USER_USER_ID` FOREIGN KEY (`admin_id`) REFERENCES `rradmin_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRAPI2_ACL_USER_ROLE_ID_RRAPI2_ACL_ROLE_ENTITY_ID` FOREIGN KEY (`role_id`) REFERENCES `rrapi2_acl_role` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrapi_rule`
+--
+ALTER TABLE `rrapi_rule`
+  ADD CONSTRAINT `FK_RRAPI_RULE_ROLE_ID_RRAPI_ROLE_ROLE_ID` FOREIGN KEY (`role_id`) REFERENCES `rrapi_role` (`role_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrapi_session`
+--
+ALTER TABLE `rrapi_session`
+  ADD CONSTRAINT `FK_RRAPI_SESSION_USER_ID_RRAPI_USER_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `rrapi_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcataloginventory_stock_item`
+--
+ALTER TABLE `rrcataloginventory_stock_item`
+  ADD CONSTRAINT `FK_RRCATINV_STOCK_ITEM_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATINV_STOCK_ITEM_STOCK_ID_RRCATINV_STOCK_STOCK_ID` FOREIGN KEY (`stock_id`) REFERENCES `rrcataloginventory_stock` (`stock_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcataloginventory_stock_status`
+--
+ALTER TABLE `rrcataloginventory_stock_status`
+  ADD CONSTRAINT `FK_RRCATINV_STOCK_STS_STOCK_ID_RRCATINV_STOCK_STOCK_ID` FOREIGN KEY (`stock_id`) REFERENCES `rrcataloginventory_stock` (`stock_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATINV_STOCK_STS_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATINV_STOCK_STS_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalogrule_customer_group`
+--
+ALTER TABLE `rrcatalogrule_customer_group`
+  ADD CONSTRAINT `FK_RRCATALOGRULE_CUSTOMER_GROUP_RULE_ID_RRCATALOGRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `rrcatalogrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATRULE_CSTR_GROUP_CSTR_GROUP_ID_RRCSTR_GROUP_CSTR_GROUP_ID` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalogrule_group_website`
+--
+ALTER TABLE `rrcatalogrule_group_website`
+  ADD CONSTRAINT `FK_RRCATRULE_GROUP_WS_CSTR_GROUP_ID_RRCSTR_GROUP_CSTR_GROUP_ID` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOGRULE_GROUP_WEBSITE_RULE_ID_RRCATALOGRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `rrcatalogrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATRULE_GROUP_WS_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalogrule_product`
+--
+ALTER TABLE `rrcatalogrule_product`
+  ADD CONSTRAINT `FK_RRCATALOGRULE_PRODUCT_RULE_ID_RRCATALOGRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `rrcatalogrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOGRULE_PRODUCT_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATRULE_PRD_CSTR_GROUP_ID_RRCSTR_GROUP_CSTR_GROUP_ID` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATRULE_PRD_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalogrule_product_price`
+--
+ALTER TABLE `rrcatalogrule_product_price`
+  ADD CONSTRAINT `FK_RRCATRULE_PRD_PRICE_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATRULE_PRD_PRICE_CSTR_GROUP_ID_RRCSTR_GROUP_CSTR_GROUP_ID` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATRULE_PRD_PRICE_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalogrule_website`
+--
+ALTER TABLE `rrcatalogrule_website`
+  ADD CONSTRAINT `FK_RRCATALOGRULE_WEBSITE_RULE_ID_RRCATALOGRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `rrcatalogrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOGRULE_WEBSITE_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalogsearch_query`
+--
+ALTER TABLE `rrcatalogsearch_query`
+  ADD CONSTRAINT `FK_RRCATALOGSEARCH_QUERY_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalogsearch_result`
+--
+ALTER TABLE `rrcatalogsearch_result`
+  ADD CONSTRAINT `FK_RRCATSRCH_RESULT_QR_ID_RRCATSRCH_QR_QR_ID` FOREIGN KEY (`query_id`) REFERENCES `rrcatalogsearch_query` (`query_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATSRCH_RESULT_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_category_entity_datetime`
+--
+ALTER TABLE `rrcatalog_category_entity_datetime`
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_DTIME_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_DTIME_ENTT_ID_RRCAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_DTIME_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_category_entity_decimal`
+--
+ALTER TABLE `rrcatalog_category_entity_decimal`
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_DEC_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_DEC_ENTT_ID_RRCAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_DEC_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_category_entity_int`
+--
+ALTER TABLE `rrcatalog_category_entity_int`
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_INT_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_INT_ENTT_ID_RRCAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOG_CATEGORY_ENTITY_INT_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_category_entity_text`
+--
+ALTER TABLE `rrcatalog_category_entity_text`
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_TEXT_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_TEXT_ENTT_ID_RRCAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOG_CATEGORY_ENTITY_TEXT_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_category_entity_varchar`
+--
+ALTER TABLE `rrcatalog_category_entity_varchar`
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_VCHR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_VCHR_ENTT_ID_RRCAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_ENTT_VCHR_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_category_flat_store_1`
+--
+ALTER TABLE `rrcatalog_category_flat_store_1`
+  ADD CONSTRAINT `FK_RRCAT_CTGR_FLAT_STORE_1_ENTT_ID_RRCAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_FLAT_STORE_1_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_category_product`
+--
+ALTER TABLE `rrcatalog_category_product`
+  ADD CONSTRAINT `FK_RRCAT_CTGR_PRD_CTGR_ID_RRCAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`category_id`) REFERENCES `rrcatalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_PRD_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_category_product_index`
+--
+ALTER TABLE `rrcatalog_category_product_index`
+  ADD CONSTRAINT `FK_RRCAT_CTGR_PRD_IDX_CTGR_ID_RRCAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`category_id`) REFERENCES `rrcatalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_PRD_IDX_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CTGR_PRD_IDX_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_compare_item`
+--
+ALTER TABLE `rrcatalog_compare_item`
+  ADD CONSTRAINT `FK_RRCAT_CMP_ITEM_CSTR_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_CMP_ITEM_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOG_COMPARE_ITEM_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_eav_attribute`
+--
+ALTER TABLE `rrcatalog_eav_attribute`
+  ADD CONSTRAINT `FK_RRCAT_EAV_ATTR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_bundle_option`
+--
+ALTER TABLE `rrcatalog_product_bundle_option`
+  ADD CONSTRAINT `FK_RRCAT_PRD_BNDL_OPT_PARENT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`parent_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_bundle_option_value`
+--
+ALTER TABLE `rrcatalog_product_bundle_option_value`
+  ADD CONSTRAINT `FK_RRCAT_PRD_BNDL_OPT_VAL_OPT_ID_RRCAT_PRD_BNDL_OPT_OPT_ID` FOREIGN KEY (`option_id`) REFERENCES `rrcatalog_product_bundle_option` (`option_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_bundle_price_index`
+--
+ALTER TABLE `rrcatalog_product_bundle_price_index`
+  ADD CONSTRAINT `FK_F3F88EC35315975221E31A14AE54FDFA` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_BNDL_PRICE_IDX_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_BNDL_PRICE_IDX_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_bundle_selection`
+--
+ALTER TABLE `rrcatalog_product_bundle_selection`
+  ADD CONSTRAINT `FK_RRCAT_PRD_BNDL_SELECTION_OPT_ID_RRCAT_PRD_BNDL_OPT_OPT_ID` FOREIGN KEY (`option_id`) REFERENCES `rrcatalog_product_bundle_option` (`option_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_BNDL_SELECTION_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_bundle_selection_price`
+--
+ALTER TABLE `rrcatalog_product_bundle_selection_price`
+  ADD CONSTRAINT `FK_RRCAT_PRD_BNDL_SELECTION_PRICE_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_79C866320659015010C21E33BD3D01ED` FOREIGN KEY (`selection_id`) REFERENCES `rrcatalog_product_bundle_selection` (`selection_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_enabled_index`
+--
+ALTER TABLE `rrcatalog_product_enabled_index`
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENABLED_IDX_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENABLED_IDX_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity`
+--
+ALTER TABLE `rrcatalog_product_entity`
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_ATTR_SET_ID_RREAV_ATTR_SET_ATTR_SET_ID` FOREIGN KEY (`attribute_set_id`) REFERENCES `rreav_attribute_set` (`attribute_set_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity_datetime`
+--
+ALTER TABLE `rrcatalog_product_entity_datetime`
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_DTIME_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_DTIME_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_DTIME_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity_decimal`
+--
+ALTER TABLE `rrcatalog_product_entity_decimal`
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_DEC_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_DEC_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_DEC_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity_gallery`
+--
+ALTER TABLE `rrcatalog_product_entity_gallery`
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_GLR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_GLR_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_GLR_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity_group_price`
+--
+ALTER TABLE `rrcatalog_product_entity_group_price`
+  ADD CONSTRAINT `FK_E370BEF04B57334C9C8B371E5A24B79C` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_GROUP_PRICE_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_GROUP_PRICE_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity_int`
+--
+ALTER TABLE `rrcatalog_product_entity_int`
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_INT_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_INT_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOG_PRODUCT_ENTITY_INT_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity_media_gallery`
+--
+ALTER TABLE `rrcatalog_product_entity_media_gallery`
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_MDA_GLR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_MDA_GLR_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity_media_gallery_value`
+--
+ALTER TABLE `rrcatalog_product_entity_media_gallery_value`
+  ADD CONSTRAINT `FK_7B85674ABED866CEB863E89A36FA7D5C` FOREIGN KEY (`value_id`) REFERENCES `rrcatalog_product_entity_media_gallery` (`value_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_MDA_GLR_VAL_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity_text`
+--
+ALTER TABLE `rrcatalog_product_entity_text`
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_TEXT_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_TEXT_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOG_PRODUCT_ENTITY_TEXT_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity_tier_price`
+--
+ALTER TABLE `rrcatalog_product_entity_tier_price`
+  ADD CONSTRAINT `FK_2036135E00F620A789B6F333CF5F6527` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_TIER_PRICE_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_TIER_PRICE_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_entity_varchar`
+--
+ALTER TABLE `rrcatalog_product_entity_varchar`
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_VCHR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_VCHR_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_ENTT_VCHR_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_flat_1`
+--
+ALTER TABLE `rrcatalog_product_flat_1`
+  ADD CONSTRAINT `FK_RRRRCAT_PRD_FLAT_1_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_index_eav`
+--
+ALTER TABLE `rrcatalog_product_index_eav`
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_EAV_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_EAV_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOG_PRODUCT_INDEX_EAV_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_index_eav_decimal`
+--
+ALTER TABLE `rrcatalog_product_index_eav_decimal`
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_EAV_DEC_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_EAV_DEC_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_EAV_DEC_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_index_group_price`
+--
+ALTER TABLE `rrcatalog_product_index_group_price`
+  ADD CONSTRAINT `FK_F17203FF680869028ACEA6B28B95E271` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_GROUP_PRICE_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_GROUP_PRICE_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_index_price`
+--
+ALTER TABLE `rrcatalog_product_index_price`
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_PRICE_CSTR_GROUP_ID_RRCSTR_GROUP_CSTR_GROUP_ID` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_PRICE_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_PRICE_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_index_tier_price`
+--
+ALTER TABLE `rrcatalog_product_index_tier_price`
+  ADD CONSTRAINT `FK_A74E478774EB5B9F2BC40DE632BDB47E` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_TIER_PRICE_ENTT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_TIER_PRICE_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_index_website`
+--
+ALTER TABLE `rrcatalog_product_index_website`
+  ADD CONSTRAINT `FK_RRCAT_PRD_IDX_WS_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_link`
+--
+ALTER TABLE `rrcatalog_product_link`
+  ADD CONSTRAINT `FK_RRCAT_PRD_LNK_LNKED_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`linked_product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_LNK_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_LNK_LNK_TYPE_ID_RRCAT_PRD_LNK_TYPE_LNK_TYPE_ID` FOREIGN KEY (`link_type_id`) REFERENCES `rrcatalog_product_link_type` (`link_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_link_attribute`
+--
+ALTER TABLE `rrcatalog_product_link_attribute`
+  ADD CONSTRAINT `FK_RRCAT_PRD_LNK_ATTR_LNK_TYPE_ID_RRCAT_PRD_LNK_TYPE_LNK_TYPE_ID` FOREIGN KEY (`link_type_id`) REFERENCES `rrcatalog_product_link_type` (`link_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_link_attribute_decimal`
+--
+ALTER TABLE `rrcatalog_product_link_attribute_decimal`
+  ADD CONSTRAINT `FK_RRCAT_PRD_LNK_ATTR_DEC_LNK_ID_RRCAT_PRD_LNK_LNK_ID` FOREIGN KEY (`link_id`) REFERENCES `rrcatalog_product_link` (`link_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_9A3912E753D299065FFEA84248C74003` FOREIGN KEY (`product_link_attribute_id`) REFERENCES `rrcatalog_product_link_attribute` (`product_link_attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_link_attribute_int`
+--
+ALTER TABLE `rrcatalog_product_link_attribute_int`
+  ADD CONSTRAINT `FK_RRCAT_PRD_LNK_ATTR_INT_LNK_ID_RRCAT_PRD_LNK_LNK_ID` FOREIGN KEY (`link_id`) REFERENCES `rrcatalog_product_link` (`link_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_9555C3103BDB1AB3F20947349FEB7AEF` FOREIGN KEY (`product_link_attribute_id`) REFERENCES `rrcatalog_product_link_attribute` (`product_link_attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_link_attribute_varchar`
+--
+ALTER TABLE `rrcatalog_product_link_attribute_varchar`
+  ADD CONSTRAINT `FK_RRCAT_PRD_LNK_ATTR_VCHR_LNK_ID_RRCAT_PRD_LNK_LNK_ID` FOREIGN KEY (`link_id`) REFERENCES `rrcatalog_product_link` (`link_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_F4F3BCF916C7F424BFBECB09F5A8DAD4` FOREIGN KEY (`product_link_attribute_id`) REFERENCES `rrcatalog_product_link_attribute` (`product_link_attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_option`
+--
+ALTER TABLE `rrcatalog_product_option`
+  ADD CONSTRAINT `FK_RRCAT_PRD_OPT_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_option_price`
+--
+ALTER TABLE `rrcatalog_product_option_price`
+  ADD CONSTRAINT `FK_RRCAT_PRD_OPT_PRICE_OPT_ID_RRCAT_PRD_OPT_OPT_ID` FOREIGN KEY (`option_id`) REFERENCES `rrcatalog_product_option` (`option_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOG_PRODUCT_OPTION_PRICE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_option_title`
+--
+ALTER TABLE `rrcatalog_product_option_title`
+  ADD CONSTRAINT `FK_RRCAT_PRD_OPT_TTL_OPT_ID_RRCAT_PRD_OPT_OPT_ID` FOREIGN KEY (`option_id`) REFERENCES `rrcatalog_product_option` (`option_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCATALOG_PRODUCT_OPTION_TITLE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_option_type_price`
+--
+ALTER TABLE `rrcatalog_product_option_type_price`
+  ADD CONSTRAINT `FK_1272A5A442F6421D4EC0DDFC04691B95` FOREIGN KEY (`option_type_id`) REFERENCES `rrcatalog_product_option_type_value` (`option_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_OPT_TYPE_PRICE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_option_type_title`
+--
+ALTER TABLE `rrcatalog_product_option_type_title`
+  ADD CONSTRAINT `FK_66C5DB996469376EE9A4D40C8B1C3ABC` FOREIGN KEY (`option_type_id`) REFERENCES `rrcatalog_product_option_type_value` (`option_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_OPT_TYPE_TTL_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_option_type_value`
+--
+ALTER TABLE `rrcatalog_product_option_type_value`
+  ADD CONSTRAINT `FK_RRCAT_PRD_OPT_TYPE_VAL_OPT_ID_RRCAT_PRD_OPT_OPT_ID` FOREIGN KEY (`option_id`) REFERENCES `rrcatalog_product_option` (`option_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_relation`
+--
+ALTER TABLE `rrcatalog_product_relation`
+  ADD CONSTRAINT `FK_RRCAT_PRD_RELATION_CHILD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`child_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_RELATION_PARENT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`parent_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_super_attribute`
+--
+ALTER TABLE `rrcatalog_product_super_attribute`
+  ADD CONSTRAINT `FK_RRCAT_PRD_SPR_ATTR_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rrcatalog_product_super_attribute_label`
+--
+ALTER TABLE `rrcatalog_product_super_attribute_label`
+  ADD CONSTRAINT `FK_E8DB53A7E6891FE9787434C9EBB13E1B` FOREIGN KEY (`product_super_attribute_id`) REFERENCES `rrcatalog_product_super_attribute` (`product_super_attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_SPR_ATTR_LBL_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_super_attribute_pricing`
+--
+ALTER TABLE `rrcatalog_product_super_attribute_pricing`
+  ADD CONSTRAINT `FK_RRCAT_PRD_SPR_ATTR_PRICING_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_60A8BDCF97E7128DA1BF7F6490CB86DD` FOREIGN KEY (`product_super_attribute_id`) REFERENCES `rrcatalog_product_super_attribute` (`product_super_attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_super_link`
+--
+ALTER TABLE `rrcatalog_product_super_link`
+  ADD CONSTRAINT `FK_RRCAT_PRD_SPR_LNK_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_SPR_LNK_PARENT_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`parent_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcatalog_product_website`
+--
+ALTER TABLE `rrcatalog_product_website`
+  ADD CONSTRAINT `FK_RRCAT_PRD_WS_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCAT_PRD_WS_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcheckout_agreement_store`
+--
+ALTER TABLE `rrcheckout_agreement_store`
+  ADD CONSTRAINT `FK_RRCHKT_AGRT_STORE_AGRT_ID_RRCHKT_AGRT_AGRT_ID` FOREIGN KEY (`agreement_id`) REFERENCES `rrcheckout_agreement` (`agreement_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCHECKOUT_AGREEMENT_STORE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcms_block_store`
+--
+ALTER TABLE `rrcms_block_store`
+  ADD CONSTRAINT `FK_RRCMS_BLOCK_STORE_BLOCK_ID_RRCMS_BLOCK_BLOCK_ID` FOREIGN KEY (`block_id`) REFERENCES `rrcms_block` (`block_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCMS_BLOCK_STORE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcms_page_store`
+--
+ALTER TABLE `rrcms_page_store`
+  ADD CONSTRAINT `FK_RRCMS_PAGE_STORE_PAGE_ID_RRCMS_PAGE_PAGE_ID` FOREIGN KEY (`page_id`) REFERENCES `rrcms_page` (`page_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCMS_PAGE_STORE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcore_email_queue_recipients`
+--
+ALTER TABLE `rrcore_email_queue_recipients`
+  ADD CONSTRAINT `FK_45430D2C0542B85605F161D4E0393092` FOREIGN KEY (`message_id`) REFERENCES `rrcore_email_queue` (`message_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcore_layout_link`
+--
+ALTER TABLE `rrcore_layout_link`
+  ADD CONSTRAINT `FK_RRCORE_LAYOUT_LINK_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCORE_LYT_LNK_LYT_UPDATE_ID_RRCORE_LYT_UPDATE_LYT_UPDATE_ID` FOREIGN KEY (`layout_update_id`) REFERENCES `rrcore_layout_update` (`layout_update_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcore_store`
+--
+ALTER TABLE `rrcore_store`
+  ADD CONSTRAINT `FK_RRCORE_STORE_GROUP_ID_RRCORE_STORE_GROUP_GROUP_ID` FOREIGN KEY (`group_id`) REFERENCES `rrcore_store_group` (`group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCORE_STORE_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcore_store_group`
+--
+ALTER TABLE `rrcore_store_group`
+  ADD CONSTRAINT `FK_RRCORE_STORE_GROUP_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcore_translate`
+--
+ALTER TABLE `rrcore_translate`
+  ADD CONSTRAINT `FK_RRCORE_TRANSLATE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcore_url_rewrite`
+--
+ALTER TABLE `rrcore_url_rewrite`
+  ADD CONSTRAINT `FK_RRCORE_URL_REWRITE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCORE_URL_REWRITE_CTGR_ID_RRCAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`category_id`) REFERENCES `rrcatalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCORE_URL_REWRITE_PRD_ID_RRCAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcore_variable_value`
+--
+ALTER TABLE `rrcore_variable_value`
+  ADD CONSTRAINT `FK_RRCORE_VARIABLE_VALUE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCORE_VARIABLE_VALUE_VARIABLE_ID_RRCORE_VARIABLE_VARIABLE_ID` FOREIGN KEY (`variable_id`) REFERENCES `rrcore_variable` (`variable_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcoupon_aggregated`
+--
+ALTER TABLE `rrcoupon_aggregated`
+  ADD CONSTRAINT `FK_RRCOUPON_AGGREGATED_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcoupon_aggregated_order`
+--
+ALTER TABLE `rrcoupon_aggregated_order`
+  ADD CONSTRAINT `FK_RRCOUPON_AGGREGATED_ORDER_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcoupon_aggregated_updated`
+--
+ALTER TABLE `rrcoupon_aggregated_updated`
+  ADD CONSTRAINT `FK_RRCOUPON_AGGREGATED_UPDATED_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_address_entity`
+--
+ALTER TABLE `rrcustomer_address_entity`
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_PARENT_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`parent_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_address_entity_datetime`
+--
+ALTER TABLE `rrcustomer_address_entity_datetime`
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_DTIME_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_DTIME_ENTT_ID_RRCSTR_ADDR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcustomer_address_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_36BE4EC61AE5D9E9CC346C87113D7367` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_address_entity_decimal`
+--
+ALTER TABLE `rrcustomer_address_entity_decimal`
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_DEC_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_DEC_ENTT_ID_RRCSTR_ADDR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcustomer_address_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_AA54C0E2366DCA877069C174EA65EAFC` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_address_entity_int`
+--
+ALTER TABLE `rrcustomer_address_entity_int`
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_INT_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_INT_ENTT_ID_RRCSTR_ADDR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcustomer_address_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_F3F2BDF39F6282B0DA9A95981763BC31` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_address_entity_text`
+--
+ALTER TABLE `rrcustomer_address_entity_text`
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_TEXT_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_TEXT_ENTT_ID_RRCSTR_ADDR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcustomer_address_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_04C36CBB3367E4E51C8708A9D3528DFD` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_address_entity_varchar`
+--
+ALTER TABLE `rrcustomer_address_entity_varchar`
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_VCHR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ADDR_ENTT_VCHR_ENTT_ID_RRCSTR_ADDR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcustomer_address_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_6B134D77A19676AE3992E069BD1A5DB7` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_eav_attribute`
+--
+ALTER TABLE `rrcustomer_eav_attribute`
+  ADD CONSTRAINT `FK_RRCSTR_EAV_ATTR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_eav_attribute_website`
+--
+ALTER TABLE `rrcustomer_eav_attribute_website`
+  ADD CONSTRAINT `FK_RRCSTR_EAV_ATTR_WS_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_EAV_ATTR_WS_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_entity`
+--
+ALTER TABLE `rrcustomer_entity`
+  ADD CONSTRAINT `FK_RRCUSTOMER_ENTITY_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCUSTOMER_ENTITY_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_entity_datetime`
+--
+ALTER TABLE `rrcustomer_entity_datetime`
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_DTIME_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_DTIME_ENTT_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_DTIME_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_entity_decimal`
+--
+ALTER TABLE `rrcustomer_entity_decimal`
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_DEC_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_DEC_ENTT_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_DEC_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_entity_int`
+--
+ALTER TABLE `rrcustomer_entity_int`
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_INT_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCUSTOMER_ENTITY_INT_ENTITY_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_INT_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_entity_text`
+--
+ALTER TABLE `rrcustomer_entity_text`
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_TEXT_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCUSTOMER_ENTITY_TEXT_ENTITY_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_TEXT_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_entity_varchar`
+--
+ALTER TABLE `rrcustomer_entity_varchar`
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_VCHR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_VCHR_ENTT_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRCSTR_ENTT_VCHR_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrcustomer_form_attribute`
+--
+ALTER TABLE `rrcustomer_form_attribute`
+  ADD CONSTRAINT `FK_RRCSTR_FORM_ATTR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrdataflow_batch`
+--
+ALTER TABLE `rrdataflow_batch`
+  ADD CONSTRAINT `FK_RRDATAFLOW_BATCH_PROFILE_ID_RRDATAFLOW_PROFILE_PROFILE_ID` FOREIGN KEY (`profile_id`) REFERENCES `rrdataflow_profile` (`profile_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_RRDATAFLOW_BATCH_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rrdataflow_batch_export`
+--
+ALTER TABLE `rrdataflow_batch_export`
+  ADD CONSTRAINT `FK_RRDATAFLOW_BATCH_EXPORT_BATCH_ID_RRDATAFLOW_BATCH_BATCH_ID` FOREIGN KEY (`batch_id`) REFERENCES `rrdataflow_batch` (`batch_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rrdataflow_batch_import`
+--
+ALTER TABLE `rrdataflow_batch_import`
+  ADD CONSTRAINT `FK_RRDATAFLOW_BATCH_IMPORT_BATCH_ID_RRDATAFLOW_BATCH_BATCH_ID` FOREIGN KEY (`batch_id`) REFERENCES `rrdataflow_batch` (`batch_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rrdataflow_import_data`
+--
+ALTER TABLE `rrdataflow_import_data`
+  ADD CONSTRAINT `FK_RRDATAFLOW_IMPORT_DATA_SESS_ID_RRDATAFLOW_SESS_SESS_ID` FOREIGN KEY (`session_id`) REFERENCES `rrdataflow_session` (`session_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rrdataflow_profile_history`
+--
+ALTER TABLE `rrdataflow_profile_history`
+  ADD CONSTRAINT `FK_DB43DDBFE9E0835B2A738D9696B54AE6` FOREIGN KEY (`profile_id`) REFERENCES `rrdataflow_profile` (`profile_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrdesign_change`
+--
+ALTER TABLE `rrdesign_change`
+  ADD CONSTRAINT `FK_RRDESIGN_CHANGE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrdirectory_country_region_name`
+--
+ALTER TABLE `rrdirectory_country_region_name`
+  ADD CONSTRAINT `FK_BB09D323A578E6FBF8BB5DF4EF2ED3BB` FOREIGN KEY (`region_id`) REFERENCES `rrdirectory_country_region` (`region_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrdownloadable_link`
+--
+ALTER TABLE `rrdownloadable_link`
+  ADD CONSTRAINT `FK_RRDL_LNK_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrdownloadable_link_price`
+--
+ALTER TABLE `rrdownloadable_link_price`
+  ADD CONSTRAINT `FK_RRDOWNLOADABLE_LINK_PRICE_LINK_ID_RRDOWNLOADABLE_LINK_LINK_ID` FOREIGN KEY (`link_id`) REFERENCES `rrdownloadable_link` (`link_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRDL_LNK_PRICE_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrdownloadable_link_purchased`
+--
+ALTER TABLE `rrdownloadable_link_purchased`
+  ADD CONSTRAINT `FK_RRDL_LNK_PURCHASED_CSTR_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRDL_LNK_PURCHASED_ORDER_ID_RRSALES_FLAT_ORDER_ENTT_ID` FOREIGN KEY (`order_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrdownloadable_link_purchased_item`
+--
+ALTER TABLE `rrdownloadable_link_purchased_item`
+  ADD CONSTRAINT `FK_EE83BA5B24E80C20719869BB2F8CE4C4` FOREIGN KEY (`purchased_id`) REFERENCES `rrdownloadable_link_purchased` (`purchased_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_9617129E4C136883C78A3B06A633571E` FOREIGN KEY (`order_item_id`) REFERENCES `rrsales_flat_order_item` (`item_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrdownloadable_link_title`
+--
+ALTER TABLE `rrdownloadable_link_title`
+  ADD CONSTRAINT `FK_RRDOWNLOADABLE_LINK_TITLE_LINK_ID_RRDOWNLOADABLE_LINK_LINK_ID` FOREIGN KEY (`link_id`) REFERENCES `rrdownloadable_link` (`link_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRDOWNLOADABLE_LINK_TITLE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrdownloadable_sample`
+--
+ALTER TABLE `rrdownloadable_sample`
+  ADD CONSTRAINT `FK_RRDL_SAMPLE_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrdownloadable_sample_title`
+--
+ALTER TABLE `rrdownloadable_sample_title`
+  ADD CONSTRAINT `FK_RRDL_SAMPLE_TTL_SAMPLE_ID_RRDL_SAMPLE_SAMPLE_ID` FOREIGN KEY (`sample_id`) REFERENCES `rrdownloadable_sample` (`sample_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRDOWNLOADABLE_SAMPLE_TITLE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_attribute`
+--
+ALTER TABLE `rreav_attribute`
+  ADD CONSTRAINT `FK_RREAV_ATTR_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_attribute_group`
+--
+ALTER TABLE `rreav_attribute_group`
+  ADD CONSTRAINT `FK_RREAV_ATTR_GROUP_ATTR_SET_ID_RREAV_ATTR_SET_ATTR_SET_ID` FOREIGN KEY (`attribute_set_id`) REFERENCES `rreav_attribute_set` (`attribute_set_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_attribute_label`
+--
+ALTER TABLE `rreav_attribute_label`
+  ADD CONSTRAINT `FK_RREAV_ATTR_LBL_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ATTRIBUTE_LABEL_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_attribute_option`
+--
+ALTER TABLE `rreav_attribute_option`
+  ADD CONSTRAINT `FK_RREAV_ATTR_OPT_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_attribute_option_value`
+--
+ALTER TABLE `rreav_attribute_option_value`
+  ADD CONSTRAINT `FK_RREAV_ATTR_OPT_VAL_OPT_ID_RREAV_ATTR_OPT_OPT_ID` FOREIGN KEY (`option_id`) REFERENCES `rreav_attribute_option` (`option_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ATTRIBUTE_OPTION_VALUE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_attribute_set`
+--
+ALTER TABLE `rreav_attribute_set`
+  ADD CONSTRAINT `FK_RREAV_ATTR_SET_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_entity`
+--
+ALTER TABLE `rreav_entity`
+  ADD CONSTRAINT `FK_RREAV_ENTITY_ENTITY_TYPE_ID_RREAV_ENTITY_TYPE_ENTITY_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTITY_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_entity_attribute`
+--
+ALTER TABLE `rreav_entity_attribute`
+  ADD CONSTRAINT `FK_RREAV_ENTT_ATTR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTT_ATTR_ATTR_GROUP_ID_RREAV_ATTR_GROUP_ATTR_GROUP_ID` FOREIGN KEY (`attribute_group_id`) REFERENCES `rreav_attribute_group` (`attribute_group_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_entity_datetime`
+--
+ALTER TABLE `rreav_entity_datetime`
+  ADD CONSTRAINT `FK_RREAV_ENTITY_DATETIME_ENTITY_ID_RREAV_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rreav_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTT_DTIME_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTITY_DATETIME_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_entity_decimal`
+--
+ALTER TABLE `rreav_entity_decimal`
+  ADD CONSTRAINT `FK_RREAV_ENTITY_DECIMAL_ENTITY_ID_RREAV_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rreav_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTT_DEC_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTITY_DECIMAL_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_entity_int`
+--
+ALTER TABLE `rreav_entity_int`
+  ADD CONSTRAINT `FK_RREAV_ENTITY_INT_ENTITY_ID_RREAV_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rreav_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTT_INT_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTITY_INT_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_entity_store`
+--
+ALTER TABLE `rreav_entity_store`
+  ADD CONSTRAINT `FK_RREAV_ENTT_STORE_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTITY_STORE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_entity_text`
+--
+ALTER TABLE `rreav_entity_text`
+  ADD CONSTRAINT `FK_RREAV_ENTITY_TEXT_ENTITY_ID_RREAV_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rreav_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTT_TEXT_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTITY_TEXT_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_entity_varchar`
+--
+ALTER TABLE `rreav_entity_varchar`
+  ADD CONSTRAINT `FK_RREAV_ENTITY_VARCHAR_ENTITY_ID_RREAV_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rreav_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTT_VCHR_ENTT_TYPE_ID_RREAV_ENTT_TYPE_ENTT_TYPE_ID` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_ENTITY_VARCHAR_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_form_element`
+--
+ALTER TABLE `rreav_form_element`
+  ADD CONSTRAINT `FK_RREAV_FORM_ELEMENT_ATTRIBUTE_ID_RREAV_ATTRIBUTE_ATTRIBUTE_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_FORM_ELM_FSET_ID_RREAV_FORM_FSET_FSET_ID` FOREIGN KEY (`fieldset_id`) REFERENCES `rreav_form_fieldset` (`fieldset_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_FORM_ELEMENT_TYPE_ID_RREAV_FORM_TYPE_TYPE_ID` FOREIGN KEY (`type_id`) REFERENCES `rreav_form_type` (`type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_form_fieldset`
+--
+ALTER TABLE `rreav_form_fieldset`
+  ADD CONSTRAINT `FK_RREAV_FORM_FIELDSET_TYPE_ID_RREAV_FORM_TYPE_TYPE_ID` FOREIGN KEY (`type_id`) REFERENCES `rreav_form_type` (`type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_form_fieldset_label`
+--
+ALTER TABLE `rreav_form_fieldset_label`
+  ADD CONSTRAINT `FK_RREAV_FORM_FSET_LBL_FSET_ID_RREAV_FORM_FSET_FSET_ID` FOREIGN KEY (`fieldset_id`) REFERENCES `rreav_form_fieldset` (`fieldset_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_FORM_FIELDSET_LABEL_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_form_type`
+--
+ALTER TABLE `rreav_form_type`
+  ADD CONSTRAINT `FK_RREAV_FORM_TYPE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rreav_form_type_entity`
+--
+ALTER TABLE `rreav_form_type_entity`
+  ADD CONSTRAINT `FK_D85E01F6500E6634C4A1C798FF280AFB` FOREIGN KEY (`entity_type_id`) REFERENCES `rreav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RREAV_FORM_TYPE_ENTITY_TYPE_ID_RREAV_FORM_TYPE_TYPE_ID` FOREIGN KEY (`type_id`) REFERENCES `rreav_form_type` (`type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrindex_process_event`
+--
+ALTER TABLE `rrindex_process_event`
+  ADD CONSTRAINT `FK_RRINDEX_PROCESS_EVENT_EVENT_ID_RRINDEX_EVENT_EVENT_ID` FOREIGN KEY (`event_id`) REFERENCES `rrindex_event` (`event_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRINDEX_PROCESS_EVENT_PROCESS_ID_RRINDEX_PROCESS_PROCESS_ID` FOREIGN KEY (`process_id`) REFERENCES `rrindex_process` (`process_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrnewsletter_problem`
+--
+ALTER TABLE `rrnewsletter_problem`
+  ADD CONSTRAINT `FK_RRNEWSLETTER_PROBLEM_QUEUE_ID_RRNEWSLETTER_QUEUE_QUEUE_ID` FOREIGN KEY (`queue_id`) REFERENCES `rrnewsletter_queue` (`queue_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_7D14C01A2A81FE45FD69AE997EBD5ECC` FOREIGN KEY (`subscriber_id`) REFERENCES `rrnewsletter_subscriber` (`subscriber_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrnewsletter_queue`
+--
+ALTER TABLE `rrnewsletter_queue`
+  ADD CONSTRAINT `FK_RRNLTTR_QUEUE_TEMPLATE_ID_RRNLTTR_TEMPLATE_TEMPLATE_ID` FOREIGN KEY (`template_id`) REFERENCES `rrnewsletter_template` (`template_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrnewsletter_queue_link`
+--
+ALTER TABLE `rrnewsletter_queue_link`
+  ADD CONSTRAINT `FK_RRNEWSLETTER_QUEUE_LINK_QUEUE_ID_RRNEWSLETTER_QUEUE_QUEUE_ID` FOREIGN KEY (`queue_id`) REFERENCES `rrnewsletter_queue` (`queue_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_FF8F563FC8674A4F9E578DB4DEF3085B` FOREIGN KEY (`subscriber_id`) REFERENCES `rrnewsletter_subscriber` (`subscriber_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrnewsletter_queue_store_link`
+--
+ALTER TABLE `rrnewsletter_queue_store_link`
+  ADD CONSTRAINT `FK_RRNLTTR_QUEUE_STORE_LNK_QUEUE_ID_RRNLTTR_QUEUE_QUEUE_ID` FOREIGN KEY (`queue_id`) REFERENCES `rrnewsletter_queue` (`queue_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRNEWSLETTER_QUEUE_STORE_LINK_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrnewsletter_subscriber`
+--
+ALTER TABLE `rrnewsletter_subscriber`
+  ADD CONSTRAINT `FK_RRNEWSLETTER_SUBSCRIBER_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rroauth_token`
+--
+ALTER TABLE `rroauth_token`
+  ADD CONSTRAINT `FK_RROAUTH_TOKEN_ADMIN_ID_RRRRADMIN_USER_USER_ID` FOREIGN KEY (`admin_id`) REFERENCES `rradmin_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RROAUTH_TOKEN_CONSUMER_ID_RROAUTH_CONSUMER_ENTITY_ID` FOREIGN KEY (`consumer_id`) REFERENCES `rroauth_consumer` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RROAUTH_TOKEN_CUSTOMER_ID_RRRRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrpaypal_cert`
+--
+ALTER TABLE `rrpaypal_cert`
+  ADD CONSTRAINT `FK_RRPAYPAL_CERT_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrpaypal_settlement_report_row`
+--
+ALTER TABLE `rrpaypal_settlement_report_row`
+  ADD CONSTRAINT `FK_AE1CDCCBB6E00219D4A1BEF0433C05CB` FOREIGN KEY (`report_id`) REFERENCES `rrpaypal_settlement_report` (`report_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrpersistent_session`
+--
+ALTER TABLE `rrpersistent_session`
+  ADD CONSTRAINT `FK_RRPERSISTENT_SESSION_CUSTOMER_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_RRPERSISTENT_SESSION_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rrpoll`
+--
+ALTER TABLE `rrpoll`
+  ADD CONSTRAINT `FK_RRPOLL_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrpoll_answer`
+--
+ALTER TABLE `rrpoll_answer`
+  ADD CONSTRAINT `FK_RRPOLL_ANSWER_POLL_ID_RRPOLL_POLL_ID` FOREIGN KEY (`poll_id`) REFERENCES `rrpoll` (`poll_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrpoll_store`
+--
+ALTER TABLE `rrpoll_store`
+  ADD CONSTRAINT `FK_RRPOLL_STORE_POLL_ID_RRPOLL_POLL_ID` FOREIGN KEY (`poll_id`) REFERENCES `rrpoll` (`poll_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRPOLL_STORE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrpoll_vote`
+--
+ALTER TABLE `rrpoll_vote`
+  ADD CONSTRAINT `FK_RRPOLL_VOTE_POLL_ANSWER_ID_RRPOLL_ANSWER_ANSWER_ID` FOREIGN KEY (`poll_answer_id`) REFERENCES `rrpoll_answer` (`answer_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrproduct_alert_price`
+--
+ALTER TABLE `rrproduct_alert_price`
+  ADD CONSTRAINT `FK_RRPRODUCT_ALERT_PRICE_CUSTOMER_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRPRD_ALERT_PRICE_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRPRODUCT_ALERT_PRICE_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrproduct_alert_stock`
+--
+ALTER TABLE `rrproduct_alert_stock`
+  ADD CONSTRAINT `FK_RRPRODUCT_ALERT_STOCK_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRPRODUCT_ALERT_STOCK_CUSTOMER_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRPRD_ALERT_STOCK_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrrating`
+--
+ALTER TABLE `rrrating`
+  ADD CONSTRAINT `FK_RRRATING_ENTITY_ID_RRRATING_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrrating_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrrating_option`
+--
+ALTER TABLE `rrrating_option`
+  ADD CONSTRAINT `FK_RRRATING_OPTION_RATING_ID_RRRATING_RATING_ID` FOREIGN KEY (`rating_id`) REFERENCES `rrrating` (`rating_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrrating_option_vote`
+--
+ALTER TABLE `rrrating_option_vote`
+  ADD CONSTRAINT `FK_RRRATING_OPTION_VOTE_OPTION_ID_RRRATING_OPTION_OPTION_ID` FOREIGN KEY (`option_id`) REFERENCES `rrrating_option` (`option_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRRATING_OPTION_VOTE_REVIEW_ID_RRREVIEW_REVIEW_ID` FOREIGN KEY (`review_id`) REFERENCES `rrreview` (`review_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrrating_option_vote_aggregated`
+--
+ALTER TABLE `rrrating_option_vote_aggregated`
+  ADD CONSTRAINT `FK_RRRATING_OPTION_VOTE_AGGREGATED_RATING_ID_RRRATING_RATING_ID` FOREIGN KEY (`rating_id`) REFERENCES `rrrating` (`rating_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRRATING_OPT_VOTE_AGGRED_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrrating_store`
+--
+ALTER TABLE `rrrating_store`
+  ADD CONSTRAINT `FK_RRRATING_STORE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRRATING_STORE_RATING_ID_RRRATING_RATING_ID` FOREIGN KEY (`rating_id`) REFERENCES `rrrating` (`rating_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rrrating_title`
+--
+ALTER TABLE `rrrating_title`
+  ADD CONSTRAINT `FK_RRRATING_TITLE_RATING_ID_RRRATING_RATING_ID` FOREIGN KEY (`rating_id`) REFERENCES `rrrating` (`rating_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRRATING_TITLE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrreport_compared_product_index`
+--
+ALTER TABLE `rrreport_compared_product_index`
+  ADD CONSTRAINT `FK_RRREPORT_CMPD_PRD_IDX_CSTR_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRREPORT_CMPD_PRD_IDX_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRREPORT_CMPD_PRD_IDX_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrreport_event`
+--
+ALTER TABLE `rrreport_event`
+  ADD CONSTRAINT `FK_RRREPORT_EVENT_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_E6DF0AF990F97CC6CFDFD419DD875662` FOREIGN KEY (`event_type_id`) REFERENCES `rrreport_event_types` (`event_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrreport_viewed_product_aggregated_daily`
+--
+ALTER TABLE `rrreport_viewed_product_aggregated_daily`
+  ADD CONSTRAINT `FK_6090C7D42A47A932AB9FB1AEA66DB52B` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_626486DA28B527D161DC3C153149540F` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrreport_viewed_product_aggregated_monthly`
+--
+ALTER TABLE `rrreport_viewed_product_aggregated_monthly`
+  ADD CONSTRAINT `FK_54746FC163600D72BE0A826AB1A3AD62` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_51D5585412B8FC663840A2FA56BAB80E` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrreport_viewed_product_aggregated_yearly`
+--
+ALTER TABLE `rrreport_viewed_product_aggregated_yearly`
+  ADD CONSTRAINT `FK_70E50C6E7959BAF46BDE80272608E7BF` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_4229926BA7EC6E33C36E5AF0243CB811` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrreport_viewed_product_index`
+--
+ALTER TABLE `rrreport_viewed_product_index`
+  ADD CONSTRAINT `FK_RRREPORT_VIEWED_PRD_IDX_CSTR_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRREPORT_VIEWED_PRD_IDX_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRREPORT_VIEWED_PRODUCT_INDEX_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrreview`
+--
+ALTER TABLE `rrreview`
+  ADD CONSTRAINT `FK_RRREVIEW_ENTITY_ID_RRREVIEW_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrreview_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRREVIEW_STATUS_ID_RRREVIEW_STATUS_STATUS_ID` FOREIGN KEY (`status_id`) REFERENCES `rrreview_status` (`status_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rrreview_detail`
+--
+ALTER TABLE `rrreview_detail`
+  ADD CONSTRAINT `FK_RRREVIEW_DETAIL_CUSTOMER_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRREVIEW_DETAIL_REVIEW_ID_RRREVIEW_REVIEW_ID` FOREIGN KEY (`review_id`) REFERENCES `rrreview` (`review_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRREVIEW_DETAIL_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrreview_entity_summary`
+--
+ALTER TABLE `rrreview_entity_summary`
+  ADD CONSTRAINT `FK_RRREVIEW_ENTITY_SUMMARY_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrreview_store`
+--
+ALTER TABLE `rrreview_store`
+  ADD CONSTRAINT `FK_RRREVIEW_STORE_REVIEW_ID_RRREVIEW_REVIEW_ID` FOREIGN KEY (`review_id`) REFERENCES `rrreview` (`review_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRREVIEW_STORE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsalesrule_coupon`
+--
+ALTER TABLE `rrsalesrule_coupon`
+  ADD CONSTRAINT `FK_RRSALESRULE_COUPON_RULE_ID_RRSALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `rrsalesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsalesrule_coupon_usage`
+--
+ALTER TABLE `rrsalesrule_coupon_usage`
+  ADD CONSTRAINT `FK_6EB88C4DB9CEAA3FAE4DB829C6E786FD` FOREIGN KEY (`coupon_id`) REFERENCES `rrsalesrule_coupon` (`coupon_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALESRULE_COUPON_USAGE_CSTR_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsalesrule_customer`
+--
+ALTER TABLE `rrsalesrule_customer`
+  ADD CONSTRAINT `FK_RRSALESRULE_CUSTOMER_CUSTOMER_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALESRULE_CUSTOMER_RULE_ID_RRSALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `rrsalesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsalesrule_customer_group`
+--
+ALTER TABLE `rrsalesrule_customer_group`
+  ADD CONSTRAINT `FK_RRSALESRULE_CUSTOMER_GROUP_RULE_ID_RRSALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `rrsalesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_657E46A00B069D23859FC78A96D517C9` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsalesrule_label`
+--
+ALTER TABLE `rrsalesrule_label`
+  ADD CONSTRAINT `FK_RRSALESRULE_LABEL_RULE_ID_RRSALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `rrsalesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALESRULE_LABEL_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsalesrule_product_attribute`
+--
+ALTER TABLE `rrsalesrule_product_attribute`
+  ADD CONSTRAINT `FK_RRSALESRULE_PRD_ATTR_ATTR_ID_RREAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_RRSALESRULE_PRD_ATTR_CSTR_GROUP_ID_RRCSTR_GROUP_CSTR_GROUP_ID` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_RRSALESRULE_PRODUCT_ATTRIBUTE_RULE_ID_RRSALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `rrsalesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_RRSALESRULE_PRD_ATTR_WS_ID_RRCORE_WS_WS_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rrsalesrule_website`
+--
+ALTER TABLE `rrsalesrule_website`
+  ADD CONSTRAINT `FK_RRSALESRULE_WEBSITE_RULE_ID_RRSALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `rrsalesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALESRULE_WEBSITE_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_bestsellers_aggregated_daily`
+--
+ALTER TABLE `rrsales_bestsellers_aggregated_daily`
+  ADD CONSTRAINT `FK_074CDF64EBE9DD381C61E996E9110D10` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_BE2E231C69C2851FFDE977C281AA0B19` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_bestsellers_aggregated_monthly`
+--
+ALTER TABLE `rrsales_bestsellers_aggregated_monthly`
+  ADD CONSTRAINT `FK_5565434FB64D02CB337E82027156410C` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_193D5C6A70979A1DDCB68D64B5834626` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_bestsellers_aggregated_yearly`
+--
+ALTER TABLE `rrsales_bestsellers_aggregated_yearly`
+  ADD CONSTRAINT `FK_2DD50D4E1929EA8FFA3F912D35C23545` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_B793669CFEAB9428E945E792B29B6867` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_billing_agreement`
+--
+ALTER TABLE `rrsales_billing_agreement`
+  ADD CONSTRAINT `FK_RRSALES_BILLING_AGRT_CSTR_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_BILLING_AGREEMENT_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_billing_agreement_order`
+--
+ALTER TABLE `rrsales_billing_agreement_order`
+  ADD CONSTRAINT `FK_86C7314DC8944A38CBCEFA354A707ED3` FOREIGN KEY (`agreement_id`) REFERENCES `rrsales_billing_agreement` (`agreement_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_FE587095D58578840353F4ACD0570423` FOREIGN KEY (`order_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_creditmemo`
+--
+ALTER TABLE `rrsales_flat_creditmemo`
+  ADD CONSTRAINT `FK_RRSALES_FLAT_CREDITMEMO_ORDER_ID_RRSALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_CREDITMEMO_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_creditmemo_comment`
+--
+ALTER TABLE `rrsales_flat_creditmemo_comment`
+  ADD CONSTRAINT `FK_C0D94F8196AE84A27DB00D24E05160CF` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_flat_creditmemo` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_creditmemo_grid`
+--
+ALTER TABLE `rrsales_flat_creditmemo_grid`
+  ADD CONSTRAINT `FK_57317D72EAFB64592CDAFC86686FB7B2` FOREIGN KEY (`entity_id`) REFERENCES `rrsales_flat_creditmemo` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_CREDITMEMO_GRID_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_creditmemo_item`
+--
+ALTER TABLE `rrsales_flat_creditmemo_item`
+  ADD CONSTRAINT `FK_D298ABC8B6A592FA83FDF49A8C0F32D5` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_flat_creditmemo` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_invoice`
+--
+ALTER TABLE `rrsales_flat_invoice`
+  ADD CONSTRAINT `FK_RRSALES_FLAT_INVOICE_ORDER_ID_RRSALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_INVOICE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_invoice_comment`
+--
+ALTER TABLE `rrsales_flat_invoice_comment`
+  ADD CONSTRAINT `FK_1958443E8C2E6538BBA8208D6708F09D` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_flat_invoice` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_invoice_grid`
+--
+ALTER TABLE `rrsales_flat_invoice_grid`
+  ADD CONSTRAINT `FK_E09D875530DF7CAA67A0C5EE0C9D8CCF` FOREIGN KEY (`entity_id`) REFERENCES `rrsales_flat_invoice` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_INVOICE_GRID_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_invoice_item`
+--
+ALTER TABLE `rrsales_flat_invoice_item`
+  ADD CONSTRAINT `FK_2277669E47136E3E6FF5A9A4B4AD05C5` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_flat_invoice` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_order`
+--
+ALTER TABLE `rrsales_flat_order`
+  ADD CONSTRAINT `FK_RRSALES_FLAT_ORDER_CUSTOMER_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_ORDER_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_order_address`
+--
+ALTER TABLE `rrsales_flat_order_address`
+  ADD CONSTRAINT `FK_RRSALES_FLAT_ORDER_ADDR_PARENT_ID_RRSALES_FLAT_ORDER_ENTT_ID` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_order_grid`
+--
+ALTER TABLE `rrsales_flat_order_grid`
+  ADD CONSTRAINT `FK_RRSALES_FLAT_ORDER_GRID_CSTR_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_ORDER_GRID_ENTT_ID_RRSALES_FLAT_ORDER_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_ORDER_GRID_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_order_item`
+--
+ALTER TABLE `rrsales_flat_order_item`
+  ADD CONSTRAINT `FK_RRSALES_FLAT_ORDER_ITEM_ORDER_ID_RRSALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_ORDER_ITEM_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_order_payment`
+--
+ALTER TABLE `rrsales_flat_order_payment`
+  ADD CONSTRAINT `FK_0F0731166B55FBBD77DC401EA75DF4A5` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_order_status_history`
+--
+ALTER TABLE `rrsales_flat_order_status_history`
+  ADD CONSTRAINT `FK_188F0116C2D1E2364190EE19B24DD45B` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_quote`
+--
+ALTER TABLE `rrsales_flat_quote`
+  ADD CONSTRAINT `FK_RRSALES_FLAT_QUOTE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_quote_address`
+--
+ALTER TABLE `rrsales_flat_quote_address`
+  ADD CONSTRAINT `FK_RRSALES_FLAT_QUOTE_ADDR_QUOTE_ID_RRSALES_FLAT_QUOTE_ENTT_ID` FOREIGN KEY (`quote_id`) REFERENCES `rrsales_flat_quote` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_quote_address_item`
+--
+ALTER TABLE `rrsales_flat_quote_address_item`
+  ADD CONSTRAINT `FK_1D10E3F27368ABDA498E3949F6C2BB9E` FOREIGN KEY (`parent_item_id`) REFERENCES `rrsales_flat_quote_address_item` (`address_item_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_2379DD32A5EA5C8F54FDADED3445C2F8` FOREIGN KEY (`quote_address_id`) REFERENCES `rrsales_flat_quote_address` (`address_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_28B3784A387F78E118B5700B62E89AF6` FOREIGN KEY (`quote_item_id`) REFERENCES `rrsales_flat_quote_item` (`item_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_quote_item`
+--
+ALTER TABLE `rrsales_flat_quote_item`
+  ADD CONSTRAINT `FK_A7AF04552A6E0D64CEA981D81930D07E` FOREIGN KEY (`parent_item_id`) REFERENCES `rrsales_flat_quote_item` (`item_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_QUOTE_ITEM_PRD_ID_RRCAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_QUOTE_ITEM_QUOTE_ID_RRSALES_FLAT_QUOTE_ENTITY_ID` FOREIGN KEY (`quote_id`) REFERENCES `rrsales_flat_quote` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_QUOTE_ITEM_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_quote_item_option`
+--
+ALTER TABLE `rrsales_flat_quote_item_option`
+  ADD CONSTRAINT `FK_CEE68C4BE75B96E15DEB6FFD991E7152` FOREIGN KEY (`item_id`) REFERENCES `rrsales_flat_quote_item` (`item_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_quote_payment`
+--
+ALTER TABLE `rrsales_flat_quote_payment`
+  ADD CONSTRAINT `FK_5642232D31FFC2322106C03DCA3CFA01` FOREIGN KEY (`quote_id`) REFERENCES `rrsales_flat_quote` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_quote_shipping_rate`
+--
+ALTER TABLE `rrsales_flat_quote_shipping_rate`
+  ADD CONSTRAINT `FK_AAE06BF70DAD88EBD9E5794FBF152C99` FOREIGN KEY (`address_id`) REFERENCES `rrsales_flat_quote_address` (`address_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_shipment`
+--
+ALTER TABLE `rrsales_flat_shipment`
+  ADD CONSTRAINT `FK_RRSALES_FLAT_SHIPMENT_ORDER_ID_RRSALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_SHIPMENT_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_shipment_comment`
+--
+ALTER TABLE `rrsales_flat_shipment_comment`
+  ADD CONSTRAINT `FK_00139A00D379AD05843973AE8C2CCEA0` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_flat_shipment` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_shipment_grid`
+--
+ALTER TABLE `rrsales_flat_shipment_grid`
+  ADD CONSTRAINT `FK_7BD02E52C749DF4B233F9D9B6054A3D2` FOREIGN KEY (`entity_id`) REFERENCES `rrsales_flat_shipment` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_FLAT_SHIPMENT_GRID_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_shipment_item`
+--
+ALTER TABLE `rrsales_flat_shipment_item`
+  ADD CONSTRAINT `FK_A2D86D84DC0AD2D073064F3B8ABF3A7A` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_flat_shipment` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_flat_shipment_track`
+--
+ALTER TABLE `rrsales_flat_shipment_track`
+  ADD CONSTRAINT `FK_87F7547592C8A3E1360AD257F1CDA8DF` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_flat_shipment` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_invoiced_aggregated`
+--
+ALTER TABLE `rrsales_invoiced_aggregated`
+  ADD CONSTRAINT `FK_RRSALES_INVOICED_AGGREGATED_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_invoiced_aggregated_order`
+--
+ALTER TABLE `rrsales_invoiced_aggregated_order`
+  ADD CONSTRAINT `FK_RRSALES_INVOICED_AGGRED_ORDER_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_order_aggregated_created`
+--
+ALTER TABLE `rrsales_order_aggregated_created`
+  ADD CONSTRAINT `FK_RRSALES_ORDER_AGGRED_CREATED_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_order_aggregated_updated`
+--
+ALTER TABLE `rrsales_order_aggregated_updated`
+  ADD CONSTRAINT `FK_RRSALES_ORDER_AGGRED_UPDATED_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_order_status_label`
+--
+ALTER TABLE `rrsales_order_status_label`
+  ADD CONSTRAINT `FK_RRSALES_ORDER_STATUS_LABEL_STATUS_RRSALES_ORDER_STATUS_STATUS` FOREIGN KEY (`status`) REFERENCES `rrsales_order_status` (`status`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_ORDER_STATUS_LABEL_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_order_status_state`
+--
+ALTER TABLE `rrsales_order_status_state`
+  ADD CONSTRAINT `FK_RRSALES_ORDER_STATUS_STATE_STATUS_RRSALES_ORDER_STATUS_STATUS` FOREIGN KEY (`status`) REFERENCES `rrsales_order_status` (`status`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_order_tax_item`
+--
+ALTER TABLE `rrsales_order_tax_item`
+  ADD CONSTRAINT `FK_2A06987879F935724A1CECB13FDAF6A1` FOREIGN KEY (`item_id`) REFERENCES `rrsales_flat_order_item` (`item_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_ORDER_TAX_ITEM_TAX_ID_RRSALES_ORDER_TAX_TAX_ID` FOREIGN KEY (`tax_id`) REFERENCES `rrsales_order_tax` (`tax_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_payment_transaction`
+--
+ALTER TABLE `rrsales_payment_transaction`
+  ADD CONSTRAINT `FK_A1FFAB0E59A50BC5FFABF11976F01C27` FOREIGN KEY (`order_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_F004E1157279217C644BC71989F61EE3` FOREIGN KEY (`parent_id`) REFERENCES `rrsales_payment_transaction` (`transaction_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_596F406FD5D702AF1370D9572F0C23D7` FOREIGN KEY (`payment_id`) REFERENCES `rrsales_flat_order_payment` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_recurring_profile`
+--
+ALTER TABLE `rrsales_recurring_profile`
+  ADD CONSTRAINT `FK_RRSALES_RECURRING_PROFILE_CSTR_ID_RRCSTR_ENTT_ENTT_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRSALES_RECURRING_PROFILE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_recurring_profile_order`
+--
+ALTER TABLE `rrsales_recurring_profile_order`
+  ADD CONSTRAINT `FK_F356665A16B7FEF160D344A790D5CFD3` FOREIGN KEY (`order_id`) REFERENCES `rrsales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_BF4CC168F98BD390FD74CDC6FF76D0A2` FOREIGN KEY (`profile_id`) REFERENCES `rrsales_recurring_profile` (`profile_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_refunded_aggregated`
+--
+ALTER TABLE `rrsales_refunded_aggregated`
+  ADD CONSTRAINT `FK_RRSALES_REFUNDED_AGGREGATED_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_refunded_aggregated_order`
+--
+ALTER TABLE `rrsales_refunded_aggregated_order`
+  ADD CONSTRAINT `FK_RRSALES_REFUNDED_AGGRED_ORDER_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_shipping_aggregated`
+--
+ALTER TABLE `rrsales_shipping_aggregated`
+  ADD CONSTRAINT `FK_RRSALES_SHIPPING_AGGREGATED_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsales_shipping_aggregated_order`
+--
+ALTER TABLE `rrsales_shipping_aggregated_order`
+  ADD CONSTRAINT `FK_RRSALES_SHPP_AGGRED_ORDER_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrsitemap`
+--
+ALTER TABLE `rrsitemap`
+  ADD CONSTRAINT `FK_RRSITEMAP_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrtag`
+--
+ALTER TABLE `rrtag`
+  ADD CONSTRAINT `FK_RRTAG_FIRST_CUSTOMER_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`first_customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE SET NULL ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_RRTAG_FIRST_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`first_store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rrtag_properties`
+--
+ALTER TABLE `rrtag_properties`
+  ADD CONSTRAINT `FK_RRTAG_PROPERTIES_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRTAG_PROPERTIES_TAG_ID_RRTAG_TAG_ID` FOREIGN KEY (`tag_id`) REFERENCES `rrtag` (`tag_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrtag_relation`
+--
+ALTER TABLE `rrtag_relation`
+  ADD CONSTRAINT `FK_RRTAG_RELATION_CUSTOMER_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRTAG_RELATION_PRODUCT_ID_RRCATALOG_PRODUCT_ENTITY_ENTITY_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRTAG_RELATION_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRTAG_RELATION_TAG_ID_RRTAG_TAG_ID` FOREIGN KEY (`tag_id`) REFERENCES `rrtag` (`tag_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrtag_summary`
+--
+ALTER TABLE `rrtag_summary`
+  ADD CONSTRAINT `FK_RRTAG_SUMMARY_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRTAG_SUMMARY_TAG_ID_RRTAG_TAG_ID` FOREIGN KEY (`tag_id`) REFERENCES `rrtag` (`tag_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrtax_calculation`
+--
+ALTER TABLE `rrtax_calculation`
+  ADD CONSTRAINT `FK_RRTAX_CALCULATION_PRODUCT_TAX_CLASS_ID_RRTAX_CLASS_CLASS_ID` FOREIGN KEY (`product_tax_class_id`) REFERENCES `rrtax_class` (`class_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRTAX_CALCULATION_CUSTOMER_TAX_CLASS_ID_RRTAX_CLASS_CLASS_ID` FOREIGN KEY (`customer_tax_class_id`) REFERENCES `rrtax_class` (`class_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRTAX_CALC_TAX_CALC_RATE_ID_RRTAX_CALC_RATE_TAX_CALC_RATE_ID` FOREIGN KEY (`tax_calculation_rate_id`) REFERENCES `rrtax_calculation_rate` (`tax_calculation_rate_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRTAX_CALC_TAX_CALC_RULE_ID_RRTAX_CALC_RULE_TAX_CALC_RULE_ID` FOREIGN KEY (`tax_calculation_rule_id`) REFERENCES `rrtax_calculation_rule` (`tax_calculation_rule_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrtax_calculation_rate_title`
+--
+ALTER TABLE `rrtax_calculation_rate_title`
+  ADD CONSTRAINT `FK_RRTAX_CALCULATION_RATE_TITLE_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_3F013E0AA7C8B554B9AC4C99CF37FF14` FOREIGN KEY (`tax_calculation_rate_id`) REFERENCES `rrtax_calculation_rate` (`tax_calculation_rate_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrtax_order_aggregated_created`
+--
+ALTER TABLE `rrtax_order_aggregated_created`
+  ADD CONSTRAINT `FK_RRTAX_ORDER_AGGREGATED_CREATED_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrtax_order_aggregated_updated`
+--
+ALTER TABLE `rrtax_order_aggregated_updated`
+  ADD CONSTRAINT `FK_RRTAX_ORDER_AGGREGATED_UPDATED_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrweee_discount`
+--
+ALTER TABLE `rrweee_discount`
+  ADD CONSTRAINT `FK_RRWEEE_DISCOUNT_CSTR_GROUP_ID_RRCSTR_GROUP_CSTR_GROUP_ID` FOREIGN KEY (`customer_group_id`) REFERENCES `rrcustomer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRWEEE_DISCOUNT_ENTITY_ID_RRCATALOG_PRODUCT_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRWEEE_DISCOUNT_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrweee_tax`
+--
+ALTER TABLE `rrweee_tax`
+  ADD CONSTRAINT `FK_RRWEEE_TAX_COUNTRY_RRDIRECTORY_COUNTRY_COUNTRY_ID` FOREIGN KEY (`country`) REFERENCES `rrdirectory_country` (`country_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRWEEE_TAX_ENTITY_ID_RRCATALOG_PRODUCT_ENTITY_ENTITY_ID` FOREIGN KEY (`entity_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRWEEE_TAX_WEBSITE_ID_RRCORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `rrcore_website` (`website_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRWEEE_TAX_ATTRIBUTE_ID_RREAV_ATTRIBUTE_ATTRIBUTE_ID` FOREIGN KEY (`attribute_id`) REFERENCES `rreav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrwidget_instance_page`
+--
+ALTER TABLE `rrwidget_instance_page`
+  ADD CONSTRAINT `FK_455B6CB5E6AC574DF74E160184EAF706` FOREIGN KEY (`instance_id`) REFERENCES `rrwidget_instance` (`instance_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrwidget_instance_page_layout`
+--
+ALTER TABLE `rrwidget_instance_page_layout`
+  ADD CONSTRAINT `FK_BB8C0E18474A26F22570EB0304BFEB35` FOREIGN KEY (`page_id`) REFERENCES `rrwidget_instance_page` (`page_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_8774C3861E98F595F5EAAC2F2BCC1FC2` FOREIGN KEY (`layout_update_id`) REFERENCES `rrcore_layout_update` (`layout_update_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrwishlist`
+--
+ALTER TABLE `rrwishlist`
+  ADD CONSTRAINT `FK_RRWISHLIST_CUSTOMER_ID_RRCUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `rrcustomer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrwishlist_item`
+--
+ALTER TABLE `rrwishlist_item`
+  ADD CONSTRAINT `FK_RRWISHLIST_ITEM_WISHLIST_ID_RRWISHLIST_WISHLIST_ID` FOREIGN KEY (`wishlist_id`) REFERENCES `rrwishlist` (`wishlist_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRWISHLIST_ITEM_PRODUCT_ID_RRCATALOG_PRODUCT_ENTITY_ENTITY_ID` FOREIGN KEY (`product_id`) REFERENCES `rrcatalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_RRWISHLIST_ITEM_STORE_ID_RRCORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `rrcore_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rrwishlist_item_option`
+--
+ALTER TABLE `rrwishlist_item_option`
+  ADD CONSTRAINT `FK_F8D6DDDC69F43652B840C62DF8D730EC` FOREIGN KEY (`wishlist_item_id`) REFERENCES `rrwishlist_item` (`wishlist_item_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
