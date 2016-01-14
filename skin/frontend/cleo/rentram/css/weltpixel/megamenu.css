@@ -497,7 +497,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
     line-height: 30px
 }
 .v2 #top-links li a {
-    color: #fff;
+    color: black;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px
@@ -512,7 +512,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
     border-top: 0 none
 }
 .v2 .form-language .dropdown .carat {
-    border-color: #fff transparent transparent
+    border-color: #000 transparent transparent
 }
 .v2 .form-language .dropdown:hover {
     box-shadow: -45px 0 25px -20px rgba(255, 255, 255, 0.2) inset
@@ -521,7 +521,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
     margin-top: 0
 }
 .v2 .form-language .selected {
-    color: #fff;
+    color: black;
     font-size: 14px;
     line-height: 24px
 }
@@ -590,7 +590,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
 }
 
 .v2 #page-header-section-02 {
-	height: 80px;
+
 	padding-top: 10px;
     background: white;
 }
@@ -1026,7 +1026,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
 
 #quick-access {
     z-index: 1;
-    position: absolute;
+    position: relative;
     top: 65px;
     right: 5px;
 }
@@ -1517,7 +1517,7 @@ font-family: 'Brandon Light';
 .header-settings {
     display: none;
     position: absolute;
-    right: 0;
+
     top: 0;
     height: 100%;
     width: 70px;

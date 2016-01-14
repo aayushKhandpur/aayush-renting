@@ -1,6 +1,12 @@
 <!-- BEGIN website switcher -->
+<style>
+.dropdown li{
+background-color: black;
+    color: white;
+  }
+</style>
 <div class="form-language flags">
-<select id="website-changer"  class="dropdown flags" onChange="document.location=this.options[selectedIndex].value">
+<select id="website-changer"  class="dropdown flags" onChange="document.location=this.options[selectedIndex].value" style="background-color: darkcyan;">
 <?php
 $websites = Mage::getModel('core/website')->getCollection();
 foreach($websites as $website)
@@ -10,7 +16,7 @@ foreach($websites as $website)
     $default_store_path = $url_obj->getBaseUrl(array('_store'=> $default_store->getCode()));
 ?>
     <option <?php if(strstr($this->helper('core/url')->getCurrentUrl(), $default_store_path)):?>
-      selected="selected"<?php endif; ?> value="<?php echo $default_store_path ?>">
+      selected="selected"<?php endif; ?> value="<?php echo $default_store_path ?>" style="background-color: darkcyan;">
       <?php echo $website->getName()?>
     </option>
 <?php

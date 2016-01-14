@@ -33,7 +33,7 @@
 
 
 
-    #wpas-q { background-color:  #4564FF !important; }
+    #wpas-q { background-color:  #FFFCE8 !important; }
     #wpas-q { border: 1px solid #FEBD69 !important; }
 
 
@@ -76,7 +76,7 @@
     body, input, select, textarea, th, td, b, strong, caption, th, td,
     #product-info .product-description,
     #product-reviews p, #product-reviews label
-    { font-size:  10px !important; }
+    { font-size:  14px !important; }
 
     h1,#product-info h1 { font-size:  18px !important;}
 
