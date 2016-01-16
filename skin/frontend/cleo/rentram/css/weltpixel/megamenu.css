@@ -1181,7 +1181,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
 #quick-access > li i {
     line-height: 38px;
     font-size: 24px;
-    color: rgba(0, 0, 0, 0.85);
+    color: white;
 }
 #quick-access > li:first-child {
     margin-left: 0;
