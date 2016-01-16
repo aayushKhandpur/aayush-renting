@@ -1,11 +1,10 @@
 <?php
 $_productCollection = $this->getItemCollection()->getItems();
+
 $this->resetItemsIterator();
-
-
-
 $_helper = $this->helper('catalog/output');
 $_settings = Mage::getStoreConfig('weltpixel_selector/categoryoptions');
+
 $_showRating = ('yes' == $_settings['showratings']);
 $_showAddToCart = ('yes' == $_settings['addtocart']);
 $_showAddToWishlist = ('yes' == $_settings['addtowishlist']);
@@ -14,7 +13,6 @@ $_showAddToBox = $_showAddToCart || $_showAddToWishlist || $_showAddToCompare;
 $_showQuickView = ('yes' == $_settings['enablequickview']);
 $_addToCartLightBox = ('lightbox' == $_settings['addtocartbutton']);
 $_useRetina = Mage::getStoreConfig('weltpixel_selector/customization_settings/retina');
-
 $_imgSize = 270;
 ?>
 
@@ -33,7 +31,7 @@ $_imgSize = 270;
                 }
                 ?>
                 <?php foreach ($_productCollection as $_product): ?>
-                    <?php
+                    <?php  Mage::log($_product->debug(),Zend_log::INFO,'layout.log',true);
                     $_productUrl = $_product->getProductUrl();
                     $_productName = $_helper->productAttribute($_product, $_product->getName(), 'name');
                     $_productNameStripped = $this->stripTags($_product->getName(), null, true);

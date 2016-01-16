@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2016 at 03:03 PM
+-- Generation Time: Jan 16, 2016 at 08:27 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -492,7 +492,7 @@ CREATE TABLE IF NOT EXISTS `rradmin_user` (
 --
 
 INSERT INTO `rradmin_user` (`user_id`, `firstname`, `lastname`, `email`, `username`, `password`, `created`, `modified`, `logdate`, `lognum`, `reload_acl_flag`, `is_active`, `extra`, `rp_token`, `rp_token_created_at`) VALUES
-(1, 'aayush', 'khandpur', 'aayush.khandpur@gmail.com', 'admin', '6c05b09163a3cc61e02d8849d4048b70:MKferNYX7lysfyx9ZCwSyMIyVCu1w1Ew', '2015-12-08 14:12:29', '2015-12-08 14:12:29', '2016-01-16 08:00:42', 55, 0, 1, 'a:1:{s:11:"configState";a:67:{s:14:"design_package";s:1:"1";s:12:"design_theme";s:1:"1";s:11:"design_head";s:1:"1";s:13:"design_header";s:1:"1";s:13:"design_footer";s:1:"1";s:16:"design_watermark";s:1:"0";s:17:"design_pagination";s:1:"0";s:12:"design_email";s:1:"1";s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"1";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";s:28:"weltpixel_ajaxsearch_general";s:1:"1";s:34:"weltpixel_fontsettings_font_family";s:1:"1";s:32:"weltpixel_fontsettings_font_size";s:1:"1";s:32:"weltpixel_selector_headeroptions";s:1:"1";s:34:"weltpixel_selector_categoryoptions";s:1:"0";s:33:"weltpixel_selector_sidebaroptions";s:1:"0";s:37:"weltpixel_selector_productpageoptions";s:1:"0";s:41:"weltpixel_selector_customization_settings";s:1:"0";s:12:"dev_restrict";s:1:"1";s:9:"dev_debug";s:1:"1";s:12:"dev_template";s:1:"1";s:20:"dev_translate_inline";s:1:"1";s:7:"dev_log";s:1:"0";s:6:"dev_js";s:1:"0";s:7:"dev_css";s:1:"0";s:31:"weltpixel_colorsettings_general";s:1:"0";s:31:"weltpixel_colorsettings_buttons";s:1:"0";s:43:"weltpixel_colorsettings_new_and_sale_labels";s:1:"0";s:37:"weltpixel_colorsettings_misc_elements";s:1:"0";s:40:"weltpixel_colorsettings_header_version_1";s:1:"0";s:40:"weltpixel_colorsettings_header_version_2";s:1:"1";s:40:"weltpixel_colorsettings_header_version_3";s:1:"0";s:35:"weltpixel_colorsettings_header_menu";s:1:"0";s:34:"weltpixel_colorsettings_breadcrumb";s:1:"0";s:34:"weltpixel_colorsettings_search_box";s:1:"1";s:45:"weltpixel_colorsettings_dropdown_boxes_header";s:1:"0";s:30:"weltpixel_colorsettings_footer";s:1:"1";s:34:"weltpixel_colorsettings_pre_footer";s:1:"0";s:34:"weltpixel_colorsettings_sub_footer";s:1:"0";s:34:"weltpixel_colorsettings_ajaxsearch";s:1:"1";s:42:"weltpixel_colorsettings_layered_navigation";s:1:"1";s:42:"weltpixel_colorsettings_social_media_icons";s:1:"1";s:11:"cms_wysiwyg";s:1:"1";s:22:"configswatches_general";s:1:"1";s:40:"configswatches_product_detail_dimensions";s:1:"0";s:41:"configswatches_product_listing_dimensions";s:1:"0";s:37:"configswatches_layered_nav_dimensions";s:1:"0";s:31:"weltpixel_productswatch_general";s:1:"1";s:28:"weltpixel_newsletter_general";s:1:"1";s:19:"marketplace_general";s:1:"0";s:18:"marketplace_review";s:1:"0";s:31:"marketplace_vendor_registration";s:1:"1";s:17:"marketplace_email";s:1:"0";s:37:"marketplace_vendor_registration_email";s:1:"0";s:35:"marketplace_vendor_activation_email";s:1:"0";s:43:"marketplace_registration_confirmation_email";s:1:"0";s:31:"advanced_modules_disable_output";s:1:"1";s:32:"weltpixel_layerednavigation_ajax";s:1:"0";s:35:"weltpixel_layerednavigation_display";s:1:"1";s:43:"weltpixel_layerednavigation_default_display";s:1:"1";}}', NULL, NULL),
+(1, 'aayush', 'khandpur', 'aayush.khandpur@gmail.com', 'admin', '6c05b09163a3cc61e02d8849d4048b70:MKferNYX7lysfyx9ZCwSyMIyVCu1w1Ew', '2015-12-08 14:12:29', '2015-12-08 14:12:29', '2016-01-16 10:30:14', 56, 0, 1, 'a:1:{s:11:"configState";a:67:{s:14:"design_package";s:1:"1";s:12:"design_theme";s:1:"1";s:11:"design_head";s:1:"1";s:13:"design_header";s:1:"1";s:13:"design_footer";s:1:"1";s:16:"design_watermark";s:1:"0";s:17:"design_pagination";s:1:"0";s:12:"design_email";s:1:"1";s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"1";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";s:28:"weltpixel_ajaxsearch_general";s:1:"1";s:34:"weltpixel_fontsettings_font_family";s:1:"1";s:32:"weltpixel_fontsettings_font_size";s:1:"1";s:32:"weltpixel_selector_headeroptions";s:1:"1";s:34:"weltpixel_selector_categoryoptions";s:1:"0";s:33:"weltpixel_selector_sidebaroptions";s:1:"0";s:37:"weltpixel_selector_productpageoptions";s:1:"0";s:41:"weltpixel_selector_customization_settings";s:1:"0";s:12:"dev_restrict";s:1:"1";s:9:"dev_debug";s:1:"1";s:12:"dev_template";s:1:"1";s:20:"dev_translate_inline";s:1:"1";s:7:"dev_log";s:1:"0";s:6:"dev_js";s:1:"0";s:7:"dev_css";s:1:"0";s:31:"weltpixel_colorsettings_general";s:1:"0";s:31:"weltpixel_colorsettings_buttons";s:1:"0";s:43:"weltpixel_colorsettings_new_and_sale_labels";s:1:"0";s:37:"weltpixel_colorsettings_misc_elements";s:1:"0";s:40:"weltpixel_colorsettings_header_version_1";s:1:"0";s:40:"weltpixel_colorsettings_header_version_2";s:1:"1";s:40:"weltpixel_colorsettings_header_version_3";s:1:"0";s:35:"weltpixel_colorsettings_header_menu";s:1:"0";s:34:"weltpixel_colorsettings_breadcrumb";s:1:"0";s:34:"weltpixel_colorsettings_search_box";s:1:"1";s:45:"weltpixel_colorsettings_dropdown_boxes_header";s:1:"0";s:30:"weltpixel_colorsettings_footer";s:1:"1";s:34:"weltpixel_colorsettings_pre_footer";s:1:"0";s:34:"weltpixel_colorsettings_sub_footer";s:1:"0";s:34:"weltpixel_colorsettings_ajaxsearch";s:1:"1";s:42:"weltpixel_colorsettings_layered_navigation";s:1:"1";s:42:"weltpixel_colorsettings_social_media_icons";s:1:"1";s:11:"cms_wysiwyg";s:1:"1";s:22:"configswatches_general";s:1:"1";s:40:"configswatches_product_detail_dimensions";s:1:"0";s:41:"configswatches_product_listing_dimensions";s:1:"0";s:37:"configswatches_layered_nav_dimensions";s:1:"0";s:31:"weltpixel_productswatch_general";s:1:"1";s:28:"weltpixel_newsletter_general";s:1:"1";s:19:"marketplace_general";s:1:"0";s:18:"marketplace_review";s:1:"0";s:31:"marketplace_vendor_registration";s:1:"1";s:17:"marketplace_email";s:1:"0";s:37:"marketplace_vendor_registration_email";s:1:"0";s:35:"marketplace_vendor_activation_email";s:1:"0";s:43:"marketplace_registration_confirmation_email";s:1:"0";s:31:"advanced_modules_disable_output";s:1:"1";s:32:"weltpixel_layerednavigation_ajax";s:1:"0";s:35:"weltpixel_layerednavigation_display";s:1:"1";s:43:"weltpixel_layerednavigation_default_display";s:1:"1";}}', NULL, NULL),
 (2, 'vendor', '1', 'vendor@gmail.com', 'vendor1', '53df0b3fab71cf99f7717b356f78e1a1:M37m29zkxKmcCTcU8VkJ5JgGnyuDeSpo', '2015-12-19 11:39:58', '2015-12-19 11:39:58', '2015-12-30 12:01:13', 2, 1, 1, 'N;', NULL, NULL),
 (3, 'aayush', 'khandpur', 'aayush.khandpur@metacube.com', 'aayushk', '8d58f47f1103baac2df6f46459719423:0S21TJYWnAf4xSug6FzBxLkcAi9sC6Sk', '2016-01-02 14:16:21', '2016-01-09 05:24:59', '2016-01-09 05:37:28', 3, 0, 1, 'N;', NULL, NULL),
 (4, 'kuldeep22', 'joshi', 'kkuldeepjoshi5@gmail.com', 'kuldeep', 'c303d33f5832313c7d09c846c72b77d8:tFpE7eSjTWrx5RJ7qqTaxJc5jRRFjddS', '2016-01-08 23:26:03', '2016-01-13 23:46:01', '2016-01-13 23:01:07', 5, 0, 1, 'N;', NULL, NULL),
@@ -865,7 +865,7 @@ INSERT INTO `rrcataloginventory_stock_item` (`item_id`, `product_id`, `stock_id`
 (1, 1, 1, '20.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, NULL, 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
 (2, 2, 1, '1.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, NULL, 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
 (3, 3, 1, '2.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, NULL, 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
-(4, 4, 1, '0.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 0, '2015-12-23 10:49:52', NULL, 1, 0, 1, 1, 1, '0.0000', 1, 0, 0),
+(4, 4, 1, '0.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 0, '2016-01-16 12:19:53', NULL, 1, 0, 1, 1, 1, '0.0000', 1, 0, 0),
 (5, 5, 1, '2.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, NULL, 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
 (6, 6, 1, '1.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, NULL, 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
 (7, 7, 1, '2.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, NULL, 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
@@ -1123,7 +1123,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalogsearch_fulltext` (
   PRIMARY KEY (`fulltext_id`),
   UNIQUE KEY `UNQ_RRCATALOGSEARCH_FULLTEXT_PRODUCT_ID_STORE_ID` (`product_id`,`store_id`),
   FULLTEXT KEY `FTI_RRCATALOGSEARCH_FULLTEXT_DATA_INDEX` (`data_index`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Catalog search result table' AUTO_INCREMENT=368 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Catalog search result table' AUTO_INCREMENT=376 ;
 
 --
 -- Dumping data for table `rrcatalogsearch_fulltext`
@@ -1145,7 +1145,7 @@ INSERT INTO `rrcatalogsearch_fulltext` (`fulltext_id`, `product_id`, `store_id`,
 (269, 10, 6, 'music2|None|gramphore|old style music|1000+ tuning and range of fz.|5000|1'),
 (270, 11, 6, 'comp1|None|commpressor|light wait power|200 hz and 3 phess|5200|1'),
 (345, 8, 11, 'photo_4|None|hd suite|power of digination|5000*5000 hd high acceptance|2000|1'),
-(350, 10, 10, 'music2|None|gramphore|old style music|1000+ tuning and range of fz.|5000|1'),
+(375, 10, 10, 'music2|None|gramphore|old style music|1000+ tuning and range of fz.|5000|1'),
 (289, 8, 9, 'photo_4|None|hd suite|power of digination|5000*5000 hd high acceptance|2000|1'),
 (290, 9, 9, 'music1|None|piyano|heart of music|20 hz, classic woodan|2000|1'),
 (77, 2, 8, 'bad123|None|double bad|2X2 wide and ful length|wooden and iron coating|500|1'),
@@ -1186,7 +1186,7 @@ INSERT INTO `rrcatalogsearch_fulltext` (`fulltext_id`, `product_id`, `store_id`,
 (348, 6, 10, 'vehical_3|None|bmw|conform and luxy|look and style|80000|1'),
 (347, 5, 10, 'venhical_1|None|hondai|luxy car|confort and look|50000|1'),
 (367, 2, 10, 'bad123|None|double bad|2X2 wide and ful length|wooden and iron coating|500|1'),
-(353, 11, 10, 'comp1|None|commpressor|light wait power|200 hz and 3 phess|5200|1'),
+(374, 11, 10, 'comp1|None|commpressor|light wait power|200 hz and 3 phess|5200|1'),
 (352, 12, 10, 'table2|None|vibrating table|civil instar=aumtnt|civil instraut|200|1'),
 (355, 13, 10, 'sofa1|None|sofa|comfort and rest|best quality with lader|200|1'),
 (365, 14, 10, 'tv2|None|LG (TV)|Brand: LG Screen size: 32 inch Installation: Table mount Color: Black|HD quality video 32 inch|200|1'),
@@ -1223,7 +1223,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalogsearch_query` (
 --
 
 INSERT INTO `rrcatalogsearch_query` (`query_id`, `query_text`, `num_results`, `popularity`, `redirect`, `synonym_for`, `store_id`, `display_in_terms`, `is_active`, `is_processed`, `updated_at`) VALUES
-(16, 'bmw', 1, 59, NULL, NULL, 10, 1, 1, 1, '2016-01-16 07:56:04'),
+(16, 'bmw', 1, 59, NULL, NULL, 10, 1, 1, 0, '2016-01-16 07:56:04'),
 (17, 'roo', 0, 1, NULL, NULL, 10, 1, 1, 0, '2015-12-23 11:17:41'),
 (18, 'jcb', 0, 3, NULL, NULL, 10, 1, 1, 0, '2015-12-23 11:54:12'),
 (19, 'piya', 0, 2, NULL, NULL, 10, 1, 1, 0, '2015-12-23 11:19:23'),
@@ -1264,13 +1264,6 @@ CREATE TABLE IF NOT EXISTS `rrcatalogsearch_result` (
   KEY `IDX_RRCATALOGSEARCH_RESULT_QUERY_ID` (`query_id`),
   KEY `IDX_RRCATALOGSEARCH_RESULT_PRODUCT_ID` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog search result table';
-
---
--- Dumping data for table `rrcatalogsearch_result`
---
-
-INSERT INTO `rrcatalogsearch_result` (`query_id`, `product_id`, `relevance`) VALUES
-(16, 6, '0.0000');
 
 -- --------------------------------------------------------
 
@@ -1353,7 +1346,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_category_entity` (
 INSERT INTO `rrcatalog_category_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `parent_id`, `created_at`, `updated_at`, `path`, `position`, `level`, `children_count`) VALUES
 (1, 3, 0, 0, '2015-12-08 14:06:19', '2015-12-08 14:06:19', '1', 0, 0, 20),
 (2, 3, 3, 1, '2015-12-08 20:36:20', '2015-12-23 10:44:29', '1/2', 1, 1, 19),
-(12, 3, 3, 2, '2015-12-19 12:44:22', '2016-01-09 04:43:04', '1/2/12', 1, 2, 6),
+(12, 3, 3, 2, '2015-12-19 13:14:22', '2016-01-16 12:14:14', '1/2/12', 1, 2, 6),
 (14, 3, 3, 2, '2015-12-19 08:13:57', '2015-12-28 12:09:14', '1/2/14', 2, 2, 5),
 (18, 3, 3, 2, '2015-12-19 08:47:48', '2015-12-28 12:09:52', '1/2/18', 3, 2, 5),
 (19, 3, 3, 12, '2015-12-28 11:57:19', '2015-12-28 11:57:19', '1/2/12/19', 1, 3, 0),
@@ -1391,7 +1384,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_category_entity_datetime` (
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_DATETIME_ENTITY_ID` (`entity_id`),
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_DATETIME_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_DATETIME_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Datetime Attribute Backend Table' AUTO_INCREMENT=103 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Datetime Attribute Backend Table' AUTO_INCREMENT=105 ;
 
 --
 -- Dumping data for table `rrcatalog_category_entity_datetime`
@@ -1503,7 +1496,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_category_entity_int` (
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_INT_ENTITY_ID` (`entity_id`),
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_INT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table' AUTO_INCREMENT=457 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table' AUTO_INCREMENT=459 ;
 
 --
 -- Dumping data for table `rrcatalog_category_entity_int`
@@ -1729,7 +1722,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_category_entity_text` (
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_TEXT_ENTITY_ID` (`entity_id`),
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_TEXT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_TEXT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Text Attribute Backend Table' AUTO_INCREMENT=518 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Text Attribute Backend Table' AUTO_INCREMENT=528 ;
 
 --
 -- Dumping data for table `rrcatalog_category_entity_text`
@@ -1956,7 +1949,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_category_entity_varchar` (
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`),
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_CATEGORY_ENTITY_VARCHAR_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Varchar Attribute Backend Table' AUTO_INCREMENT=793 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Varchar Attribute Backend Table' AUTO_INCREMENT=803 ;
 
 --
 -- Dumping data for table `rrcatalog_category_entity_varchar`
@@ -1976,7 +1969,7 @@ INSERT INTO `rrcatalog_category_entity_varchar` (`value_id`, `entity_type_id`, `
 (69, 3, 143, 0, 2, NULL),
 (70, 3, 146, 0, 2, NULL),
 (71, 3, 43, 0, 2, 'jaipur'),
-(259, 3, 41, 0, 12, 'electronics'),
+(259, 3, 41, 0, 12, 'Electronics'),
 (260, 3, 43, 0, 12, 'electronics'),
 (261, 3, 46, 0, 12, NULL),
 (262, 3, 49, 0, 12, 'PRODUCTS_AND_PAGE'),
@@ -2480,6 +2473,7 @@ INSERT INTO `rrcatalog_category_product` (`category_id`, `product_id`, `position
 (2, 16, 1),
 (2, 17, 1),
 (12, 1, 1),
+(12, 4, 1),
 (12, 7, 1),
 (12, 10, 1),
 (12, 14, 1),
@@ -2487,7 +2481,6 @@ INSERT INTO `rrcatalog_category_product` (`category_id`, `product_id`, `position
 (12, 16, 1),
 (12, 17, 1),
 (14, 2, 1),
-(14, 4, 1),
 (14, 12, 1),
 (14, 13, 1),
 (18, 3, 1),
@@ -2498,19 +2491,20 @@ INSERT INTO `rrcatalog_category_product` (`category_id`, `product_id`, `position
 (18, 11, 1),
 (19, 1, 0),
 (19, 14, 1),
-(20, 11, 0),
 (20, 15, 1),
 (21, 16, 1),
+(22, 4, 1),
 (22, 17, 1),
+(23, 10, 1),
 (25, 2, 0),
 (25, 13, 1),
 (26, 13, 1),
 (27, 12, 0),
-(28, 10, 0),
 (29, 8, 0),
 (31, 3, 0),
 (32, 5, 0),
 (33, 6, 0),
+(33, 11, 1),
 (34, 7, 0);
 
 -- --------------------------------------------------------
@@ -2548,13 +2542,11 @@ INSERT INTO `rrcatalog_category_product_index` (`category_id`, `product_id`, `po
 (2, 15, 1, 1, 10, 4),
 (2, 16, 1, 1, 10, 4),
 (2, 17, 1, 1, 10, 4),
-(12, 11, 120000, 0, 10, 4),
 (12, 10, 1, 1, 10, 4),
 (12, 14, 1, 1, 10, 4),
 (12, 15, 1, 1, 10, 4),
 (12, 16, 1, 1, 10, 4),
 (12, 17, 1, 1, 10, 4),
-(14, 10, 200000, 0, 10, 4),
 (14, 2, 1, 1, 10, 4),
 (14, 12, 1, 1, 10, 4),
 (14, 13, 1, 1, 10, 4),
@@ -2563,29 +2555,30 @@ INSERT INTO `rrcatalog_category_product_index` (`category_id`, `product_id`, `po
 (18, 9, 1, 1, 10, 4),
 (18, 11, 1, 1, 10, 4),
 (19, 14, 1, 1, 10, 4),
-(20, 11, 0, 1, 10, 4),
 (20, 15, 1, 1, 10, 4),
 (21, 16, 1, 1, 10, 4),
 (22, 17, 1, 1, 10, 4),
+(23, 10, 1, 1, 10, 4),
 (25, 2, 0, 1, 10, 4),
 (25, 13, 1, 1, 10, 4),
 (26, 13, 1, 1, 10, 4),
 (27, 12, 0, 1, 10, 4),
-(28, 10, 0, 1, 10, 4),
 (32, 5, 0, 1, 10, 4),
 (33, 6, 0, 1, 10, 4),
+(33, 11, 1, 1, 10, 4),
 (2, 1, 1, 1, 11, 4),
 (2, 3, 1, 1, 11, 4),
 (2, 4, 1, 1, 11, 4),
 (2, 7, 1, 1, 11, 4),
 (2, 8, 1, 1, 11, 4),
 (12, 1, 1, 1, 11, 4),
+(12, 4, 1, 1, 11, 4),
 (12, 7, 1, 1, 11, 4),
 (14, 8, 240000, 0, 11, 4),
-(14, 4, 1, 1, 11, 4),
 (18, 3, 1, 1, 11, 4),
 (18, 8, 1, 1, 11, 4),
 (19, 1, 0, 1, 11, 4),
+(22, 4, 1, 1, 11, 4),
 (29, 8, 0, 1, 11, 4),
 (31, 3, 0, 1, 11, 4),
 (34, 7, 0, 1, 11, 4);
@@ -2977,14 +2970,14 @@ INSERT INTO `rrcatalog_product_entity` (`entity_id`, `entity_type_id`, `attribut
 (1, 4, 4, 'simple', 'projector123', 0, 0, '2015-12-15 12:39:12', '2015-12-23 10:47:00'),
 (2, 4, 4, 'simple', 'bad123', 0, 0, '2015-12-16 01:17:37', '2016-01-14 08:33:35'),
 (3, 4, 4, 'simple', 'jcb123', 0, 0, '2015-12-15 21:22:31', '2015-12-23 10:48:42'),
-(4, 4, 4, 'simple', 'room_1', 0, 0, '2015-12-19 06:04:46', '2015-12-23 10:49:51'),
+(4, 4, 4, 'simple', 'room_1', 0, 0, '2015-12-19 06:34:46', '2016-01-16 12:19:52'),
 (5, 4, 4, 'simple', 'venhical_1', 0, 0, '2015-12-19 04:39:24', '2015-12-23 10:53:24'),
 (6, 4, 4, 'simple', 'vehical_3', 0, 0, '2015-12-19 04:42:56', '2015-12-23 10:54:29'),
 (7, 4, 4, 'simple', 'photo_1', 0, 0, '2015-12-19 04:17:07', '2015-12-23 10:54:01'),
 (8, 4, 4, 'simple', 'photo_4', 0, 0, '2015-12-19 03:49:16', '2015-12-23 10:50:19'),
 (9, 4, 4, 'simple', 'music1', 0, 0, '2015-12-19 06:53:33', '2015-12-23 11:40:46'),
-(10, 4, 4, 'simple', 'music2', 0, 0, '2015-12-19 06:26:25', '2015-12-25 01:39:35'),
-(11, 4, 4, 'simple', 'comp1', 0, 0, '2015-12-19 07:05:36', '2016-01-07 22:07:57'),
+(10, 4, 4, 'simple', 'music2', 0, 0, '2015-12-19 07:56:25', '2016-01-16 13:45:49'),
+(11, 4, 4, 'simple', 'comp1', 0, 0, '2015-12-19 09:35:36', '2016-01-16 12:48:13'),
 (12, 4, 4, 'simple', 'table2', 0, 0, '2015-12-19 07:39:35', '2015-12-25 00:21:08'),
 (13, 4, 4, 'simple', 'sofa1', 0, 0, '2016-01-07 23:09:22', '2016-01-09 05:25:02'),
 (14, 4, 4, 'simple', 'tv2', 0, 0, '2016-01-09 06:02:45', '2016-01-09 05:46:20'),
@@ -3010,7 +3003,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity_datetime` (
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DATETIME_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DATETIME_STORE_ID` (`store_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DATETIME_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Datetime Attribute Backend Table' AUTO_INCREMENT=331 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Datetime Attribute Backend Table' AUTO_INCREMENT=403 ;
 
 --
 -- Dumping data for table `rrcatalog_product_entity_datetime`
@@ -3196,7 +3189,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity_decimal` (
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DECIMAL_STORE_ID` (`store_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DECIMAL_ENTITY_ID` (`entity_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_DECIMAL_ATTRIBUTE_ID` (`attribute_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Decimal Attribute Backend Table' AUTO_INCREMENT=146 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Decimal Attribute Backend Table' AUTO_INCREMENT=174 ;
 
 --
 -- Dumping data for table `rrcatalog_product_entity_decimal`
@@ -3331,7 +3324,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity_int` (
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_INT_STORE_ID` (`store_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_INT_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Integer Attribute Backend Table' AUTO_INCREMENT=266 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Integer Attribute Backend Table' AUTO_INCREMENT=281 ;
 
 --
 -- Dumping data for table `rrcatalog_product_entity_int`
@@ -3581,7 +3574,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity_text` (
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_TEXT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_TEXT_STORE_ID` (`store_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_TEXT_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Text Attribute Backend Table' AUTO_INCREMENT=147 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Text Attribute Backend Table' AUTO_INCREMENT=167 ;
 
 --
 -- Dumping data for table `rrcatalog_product_entity_text`
@@ -3708,7 +3701,7 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_entity_varchar` (
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_VARCHAR_STORE_ID` (`store_id`),
   KEY `IDX_RRCATALOG_PRODUCT_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Varchar Attribute Backend Table' AUTO_INCREMENT=1324 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Varchar Attribute Backend Table' AUTO_INCREMENT=1429 ;
 
 --
 -- Dumping data for table `rrcatalog_product_entity_varchar`
@@ -4145,7 +4138,10 @@ INSERT INTO `rrcatalog_product_entity_varchar` (`value_id`, `entity_type_id`, `a
 (1299, 4, 113, 0, 17, NULL),
 (1300, 4, 114, 0, 17, NULL),
 (1301, 4, 98, 10, 17, 'window-ac.html'),
-(1302, 4, 98, 0, 17, 'window-ac.html');
+(1302, 4, 98, 0, 17, 'window-ac.html'),
+(1324, 4, 158, 0, 4, NULL),
+(1335, 4, 158, 0, 10, NULL),
+(1407, 4, 158, 10, 10, NULL);
 
 -- --------------------------------------------------------
 
@@ -4360,8 +4356,8 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_index_eav_tmp` (
 --
 
 INSERT INTO `rrcatalog_product_index_eav_tmp` (`entity_id`, `attribute_id`, `store_id`, `value`) VALUES
-(2, 121, 10, 0),
-(2, 121, 11, 0);
+(10, 121, 10, 0),
+(10, 121, 11, 0);
 
 -- --------------------------------------------------------
 
@@ -4920,10 +4916,10 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_index_price_tmp` (
 --
 
 INSERT INTO `rrcatalog_product_index_price_tmp` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`, `group_price`) VALUES
-(2, 0, 2, 0, '500.0000', '500.0000', '500.0000', '500.0000', NULL, NULL),
-(2, 1, 2, 0, '500.0000', '500.0000', '500.0000', '500.0000', NULL, NULL),
-(2, 2, 2, 0, '500.0000', '500.0000', '500.0000', '500.0000', NULL, NULL),
-(2, 3, 2, 0, '500.0000', '500.0000', '500.0000', '500.0000', NULL, NULL);
+(10, 0, 2, 0, '5000.0000', '5000.0000', '5000.0000', '5000.0000', NULL, NULL),
+(10, 1, 2, 0, '5000.0000', '5000.0000', '5000.0000', '5000.0000', NULL, NULL),
+(10, 2, 2, 0, '5000.0000', '5000.0000', '5000.0000', '5000.0000', NULL, NULL),
+(10, 3, 2, 0, '5000.0000', '5000.0000', '5000.0000', '5000.0000', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4960,8 +4956,8 @@ CREATE TABLE IF NOT EXISTS `rrcatalog_product_index_website` (
 --
 
 INSERT INTO `rrcatalog_product_index_website` (`website_id`, `website_date`, `rate`) VALUES
-(2, '2016-01-14', 1),
-(3, '2016-01-14', 1);
+(2, '2016-01-17', 1),
+(3, '2016-01-17', 1);
 
 -- --------------------------------------------------------
 
@@ -5518,7 +5514,7 @@ INSERT INTO `rrcms_page` (`page_id`, `title`, `root_template`, `meta_keywords`, 
 (5, 'Enable Cookies', 'one_column', NULL, NULL, 'enable-cookies', NULL, '<div class="std">\n    <ul class="messages">\n        <li class="notice-msg">\n            <ul>\n                <li>Please enable cookies in your web browser to continue.</li>\n            </ul>\n        </li>\n    </ul>\n    <div class="page-title">\n        <h1><a name="top"></a>What are Cookies?</h1>\n    </div>\n    <p>Cookies are short pieces of data that are sent to your computer when you visit a website.\n    On later visits, this data is then returned to that website. Cookies allow us to recognize you automatically\n    whenever you visit our site so that we can personalize your experience and provide you with better service.\n    We also use cookies (and similar browser data, such as Flash cookies) for fraud prevention and other purposes.\n     If your web browser is set to refuse cookies from our website, you will not be able to complete a purchase\n     or take advantage of certain features of our website, such as storing items in your Shopping Cart or\n     receiving personalized recommendations. As a result, we strongly encourage you to configure your web\n     browser to accept cookies from our website.</p>\n    <h2 class="subtitle">Enabling Cookies</h2>\n    <ul class="disc">\n        <li><a href="#ie7">Internet Explorer 7.x</a></li>\n        <li><a href="#ie6">Internet Explorer 6.x</a></li>\n        <li><a href="#firefox">Mozilla/Firefox</a></li>\n        <li><a href="#opera">Opera 7.x</a></li>\n    </ul>\n    <h3><a name="ie7"></a>Internet Explorer 7.x</h3>\n    <ol>\n        <li>\n            <p>Start Internet Explorer</p>\n        </li>\n        <li>\n            <p>Under the <strong>Tools</strong> menu, click <strong>Internet Options</strong></p>\n            <p><img src="{{skin url="images/cookies/ie7-1.gif"}}" alt="" /></p>\n        </li>\n        <li>\n            <p>Click the <strong>Privacy</strong> tab</p>\n            <p><img src="{{skin url="images/cookies/ie7-2.gif"}}" alt="" /></p>\n        </li>\n        <li>\n            <p>Click the <strong>Advanced</strong> button</p>\n            <p><img src="{{skin url="images/cookies/ie7-3.gif"}}" alt="" /></p>\n        </li>\n        <li>\n            <p>Put a check mark in the box for <strong>Override Automatic Cookie Handling</strong>,\n            put another check mark in the <strong>Always accept session cookies </strong>box</p>\n            <p><img src="{{skin url="images/cookies/ie7-4.gif"}}" alt="" /></p>\n        </li>\n        <li>\n            <p>Click <strong>OK</strong></p>\n            <p><img src="{{skin url="images/cookies/ie7-5.gif"}}" alt="" /></p>\n        </li>\n        <li>\n            <p>Click <strong>OK</strong></p>\n            <p><img src="{{skin url="images/cookies/ie7-6.gif"}}" alt="" /></p>\n        </li>\n        <li>\n            <p>Restart Internet Explore</p>\n        </li>\n    </ol>\n    <p class="a-top"><a href="#top">Back to Top</a></p>\n    <h3><a name="ie6"></a>Internet Explorer 6.x</h3>\n    <ol>\n        <li>\n            <p>Select <strong>Internet Options</strong> from the Tools menu</p>\n            <p><img src="{{skin url="images/cookies/ie6-1.gif"}}" alt="" /></p>\n        </li>\n        <li>\n            <p>Click on the <strong>Privacy</strong> tab</p>\n        </li>\n        <li>\n            <p>Click the <strong>Default</strong> button (or manually slide the bar down to <strong>Medium</strong>)\n            under <strong>Settings</strong>. Click <strong>OK</strong></p>\n            <p><img src="{{skin url="images/cookies/ie6-2.gif"}}" alt="" /></p>\n        </li>\n    </ol>\n    <p class="a-top"><a href="#top">Back to Top</a></p>\n    <h3><a name="firefox"></a>Mozilla/Firefox</h3>\n    <ol>\n        <li>\n            <p>Click on the <strong>Tools</strong>-menu in Mozilla</p>\n        </li>\n        <li>\n            <p>Click on the <strong>Options...</strong> item in the menu - a new window open</p>\n        </li>\n        <li>\n            <p>Click on the <strong>Privacy</strong> selection in the left part of the window. (See image below)</p>\n            <p><img src="{{skin url="images/cookies/firefox.png"}}" alt="" /></p>\n        </li>\n        <li>\n            <p>Expand the <strong>Cookies</strong> section</p>\n        </li>\n        <li>\n            <p>Check the <strong>Enable cookies</strong> and <strong>Accept cookies normally</strong> checkboxes</p>\n        </li>\n        <li>\n            <p>Save changes by clicking <strong>Ok</strong>.</p>\n        </li>\n    </ol>\n    <p class="a-top"><a href="#top">Back to Top</a></p>\n    <h3><a name="opera"></a>Opera 7.x</h3>\n    <ol>\n        <li>\n            <p>Click on the <strong>Tools</strong> menu in Opera</p>\n        </li>\n        <li>\n            <p>Click on the <strong>Preferences...</strong> item in the menu - a new window open</p>\n        </li>\n        <li>\n            <p>Click on the <strong>Privacy</strong> selection near the bottom left of the window. (See image below)</p>\n            <p><img src="{{skin url="images/cookies/opera.png"}}" alt="" /></p>\n        </li>\n        <li>\n            <p>The <strong>Enable cookies</strong> checkbox must be checked, and <strong>Accept all cookies</strong>\n            should be selected in the &quot;<strong>Normal cookies</strong>&quot; drop-down</p>\n        </li>\n        <li>\n            <p>Save changes by clicking <strong>Ok</strong></p>\n        </li>\n    </ol>\n    <p class="a-top"><a href="#top">Back to Top</a></p>\n</div>\n', '2015-12-08 14:05:53', '2015-12-08 14:05:53', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL),
 (6, 'Privacy Policy', 'one_column', NULL, NULL, 'privacy-policy-cookie-restriction-mode', 'Privacy Policy', '<p style="color: #ff0000; font-weight: bold; font-size: 13px">\n    Please replace this text with you Privacy Policy.\n    Please add any additional cookies your website uses below (e.g., Google Analytics)\n</p>\n<p>\n    This privacy policy sets out how {{config path="general/store_information/name"}} uses and protects any information\n    that you give {{config path="general/store_information/name"}} when you use this website.\n    {{config path="general/store_information/name"}} is committed to ensuring that your privacy is protected.\n    Should we ask you to provide certain information by which you can be identified when using this website,\n    then you can be assured that it will only be used in accordance with this privacy statement.\n    {{config path="general/store_information/name"}} may change this policy from time to time by updating this page.\n    You should check this page from time to time to ensure that you are happy with any changes.\n</p>\n<h2>What we collect</h2>\n<p>We may collect the following information:</p>\n<ul>\n    <li>name</li>\n    <li>contact information including email address</li>\n    <li>demographic information such as postcode, preferences and interests</li>\n    <li>other information relevant to customer surveys and/or offers</li>\n</ul>\n<p>\n    For the exhaustive list of cookies we collect see the <a href="#list">List of cookies we collect</a> section.\n</p>\n<h2>What we do with the information we gather</h2>\n<p>\n    We require this information to understand your needs and provide you with a better service,\n    and in particular for the following reasons:\n</p>\n<ul>\n    <li>Internal record keeping.</li>\n    <li>We may use the information to improve our products and services.</li>\n    <li>\n        We may periodically send promotional emails about new products, special offers or other information which we\n        think you may find interesting using the email address which you have provided.\n    </li>\n    <li>\n        From time to time, we may also use your information to contact you for market research purposes.\n        We may contact you by email, phone, fax or mail. We may use the information to customise the website\n        according to your interests.\n    </li>\n</ul>\n<h2>Security</h2>\n<p>\n    We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure,\n    we have put in place suitable physical, electronic and managerial procedures to safeguard and secure\n    the information we collect online.\n</p>\n<h2>How we use cookies</h2>\n<p>\n    A cookie is a small file which asks permission to be placed on your computer''s hard drive.\n    Once you agree, the file is added and the cookie helps analyse web traffic or lets you know when you visit\n    a particular site. Cookies allow web applications to respond to you as an individual. The web application\n    can tailor its operations to your needs, likes and dislikes by gathering and remembering information about\n    your preferences.\n</p>\n<p>\n    We use traffic log cookies to identify which pages are being used. This helps us analyse data about web page traffic\n    and improve our website in order to tailor it to customer needs. We only use this information for statistical\n    analysis purposes and then the data is removed from the system.\n</p>\n<p>\n    Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find useful\n    and which you do not. A cookie in no way gives us access to your computer or any information about you,\n    other than the data you choose to share with us. You can choose to accept or decline cookies.\n    Most web browsers automatically accept cookies, but you can usually modify your browser setting\n    to decline cookies if you prefer. This may prevent you from taking full advantage of the website.\n</p>\n<h2>Links to other websites</h2>\n<p>\n    Our website may contain links to other websites of interest. However, once you have used these links\n    to leave our site, you should note that we do not have any control over that other website.\n    Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst\n    visiting such sites and such sites are not governed by this privacy statement.\n    You should exercise caution and look at the privacy statement applicable to the website in question.\n</p>\n<h2>Controlling your personal information</h2>\n<p>You may choose to restrict the collection or use of your personal information in the following ways:</p>\n<ul>\n    <li>\n        whenever you are asked to fill in a form on the website, look for the box that you can click to indicate\n        that you do not want the information to be used by anybody for direct marketing purposes\n    </li>\n    <li>\n        if you have previously agreed to us using your personal information for direct marketing purposes,\n        you may change your mind at any time by writing to or emailing us at\n        {{config path="trans_email/ident_general/email"}}\n    </li>\n</ul>\n<p>\n    We will not sell, distribute or lease your personal information to third parties unless we have your permission\n    or are required by law to do so. We may use your personal information to send you promotional information\n    about third parties which we think you may find interesting if you tell us that you wish this to happen.\n</p>\n<p>\n    You may request details of personal information which we hold about you under the Data Protection Act 1998.\n    A small fee will be payable. If you would like a copy of the information held on you please write to\n    {{config path="general/store_information/address"}}.\n</p>\n<p>\n    If you believe that any information we are holding on you is incorrect or incomplete,\n    please write to or email us as soon as possible, at the above address.\n    We will promptly correct any information found to be incorrect.\n</p>\n<h2><a name="list"></a>List of cookies we collect</h2>\n<p>The table below lists the cookies we collect and what information they store.</p>\n<table class="data-table">\n    <thead>\n        <tr>\n            <th>COOKIE name</th>\n            <th>COOKIE Description</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <th>CART</th>\n            <td>The association with your shopping cart.</td>\n        </tr>\n        <tr>\n            <th>CATEGORY_INFO</th>\n            <td>Stores the category info on the page, that allows to display pages more quickly.</td>\n        </tr>\n        <tr>\n            <th>COMPARE</th>\n            <td>The items that you have in the Compare Products list.</td>\n        </tr>\n        <tr>\n            <th>CURRENCY</th>\n            <td>Your preferred currency</td>\n        </tr>\n        <tr>\n            <th>CUSTOMER</th>\n            <td>An encrypted version of your customer id with the store.</td>\n        </tr>\n        <tr>\n            <th>CUSTOMER_AUTH</th>\n            <td>An indicator if you are currently logged into the store.</td>\n        </tr>\n        <tr>\n            <th>CUSTOMER_INFO</th>\n            <td>An encrypted version of the customer group you belong to.</td>\n        </tr>\n        <tr>\n            <th>CUSTOMER_SEGMENT_IDS</th>\n            <td>Stores the Customer Segment ID</td>\n        </tr>\n        <tr>\n            <th>EXTERNAL_NO_CACHE</th>\n            <td>A flag, which indicates whether caching is disabled or not.</td>\n        </tr>\n        <tr>\n            <th>FRONTEND</th>\n            <td>You sesssion ID on the server.</td>\n        </tr>\n        <tr>\n            <th>GUEST-VIEW</th>\n            <td>Allows guests to edit their orders.</td>\n        </tr>\n        <tr>\n            <th>LAST_CATEGORY</th>\n            <td>The last category you visited.</td>\n        </tr>\n        <tr>\n            <th>LAST_PRODUCT</th>\n            <td>The most recent product you have viewed.</td>\n        </tr>\n        <tr>\n            <th>NEWMESSAGE</th>\n            <td>Indicates whether a new message has been received.</td>\n        </tr>\n        <tr>\n            <th>NO_CACHE</th>\n            <td>Indicates whether it is allowed to use cache.</td>\n        </tr>\n        <tr>\n            <th>PERSISTENT_SHOPPING_CART</th>\n            <td>A link to information about your cart and viewing history if you have asked the site.</td>\n        </tr>\n        <tr>\n            <th>POLL</th>\n            <td>The ID of any polls you have recently voted in.</td>\n        </tr>\n        <tr>\n            <th>POLLN</th>\n            <td>Information on what polls you have voted on.</td>\n        </tr>\n        <tr>\n            <th>RECENTLYCOMPARED</th>\n            <td>The items that you have recently compared.            </td>\n        </tr>\n        <tr>\n            <th>STF</th>\n            <td>Information on products you have emailed to friends.</td>\n        </tr>\n        <tr>\n            <th>STORE</th>\n            <td>The store view or language you have selected.</td>\n        </tr>\n        <tr>\n            <th>USER_ALLOWED_SAVE_COOKIE</th>\n            <td>Indicates whether a customer allowed to use cookies.</td>\n        </tr>\n        <tr>\n            <th>VIEWED_PRODUCT_IDS</th>\n            <td>The products that you have recently viewed.</td>\n        </tr>\n        <tr>\n            <th>WISHLIST</th>\n            <td>An encrypted list of products added to your Wishlist.</td>\n        </tr>\n        <tr>\n            <th>WISHLIST_CNT</th>\n            <td>The number of items in your Wishlist.</td>\n        </tr>\n    </tbody>\n</table>', '2015-12-08 14:05:54', '2015-12-08 14:05:54', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL),
 (7, '404 Not Found', 'one_column', 'Page keywords', 'Page description', 'weltpixel_no-route', NULL, '\n<style scoped>\n.search-form { width:50%; margin: 0 auto; }\n.form .field { display: block; width: 80%;  background: none; margin-right: 1%; padding: 8px 18px; padding: 0.53333rem 1.2rem; border: 1px solid #818181; float: left;}\n.form .submit { padding: 9px 18px; padding: 0.6rem 1.2rem;  color: white; text-align: center; }\n</style>\n\n<h1 style="text-align: center; padding-top: 100px; font: 200px/200px ''Brandon Medium'';">404</h1>\n<p style="text-align:center; text-transform:uppercase; font: 30px/20px ''Brandon Medium'';">Oops! That page can’t be found.</p>\n<p style="text-align:center; padding-top: 50px; text-transform:uppercase; font: 16px/20px ''Brandon Medium'';">This may be because of a mistyped URL, faulty referral or out-of-date search engine listing. <br> You might want to check that URL again or head over to our <a href="{{config path="web/unsecure/base_url"}}">homepage or maybe do a search?</a>\n<br/>\n<br/>\n<div class="search-form">\n	<div class="form">\n		<form method="get" id="searchform" class="form-search" action="{{config path="web/unsecure/base_url"}}/catalogsearch/result/" role="search">\n			\n			<input type="text" class="field input-medium search-query" name="q" value="" id="q" placeholder="Search …">\n			<button class="button submit" name="submit" id="searchsubmit">Search</button>\n		</form>\n	</div>				\n</div>\n<br/>\n<br/>\n<p style="text-align:center; padding-top: 50px; text-transform:uppercase; font: 16px/20px ''Brandon Medium'';">\nWERE YOU LOOKING FOR SOMETHING SPECIAL?<br>\nHere are some suggestions that you might like....</p>\n\n<!-- FEATURED PRODUCTS BLOCK BEGIN -->\n{{block type="weltpixel/product_list" category_id="13" num_products="5" title="Featured Products" template="catalog/product/featured_products.phtml"}}\n<!-- FEATURED PRODUCTS BLOCK END -->\n\n<!-- NEW PRODUCTS BLOCK BEGIN -->\n{{block type="weltpixel/product_new" num_products="5" title="New Products" template="catalog/product/new_products.phtml"}}\n<!-- NEW PRODUCTS BLOCK END -->\n\n', '2015-12-08 15:00:18', '2015-12-08 15:00:18', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 'RentRam- One stop renting solutions', 'one_column', NULL, NULL, 'weltpixel_home', NULL, '<style><!--\r\n.white-bg {\r\n    background: #fff none repeat scroll 0 0;\r\n    padding: 90px 0;\r\n}\r\n--></style>\r\n<section id="slider" class="slider-parallax">{{widget type="revslider/slider_preview" id="1"}}</section>\r\n<!-- PARALLAX SECTION BEGIN -->\r\n<div class="container clearfix">\r\n<div class="w content-wrap">\r\n<div class="col_one_third bottommargin-lg">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media"><img class="image-fade" alt="Image" src="{{skin url=''media/cleo/v1/home-furnishing.jpg ''}}" /></div>\r\n<div class="fbox-desc" style="font-size: 33px !important;">{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="23"}} <!--<h3><span class="subtitle">HOME</span> FURNISHING</h3>-->\r\n<p><a style="font-weight: 900;" class="btn btn-default" href="{{store url=''home-furnishing.html''}}">FURNISHING</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media"><img class="image-fade" alt="Image" src="{{skin url=''media/cleo/v1/kitchen-appliances.jpg''}}" /></div>\r\n<div class="fbox-desc" style="font-size: 33px !important;">{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="24"}}<!--<h3><span class="subtitle">ELECTROINC</span> APPLIANCES</h3>-->\r\n<p><a style="font-weight: 900;"  class="btn btn-default" href="{{store url=''electronics.html''}}">ELECTROINCS</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg col_last">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media"><img class="image-fade" alt="Image" src="{{skin url=''media/cleo/v1/construction-site.jpg''}}" /></div>\r\n<div class="fbox-desc" style="font-size: 33px !important;">{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="25"}}<!--<h3><span class="subtitle">CONSTRUCTION</span>MACHINE</h3>-->\r\n<p><a style="font-weight: 900;"  class="btn btn-default" href="{{store url=''machanical.html''}}">MACHINERY</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="clear">&nbsp;</div>\r\n</div>\r\n</div>\r\n<div style="background: #99BADD;">\r\n<div class="container-fluid">\r\n<div class="w">\r\n<div class="center">\r\n<h3>how it works</h3>\r\n</div>\r\n<div class="col_one_third bottommargin-lg">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media center" ><img style="display:inline !important; width:40% !important;" class="image-fade  image-responsive center" alt="search-product" src="{{skin url=''media/cleo/v1/browse.png''}}" /></div>\r\n<h3><span class="subtitle">Browse/Search your Product</span></h3>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media center"><img style="display:inline !important; width:40% !important;" class="image-fade  image-responsive center" alt="Finalize-pay" src="{{skin url=''media/cleo/v1/bank.png''}}" /></div>\r\n<h3><span class="subtitle">Finalize &amp; Pay</span></h3>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg col_last">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media center"><img style="display:inline !important; width:40% !important;" class="image-fade  image-responsive center" alt="delivery" src="{{skin url=''media/cleo/v1/delivery.png''}}" /></div>\r\n<h3><span class="subtitle">Receive your Product</span></h3>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<section id="products">{{block type="weltpixel/product_list" category_id="12" num_products="15" title="Featured Products" template="catalog/product/featured_products.phtml"}}</section>\r\n<section id="products">{{block type="weltpixel/product_list" category_id="14" num_products="15" title="Featured Products" template="catalog/product/featured_products.phtml"}}</section>\r\n<section id="products">{{block type="weltpixel/product_list" category_id="16" num_products="15" title="Featured Products" template="catalog/product/featured_products.phtml"}}</section>', '2015-12-08 15:00:19', '2016-01-16 08:19:49', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 'RentRam- One stop renting solutions', 'one_column', NULL, NULL, 'weltpixel_home', NULL, '<style><!--\r\n.white-bg {\r\n    background: #fff none repeat scroll 0 0;\r\n    padding: 90px 0;\r\n}\r\n--></style>\r\n<section id="slider" class="slider-parallax">{{widget type="revslider/slider_preview" id="1"}}</section>\r\n<!-- PARALLAX SECTION BEGIN -->\r\n<div class="container clearfix">\r\n<div class="w content-wrap">\r\n<div class="col_one_third bottommargin-lg">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media"><img class="image-fade" alt="Image" src="{{skin url=''media/cleo/v1/home-furnishing.jpg ''}}" /></div>\r\n<div class="fbox-desc" style="font-size: 33px !important;">{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="23"}} <!--<h3><span class="subtitle">HOME</span> FURNISHING</h3>-->\r\n<p><a style="font-weight: 900;" class="btn btn-default" href="{{store url=''home-furnishing.html''}}">FURNISHING</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media"><img class="image-fade" alt="Image" src="{{skin url=''media/cleo/v1/kitchen-appliances.jpg''}}" /></div>\r\n<div class="fbox-desc" style="font-size: 33px !important;">{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="24"}}<!--<h3><span class="subtitle">ELECTROINC</span> APPLIANCES</h3>-->\r\n<p><a style="font-weight: 900;"  class="btn btn-default" href="{{store url=''electronics.html''}}">ELECTROINCS</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg col_last">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media"><img class="image-fade" alt="Image" src="{{skin url=''media/cleo/v1/construction-site.jpg''}}" /></div>\r\n<div class="fbox-desc" style="font-size: 33px !important;">{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="25"}}<!--<h3><span class="subtitle">CONSTRUCTION</span>MACHINE</h3>-->\r\n<p><a style="font-weight: 900;"  class="btn btn-default" href="{{store url=''machanical.html''}}">MACHINERY</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="clear">&nbsp;</div>\r\n</div>\r\n</div>\r\n<div style="background: #99BADD;">\r\n<div class="container-fluid">\r\n<div class="w">\r\n<div class="center">\r\n<h3>how it works</h3>\r\n</div>\r\n<div class="col_one_third bottommargin-lg">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media center" ><img style="display:inline !important; width:40% !important;" class="image-fade  image-responsive center" alt="search-product" src="{{skin url=''media/cleo/v1/browse.png''}}" /></div>\r\n<h3><span class="subtitle">Browse/Search your Product</span></h3>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media center"><img style="display:inline !important; width:40% !important;" class="image-fade  image-responsive center" alt="Finalize-pay" src="{{skin url=''media/cleo/v1/bank.png''}}" /></div>\r\n<h3><span class="subtitle">Finalize &amp; Pay</span></h3>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg col_last">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media center"><img style="display:inline !important; width:40% !important;" class="image-fade  image-responsive center" alt="delivery" src="{{skin url=''media/cleo/v1/delivery.png''}}" /></div>\r\n<h3><span class="subtitle">Receive your Product</span></h3>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<section id="products">{{block type="weltpixel/product_list" category_id="12" num_products="15" title="Electronics Featured Products" template="catalog/product/featured_products.phtml"}}</section>\r\n<section id="products">{{block type="weltpixel/product_list" category_id="14" num_products="15" title="Furnishing Featured Products" template="catalog/product/featured_products.phtml"}}</section>\r\n<section id="products">{{block type="weltpixel/product_list" category_id="18" num_products="15" title="Machinery Featured Products" template="catalog/product/featured_products.phtml"}}</section>', '2015-12-08 15:00:19', '2016-01-16 12:15:13', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL),
 (9, 'Cleo Home Page V3', 'full_screen', NULL, NULL, 'weltpixel_home_v3', NULL, '<style><!--\r\n.owl-item img {\r\n  width: 100%;\r\n}\r\n\r\n.featured-box {\r\n  margin-top: 0;\r\n  padding:0;\r\n}\r\n\r\n.featured-box-overlay {\r\nmargin:0;\r\n}\r\n\r\n\r\n.owl-theme .owl-controls .owl-buttons div, .owl-theme .owl-controls .owl-buttons i { margin:0; }\r\n\r\n.owl-controls.clickable {\r\n  top: 50%;\r\n}\r\n--></style>\r\n<section id="slider" class="slider-parallax-off">\r\n<div id="owl-fashion-slider" class="owl-carousel"><a href="#"><img class="image-fade" alt="Slider" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/b1.jpg" /></a> <a href="#"><img class="image-fade" alt="Slider" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/b2.jpg" /></a> <a href="#"><img class="image-fade" alt="Slider" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/b3.jpg" /></a> <a href="#"><img class="image-fade" alt="Slider" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/b4.jpg" /></a> <a href="#"><img class="image-fade" alt="Slider" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/b5.jpg" /></a> <a href="#"><img class="image-fade" alt="Slider" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/b6.jpg" /></a></div>\r\n<script type="text/javascript">// <![CDATA[\r\njQuery(document).ready(function($) {\r\n            var owl = $("#owl-fashion-slider");\r\n            owl.owlCarousel({\r\n                items: 4,\r\n                pagination: false,\r\n                navigation: true,\r\n                rewindNav: true,\r\n                itemsDesktopSmall : [979,5],\r\n                itemsMobile : [479,2],\r\n                navigationText: [\r\n                    ''<i class="ion-ios7-arrow-left"></i>'',\r\n                    ''<i class="ion-ios7-arrow-right"></i>''\r\n                ]\r\n            });\r\n        });\r\n// ]]></script>\r\n</section>\r\n<!-- Content\r\n        ============================================= -->\r\n<section id="content">\r\n<div class="content-wrap">\r\n<div class="container clearfix">\r\n<div class="col_two_third bottommargin-lg">\r\n<div class="fslider" data-arrows="false">\r\n<div class="flexslider">\r\n<div class="slider-wrap">\r\n<div class="slide"><a href="#"> <img alt="Shop Image" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/s2.jpg" /> </a></div>\r\n<div class="slide"><a href="#"> <img alt="Shop Image" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/s1.jpg" /> </a></div>\r\n<div class="slide"><a href="#"> <img alt="Shop Image" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/s3.jpg" /> </a></div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg col_last">\r\n<div class="featured-box col-sm-12 col-xs-12">\r\n<div class="featured-box-content"><img style="width: 100%;" alt="Tech Shop" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/tech-shop.jpg" /></div>\r\n<div class="featured-box-overlay"><span class="featured-box-subtitle">Explore</span> <span class="featured-box-title">The Tech Shop</span></div>\r\n</div>\r\n</div>\r\n<div class="clear">&nbsp;</div>\r\n</div>\r\n<div class="promo parallax promo-full bottommargin-lg" style="background-color: #fafafa;" data-stellar-background-ratio="0.4">\r\n<div class="container clearfix">\r\n<h3>Get <span>30%</span> off on orders of $29 or more. Use Coupon: <span>SHOP30</span></h3>\r\n<span>Sale available on selected Designer Brands that include Apparels, Footwear, Fashion Accessories &amp; Watches.</span> <a class="wp-button wp-button-large" href="#">Start Shopping</a></div>\r\n</div>\r\n<div class="container clearfix">\r\n<div class="col_one_third bottommargin-lg">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media"><img class="image-fade" alt="Image" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/shoes-h3.jpg" /></div>\r\n<div class="fbox-desc">\r\n<h3>Footwear<span class="subtitle">Flat 50% Off*</span></h3>\r\n<p><a class="btn btn-default" href="#">Shop Now</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media"><img class="image-fade" alt="Image" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/new-h3.jpg" /></div>\r\n<div class="fbox-desc">\r\n<h3>Latest Product Arrivals<span class="subtitle">New Dress Designs Available</span></h3>\r\n<p><a class="btn btn-default" href="#">Check New Arrivals</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="col_one_third bottommargin-lg col_last">\r\n<div class="feature-box center media-box fbox-bg">\r\n<div class="fbox-media"><img class="image-fade" alt="Image" src="http://cleo.weltpixel.com/skin/frontend/cleo/default/media/cleo/v1/accessories-h3.jpg" /></div>\r\n<div class="fbox-desc">\r\n<h3>The Style Blog<span class="subtitle">Fashion Tips from Experts</span></h3>\r\n<p><a class="btn btn-default" href="#">Browse Videos</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="clear">&nbsp;</div>\r\n</div>\r\n</div>\r\n</section>\r\n<!-- #content end -->\r\n<p>&nbsp;</p>', '2015-12-08 15:11:54', '2015-12-24 03:34:39', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL),
 (10, 'Cleo Home Page V4', 'full_screen', NULL, NULL, 'weltpixel_home_v4', NULL, '<style>\r\n.content-wrap .footer-stick { margin-bottom: 0px !important; }\r\n.entry-image.parallax.fullscreen.nobottommargin { background-position-y: 50%;   border-bottom: 0px solid #fff;}\r\n\r\n\r\n.icon-angle-down {\r\n  position: fixed;\r\n  font-size: 50px;\r\n  color: red;\r\n  text-align: center;\r\n  bottom: 100px;\r\n  right: 0;\r\n  left: 0;\r\n  z-index: 1000;\r\n}\r\n\r\n.buy-now-button {\r\n  right: 10px;\r\n  position: absolute;\r\n  bottom: 10px;\r\n}\r\n\r\n</style>\r\n\r\n\r\n\r\n\r\n        <section id="content">\r\n\r\n            <div class="content-wrap">\r\n\r\n<i class="icon-angle-down infinite animated fadeInDown"></i>\r\n\r\n                <div id="shop-categories" class="header-stick footer-stick clearfix">\r\n                    <div class="entry-image parallax fullscreen nobottommargin" style="background-size: cover; background-image: url(''{{skin url=''media/cleo/v1//supercolor/pharrell-superstar.jpg''}}'');  height: 1000px;"  ></div>\r\n                    <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal(''http://cleo.weltpixel.com/fashion_v2/weltpixel_quickview/ajax_catalog_product/view/id/888/'');" class="quickview "><div class="entry-image parallax fullscreen nobottommargin" style="background-image: url(''{{skin url=''media/cleo/v1//supercolor/adidas-supercolor.jpg''}}'');  height: 1000px;"  ><div class="buy-now-button"><span class="wp-button wp-button-mini wp-button-border wp-button-rounded">Buy Now</span></div></div></a>\r\n\r\n                    <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal(''http://cleo.weltpixel.com/fashion_v2/weltpixel_quickview/ajax_catalog_product/view/id/889/'');" class="quickview "><div class="entry-image parallax fullscreen nobottommargin" style="background-image: url(''{{skin url=''media/cleo/v1//supercolor/adidas-supercolor-3.jpg''}}'');  height:1000px;"  ><div class="buy-now-button"><span class="wp-button wp-button-mini wp-button-border wp-button-rounded">Buy Now</span></div></div></a>\r\n\r\n                    <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal(''http://cleo.weltpixel.com/fashion_v2/weltpixel_quickview/ajax_catalog_product/view/id/890/'');" class="quickview "><div class="entry-image parallax fullscreen nobottommargin" style="background-image: url(''{{skin url=''media/cleo/v1//supercolor/adidas-supercolor-4.jpg''}}'');  height: 1000px;"  ><div class="buy-now-button"><span class="wp-button wp-button-mini wp-button-border wp-button-rounded">Buy Now</span></div></div></a>\r\n\r\n                    <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal(''http://cleo.weltpixel.com/fashion_v2/weltpixel_quickview/ajax_catalog_product/view/id/891/'');" class="quickview "><div class="entry-image parallax fullscreen nobottommargin" style="background-image: url(''{{skin url=''media/cleo/v1//supercolor/adidas-supercolor-5.jpg''}}'');  height: 1000px;"  ><div class="buy-now-button"><span class="wp-button wp-button-mini wp-button-border wp-button-rounded">Buy Now</span></div></div></a>\r\n\r\n                    <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal(''http://cleo.weltpixel.com/fashion_v2/weltpixel_quickview/ajax_catalog_product/view/id/892/'');" class="quickview "><div class="entry-image parallax fullscreen nobottommargin" style="background-image: url(''{{skin url=''media/cleo/v1//supercolor/adidas-supercolor-6.jpg''}}'');  height: 1000px;"  ><div class="buy-now-button"><span class="wp-button wp-button-mini wp-button-border wp-button-rounded">Buy Now</span></div></div></a>\r\n\r\n                    <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal(''http://cleo.weltpixel.com/fashion_v2/weltpixel_quickview/ajax_catalog_product/view/id/893/'');" class="quickview "><div class="entry-image parallax fullscreen nobottommargin" style="background-image: url(''{{skin url=''media/cleo/v1//supercolor/adidas-supercolor-7.jpg''}}'');  height: 1000px;"  ><div class="buy-now-button"><span class="wp-button wp-button-mini wp-button-border wp-button-rounded">Buy Now</span></div></div></a>\r\n\r\n                    <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal(''http://cleo.weltpixel.com/fashion_v2/weltpixel_quickview/ajax_catalog_product/view/id/894/'');" class="quickview "><div class="entry-image parallax fullscreen nobottommargin" style="background-image: url(''{{skin url=''media/cleo/v1//supercolor/adidas-supercolor-8.jpg''}}'');  height: 1000px;"  ><div class="buy-now-button"><span class="wp-button wp-button-mini wp-button-border wp-button-rounded">Buy Now</span></div></div></a>\r\n\r\n                    <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal(''http://cleo.weltpixel.com/fashion_v2/weltpixel_quickview/ajax_catalog_product/view/id/895/'');" class="quickview "><div class="entry-image parallax fullscreen nobottommargin" style="background-image: url(''{{skin url=''media/cleo/v1//supercolor/adidas-supercolor-9.jpg''}}'');  height: 1000px;"  ><div class="buy-now-button"><span class="wp-button wp-button-mini wp-button-border wp-button-rounded">Buy Now</span></div></div></a>\r\n\r\n                    <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal(''http://cleo.weltpixel.com/fashion_v2/weltpixel_quickview/ajax_catalog_product/view/id/896/'');" class="quickview "><div class="entry-image parallax fullscreen nobottommargin" style="background-image: url(''{{skin url=''media/cleo/v1//supercolor/adidas-supercolor-10.jpg''}}''); height: 1000px;"  ><div class="buy-now-button"><span class="wp-button wp-button-mini wp-button-border wp-button-rounded">Buy Now</span></div></div></a>\r\n\r\n                </div>\r\n\r\n<div class="w center">\r\n<img src="{{skin url=''media/cleo/v1//supercolor/adidas-pharrell-logo.png''}}" class="allmargin">\r\n<div class="section yt-bg-player nomargin dark" data-animate="fadeIn"  data-quality="hd1080" data-start="0" data-stop="0" data-video="https://youtu.be/nH5BILAPmtI" style="height: 550px;"></div>\r\n</div>\r\n\r\n            </div>\r\n\r\n        </section><!-- #content end -->', '2015-12-08 15:11:55', '2015-12-08 15:11:55', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `rrcms_page` (`page_id`, `title`, `root_template`, `meta_keywords`, `meta_description`, `identifier`, `content_heading`, `content`, `creation_time`, `update_time`, `is_active`, `sort_order`, `layout_update_xml`, `custom_theme`, `custom_root_template`, `custom_layout_update_xml`, `custom_theme_from`, `custom_theme_to`) VALUES
@@ -6515,7 +6511,7 @@ CREATE TABLE IF NOT EXISTS `rrcore_url_rewrite` (
   KEY `IDX_RRCORE_URL_REWRITE_STORE_ID` (`store_id`),
   KEY `FK_RRCORE_URL_REWRITE_CTGR_ID_RRCAT_CTGR_ENTT_ENTT_ID` (`category_id`),
   KEY `FK_RRCORE_URL_REWRITE_PRD_ID_RRCAT_CTGR_ENTT_ENTT_ID` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=1146 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=1162 ;
 
 --
 -- Dumping data for table `rrcore_url_rewrite`
@@ -6529,13 +6525,11 @@ INSERT INTO `rrcore_url_rewrite` (`url_rewrite_id`, `store_id`, `id_path`, `requ
 (680, 10, 'product/12/14', 'home-furnishing/vibrating-table.html', 'catalog/product/view/id/12/category/14', 1, NULL, NULL, 14, 12),
 (681, 11, 'product/1', 'projector.html', 'catalog/product/view/id/1', 1, NULL, NULL, NULL, 1),
 (682, 11, 'product/1/12', 'electronics/projector.html', 'catalog/product/view/id/1/category/12', 1, NULL, NULL, 12, 1),
-(684, 10, 'product/11/18', 'machanical/commpressor.html', 'catalog/product/view/id/11/category/18', 1, NULL, NULL, 18, 11),
 (685, 10, 'product/2', 'double-bad.html', 'catalog/product/view/id/2', 1, NULL, NULL, NULL, 2),
 (686, 10, 'product/2/14', 'home-furnishing/double-bad.html', 'catalog/product/view/id/2/category/14', 1, NULL, NULL, 14, 2),
 (687, 11, 'product/3', 'jsb.html', 'catalog/product/view/id/3', 1, NULL, NULL, NULL, 3),
 (688, 11, 'product/3/18', 'machanical/jsb.html', 'catalog/product/view/id/3/category/18', 1, NULL, NULL, 18, 3),
 (691, 11, 'product/4', 'room-ac.html', 'catalog/product/view/id/4', 1, NULL, NULL, NULL, 4),
-(692, 11, 'product/4/14', 'home-furnishing/room-ac.html', 'catalog/product/view/id/4/category/14', 1, NULL, NULL, 14, 4),
 (693, 11, 'product/8', 'hd-suite.html', 'catalog/product/view/id/8', 1, NULL, NULL, NULL, 8),
 (694, 11, 'product/8/18', 'machanical/hd-suite.html', 'catalog/product/view/id/8/category/18', 1, NULL, NULL, 18, 8),
 (695, 10, 'product/5', 'hondai.html', 'catalog/product/view/id/5', 1, NULL, NULL, NULL, 5),
@@ -6557,7 +6551,6 @@ INSERT INTO `rrcore_url_rewrite` (`url_rewrite_id`, `store_id`, `id_path`, `requ
 (736, 10, 'category/19', 'electronics/television-tv.html', 'catalog/category/view/id/19', 1, NULL, NULL, 19, NULL),
 (737, 11, 'category/20', 'electronics/fridge-refrigerator.html', 'catalog/category/view/id/20', 1, NULL, NULL, 20, NULL),
 (738, 10, 'category/20', 'electronics/fridge-refrigerator.html', 'catalog/category/view/id/20', 1, NULL, NULL, 20, NULL),
-(740, 10, 'product/11/20', 'electronics/fridge-refrigerator/commpressor.html', 'catalog/product/view/id/11/category/20', 1, NULL, NULL, 20, 11),
 (741, 11, 'category/21', 'electronics/washing-machine.html', 'catalog/category/view/id/21', 1, NULL, NULL, 21, NULL),
 (742, 10, 'category/21', 'electronics/washing-machine.html', 'catalog/category/view/id/21', 1, NULL, NULL, 21, NULL),
 (743, 11, 'category/22', 'electronics/air-conditioner-ac.html', 'catalog/category/view/id/22', 1, NULL, NULL, 22, NULL),
@@ -6583,7 +6576,6 @@ INSERT INTO `rrcore_url_rewrite` (`url_rewrite_id`, `store_id`, `id_path`, `requ
 (923, 10, '67841000_1451324179', 'home-furnishing/sofa/table/vibrating-table.html', 'home-furnishing/table/vibrating-table.html', 0, 'RP', NULL, 27, 12),
 (944, 11, 'category/28', 'home-furnishing/chair.html', 'catalog/category/view/id/28', 1, NULL, NULL, 28, NULL),
 (945, 10, 'category/28', 'home-furnishing/chair.html', 'catalog/category/view/id/28', 1, NULL, NULL, 28, NULL),
-(947, 10, 'product/10/28', 'home-furnishing/chair/gramphore.html', 'catalog/product/view/id/10/category/28', 1, NULL, NULL, 28, 10),
 (948, 11, 'category/29', 'home-furnishing/mattresses.html', 'catalog/category/view/id/29', 1, NULL, NULL, 29, NULL),
 (950, 11, 'product/8/29', 'home-furnishing/mattresses/hd-suite.html', 'catalog/product/view/id/8/category/29', 1, NULL, NULL, 29, 8),
 (951, 10, 'category/29', 'home-furnishing/mattresses.html', 'catalog/category/view/id/29', 1, NULL, NULL, 29, NULL),
@@ -6631,7 +6623,12 @@ INSERT INTO `rrcore_url_rewrite` (`url_rewrite_id`, `store_id`, `id_path`, `requ
 (1139, 10, 'product/16/21', 'electronics/washing-machine/washing-machine.html', 'catalog/product/view/id/16/category/21', 1, NULL, NULL, 21, 16),
 (1140, 10, 'product/17', 'window-ac.html', 'catalog/product/view/id/17', 1, NULL, NULL, NULL, 17),
 (1141, 10, 'product/17/12', 'electronics/window-ac.html', 'catalog/product/view/id/17/category/12', 1, NULL, NULL, 12, 17),
-(1142, 10, 'product/17/22', 'electronics/air-conditioner-ac/window-ac.html', 'catalog/product/view/id/17/category/22', 1, NULL, NULL, 22, 17);
+(1142, 10, 'product/17/22', 'electronics/air-conditioner-ac/window-ac.html', 'catalog/product/view/id/17/category/22', 1, NULL, NULL, 22, 17),
+(1147, 11, 'product/4/12', 'electronics/room-ac.html', 'catalog/product/view/id/4/category/12', 1, NULL, NULL, 12, 4),
+(1148, 11, 'product/4/22', 'electronics/air-conditioner-ac/room-ac.html', 'catalog/product/view/id/4/category/22', 1, NULL, NULL, 22, 4),
+(1151, 10, 'product/10/23', 'electronics/invertot/gramphore.html', 'catalog/product/view/id/10/category/23', 1, NULL, NULL, 23, 10),
+(1155, 10, 'product/11/33', 'machanical/crusher/commpressor.html', 'catalog/product/view/id/11/category/33', 1, NULL, NULL, 33, 11),
+(1157, 10, 'product/11/18', 'machanical/commpressor.html', 'catalog/product/view/id/11/category/18', 1, NULL, NULL, 18, 11);
 
 -- --------------------------------------------------------
 
@@ -9073,7 +9070,7 @@ INSERT INTO `rreav_attribute` (`attribute_id`, `entity_type_id`, `attribute_code
 (72, 4, 'description', NULL, NULL, 'text', NULL, NULL, 'textarea', 'Description', NULL, NULL, 1, 0, NULL, 0, NULL),
 (73, 4, 'short_description', NULL, NULL, 'text', NULL, NULL, 'textarea', 'Short Description', NULL, NULL, 1, 0, NULL, 0, NULL),
 (74, 4, 'sku', NULL, 'catalog/product_attribute_backend_sku', 'static', NULL, NULL, 'text', 'SKU', NULL, NULL, 1, 0, NULL, 1, NULL),
-(75, 4, 'price', NULL, 'catalog/product_attribute_backend_price', 'decimal', NULL, NULL, 'price', 'Price', NULL, NULL, 1, 0, NULL, 0, NULL),
+(75, 4, 'price', NULL, 'catalog/product_attribute_backend_price', 'decimal', NULL, NULL, 'price', 'Rent', NULL, NULL, 1, 0, NULL, 0, NULL),
 (76, 4, 'special_price', NULL, 'catalog/product_attribute_backend_price', 'decimal', NULL, NULL, 'price', 'Special Price', NULL, NULL, 0, 0, NULL, 0, 'The Special Price is active only when lower than the Actual Price'),
 (77, 4, 'special_from_date', NULL, 'catalog/product_attribute_backend_startdate_specialprice', 'datetime', NULL, NULL, 'date', 'Special Price From Date', NULL, NULL, 0, 0, NULL, 0, NULL),
 (78, 4, 'special_to_date', NULL, 'eav/entity_attribute_backend_datetime', 'datetime', NULL, NULL, 'date', 'Special Price To Date', NULL, NULL, 0, 0, NULL, 0, NULL),
@@ -9213,7 +9210,15 @@ CREATE TABLE IF NOT EXISTS `rreav_attribute_label` (
   KEY `IDX_RREAV_ATTRIBUTE_LABEL_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_RREAV_ATTRIBUTE_LABEL_STORE_ID` (`store_id`),
   KEY `IDX_RREAV_ATTRIBUTE_LABEL_ATTRIBUTE_ID_STORE_ID` (`attribute_id`,`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Eav Attribute Label' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute Label' AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `rreav_attribute_label`
+--
+
+INSERT INTO `rreav_attribute_label` (`attribute_label_id`, `attribute_id`, `store_id`, `value`) VALUES
+(1, 75, 11, 'Rent'),
+(2, 75, 10, 'Rent');
 
 -- --------------------------------------------------------
 
@@ -9900,7 +9905,7 @@ CREATE TABLE IF NOT EXISTS `rrindex_event` (
   `new_data` mediumtext COMMENT 'New Data',
   PRIMARY KEY (`event_id`),
   UNIQUE KEY `UNQ_RRINDEX_EVENT_TYPE_ENTITY_ENTITY_PK` (`type`,`entity`,`entity_pk`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Index Event' AUTO_INCREMENT=114 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Index Event' AUTO_INCREMENT=115 ;
 
 --
 -- Dumping data for table `rrindex_event`
@@ -10019,7 +10024,8 @@ INSERT INTO `rrindex_event` (`event_id`, `type`, `entity`, `entity_pk`, `created
 (110, 'save', 'catalog_product', 16, '2016-01-09 05:40:15', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:1;s:34:"catalog_product_price_match_result";b:1;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
 (111, 'save', 'cataloginventory_stock_item', 17, '2016-01-09 05:42:45', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:1;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:0;}'),
 (112, 'catalog_reindex_price', 'catalog_product', 17, '2016-01-09 05:42:45', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:1;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:0;}'),
-(113, 'save', 'catalog_product', 17, '2016-01-09 05:42:46', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:1;s:34:"catalog_product_price_match_result";b:1;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}');
+(113, 'save', 'catalog_product', 17, '2016-01-09 05:42:46', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:1;s:34:"catalog_product_price_match_result";b:1;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
+(114, 'save', 'catalog_eav_attribute', 75, '2016-01-16 13:40:49', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:0;s:37:"catalog_category_product_match_result";b:0;s:35:"catalogsearch_fulltext_match_result";b:0;}');
 
 -- --------------------------------------------------------
 
@@ -10043,15 +10049,15 @@ CREATE TABLE IF NOT EXISTS `rrindex_process` (
 --
 
 INSERT INTO `rrindex_process` (`process_id`, `indexer_code`, `status`, `started_at`, `ended_at`, `mode`) VALUES
-(1, 'catalog_product_attribute', 'pending', '2016-01-14 08:33:36', '2016-01-14 08:33:36', 'real_time'),
-(2, 'catalog_product_price', 'pending', '2016-01-14 08:33:36', '2016-01-14 08:33:37', 'real_time'),
-(3, 'catalog_url', 'pending', '2016-01-14 08:33:37', '2016-01-14 08:33:37', 'real_time'),
+(1, 'catalog_product_attribute', 'pending', '2016-01-16 13:45:50', '2016-01-16 13:45:50', 'real_time'),
+(2, 'catalog_product_price', 'pending', '2016-01-16 13:45:50', '2016-01-16 13:45:50', 'real_time'),
+(3, 'catalog_url', 'pending', '2016-01-16 13:45:50', '2016-01-16 13:45:50', 'real_time'),
 (4, 'catalog_product_flat', 'pending', '2015-12-08 14:56:54', '2015-12-08 14:56:55', 'real_time'),
 (5, 'catalog_category_flat', 'pending', '2015-12-23 10:58:03', '2015-12-23 10:58:03', 'real_time'),
-(6, 'catalog_category_product', 'pending', '2016-01-14 08:33:37', '2016-01-14 08:33:37', 'real_time'),
-(7, 'catalogsearch_fulltext', 'pending', '2016-01-14 08:33:37', '2016-01-14 08:33:37', 'real_time'),
-(8, 'cataloginventory_stock', 'pending', '2016-01-14 08:33:36', '2016-01-14 08:33:36', 'real_time'),
-(9, 'tag_summary', 'pending', '2016-01-14 08:33:37', '2016-01-14 08:33:37', 'real_time');
+(6, 'catalog_category_product', 'pending', '2016-01-16 13:45:50', '2016-01-16 13:45:50', 'real_time'),
+(7, 'catalogsearch_fulltext', 'pending', '2016-01-16 13:45:50', '2016-01-16 13:45:50', 'real_time'),
+(8, 'cataloginventory_stock', 'pending', '2016-01-16 13:45:50', '2016-01-16 13:45:50', 'real_time'),
+(9, 'tag_summary', 'pending', '2016-01-16 13:45:50', '2016-01-16 13:45:50', 'real_time');
 
 -- --------------------------------------------------------
 
@@ -10108,7 +10114,8 @@ INSERT INTO `rrlog_quote` (`quote_id`, `visitor_id`, `created_at`, `deleted_at`)
 (3, 1280, '2015-12-25 01:39:43', NULL),
 (4, 1464, '2016-01-05 14:37:00', NULL),
 (5, 1476, '2016-01-13 22:13:06', NULL),
-(6, 1478, '2016-01-14 08:33:40', NULL);
+(6, 1478, '2016-01-14 08:33:40', NULL),
+(7, 1483, '2016-01-16 13:45:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -10189,7 +10196,7 @@ CREATE TABLE IF NOT EXISTS `rrlog_visitor` (
   `last_url_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'Last URL ID',
   `store_id` smallint(5) unsigned NOT NULL COMMENT 'Store ID',
   PRIMARY KEY (`visitor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table' AUTO_INCREMENT=1483 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table' AUTO_INCREMENT=1484 ;
 
 --
 -- Dumping data for table `rrlog_visitor`
@@ -11679,7 +11686,8 @@ INSERT INTO `rrlog_visitor` (`visitor_id`, `session_id`, `first_visit_at`, `last
 (1479, '6d3tv67s8k4un2mikc9o8kn8s3', '2016-01-14 10:21:01', '2016-01-14 10:21:09', 0, 10),
 (1480, 'ntvunqvjdq3m0ul1afi2tiv7s2', '2016-01-14 10:21:01', '2016-01-14 12:08:20', 0, 10),
 (1481, 'vqho6jk7dfbeuh6a2he2lh0no1', '2016-01-16 00:29:36', '2016-01-16 01:44:04', 0, 10),
-(1482, 'g9padrrt34lrlb38m35jsq1eb1', '2016-01-16 07:49:37', '2016-01-16 08:20:14', 0, 10);
+(1482, 'g9padrrt34lrlb38m35jsq1eb1', '2016-01-16 07:49:37', '2016-01-16 08:20:14', 0, 10),
+(1483, 'a43753slas8gdcno5h3d2a0bk4', '2016-01-16 10:17:47', '2016-01-16 13:51:03', 0, 10);
 
 -- --------------------------------------------------------
 
@@ -13187,7 +13195,8 @@ INSERT INTO `rrlog_visitor_info` (`visitor_id`, `http_referer`, `http_user_agent
 (1479, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36', NULL, 'en-US,en;q=0.8', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0'),
 (1480, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36', NULL, 'en-US,en;q=0.8', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0'),
 (1481, NULL, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36', NULL, 'en-US,en;q=0.8', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0'),
-(1482, NULL, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36', NULL, 'en-US,en;q=0.8', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0');
+(1482, NULL, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36', NULL, 'en-US,en;q=0.8', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0'),
+(1483, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36', NULL, 'en-US,en;q=0.8', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0');
 
 -- --------------------------------------------------------
 
@@ -14073,7 +14082,7 @@ CREATE TABLE IF NOT EXISTS `rrreport_event` (
   KEY `IDX_RRREPORT_EVENT_OBJECT_ID` (`object_id`),
   KEY `IDX_RRREPORT_EVENT_SUBTYPE` (`subtype`),
   KEY `IDX_RRREPORT_EVENT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Event Table' AUTO_INCREMENT=104 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Event Table' AUTO_INCREMENT=107 ;
 
 --
 -- Dumping data for table `rrreport_event`
@@ -14182,7 +14191,10 @@ INSERT INTO `rrreport_event` (`event_id`, `logged_at`, `event_type_id`, `object_
 (100, '2016-01-14 06:23:51', 1, 6, 1478, 1, 10),
 (101, '2016-01-14 08:33:23', 1, 2, 1478, 1, 10),
 (102, '2016-01-14 08:33:39', 4, 2, 1478, 1, 10),
-(103, '2016-01-14 08:36:48', 1, 2, 1478, 1, 10);
+(103, '2016-01-14 08:36:48', 1, 2, 1478, 1, 10),
+(104, '2016-01-16 13:45:05', 1, 10, 1483, 1, 10),
+(105, '2016-01-16 13:45:51', 4, 10, 1483, 1, 10),
+(106, '2016-01-16 13:48:01', 1, 10, 1483, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -14291,7 +14303,7 @@ CREATE TABLE IF NOT EXISTS `rrreport_viewed_product_index` (
   KEY `IDX_RRREPORT_VIEWED_PRODUCT_INDEX_STORE_ID` (`store_id`),
   KEY `IDX_RRREPORT_VIEWED_PRODUCT_INDEX_ADDED_AT` (`added_at`),
   KEY `IDX_RRREPORT_VIEWED_PRODUCT_INDEX_PRODUCT_ID` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Viewed Product Index Table' AUTO_INCREMENT=213 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Viewed Product Index Table' AUTO_INCREMENT=215 ;
 
 --
 -- Dumping data for table `rrreport_viewed_product_index`
@@ -14331,7 +14343,8 @@ INSERT INTO `rrreport_viewed_product_index` (`index_id`, `visitor_id`, `customer
 (205, 1474, NULL, 15, 10, '2016-01-09 05:43:57'),
 (206, 1476, NULL, 2, 10, '2016-01-13 22:12:42'),
 (207, 1478, NULL, 6, 10, '2016-01-14 06:23:51'),
-(211, 1478, NULL, 2, 10, '2016-01-14 08:36:48');
+(211, 1478, NULL, 2, 10, '2016-01-14 08:36:48'),
+(213, 1483, NULL, 10, 10, '2016-01-16 13:48:00');
 
 -- --------------------------------------------------------
 
@@ -15592,7 +15605,7 @@ CREATE TABLE IF NOT EXISTS `rrsales_flat_quote` (
   PRIMARY KEY (`entity_id`),
   KEY `IDX_RRSALES_FLAT_QUOTE_CUSTOMER_ID_STORE_ID_IS_ACTIVE` (`customer_id`,`store_id`,`is_active`),
   KEY `IDX_RRSALES_FLAT_QUOTE_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote' AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `rrsales_flat_quote`
@@ -15604,7 +15617,8 @@ INSERT INTO `rrsales_flat_quote` (`entity_id`, `store_id`, `created_at`, `update
 (3, 10, '2015-12-25 01:39:41', '2015-12-25 02:06:49', NULL, 1, 0, 0, 1, '1.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '1100.0000', '1100.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '1100.0000', '1100.0000', '1100.0000', '1100.0000', 1, 0, NULL, NULL, 0),
 (4, 10, '2016-01-05 14:36:58', '2016-01-05 14:41:25', NULL, 1, 0, 0, 1, '1.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '2100.0000', '2100.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '2100.0000', '2100.0000', '2100.0000', '2100.0000', 1, 0, NULL, NULL, 0),
 (5, 10, '2016-01-13 22:13:05', '2016-01-14 00:19:44', NULL, 1, 0, 0, 1, '1.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '2100.0000', '2100.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '2100.0000', '2100.0000', '2100.0000', '2100.0000', 1, 0, NULL, NULL, 0),
-(6, 10, '2016-01-14 08:33:38', '2016-01-14 08:35:08', NULL, 1, 0, 0, 1, '1.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '2100.0000', '2100.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '2100.0000', '2100.0000', '2100.0000', '2100.0000', 1, 0, NULL, NULL, 0);
+(6, 10, '2016-01-14 08:33:38', '2016-01-14 08:35:08', NULL, 1, 0, 0, 1, '1.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '2100.0000', '2100.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '2100.0000', '2100.0000', '2100.0000', '2100.0000', 1, 0, NULL, NULL, 0),
+(7, 10, '2016-01-16 13:45:50', '2016-01-16 13:46:44', NULL, 1, 0, 0, 1, '1.0000', 0, '1.0000', '1.0000', 'INR', 'INR', 'INR', '10200.0000', '10200.0000', NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'INR', '1.0000', '1.0000', NULL, NULL, '10200.0000', '10200.0000', '10200.0000', '10200.0000', 1, 0, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -15677,7 +15691,7 @@ CREATE TABLE IF NOT EXISTS `rrsales_flat_quote_address` (
   `gift_message_id` int(11) DEFAULT NULL COMMENT 'Gift Message Id',
   PRIMARY KEY (`address_id`),
   KEY `IDX_RRSALES_FLAT_QUOTE_ADDRESS_QUOTE_ID` (`quote_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Address' AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Address' AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `rrsales_flat_quote_address`
@@ -15695,7 +15709,9 @@ INSERT INTO `rrsales_flat_quote_address` (`address_id`, `quote_id`, `created_at`
 (9, 5, '2016-01-13 22:13:06', '2016-01-14 00:19:45', NULL, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
 (10, 5, '2016-01-13 22:13:06', '2016-01-14 00:19:45', NULL, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '30.0000', '2100.0000', '2100.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2100.0000', '2100.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '2100.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
 (11, 6, '2016-01-14 08:33:39', '2016-01-14 08:35:09', NULL, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 6, '2016-01-14 08:33:39', '2016-01-14 08:35:09', NULL, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '30.0000', '2100.0000', '2100.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2100.0000', '2100.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '2100.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL);
+(12, 6, '2016-01-14 08:33:39', '2016-01-14 08:35:09', NULL, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '30.0000', '2100.0000', '2100.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2100.0000', '2100.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '2100.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 7, '2016-01-16 13:45:51', '2016-01-16 13:46:45', NULL, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 7, '2016-01-16 13:45:51', '2016-01-16 13:46:45', NULL, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '20.0000', '10200.0000', '10200.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '10200.0000', '10200.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '10200.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -15817,7 +15833,7 @@ CREATE TABLE IF NOT EXISTS `rrsales_flat_quote_item` (
   KEY `IDX_RRSALES_FLAT_QUOTE_ITEM_PRODUCT_ID` (`product_id`),
   KEY `IDX_RRSALES_FLAT_QUOTE_ITEM_QUOTE_ID` (`quote_id`),
   KEY `IDX_RRSALES_FLAT_QUOTE_ITEM_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item' AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `rrsales_flat_quote_item`
@@ -15828,7 +15844,8 @@ INSERT INTO `rrsales_flat_quote_item` (`item_id`, `quote_id`, `created_at`, `upd
 (4, 3, '2015-12-25 02:04:23', '2015-12-25 02:04:23', 2, 10, NULL, 0, 'bad123', 'double bad', NULL, NULL, NULL, 0, 0, 0, '30.0000', '1.0000', '500.0000', '500.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '1100.0000', '1100.0000', '0.0000', '30.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '1100.0000', '1100.0000', '1100.0000', '1100.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL),
 (6, 4, '2016-01-05 14:39:07', '2016-01-05 14:39:07', 2, 10, NULL, 0, 'bad123', 'double bad', NULL, NULL, NULL, 0, 0, 0, '30.0000', '1.0000', '500.0000', '500.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2100.0000', '2100.0000', '0.0000', '30.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '2100.0000', '2100.0000', '2100.0000', '2100.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL, '2', NULL),
 (7, 5, '2016-01-13 22:13:06', '2016-01-13 22:13:06', 2, 10, NULL, 0, 'bad123', 'double bad', NULL, NULL, NULL, 0, 0, 0, '30.0000', '1.0000', '500.0000', '500.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2100.0000', '2100.0000', '0.0000', '30.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '2100.0000', '2100.0000', '2100.0000', '2100.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL, '2', NULL),
-(8, 6, '2016-01-14 08:33:39', '2016-01-14 08:33:39', 2, 10, NULL, 0, 'bad123', 'double bad', NULL, NULL, NULL, 0, 0, 0, '30.0000', '1.0000', '500.0000', '500.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2100.0000', '2100.0000', '0.0000', '30.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '2100.0000', '2100.0000', '2100.0000', '2100.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL, '2', NULL);
+(8, 6, '2016-01-14 08:33:39', '2016-01-14 08:33:39', 2, 10, NULL, 0, 'bad123', 'double bad', NULL, NULL, NULL, 0, 0, 0, '30.0000', '1.0000', '500.0000', '500.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '2100.0000', '2100.0000', '0.0000', '30.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '2100.0000', '2100.0000', '2100.0000', '2100.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL, '2', NULL),
+(9, 7, '2016-01-16 13:45:51', '2016-01-16 13:45:51', 10, 10, NULL, 0, 'music2', 'gramphore', NULL, NULL, NULL, 0, 0, 0, '20.0000', '1.0000', '5000.0000', '5000.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '10200.0000', '10200.0000', '0.0000', '20.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '10200.0000', '10200.0000', '10200.0000', '10200.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -15844,7 +15861,7 @@ CREATE TABLE IF NOT EXISTS `rrsales_flat_quote_item_option` (
   `value` text COMMENT 'Value',
   PRIMARY KEY (`option_id`),
   KEY `IDX_RRSALES_FLAT_QUOTE_ITEM_OPTION_ITEM_ID` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item Option' AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item Option' AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `rrsales_flat_quote_item_option`
@@ -15859,7 +15876,8 @@ INSERT INTO `rrsales_flat_quote_item_option` (`option_id`, `item_id`, `product_i
 (6, 5, 2, 'info_buyRequest', 'a:6:{s:4:"uenc";s:92:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2hvbWUtZnVybmlzaGluZy9kb3VibGUtYmFkLmh0bWw,";s:7:"product";s:1:"2";s:8:"form_key";s:16:"qoRIHAMVmWtoFf0e";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"renttime";s:1:"2";}'),
 (7, 6, 2, 'info_buyRequest', 'a:6:{s:4:"uenc";s:92:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2hvbWUtZnVybmlzaGluZy9kb3VibGUtYmFkLmh0bWw,";s:7:"product";s:1:"2";s:8:"form_key";s:16:"qoRIHAMVmWtoFf0e";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"renttime";s:1:"4";}'),
 (8, 7, 2, 'info_buyRequest', 'a:6:{s:4:"uenc";s:92:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2hvbWUtZnVybmlzaGluZy9kb3VibGUtYmFkLmh0bWw,";s:7:"product";s:1:"2";s:8:"form_key";s:16:"GcjnieI89T5jvIIM";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"renttime";s:1:"4";}'),
-(9, 8, 2, 'info_buyRequest', 'a:6:{s:4:"uenc";s:92:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2hvbWUtZnVybmlzaGluZy9kb3VibGUtYmFkLmh0bWw,";s:7:"product";s:1:"2";s:8:"form_key";s:16:"sFaLB6JUj95R4WIo";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"renttime";s:1:"4";}');
+(9, 8, 2, 'info_buyRequest', 'a:6:{s:4:"uenc";s:92:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2hvbWUtZnVybmlzaGluZy9kb3VibGUtYmFkLmh0bWw,";s:7:"product";s:1:"2";s:8:"form_key";s:16:"sFaLB6JUj95R4WIo";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"renttime";s:1:"4";}'),
+(10, 9, 10, 'info_buyRequest', 'a:6:{s:4:"uenc";s:68:"aHR0cDovL2xvY2FsaG9zdC9yZW50cmFtL2phaXB1cl92aWV3L2dyYW1waG9yZS5odG1s";s:7:"product";s:2:"10";s:8:"form_key";s:16:"LO6UwduNl6OWAp6t";s:15:"related_product";s:0:"";s:3:"qty";s:1:"1";s:8:"renttime";s:1:"2";}');
 
 -- --------------------------------------------------------
 
