@@ -1,21 +1,50 @@
-<header id="page-header" class="v1">
-    <div id="page-header-section-01">
-        <div class="w header-container">
-        	<?php echo $this->getChildHtml('logo'); ?>
-        	<?php echo $this->getChildHtml('quickAccess'); ?>
-        	<span  class="header-settings"><i class="icon-user"></i></span>
-        	<div class="header-options">
-        		<?php echo $this->getChildHtml('topLinks'); ?>
-            <?php echo $this->getChildHtml('website_switcher') ?>
-	          <?php echo $this->getChildHtml('store_language_flag') ?>
-	          <?php echo $this->getChildHtml('custom_currency_selector') ?>
-        	</div>
+<?php
+$_isHomepage = $this->getIsHomePage();
+$_logoAlt = $this->getLogoAlt();
+$_logoUrl = $this->getUrl('');
+$_logoSrc = $this->getLogoSrc();
+?>
+<header id="page-header" class="v2" style="background-color: #1a1a1a !important; font-color:white !important;">
+    <div id="page-header-section-01" style="background-color: #1a1a1a !important; color:white !important;">
+      <div class="col-md-2 col-xs-3 " >
+              <a href="<?php echo $_logoUrl; ?>"><img src="<?php echo $_logoSrc; ?>" alt="<?php echo $_logoAlt; ?>" style="width:75%;" /></a>
+      </div>
+      <div class="col-md-6 col-xs-6 " style="margin-top:1%;    padding-right: 20%;">
 
+            <?php echo $this->getChildHtml('website_switcher') ?>
+            <?php echo $this->getChildHtml('store_language_flag') ?>
+            <?php echo $this->getChildHtml('custom_currency_selector') ?>
+
+      </div>
+      <div class="col-md-2 col-xs-3">
+        <?php echo $this->getChildHtml('quickAccess'); ?>
+      </div>
+    </div>
+  <div id="page-header-section-01" style="background-color: #2A2828 !important; color:black !important;">
+
+    <div class="col-md-2 col-xs-2">
+
+        <div id="wpmm-overlay"></div>
+        <div id="wpmm-nav-container">
+          <div id="wpmm-nav-viewport">
+            <ul id="wpmm-nav" class="w">
+              <?php echo $this->getChildHtml('topLinks'); ?>
+            </ul>
+
+            <div class="wpmm-mobile-cms">
+              <?php echo $this->getChildHtml('cms_weltpixel_mm_custom_mobile_block'); ?>
+            </div>
+          </div>
         </div>
-    </div>
-    <div id="page-header-section-02">
-        <?php echo $this->getChildHtml('topMenu'); ?>
-    </div>
+          <span id="wpmm-opener" style="font-size: 30px;padding-left: 6%;color: white;"><i class="icon icon-line-menu"></i></span>
+</div>
+      <div class="col-md-10 col-xs-10">
+        <?php echo $this->getChildHtml('search'); ?>
+      </div>
+
+
+  </div>
+
 </header>
-<div id="endHeader" class="v1"></div>
+<div id="endHeader" class="v2"></div>
 <?php echo $this->getChildHtml('topContainer'); ?>

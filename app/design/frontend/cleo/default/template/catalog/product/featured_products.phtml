@@ -31,7 +31,7 @@ $_imgSize = 270;
                 }
                 ?>
                 <?php foreach ($_productCollection as $_product): ?>
-                    <?php  Mage::log($_product->debug(),Zend_log::INFO,'layout.log',true);
+                    <?php // Mage::log($_product->debug(),Zend_log::INFO,'layout.log',true);
                     $_productUrl = $_product->getProductUrl();
                     $_productName = $_helper->productAttribute($_product, $_product->getName(), 'name');
                     $_productNameStripped = $this->stripTags($_product->getName(), null, true);

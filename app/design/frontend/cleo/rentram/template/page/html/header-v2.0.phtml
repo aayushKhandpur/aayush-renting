@@ -4,8 +4,6 @@ $_logoAlt = $this->getLogoAlt();
 $_logoUrl = $this->getUrl('');
 $_logoSrc = $this->getLogoSrc();
 ?>
-
-
 <header id="page-header" class="row v2" style="background-color: #1a1a1a !important; font-color:white !important;">
   <div class="col-md-2 col-xs-6 " >
       <!--  <php echo $this->getChildHtml('logo'); ?>  -->
@@ -14,41 +12,29 @@ $_logoSrc = $this->getLogoSrc();
   <div class="col-md-10 col-xs-12">
     <div id="page-header-section-01" style="background-color: #1a1a1a !important; color:white !important;">
         <div class="w header-container" style="margin-right: 0px;">
-
           <span  class="header-settings"><i class="icon-user"></i></span>
           <div class="header-options">
 			<?php echo $this->getChildHtml('topLinks'); ?>
             <?php echo $this->getChildHtml('website_switcher') ?>
             <?php echo $this->getChildHtml('store_language_flag') ?>
             <?php echo $this->getChildHtml('custom_currency_selector') ?>
-             
           </div>
-
         </div>
     </div>
     <div id="page-header-section-02" style="background-color: #1a1a1a !important; color:white !important;">
-
-
       <div class="col-md-10 col-xs-12">
-
   <?php echo $this->getChildHtml('search'); ?>
-
       <!--  <ul  id="quick-search" >icon icon-line-menu
           <li class="first">
 
           </li>
         </ul> -->
-
       </div>
       <div class="col-md-2 col-xs-2 cartAddjust pull-right" style="float:right !important;">
         <?php echo $this->getChildHtml('quickAccess'); ?>
       </div>
-
   </div>
-
-
   </div>
-
 </header>
 <div id="endHeader" class="v2"></div>
 <?php echo $this->getChildHtml('topContainer'); ?>

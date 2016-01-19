@@ -140,7 +140,7 @@ body.wpmm-mobile {
   left: -85%;
   z-index: 99999999;
   /* Do not edit */
-  width: 80% !important;
+  width: 33% !important;
   max-width: 350px;
   height: 100%;
   /* Do not edit */
@@ -149,11 +149,12 @@ body.wpmm-mobile {
   background-color: rgb(248, 248, 248); }
 
 #wpmm-nav-viewport {
-  width: 100%;
+  width: 80%;
   /* Do not edit */
   height: 100%;
   /* Do not edit */
   padding: 0;
+  margin-left: :0px;
   /* Do not edit */ }
 
 #wpmm-nav li {
@@ -237,14 +238,14 @@ body.wpmm-mobile {
   background: none rgba(0, 0, 0, 0.7); }
 
 #wpmm-opener {
-  position: absolute;
-  /* Do not edit */
+/*  position: absolute;
+  /* Do not edit
   left: 0;
-  top: -7px;
+  top: -7px;*/
   z-index: 100;
   /* Do not edit */
   width: 38px;
-  height: 38px;
+/*  height: 38px;
   padding: 20px;
   font-size: 32px;
   line-height: 1;
@@ -349,7 +350,7 @@ display: none;
     }
 
     #page-header #page-header-section-02 #wpmm-opener {
-        margin: 0px 0px 0px 10px !important;
+        margin: 0px 0px 0px 0px !important;
         line-height: 44px !important;
     }
 
@@ -385,7 +386,7 @@ display: none;
         display: block;
     }
     form.search-v2-form{
-        display: none !important;
+        display: block !important;
     }
     #page-header.search-open form.search-v2-form{
         display: block !important;
@@ -549,13 +550,7 @@ top: 0px;
 
 
     #page-header #wpas-form {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        min-height: auto;
-        height: 0;
-        padding: 0 15px;
+      margin-top: 2%;
         transition: all 0.8s ease;
         -webkit-transition: all 0.8s ease;
         -o-transition: all 0.8s ease;
@@ -565,7 +560,7 @@ top: 0px;
         border-width: 0 0 1px !important;
         border-color: rgba(0, 0, 0, 0.1) !important;
         z-index: 0;
-        overflow: hidden;
+        overflow: scroll;
     }
 
     #page-header.search-open #wpas-form {
@@ -619,9 +614,8 @@ top: 0px;
 
     #wpas-ajax {
         top: 100%;
-        width: auto !important;
-        margin: 20px -20px 0 -20px;
-        padding: 20px;
+        width:66%;
+        padding: 0px;
         border-left-width: 0;
         border-right-width: 0;
     }
