@@ -32,8 +32,7 @@ $_disableBackImage = Mage::getStoreConfig('weltpixel_selector/categoryoptions/di
             <?php echo $this->getToolbarHtml(); ?>
         </div>
 
-        <?php  if ($this->getMode() != 'grid'): ?>
-
+        <?php if ($this->getMode() != 'grid'): ?>
             <ol class="products-list" id="products-list">
                 <?php foreach ($_productCollection as $_product): ?>
                     <li class="item">
@@ -184,14 +183,16 @@ $_disableBackImage = Mage::getStoreConfig('weltpixel_selector/categoryoptions/di
                                 <?php echo $_productReviews; ?>
                                 <div class="add-to-box hidden-sm hidden-xs">
                                     <?php if ($_productIsSaleable): ?>
+                                        <?php if ( $_showAddToCart): ?>
                                         <div class="add-to-cart">
 
-                                            <?php if (($_productUrl == $_productAddToCart) && $_addToCartLightBox): ?>
+                                            <?php if (($_productUrl == $_productAddToCart) && $_addToCartLightBox ): ?>
                                                 <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal('<?php echo $this->getQuickViewUrl($_product); ?>');" class="button"><span><i class="icon icon-shopping-cart"></i><?php echo $this->__('Add to Cart'); ?></span></a>
                                             <?php else: ?>
                                                 <a href="<?php echo $_productAddToCart; ?>" class="button"><span><i class="icon icon-shopping-cart"></i><?php echo $this->__('Add to Cart'); ?></span></a>
                                             <?php endif; ?>
                                         </div>
+                                        <?php endif; ?>
                                     <?php else: ?>
                                         <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                                     <?php endif; ?>
@@ -386,7 +387,7 @@ $_disableBackImage = Mage::getStoreConfig('weltpixel_selector/categoryoptions/di
                                     <div class="add-to-box">
                                         <table>
                                             <tr>
-                                                <?php if ($_product->isSaleable() && $_showAddToCart): ?>
+                                                <?php if ( $_product->isSaleable() && $_showAddToCart): ?>
                                                     <td>
                                                         <?php if (($_productUrl == $_productAddToCart) && $_addToCartLightBox): ?>
                                                             <a href="javascript: void(0);" onclick="weltpixel.quickview.showProductInfoModal('<?php echo $this->getQuickViewUrl($_product); ?>');" class="add-to-cart"><span><i class="icon icon-shopping-cart"></i><?php echo $this->__('Add to Cart'); ?></span></a>

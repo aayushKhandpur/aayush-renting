@@ -34,7 +34,7 @@
 		                <th class="label">Shop Name</th>
 		                <td class="data">
 												<a style="font-size: 17px; text-decoration: underline; color: cornflowerblue;" href="<?php echo $this->getVendorProfileUrl($vendorInfo->getId()); ?>" >
-													<?php Mage::log($vendorInfo->debug(),Zend_log::INFO,'layout.log',true);		echo $vendorInfo->getShopName(); ?>
+													<?php echo $vendorInfo->getShopName(); ?>
 												</a>
 										</td>
 		            </tr>
