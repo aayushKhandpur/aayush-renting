@@ -11,11 +11,11 @@
     .swatches .filter_checkbox .swatch-container{ height: 30px; }
 
     .customer-account-login #page-body-section-02, .customer-account-forgotpassword #page-body-section-02, .customer-account-create #page-body-section-02  {
-    background-image: url(http://localhost/rentram/media/cleo/default/bg.jpg.png);
+    background-image: url(http://localhost/rentram/media/cleo/default/rentram-home.jpg);
     }
 
 
-    .w, .toolbar, .products-list, #wpmm-nav, .wpmm-nav-content-inner  {max-width: 1300px ; }
+    .w, .toolbar, .products-list, #wpmm-nav, .wpmm-nav-content-inner  {max-width: 1350px ; }
 
 
 

@@ -14,7 +14,7 @@ $_inputMaxLength = $catalogSearchHelper->getMaxQueryLength();
 $_inputPlaceholder = $this->__('Find products on rent ?');
 ?>
 <form id="wpas-form" class="search-v2-form" action="<?php echo $_formAction; ?>" method="get" style="display: block;">
-<div class="input-group">
+<div class="input-group" style="z-index:1;">
   <input type="text" id="wpas-q" name="<?php echo $_inputName; ?>" autocomplete="on" value="<?php echo $_inputValue; ?>"
   maxlength="<?php echo $_inputMaxLength; ?>" placeholder="<?php echo $_inputPlaceholder; ?>" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
 <div id="wpas-loader"></div>

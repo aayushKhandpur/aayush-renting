@@ -30,7 +30,7 @@ class WeltPixel_QuickView_Ajax_Checkout_CartController extends Mage_Checkout_Car
           //    $product->setData('fromdate',$params['fromdate']);
           //    $product->setData('todate',$params['todate']);
           //  $diff=date_create($params['fromdate'])->diff(date_create($params['todate']))->days;
-            Mage::log($product->debug(),Zend_log::INFO,'layout.log',true);
+        //    Mage::log($product->debug(),Zend_log::INFO,'layout.log',true);
             //  Mage::log($product->getData('mintime'),Zend_log::INFO,'layout.log',true);
 
               if($params['renttime'] < $product->getData('mintime')){
