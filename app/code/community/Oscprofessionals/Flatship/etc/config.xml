@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+* @author      Oscprofessionals Team (support@oscprofessionals.com)
+* @copyright   Copyright (c) 2014 Oscprofessionals (http://www.oscprofessionals.com)
+* @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*
+* @category    Oscprofessionals
+* @package     Oscprofessionals_Flatship
+-->
+<config>
+    <modules>
+        <Oscprofessionals_Flatship>
+            <version>1.0.0</version>
+        </Oscprofessionals_Flatship>
+    </modules>
+        <admin>
+           <translate>
+            <modules>
+                <Oscprofessionals_Flatship>
+                    <files>
+                        <default>Oscprofessionals_Flatship.csv</default>
+                    </files>
+                </Oscprofessionals_Flatship>
+            </modules>
+        </translate>
+        </admin>
+    <global>
+        <models>
+            <oscpflatshiprate>
+                <class>Oscprofessionals_Flatship_Model</class>                
+            </oscpflatshiprate>
+        </models>
+        <resources>
+            <oscpflatshiprate_setup>
+                <setup>
+                    <module>Oscprofessionals_Flatship</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </oscpflatshiprate_setup>
+            <oscpflatshiprate_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </oscpflatshiprate_write>
+            <oscpflatshiprate_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </oscpflatshiprate_read>
+        </resources>
+        <helpers>
+            <oscpflatshiprate>
+                <class>Oscprofessionals_Flatship_Helper</class>
+            </oscpflatshiprate>
+        </helpers>
+    </global>
+    <default>
+        <carriers>
+          <oscpflatshiprate>
+               <active>1</active>
+               <model>oscpflatshiprate/carrier_oscpflatshiprate</model>
+               <title>Carrier Title</title>
+               <name>Shipping Method Name</name>
+               <price>0.00</price>
+               <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+         </oscpflatshiprate>
+        </carriers>
+    </default>
+</config>

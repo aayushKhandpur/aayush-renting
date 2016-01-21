@@ -19,7 +19,7 @@
 **/
 ?>
 
-<?php $vendorInfo = $this->getVendorInfo(); if($vendorInfo): ?>
+<?php  $vendorInfo = $this->getVendorInfo(); if($vendorInfo): ?>
 <div class="box-collateral box-description">
 	<div class="std">
 
@@ -34,14 +34,22 @@
 		                <th class="label">Shop Name</th>
 		                <td class="data">
 												<a style="font-size: 17px; text-decoration: underline; color: cornflowerblue;" href="<?php echo $this->getVendorProfileUrl($vendorInfo->getId()); ?>" >
-													<?php echo $vendorInfo->getShopName(); ?>
+													<?php Mage::log($this->debug(),Zend_log::INFO,'layout.log',true); echo $vendorInfo->getShopName(); ?>
 												</a>
 										</td>
 		            </tr>
-		            <tr>
+		            <tr >
 		                <th class="label">Contact Number</th>
 		                <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
 		            </tr>
+								<tr>
+										<th class="label">Address</th>
+										<td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
+								</tr>
+								<tr>
+										<th class="label">City</th>
+										<td class="data">		<?php 	echo $vendorInfo->getCity(); ?></td>
+								</tr>
 		            <tr>
 		                <th class="label">Description</th>
 		                <td class="data">	<?php 	echo $vendorInfo->getMessage(); ?></td>
