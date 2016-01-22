@@ -17,6 +17,18 @@
  * @category    Medma
  * @package     Medma_MarketPlace
 **/
+Mage::log('KUK',Zend_log::INFO,'layout.log',true);
+$_product = $this->getProduct();
+
+   $categoryIds = $_product->getCategoryIds();
+	 if(count($categoryIds) ){
+            $firstCategoryId = $categoryIds[1];
+            $_category = Mage::getModel('catalog/category')->load($firstCategoryId);
+        }
+	  Mage::log($_category->getName(),Zend_log::INFO,'layout.log',true);
+
+
+
 ?>
 
 <?php  $vendorInfo = $this->getVendorInfo(); if($vendorInfo): ?>
@@ -33,11 +45,19 @@
 		            <tr>
 		                <th class="label">Shop Name</th>
 		                <td class="data">
+												<?php if($_category->getName()=="Construction Equipments"): ?>
 												<a style="font-size: 17px; text-decoration: underline; color: cornflowerblue;" href="<?php echo $this->getVendorProfileUrl($vendorInfo->getId()); ?>" >
-													<?php Mage::log($this->debug(),Zend_log::INFO,'layout.log',true); echo $vendorInfo->getShopName(); ?>
+													<?php  echo $vendorInfo->getShopName(); ?>
 												</a>
+												<?php endif; ?>
+												<?php if($_category->getName()!="Construction Equipments"){
+													echo $vendorInfo->getShopName();
+												} ?>
+												
+
 										</td>
 		            </tr>
+								<?php if($_category->getName()=="Construction Equipments"): ?>
 		            <tr >
 		                <th class="label">Contact Number</th>
 		                <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
@@ -46,6 +66,7 @@
 										<th class="label">Address</th>
 										<td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
 								</tr>
+								<?php endif; ?>
 								<tr>
 										<th class="label">City</th>
 										<td class="data">		<?php 	echo $vendorInfo->getCity(); ?></td>
