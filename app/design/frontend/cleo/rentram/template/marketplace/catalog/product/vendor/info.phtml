@@ -17,7 +17,8 @@
  * @category    Medma
  * @package     Medma_MarketPlace
 **/
-Mage::log('KUK',Zend_log::INFO,'layout.log',true);
+$vendorRating = $this->getVendorRating();
+$vendorInfo = $this->getVendorInfo();
 $_product = $this->getProduct();
 
    $categoryIds = $_product->getCategoryIds();
@@ -25,19 +26,14 @@ $_product = $this->getProduct();
             $firstCategoryId = $categoryIds[1];
             $_category = Mage::getModel('catalog/category')->load($firstCategoryId);
         }
-	  Mage::log($_category->getName(),Zend_log::INFO,'layout.log',true);
-
-
+    Mage::log("kul",Zend_log::INFO,'layout.log',true);
+//Mage::log(count($vendorRating),Zend_log::INFO,'layout.log',true);
 
 ?>
-
-<?php  $vendorInfo = $this->getVendorInfo(); if($vendorInfo): ?>
+<?php   if($vendorInfo): ?>
 <div class="box-collateral box-description">
 	<div class="std">
-
-
-
-		<table class="data-table" id="product-attribute-specs-table">
+    <table class="data-table" id="product-attribute-specs-table">
 		        <colgroup><col style="width: 25%">
 		        <col>
 		        </colgroup>
@@ -53,9 +49,34 @@ $_product = $this->getProduct();
 												<?php if($_category->getName()!="Construction Equipments"){
 													echo $vendorInfo->getShopName();
 												} ?>
-												
+
 
 										</td>
+                    <td class="data" rowspan="5">
+                      <?php if(count($vendorRating)): ?>
+                      <table class="data-table" id="product-attribute-specs-table" style="margin-left: 20%;">
+                        	<tbody>
+                            <tr>
+                              <th class="label" colspan="2" style="border-style: none;padding-left: 26%;font-weight: bold !important;color: black;">Vendor rating</th>
+                            </tr>
+                				<?php foreach($vendorRating as $rating): ?>
+                            <tr>
+                              <th class="label" style="border-style: none;text-align: center;"><?php echo $rating['name']; ?>:-</th>
+                                <td class="data" style="border-style: none;text-align: center;">
+                        					<div class="rating-container">
+                        						<div class="rating-graphics-container">
+                        							<div class="rating-blank"></div>
+                        							<div class="rating-filled" style="width: <?php echo $rating['value'] ?>%"></div>
+                        						</div>
+                        					<!--	<div class="rating-totals"><php echo str_pad($rating['records'], 3, "0", STR_PAD_LEFT); ?></div>  -->
+                        					</div>
+                                </td>
+                            </tr>
+                				<?php endforeach; ?>
+                        </tbody>
+                      </table>
+                			<?php endif; ?>
+                    </td>
 		            </tr>
 								<?php if($_category->getName()=="Construction Equipments"): ?>
 		            <tr >
@@ -75,6 +96,9 @@ $_product = $this->getProduct();
 		                <th class="label">Description</th>
 		                <td class="data">	<?php 	echo $vendorInfo->getMessage(); ?></td>
 		            </tr>
+
+
+
 		        </tbody>
 		    </table>
 
