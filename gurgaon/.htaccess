@@ -120,7 +120,7 @@
 ## you can put here your magento root folder
 ## path relative to web root
 
-    #RewriteBase /jaipur/
+    #RewriteBase /gurgaon/
 
 ############################################
 ## uncomment next line to enable light API calls processing
@@ -232,17 +232,17 @@
         Deny from all
     </Files>
 
-#    SetEnvIf Host localhost\rentram\jaipur MAGE_RUN_CODE = jaipur_store_view
-#    SetEnvIf Host localhost\rentram\jaipur MAGE_RUN_TYPE = store
-#    SetEnvIf Host ^jaipur MAGE_RUN_CODE = jaipur_store_view
-#    SetEnvIf Host ^jaipur MAGE_RUN_TYPE = store
+#    SetEnvIf Host localhost\rentram\gurgaon MAGE_RUN_CODE = gurgaon_store_view
+#    SetEnvIf Host localhost\rentram\gurgaon MAGE_RUN_TYPE = store
+#    SetEnvIf Host ^gurgaon MAGE_RUN_CODE = gurgaon_store_view
+#    SetEnvIf Host ^gurgaon MAGE_RUN_TYPE = store
 
 #    SetEnvIf Host localhost\rentram\delhi MAGE_RUN_CODE = delhi_store_view
 #    SetEnvIf Host localhost\rentram\delhi MAGE_RUN_TYPE = store
 #    SetEnvIf Host ^delhi MAGE_RUN_CODE = delhi_store_view
 #    SetEnvIf Host ^delhi MAGE_RUN_TYPE = store
 
-#    SetEnvIf Host localhost\rentram\kolcata MAGE_RUN_CODE = kolcata_store_view
-#    SetEnvIf Host localhost\rentram\kolcata MAGE_RUN_TYPE = store
-#    SetEnvIf Host ^kolcata MAGE_RUN_CODE = kolcata_store_view
-#    SetEnvIf Host ^kolcata MAGE_RUN_TYPE = store
+#    SetEnvIf Host localhost\rentram\jaipur MAGE_RUN_CODE = jaipur_store_view
+#    SetEnvIf Host localhost\rentram\jaipur MAGE_RUN_TYPE = store
+#    SetEnvIf Host ^jaipur MAGE_RUN_CODE = jaipur_store_view
+#    SetEnvIf Host ^jaipur MAGE_RUN_TYPE = store

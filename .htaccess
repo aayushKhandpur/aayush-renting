@@ -242,7 +242,7 @@
 #    SetEnvIf Host ^delhi MAGE_RUN_CODE = delhi_store_view
 #    SetEnvIf Host ^delhi MAGE_RUN_TYPE = store
 
-#    SetEnvIf Host localhost\rentram\kolcata MAGE_RUN_CODE = kolcata_store_view
-#    SetEnvIf Host localhost\rentram\kolcata MAGE_RUN_TYPE = store
-#    SetEnvIf Host ^kolcata MAGE_RUN_CODE = kolcata_store_view
-#    SetEnvIf Host ^kolcata MAGE_RUN_TYPE = store
+#    SetEnvIf Host localhost\rentram\gurgaon MAGE_RUN_CODE = gurgaon_store_view
+#    SetEnvIf Host localhost\rentram\gurgaon MAGE_RUN_TYPE = store
+#    SetEnvIf Host ^gurgaon MAGE_RUN_CODE = gurgaon_store_view
+#    SetEnvIf Host ^gurgaon MAGE_RUN_TYPE = store
