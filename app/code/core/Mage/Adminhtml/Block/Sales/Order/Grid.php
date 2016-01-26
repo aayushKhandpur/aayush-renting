@@ -58,12 +58,13 @@ class Mage_Adminhtml_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Widget_
     {
         $collection = Mage::getResourceModel($this->_getCollectionClass());
         $this->setCollection($collection);
+      //   Mage::log($collection,Zend_log::INFO,'layout.log',true);
         return parent::_prepareCollection();
     }
 
     protected function _prepareColumns()
     {
-      
+
         $this->addColumn('real_order_id', array(
             'header'=> Mage::helper('sales')->__('Order #'),
             'width' => '80px',
@@ -96,6 +97,11 @@ class Mage_Adminhtml_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Widget_
         $this->addColumn('shipping_name', array(
             'header' => Mage::helper('sales')->__('Ship to Name'),
             'index' => 'shipping_name',
+        ));
+
+        $this->addColumn('vendor', array(
+            'header' => Mage::helper('sales')->__('Vendor'),
+            'index' => 'vendor_name',
         ));
 
         $this->addColumn('base_grand_total', array(

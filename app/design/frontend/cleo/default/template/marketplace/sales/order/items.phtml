@@ -13,7 +13,7 @@
  * Contact us Support does not guarantee correct work of this package
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
- * 
+ *
  * @category    Medma
  * @package     Medma_MarketPlace
 **/
@@ -66,11 +66,11 @@
 <script type="text/javascript">
     function showFeedbackForm(obj, orderItemId)
     {
-        var display_value = $('order-item-row-feedback-' + orderItemId).getStyle('display');        
+        var display_value = $('order-item-row-feedback-' + orderItemId).getStyle('display');
         $$('.feedback-row').each(function (e) {
-            e.hide(); 
-        });        
-        if(display_value == 'none')                    
+            e.hide();
+        });
+        if(display_value == 'none')
             $('order-item-row-feedback-' + orderItemId).setStyle({'display': 'table-row'});
     }
 </script>
