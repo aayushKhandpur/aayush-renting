@@ -10,13 +10,13 @@
             <dataflow>
                 <rewrite>
                     <profile>Medma_MarketPlace_Model_Dataflow_Profile</profile>
-                    <profile_history>Medma_MarketPlace_Model_Dataflow_Profile_History</profile_history> 
+                    <profile_history>Medma_MarketPlace_Model_Dataflow_Profile_History</profile_history>
                 </rewrite>
             </dataflow>
             <adminhtml>
 				<rewrite>
 					<system_config_source_yesno>Medma_MarketPlace_Model_System_Config_Source_Yesno</system_config_source_yesno>
-				</rewrite>	
+				</rewrite>
             </adminhtml>
             <marketplace>
                 <class>Medma_MarketPlace_Model</class>
@@ -78,7 +78,7 @@
             </marketplace>
             <sales>
                 <rewrite>
-                    <order_item_renderer_default>Medma_MarketPlace_Block_Sales_Order_Item_Renderer_Default</order_item_renderer_default>                    
+                    <order_item_renderer_default>Medma_MarketPlace_Block_Sales_Order_Item_Renderer_Default</order_item_renderer_default>
                 </rewrite>
             </sales>
             <catalog>
@@ -127,13 +127,13 @@
                 </observers>
             </checkout_onepage_controller_success_action>
             <catalog_product_save_before>
-                <observers> 
+                <observers>
                     <catalog_product_save_before_marketplace>
                         <type>singleton</type>
                         <class>Medma_MarketPlace_Model_Observer</class>
                         <method>catalogProductSaveBefore</method>
                     </catalog_product_save_before_marketplace>
-                </observers> 
+                </observers>
             </catalog_product_save_before>
             <medma_domain_authentication>
                 <observers>
@@ -151,7 +151,7 @@
 						<method>setSellerInfoBlock</method>
 					</controller_action_layout_generate_blocks_before_marketplace>
 				</observers>
-			</controller_action_layout_generate_blocks_before> 
+			</controller_action_layout_generate_blocks_before>
 			<sales_convert_quote_item_to_order_item>
             	<observers>
                 	<sales_convert_quote_item_to_order_item_marketplace>
@@ -279,7 +279,7 @@
 						<method>checkCaptcha</method>
 					  </controller_action_predispatch_marketplace_controller_method>
 				</observers>
-			</controller_action_predispatch_marketplace_controller_method>      
+			</controller_action_predispatch_marketplace_controller_method>
         </events>
         <menu>
             <medma translate="title" module="adminhtml">
@@ -303,7 +303,7 @@
                             <reviews_ratings>
                                 <title>Reviews and Ratings</title>
                                 <sort_order>30</sort_order>
-                                <children>									
+                                <children>
                                     <pending_reviews>
                                         <title>Pending Reviews</title>
                                         <sort_order>10</sort_order>
@@ -313,7 +313,7 @@
                                         <title>All Reviews</title>
                                         <sort_order>20</sort_order>
                                         <action>admin_marketplace/adminhtml_review/index</action>
-                                    </all_reviews>										
+                                    </all_reviews>
                                     <manage_ratings>
                                         <title>Manage Ratings</title>
                                         <sort_order>30</sort_order>
@@ -330,7 +330,7 @@
                                         <sort_order>10</sort_order>
                                         <action>admin_marketplace/adminhtml_prooftype</action>
                                     </manage_type>
-                                </children>                                                
+                                </children>
                             </manage_verification>
                             <configuration>
 								<title>Configuration</title>
@@ -338,9 +338,9 @@
 								<action>adminhtml/system_config/edit/section/marketplace</action>
                             </configuration>
                         </children>
-                    </marketplace>                    
+                    </marketplace>
                 </children>
-            </medma>            
+            </medma>
             <vendor translate="title" module="adminhtml">
                 <title>Vendor</title>
                 <sort_order>75</sort_order>
@@ -363,7 +363,7 @@
                     <configuration>
 						<title>Configuration</title>
 						<sort_order>999</sort_order>
-						<action>admin_marketplace/adminhtml_configuration/index</action>						
+						<action>admin_marketplace/adminhtml_configuration/index</action>
 					</configuration>
                 </children>
             </vendor>
@@ -373,49 +373,49 @@
                 <admin>
                     <children>
 						<medma>
-							<title>Medma</title>							
+							<title>Medma</title>
 							<children>
 								<marketplace>
-									<title>Market Place</title>									
+									<title>Market Place</title>
 									<children>
 										<pending_products>
-											<title>Pending Products</title>											
+											<title>Pending Products</title>
 										</pending_products>
 										<manage_vendors>
-											<title>Manage Vendors</title>											
+											<title>Manage Vendors</title>
 										</manage_vendors>
 										<reviews_ratings>
-											<title>Reviews and Ratings</title>											
-											<children>									
+											<title>Reviews and Ratings</title>
+											<children>
 												<pending_reviews>
-													<title>Pending Reviews</title>													
+													<title>Pending Reviews</title>
 												</pending_reviews>
 												<all_reviews>
-													<title>All Reviews</title>													
-												</all_reviews>										
+													<title>All Reviews</title>
+												</all_reviews>
 												<manage_ratings>
-													<title>Manage Ratings</title>													
+													<title>Manage Ratings</title>
 												</manage_ratings>
 											</children>
 										</reviews_ratings>
 										<manage_verification>
-											<title>Verification</title>											
+											<title>Verification</title>
 											<children>
 												<manage_type>
-													<title>Manage Types</title>													
+													<title>Manage Types</title>
 												</manage_type>
-											</children>                                                
+											</children>
 										</manage_verification>
 										<configuration>
-											<title>Configuration</title>											
+											<title>Configuration</title>
 										</configuration>
 									</children>
-								</marketplace>                    
+								</marketplace>
 							</children>
-						</medma>            
+						</medma>
                         <vendor>
                             <title>Vendor</title>
-                            <children>                                
+                            <children>
                                 <orders>
                                     <title>Orders</title>
                                 </orders>
@@ -488,4 +488,13 @@
             </registration_confirmation_email>
         </marketplace>
     </default>
+    <stores>
+      <admin>
+          <design>
+              <theme>
+                  <template>custom</template>
+              </theme>
+          </design>
+      </admin>
+  </stores>
 </config>

@@ -83,7 +83,7 @@ class Medma_MarketPlace_Block_Adminhtml_Order_Grid extends Mage_Adminhtml_Block_
             'width' => '100px',
         ));
 
-    /*    $this->addColumn('billing_name', array(
+        $this->addColumn('billing_name', array(
             'header' => $hlp->__('Bill to Name'),
             'index' => 'billing_name',
             'width' => '400px',
@@ -93,7 +93,7 @@ class Medma_MarketPlace_Block_Adminhtml_Order_Grid extends Mage_Adminhtml_Block_
             'header' => $hlp->__('Ship to Name'),
             'index' => 'shipping_name',
             'width' => '400px',
-        ));  */
+        ));  
 
         $this->addColumn('status', array(
             'header' => $hlp->__('Status'),
