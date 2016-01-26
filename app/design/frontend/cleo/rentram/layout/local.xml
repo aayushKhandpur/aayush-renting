@@ -277,9 +277,9 @@
                 <url helper="customer/getLoginUrl"/>
             </action>
             <action method="addLink" translate="label title" module="customer">
-                <label>Login</label>
+                <label>Sign up/Sign in</label>
                 <url helper="customer/getLoginUrl"/>
-                <title>Login</title>
+                <title>Sign up/Sign in</title>
                 <prepare/>
                 <urlParams/>
                 <position>70</position>
