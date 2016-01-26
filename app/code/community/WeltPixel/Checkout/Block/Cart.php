@@ -15,7 +15,7 @@ class WeltPixel_Checkout_Block_Cart extends Mage_Checkout_Block_Cart
       $val = $min-$total;
       $formattedPrice = Mage::helper('core')->currency($val, true, false);
       if ($val < 0) {
-           return $this->__("You've got free shipping - Woo Hoo!");    
+           return $this->__("<br>");    
       } else {   
             return $this->__('%s away from FREE SHIPPING', $formattedPrice);
       }
