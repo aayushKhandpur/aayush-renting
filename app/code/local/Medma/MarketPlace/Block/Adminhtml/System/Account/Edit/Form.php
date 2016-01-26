@@ -181,7 +181,7 @@ class Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form extends Mage_Ad
 					'value' => $profile->getCountry(),
 					'options' => $this->_getCountryList()
 				));
-Mage::log( $this->_getCountryList(),Zend_log::INFO,'layout.log',true);
+//Mage::log( $this->_getCountryList(),Zend_log::INFO,'layout.log',true);
 
   			$fieldset->addField('category', 'select', array(
   					'name' => 'category',

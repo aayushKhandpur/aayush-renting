@@ -272,12 +272,14 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
      */
     public function createPostAction()
     {
+
         $errUrl = $this->_getUrl('*/*/create', array('_secure' => true));
 
-        if (!$this->_validateFormKey()) {
+      /*  if (!$this->_validateFormKey()) {
+            Mage::log('in error'.$errUrl,Zend_log::INFO,'layout.log',true);
             $this->_redirectError($errUrl);
             return;
-        }
+        }*/
 
         /** @var $session Mage_Customer_Model_Session */
         $session = $this->_getSession();
@@ -287,6 +289,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
         }
 
         if (!$this->getRequest()->isPost()) {
+
             $this->_redirectError($errUrl);
             return;
         }
