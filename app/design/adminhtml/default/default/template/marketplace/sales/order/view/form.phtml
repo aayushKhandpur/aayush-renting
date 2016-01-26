@@ -13,7 +13,7 @@
  * Contact us Support does not guarantee correct work of this package
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
- * 
+ *
  * @category    Medma
  * @package     Medma_MarketPlace
 **/
@@ -25,21 +25,21 @@
             <tr>
                 <td style="width:50%;"><h3 class="icon-head head-sales-order"><?php echo $this->getHeaderText(); ?></h3></td>
                 <td class="form-buttons">								
-                    <button id="btnBack" title="Back" type="button" class="scalable back" 
+                    <button id="btnBack" title="Back" type="button" class="scalable back"
                             onclick="setLocation('<?php echo $this->getBackUrl() ?>')" style="">
                         <span><?php echo $this->__('Back'); ?></span>
                     </button>
                     <?php if ($this->isShipButtonDisplay()): ?>
-                        <button id="btnShip" title="Ship" type="button" class="scalable go" 
+                        <button id="btnShip" title="Ship" type="button" class="scalable go"
                                 onclick="setLocation('<?php echo $this->getShipUrl(); ?>')" style="">
                             <span><?php echo $this->__('Ship'); ?></span>
                         </button>
-                    <?php endif; ?>					
+                    <?php endif; ?>
                     <?php if ($this->isInvoiceButtonDisplay()): ?>
-                        <button id="btnInvoice" title="Invoice" type="button" class="scalable go" 
+                        <button id="btnInvoice" title="Invoice" type="button" class="scalable go"
                                 onclick="setLocation('<?php echo $this->getInvoiceUrl(); ?>')" style="">
                             <span><?php echo $this->__('Invoice'); ?></span>
-                        </button>					
+                        </button>
                     <?php endif; ?>
                 </td>
             </tr>

@@ -304,7 +304,7 @@
         <reference name="top.links">
           <action method="addLink" translate="label title" module="customer">
               <label>Rent With us?</label>
-              <url>marketplace/vendor/register/</url>
+              <url>{{baseUrl}}marketplace/vendor/register/</url>
               <title>Rent with us?</title>
               <prepare/>
               <urlParams/>
