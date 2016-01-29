@@ -13,7 +13,7 @@
  * Contact us Support does not guarantee correct work of this package
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
- * 
+ *
  * @category    Medma
  * @package     Medma_MarketPlace
 **/

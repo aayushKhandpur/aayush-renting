@@ -99,11 +99,6 @@ class Mage_Adminhtml_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Widget_
             'index' => 'shipping_name',
         ));
 
-        $this->addColumn('vendor', array(
-            'header' => Mage::helper('sales')->__('Vendor'),
-            'index' => 'vendor_name',
-        ));
-
         $this->addColumn('base_grand_total', array(
             'header' => Mage::helper('sales')->__('G.T. (Base)'),
             'index' => 'base_grand_total',
