@@ -1355,6 +1355,7 @@ form.search-v2-form {
 #page-body-section-02 {
     padding-bottom: 0;
     padding-top: 0;
+    background-size: cover;
 }
 .checkout-onepage-success .layout-1column #page-body-section-02 .main p, .checkout-cart-index .layout-1column #page-body-section-02 .main p, .layout-1column #page-body-section-02 .main h2.sub-title {
     padding: 0 20px;
