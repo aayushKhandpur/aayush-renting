@@ -288,6 +288,16 @@
     </customer_logged_out>
 
     <customer_logged_in>
+      <reference name="top.links">
+      <action method="addLink" translate="label title" module="customer">
+          <label>Account</label>
+          <url helper="customer/getAccountUrl"/>
+          <title>Account</title>
+          <prepare/>
+          <urlParams/>
+          <position>60</position>
+      </action>
+    </reference>
         <action method="addLink" translate="label title" module="wishlist" ifconfig="wishlist/general/active">
             <label>wishlist</label>
             <name>wishlist</name>
@@ -314,16 +324,6 @@
                 <url helper="customer/getAccountUrl"/>
             </action>
             <remove name="wishlist_link"/>
-
-            <action method="addLink" translate="label title" module="customer">
-                <label>Account</label>
-                <url helper="customer/getAccountUrl"/>
-                <title>Account</title>
-                <prepare/>
-                <urlParams/>
-                <position>15</position>
-            </action>
-
         </reference>
 
         <reference  name="head">
