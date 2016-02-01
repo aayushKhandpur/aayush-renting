@@ -1,3 +1,21 @@
+.cityCircle{
+    padding-top: 9%;
+   opacity: 0.6;
+   border-radius: 49%;
+   height: 170px;
+   margin-right: 4%;
+   cursor: pointer;
+   text-align: center;
+   font-size: 18px;
+   line-height: 22px;
+   background: #8BA9A9;
+   color: #FFF;
+   text-transform: uppercase;
+}
+.cityCircle:hover{
+   opacity: 1;
+     background-color: #15A10C;
+}
 .paypal-logo {display:none;}
 #wpmm-nav-viewport {
     margin-left: 10px;

@@ -59,11 +59,12 @@ class WeltPixel_Newsletter_Helper_Data extends Mage_Core_Helper_Abstract {
         $enabled = $this->isEnabled();
         $dOption = $this->getDisplayMode();
         //check if you are on home page
-      //  Mage::log(Mage::helper('core/url')->getCurrentUrl(),Zend_log::INFO,'layout.log',true);
+      //  Mage::log(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB),Zend_log::INFO,'layout.log',true);
         $weAreOnHomePage = (Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB) ==Mage::helper('core/url')->getCurrentUrl()) ? 1 : 0;
         $displayOnMobile = $this->displayOnMobile();
         $_helper = Mage::helper('weltpixel_mobiledetect');
         $canShowOnMobile = true;
+      //    Mage::log('on mo::'.$displayOnMobile.' is mob '.$_helper->isMobile().' can on mobile :: '.$canShowOnMobile,Zend_log::INFO,'layout.log',true);
         if (!$displayOnMobile && ($_helper->isMobile() || $_helper->isTablet())) :
             $canShowOnMobile = false;
         endif;
