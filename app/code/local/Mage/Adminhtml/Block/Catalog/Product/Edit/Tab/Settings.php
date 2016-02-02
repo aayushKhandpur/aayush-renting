@@ -68,6 +68,7 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Settings extends Mage_Adminh
             'label' => Mage::helper('catalog')->__('Product Type'),
             'title' => Mage::helper('catalog')->__('Product Type'),
             'name'  => 'type',
+            'disabled' => true,
             'value' => 'Simple Product'
           //  'values'=> Mage::getModel('catalog/product_type')->getOptionArray()
         ));
