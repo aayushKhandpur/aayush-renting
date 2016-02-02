@@ -41,16 +41,12 @@ $_product = $this->getProduct();
 		            <tr>
 		                <th class="label">Shop Name</th>
 		                <td class="data">
-												<?php if($_category->getName()=="Construction Equipments"): ?>
-												<a style="font-size: 17px; text-decoration: underline; color: cornflowerblue;" href="<?php echo $this->getVendorProfileUrl($vendorInfo->getId()); ?>" >
-													<?php  echo $vendorInfo->getShopName(); ?>
+										<!--		<php if($_category->getName()=="Construction Equipments"): ?>
+												<a style="font-size: 17px; text-decoration: underline; color: cornflowerblue;" href="<php echo $this->getVendorProfileUrl($vendorInfo->getId()); ?>" >
+													<php  echo $vendorInfo->getShopName(); ?>
 												</a>
-												<?php endif; ?>
-												<?php if($_category->getName()!="Construction Equipments"){
-													echo $vendorInfo->getShopName();
-												} ?>
-
-
+												<php endif; ?>  -->
+												<?php echo $vendorInfo->getShopName(); ?>
 										</td>
                     <td class="data" rowspan="5">
                       <?php if(count($vendorRating)): ?>
@@ -79,13 +75,10 @@ $_product = $this->getProduct();
 		            </tr>
 								<?php if($_category->getName()=="Construction Equipments"): ?>
 		            <tr >
-		                <th class="label">Contact Number</th>
-		                <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
+		                <th class="label">Contact</th>
+		                <td class="data">	<button  class="btn btn-default" data-toggle="modal" data-target="#deletePaperModel">View contact</button>	</td>
 		            </tr>
-								<tr>
-										<th class="label">Address</th>
-										<td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
-								</tr>
+
 								<?php endif; ?>
 								<tr>
 										<th class="label">City</th>
@@ -95,9 +88,6 @@ $_product = $this->getProduct();
 		                <th class="label">Description</th>
 		                <td class="data">	<?php 	echo $vendorInfo->getMessage(); ?></td>
 		            </tr>
-
-
-
 		        </tbody>
 		    </table>
 
@@ -111,4 +101,40 @@ $_product = $this->getProduct();
 	</div>
 </div>
 
+
+<div class="modal fade" id="deletePaperModel" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" ng-click="deleteRow()">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Information</h1>
+				</div>
+				<div class="modal-body">
+          <?php if(true): ?>
+          <table class="data-table" id="product-attribute-specs-table">
+                  <colgroup><col style="width: 25%">
+                  <col>
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class="label" style="    color: black;"><b>Contact Number : <b></th>
+                      <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
+                    </tr>
+                    <tr>
+                      <th class="label" style="    color: black;"><b>Address</b></th>
+                      <td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
+                    </tr>
+                  </tbody>
+              </table>
+
+            <?php else: ?><label>Please log in to view seller details.</label><?php endif; ?>
+
+        </div>
+
+			</div>
+		</div>
+	</div>
 <?php endif; ?>
