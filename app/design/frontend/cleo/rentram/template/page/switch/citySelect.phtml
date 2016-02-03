@@ -11,7 +11,7 @@ function redirect(url){
 <?php
 $websites = Mage::getModel('core/website')->getCollection();
 foreach($websites as $website)
-{Mage::log($website->debug(),Zend_log::INFO,'layout.log',true);
+{
     $default_store = $website->getDefaultStore();
     $url_obj = new Mage_Core_Model_Url();
     $default_store_path = $url_obj->getBaseUrl(array('_store'=> $default_store->getCode()));
