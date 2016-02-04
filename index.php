@@ -80,4 +80,22 @@ $mageRunCode = isset($_SERVER['MAGE_RUN_CODE']) ? $_SERVER['MAGE_RUN_CODE'] : ''
 /* Run store or run website */
 $mageRunType = isset($_SERVER['MAGE_RUN_TYPE']) ? $_SERVER['MAGE_RUN_TYPE'] : 'store';
 
+// Mage::log($mageRunCode.'--'.$mageRunType,Zend_log::INFO,'layout.log',true);
+/*switch($_SERVER['HTTP_HOST']) {
+    case 'localhost/rentram/delhi':
+    case 'localhost\rentram\delhi':
+        $mageRunCode = 'delhi_view';
+        $mageRunType = 'store';
+    break;
+    case 'localhost/rentram/jaipur':
+    case 'localhost\rentram\jaipur':
+        $mageRunCode = 'jaipur_view';
+        $mageRunType = 'store';
+    break;
+    case 'localhost/rentram/gurgaon':
+    case 'localhost\rentram\gurgaon':
+        $mageRunCode = 'gurgaon_view';
+        $mageRunType = 'store';
+    break;
+}*/
 Mage::run($mageRunCode, $mageRunType);

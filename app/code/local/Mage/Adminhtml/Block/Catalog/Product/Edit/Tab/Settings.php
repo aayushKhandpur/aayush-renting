@@ -64,13 +64,13 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Settings extends Mage_Adminh
                 ->toOptionArray()
         ));
 
-        $fieldset->addField('product_type', 'text', array(
+        $fieldset->addField('product_type', 'select', array(
             'label' => Mage::helper('catalog')->__('Product Type'),
             'title' => Mage::helper('catalog')->__('Product Type'),
             'name'  => 'type',
             'disabled' => true,
-            'value' => 'Simple Product'
-          //  'values'=> Mage::getModel('catalog/product_type')->getOptionArray()
+          //  'value' => 'Simple Product'
+            'values'=> Mage::getModel('catalog/product_type')->getOptionArray()
         ));
 
         $fieldset->addField('continue_button', 'note', array(
