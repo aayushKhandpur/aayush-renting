@@ -7,17 +7,17 @@ $_logoSrc = $this->getLogoSrc();
 <header id="page-header" class="v2" style="background-color: #1a1a1a !important; font-color:white !important;">
     <div id="page-header-section-01" style="background-color: #1a1a1a !important; color:white !important;">
 
-      <div class="col-md-6 col-xs-5 " style="margin-top:1%;    padding-right: 10%;">
+      <div class="col-md-5 col-xs-5 " style="padding-top:4px;    padding-right: 10%;">
 
             <?php echo $this->getChildHtml('website_switcher') ?>
             <?php echo $this->getChildHtml('store_language_flag') ?>
             <?php echo $this->getChildHtml('custom_currency_selector') ?>
 
       </div>
-      <div class="col-md-2 col-xs-4 " >
-              <a href="<?php echo $_logoUrl; ?>"><img src="<?php echo $_logoSrc; ?>" alt="<?php echo $_logoAlt; ?>" style="width:75%;" /></a>
+      <div class="col-md-4 col-xs-4 " >
+              <a href="<?php echo $_logoUrl; ?>"><img src="<?php echo $_logoSrc; ?>" alt="<?php echo $_logoAlt; ?>" style="width:75px;" /></a>
       </div>
-      <div class="col-md-2 col-xs-3">
+      <div class="col-md-3 col-xs-3">
         <?php echo $this->getChildHtml('quickAccess'); ?>
       </div>
     </div>

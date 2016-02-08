@@ -203,10 +203,131 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
     display: block;
     /* Do not edit */
 }
+@media (min-width: 1285px) {
 #wpmm-nav .subnav-toggle, #wpmm-overlay, #wpmm-opener, #wpmm-closer {
     display: none;
     /* Do not edit */
 }
+.v2 #top-links li {
+    float: left;
+    margin-left: 20px;
+    line-height: 30px
+}
+.v2 #top-links li a {
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px
+}
+
+}
+
+@media only screen and  (min-width: 600px) and  (max-width: 1280px)   {
+  .links{
+    margin-right: 19%;
+  }
+  #wpmm-nav li > a {
+    font-size: 14px!important;
+    line-height: 29px;
+    padding: 8px 0;
+    color: #000!important;
+    text-transform: uppercase; }
+    #wpmm-nav li > a.nav-link > span {
+      display: block; }
+
+  .v2 #top-links li{
+    float: none!important;
+  	    margin-top: 6%;
+    border-bottom-style: groove;
+  }
+  .v2 #top-links li a {
+    color: #000;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: -0.2px;
+  }
+
+  #wpmm-overlay {
+    -webkit-backface-visibility: hidden;
+    /* Do not edit */
+    position: fixed;
+    /* Do not edit */
+    top: 0;
+    /* Do not edit */
+    bottom: 0;
+    /* Do not edit */
+    left: 0;
+    /* Do not edit */
+    z-index: 99999997;
+    /* Do not edit */
+    display: none;
+    /* Do not edit */
+    width: 100%;
+    /* Do not edit */
+    height: 100%;
+    /* Do not edit */
+    background: none rgba(0, 0, 0, 0.7); }
+/*! ----------------------------------------------------------------------------
+    All Levels
+    ------------------------------------------------------------------------- */
+#wpmm-nav-container {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  /* Do not edit */
+  position: fixed;
+  /* Do not edit */
+  top: 0;
+  /* Do not edit */
+  left: -85%;
+  z-index: 99999999;
+  /* Do not edit */
+  width: 13% !important;
+
+  height: 100%;
+  /* Do not edit */
+  overflow-y: auto;
+  /* Do not edit */
+  background-color: rgb(248, 248, 248); }
+
+  #wpmm-nav-container {
+
+    /* Do not edit */
+    border-width: 0;
+    /* Do not edit */ }
+
+  #wpmm-opener, #wpmm-nav-container * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* Do not edit */ }
+
+    #page-header #page-header-section-01 .header-container .header-options .links #top-links {
+        top: 0;
+        text-align: center;
+    }
+    #page-header #page-header-section-01 .header-container .header-options .links #top-links li {
+        display: inline-block;
+        float: none;
+        margin-left: 5px;
+    }
+    #page-header #page-header-section-01 .header-container .header-options .links #top-links li a {
+        line-height: 40px;
+        margin-top: 10px;
+        float: left;
+    }
+
+    .v3 #top-links li a {
+    color: #000;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: -0.2px;
+    }
+
+    .v3 #top-links {
+    float: none!important;
+    margin-right: 0!important;
+    margin-left: 0!important;
+    }
+}
+
 #product-image, #product-more-images {
     display: block;
 }
@@ -509,17 +630,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
     clear: both;
     content: '';
 }
-.v2 #top-links li {
-    float: left;
-    margin-left: 20px;
-    line-height: 30px
-}
-.v2 #top-links li a {
-    color: white;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px
-}
+
 .v2 .form-language {
 /*    position: absolute;
 	right: 200px;*/
