@@ -223,11 +223,11 @@
     <global>
       <template>
         <email>
-          <product_email_update>
+          <product_update_email>
             <label>Product Email Update Template</label>
             <file>product_update_email.html</file>
             <type>html</type>
-          </product_email_update>
+          </product_update_email>
         </email>
       </template>
         <models>

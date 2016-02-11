@@ -220,6 +220,15 @@
         </fieldsets>
     </admin>
     <global>
+      <template>
+        <email>
+          <product_update_email>
+            <label>Product Email Update Template</label>
+            <file>product_update_email.html</file>
+            <type>html</type>
+          </product_update_email>
+        </email>
+      </template>
         <models>
             <catalog>
                 <class>Mage_Catalog_Model</class>

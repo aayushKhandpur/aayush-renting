@@ -2096,27 +2096,34 @@ class Mage_Catalog_Model_Product extends Mage_Catalog_Model_Abstract
      */
 
 const XML_PATH_FORGOT_EMAIL_IDENTITY    = 'admin/emails/forgot_email_identity';
-    const XML_PATH_PRODUCT_EMAIL_TEMPLATE    = 'template/email/product_email_update';
+    const XML_PATH_PRODUCT_EMAIL_TEMPLATE    = 'template/email/product_update_email';
     public function sendProductEmail($current_user)
     {
-    //  Mage::log($this->debug(),Zend_log::INFO,'layout.log',true);
       $mailer = Mage::getModel('core/email_template_mailer');
       $emailInfo = Mage::getModel('core/email_info');
-      $emailInfo->addTo('kkuldeepjoshi5@gmail.com', 'kuldeep');
+      $emailInfo->addTo(Mage::getStoreConfig('trans_email/ident_sales/email'), 'rentram support');
       $mailer->addEmailInfo($emailInfo);
 
+      $categoryIds = $this->getCategoryIds();
+      if(count($categoryIds) ){
+               $firstCategoryId = $categoryIds[count($categoryIds)-2];
+               $_category = Mage::getModel('catalog/category')->load($firstCategoryId);
+           }
+      //     Mage::log($this->debug(),Zend_log::INFO,'layout.log',true);
       // Set all required params and send emails
       $mailer->setSender(Mage::getStoreConfig(self::XML_PATH_FORGOT_EMAIL_IDENTITY));
       $mailer->setStoreId(0);
-      $mailer->setTemplateId(9);
+      $emailTemplate  = Mage::getModel('core/email_template')->loadByCode('product email update template');
+      Mage::log(Mage::getStoreConfig('trans_email/ident_sales/email'),Zend_log::INFO,'layout.log',true);
+      $mailer->setTemplateId($emailTemplate['template_id']);
       $mailer->setTemplateParams(array(
           'firstname' => $current_user['firstname'],
           'lastname' => $current_user['lastname'],
           'product_name' => $this['name'] ,
-          'product_id' => $this['sku']
+          'product_id' => $this['sku'],
+          'category_name' => $_category['name']
       ));
       $mailer->send();
-
       return $this;
     }
 
