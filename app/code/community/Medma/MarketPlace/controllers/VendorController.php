@@ -138,6 +138,7 @@ class Medma_MarketPlace_VendorController extends Mage_Core_Controller_Front_Acti
 					->setShopName($this->getRequest()->getParam('shop_name', false))
 					->setContactNumber($this->getRequest()->getParam('contact_number', false))
 					->setCountry($this->getRequest()->getParam('country', false))
+					->setAddress($this->getRequest()->getParam('address', false))
 					->setProofType($this->getRequest()->getParam('proof_type', false))
 					->setVarificationFiles(json_encode($uploaded_files))
 					->save();
