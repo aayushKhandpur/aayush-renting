@@ -60,11 +60,7 @@ endif;
                         <h1><?php echo $_productName; ?></h1>
                     </div>
                     <div class="panel-b">
-                      <div style="width:73%;float:left;"><?php  echo $_productPrice; ?></div>
-                       <div  style="width:100%;    font: 16px 'Brandon Medium';">  <?php
-                       $att = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
-                         echo $att; ?></div>
-                        <br/>
+                      <div><?php  echo $_productPrice; ?></div>                        
                       <div>  <?php echo $_productReviews; ?></div>
                     </div>
 <!-- -->

@@ -11,10 +11,14 @@ background-color: black;
 $websites = Mage::getModel('core/website')->getCollection();
 foreach($websites as $website)
 {
+
     $default_store = $website->getDefaultStore();
+    if(!$default_store["is_active"]){
+      continue;
+    }
     $url_obj = new Mage_Core_Model_Url();
     $default_store_path = $url_obj->getBaseUrl(array('_store'=> $default_store->getCode()));
-  //  Mage::log($default_store_path,Zend_log::INFO,'layout.log',true);
+   Mage::log($default_store->debug(),Zend_log::INFO,'layout.log',true);
 ?>
     <option <?php if(strstr($this->helper('core/url')->getCurrentUrl(), $default_store_path)):?>
       selected="selected"<?php endif; ?> value="<?php echo $default_store_path ?>" style="background-color: darkcyan;">
