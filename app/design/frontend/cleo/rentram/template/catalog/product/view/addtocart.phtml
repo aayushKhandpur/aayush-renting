@@ -1,4 +1,5 @@
 <?php
+$_coreHelper = $this->helper('core');
 $_product = $this->getProduct();
 $_qty = $this->getProductDefaultQty() * 1;
 $_renttime = $_product->getData('renttime')*1;
@@ -50,7 +51,7 @@ $_renttime = $_product->getData('renttime')*1;
         </div>
         <div class="row">
             <label for="security"><?php echo $this->__('Security:'); ?></label>
-              <label style="font-weight: bold;" class="label pull-right">₹<?php echo  number_format($_product->getData('security')) ?> </label>
+              <label style="font-weight: bold;" class="label pull-right"><?php echo  $_coreHelper->formatPrice($_product->getData('security'), false) ?> </label>
         </div>
         <div class="row">
             <label for="notice"><?php echo $this->__('Notice Period:'); ?></label>
