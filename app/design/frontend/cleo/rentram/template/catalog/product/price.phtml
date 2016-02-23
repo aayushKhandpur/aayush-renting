@@ -42,6 +42,7 @@ $_taxHelper = $this->helper('tax');
 
 $_product = $this->getProduct();
 $attRentType = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
+Mage::log($attRentType,Zend_log::INFO,'layout.log',true);
 $_storeId = $_product->getStoreId();
 $_store = $_product->getStore();
 $_id = $_product->getId();
