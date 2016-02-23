@@ -14,28 +14,13 @@ $_renttime = $_product->getData('renttime')*1;
         <input type="number" name="qty" id="qty" value="<?php echo $_qty; ?>" title="" class="input-text qty" />
         <a href="javascript: void(0);" class="qty-inc"><i class="icon-angle-right"></i></a>
         <?php endif; ?>
-      <!--  <div class="row">
-            <label for="mintime"><php echo $this->__('Min time:'); ?></label>
-                <label class="label pull-right"><php
-                $att = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
-                if($att=='Per Month'){
-                  $att=' Months';
-                }else{
-                  $att=' Days';
-                }
 
-                echo  $_product->getData('mintime').$att ?> </label>
-        </div> -->
         <div class="row" style="margin-bottom: 2%;">
                 <label for="renttime"><?php echo $this->__('Duration');
                 $att = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
-                if($att=='Per Month'){
-                  $att=' Months';
-                }else{
-                  $att=' Days';
-                }
+                $keywords = preg_split("/[\s,]+/", $att);
 
-                echo  ' ('.$att.' ):' ?></label>
+                echo  ' ('.$keywords[1].'):' ?></label>
                 <a href="javascript: void(0);" class="renttime-dec qty-disabled"><i class="icon-angle-left"></i></a>
                 <input type="number" name="renttime" id="renttime" value="<?php echo $_renttime; ?>" title="" class="input-text renttime" />
                 <a href="javascript: void(0);" class="renttime-inc"><i class="icon-angle-right"></i></a>
