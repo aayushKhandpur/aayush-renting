@@ -14,8 +14,9 @@ $_logoSrc = $this->getLogoSrc();
             <?php echo $this->getChildHtml('custom_currency_selector') ?>
 
       </div>
-      <div class="col-md-4 col-xs-4 " >
-              <a href="<?php echo $_logoUrl; ?>"><img src="<?php echo $_logoSrc; ?>" alt="<?php echo $_logoAlt; ?>" style="width:75px;" /></a>
+      <div class="col-md-4 col-xs-4 ">
+
+              <div href="<?php echo $_logoUrl; ?>" style="margin-top: 4px;height: 32px;background-size: contain;width: 50px;background-image:url(<?php echo $this->getSkinUrl('mobile-logo.png') ?>)"></div>
       </div>
       <div class="col-md-3 col-xs-3">
         <?php echo $this->getChildHtml('quickAccess'); ?>

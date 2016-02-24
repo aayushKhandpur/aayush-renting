@@ -23,7 +23,8 @@ jQuery(document).ready(function(){
 
     var stickyHeader = 0;
     if (jQuery('#endHeader').length) {
-        stickyHeader = jQuery('#endHeader').offset().top;
+      //  stickyHeader = jQuery('#endHeader').offset().top;
+       stickyHeader = 0;
     }
 
     jQuery('#page-header').addClass('sticky-header');

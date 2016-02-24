@@ -16,6 +16,12 @@
    opacity: 1;
      background-color: #15A10C;
 }
+.sticky-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 .paypal-logo {display:none;}
 #wpmm-nav-viewport {
     margin-left: 10px;
@@ -208,6 +214,12 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
     display: none;
     /* Do not edit */
 }
+.sticky-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 .v2 #top-links li {
     float: left;
     margin-left: 20px;
@@ -221,11 +233,19 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
 }
 
 }
-
+@media  (max-width: 1280px)   {
+  .sticky-header {
+      position: relative !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+  }
+}
 @media only screen and  (min-width: 600px) and  (max-width: 1280px)   {
   .links{
     margin-right: 19%;
   }
+
   #wpmm-nav li > a {
     font-size: 14px!important;
     line-height: 29px;
@@ -1086,12 +1106,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
 	sticky header start
 -----------------------------------------------------------------*/
 
-.sticky-header {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
+
 .lt-ie9 .sticky-header-moved, .lt-ie9 .sticky-header-moved #wpmm-nav-container {
     background: transparent !important;
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#7FFFFFFF, endColorstr=#7FFFFFFF) !important;
@@ -1124,9 +1139,7 @@ box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.05);
     height: 26px;
 }
 
-.sticky-header {
-    position: relative;
-}
+
 .sticky-header #page-header-section-02 {
     transition: all 0.8s ease;
     -webkit-transition: all 0.8s ease;
