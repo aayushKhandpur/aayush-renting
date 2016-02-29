@@ -114,24 +114,44 @@ $_product = $this->getProduct();
 					<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Information</h1>
 				</div>
 				<div class="modal-body">
+            <form action="http://localhost/rentram/gurgaon_view/heyo/index/index" method="post" id="form-validate" enctype="multipart/form-data">
           <?php if($isCustomerLoggedIn): ?>
-          <table class="data-table" id="product-attribute-specs-table">
-                  <colgroup><col style="width: 25%">
-                  <col>
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th class="label" style="    color: black;"><b>Contact Number : <b></th>
-                      <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
-                    </tr>
-                    <tr>
-                      <th class="label" style="    color: black;"><b>Address</b></th>
-                      <td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
-                    </tr>
-                  </tbody>
-              </table>
+            <table class="data-table" id="product-attribute-specs-table">
+                <colgroup><col style="width: 25%">
+                <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th class="label" style="    color: black;"><b>Name : <b></th>
+                    <td class="data">
+                      <input type="text" id="name" name="name" title="<?php echo $this->__('First Name'); ?>" maxlength="255" class="input-text required-entry">
+      					    </td>
+                  </tr>
+                  <tr>
+                    <th class="label" style="    color: black;"><b>Email :</b></th>
+                    <td class="data">	<input type="text" name="email" id="email_address" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="label" style="    color: black;"><b>Mobile :</b></th>
+                    <td class="data">	<input type="text" id="contact_number" name="contact_number" title="<?php echo $this->__('Contact Number'); ?>" maxlength="255" class="input-text required-entry validate-phoneLax" >
+      	             </td>
+                  </tr>
+                  <tr>
+                    <th class="label" style="    color: black;"><b>Address :</b></th>
+                    <td class="data">	<textarea id="address" name="address" title="<?php echo $this->__('Address'); ?>" maxlength="555" class="input-text required-entry" >
+                                      </textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="data" ><button type="submit" class="btn btn-round btn-success">Show Contact</button></td>
+                  </tr>
+                </tbody>
+            </table>
 
             <?php else: ?><label>Please log in to view seller details.</label><?php endif; ?>
+            </form>
 
         </div>
 
@@ -139,3 +159,25 @@ $_product = $this->getProduct();
 		</div>
 	</div>
 <?php endif; ?>
+
+<!--script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+
+//]]>
+</script>
+<!--table class="data-table" id="product-attribute-specs-table">
+    <colgroup><col style="width: 25%">
+    <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th class="label" style="    color: black;"><b>Contact Number : <b></th>
+        <td class="data">		<php 	echo $vendorInfo->getContactNumber(); ?></td>
+      </tr>
+      <tr>
+        <th class="label" style="    color: black;"><b>Address</b></th>
+        <td class="data">		<php 	echo $vendorInfo->getAddress(); ?></td>
+      </tr>
+    </tbody>
+</table -->

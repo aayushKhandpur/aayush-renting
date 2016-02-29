@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Productlog_Viewer>
+          <active>true</active>
+          <codePool>local</codePool>
+        </Productlog_Viewer>
+    </modules>
+</config>
