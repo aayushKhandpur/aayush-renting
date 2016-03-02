@@ -23,7 +23,7 @@ if($isCustomerLoggedIn){
    $customerId = $customerData->getId();
 }
 $currentDate =  Mage::getModel('core/date')->date('Y-m-d H:i:s');
-  Mage::log(	$currentDate ,Zend_log::INFO,'layout.log',true);
+//  Mage::log(	$customerData ,Zend_log::INFO,'layout.log',true);
 $vendorRating = $this->getVendorRating();
 $vendorInfo = $this->getVendorInfo();
 
@@ -84,7 +84,7 @@ $productId = $_product->getId();
 								<?php if($_category->getName()=="Construction Equipments"): ?>
 		            <tr >
 		                <th class="label">Contact</th>
-		                <td class="data">	<button  class="btn btn-default" data-toggle="modal" data-target="#deletePaperModel">View contact</button>	</td>
+		                <td class="data">	<button  class="btn btn-default" data-toggle="modal" data-target="#detailModel">View contact</button>	</td>
 		            </tr>
 
 								<?php endif; ?>
@@ -110,7 +110,7 @@ $productId = $_product->getId();
 </div>
 
 
-<div class="modal fade" id="deletePaperModel" tabindex="-1" role="dialog"
+<div class="modal fade" id="detailModel" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -118,18 +118,20 @@ $productId = $_product->getId();
 					<button type="button" class="close" data-dismiss="modal" ng-click="deleteRow()">
 						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 					</button>
-					<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Information</h1>
+					<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Enquiry</h1>
+          <p class="modal-title"  style="text-align:center;">Please fill the form to get seller information.</p>
 				</div>
 				<div class="modal-body">
-              <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customerId; ?>" />
-              <input type="hidden" name="product_id" id="product_id" value="<?php echo $productId; ?>" />
+
+            <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customerId; ?>" />
+            <input type="hidden" name="product_id" id="product_id" value="<?php echo $productId; ?>" />
             <table class="data-table" id="product-attribute-specs-table">
                 <colgroup><col style="width: 25%">
                 <col>
                 </colgroup>
                 <tbody>
                   <tr>
-                    <th class="label" style="    color: black;"><b>Name : <b></th>
+                    <th class="label" style="    color: black;"><b>Your Name : <b></th>
                     <td class="data">
                       <input type="text" id="name" name="name" title="<?php echo $this->__('First Name'); ?>" maxlength="255" class="input-text required-entry">
       					    </td>
@@ -145,36 +147,69 @@ $productId = $_product->getId();
       	             </td>
                   </tr>
                   <tr>
-                    <th class="label" style="    color: black;"><b>Address :</b></th>
+                    <th class="label" style="    color: black;"><b>Address </b>(optional) :</th>
                     <td class="data">	<textarea id="address" name="address" title="<?php echo $this->__('Address'); ?>" maxlength="555" class="input-text required-entry" >
                                       </textarea>
                     </td>
                   </tr>
                   <tr>
                     <td></td>
-                    <td class="data" ><button type="submit" onclick="saveData()" class="btn btn-round btn-success">Show Contact</button></td>
+                    <td class="data" ><button type="submit" data-dismiss="modal" onclick="saveData()" data-toggle="modal" data-target="#informationModel" class="btn btn-round btn-success">Show Contact</button></td>
                   </tr>
                 </tbody>
             </table>
-<?php if($isCustomerLoggedIn): ?>
-            <?php else: ?><label>Please log in to view seller details.</label><?php endif; ?>
-
-
+          
         </div>
-
 			</div>
 		</div>
 	</div>
 <?php endif; ?>
-<script type="text/javascript">
- function saveData(){
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var contact_number = document.getElementById('contact_number').value;
-    var address = document.getElementById('address').value;
-    var customer_id = document.getElementById('customer_id').value;
-    var product_id = document.getElementById('product_id').value;
+<div class="modal fade" id="informationModel" tabindex="-1" role="dialog"	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" ng-click="deleteRow()">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Detail</h1>
+			</div>
+			<div class="modal-body">
+        <table class="data-table" id="product-attribute-specs-table">
+            <colgroup><col style="width: 25%">
+            <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="label" style="    color: black;"><b>Contact Number : <b></th>
+                <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
+              </tr>
+              <tr>
+                <th class="label" style="    color: black;"><b>Address</b></th>
+                <td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+		</div>
+	</div>
+  <script type="text/javascript">
+  //<![CDATA[
+      var dataForm = new VarienForm('form-validate', true);
+  //]]>
+  </script>
+</div>
 
+
+<script type="text/javascript">
+ document.getElementById('address').value='';
+ if("<?php echo $isCustomerLoggedIn ?>"){
+   document.getElementById('name').value = "<?php echo $customerData['firstname'].' '.$customerData['lastname']  ?>";
+   document.getElementById('email').value = "<?php echo $customerData['email'] ?>";
+   document.getElementById('contact_number').value = "<?php echo $customerData['email'] ?>";
+   document.getElementById('address').value = "<?php echo $customerData['email'] ?>";
+ }
+
+function saveData(){
            new Ajax.Request("<?php echo $this->getUrl('createLog/index/save') ?>", {
                method: 'Post',
                parameters: {
@@ -187,30 +222,12 @@ $productId = $_product->getId();
                             },
                onComplete: function(transport) {
                  console.log(transport);
-                   alert(transport.responseText);
-
+                  document.getElementById('name').value = '';
+                  document.getElementById('email').value = '';
+                  document.getElementById('contact_number').value = '';
+                  document.getElementById('address').value = '';
                }
            });
        }
 </script>
-<!--script type="text/javascript">
-//<![CDATA[
-    var dataForm = new VarienForm('form-validate', true);
-
-//]]>
-</script>
-<!--table class="data-table" id="product-attribute-specs-table">
-    <colgroup><col style="width: 25%">
-    <col>
-    </colgroup>
-    <tbody>
-      <tr>
-        <th class="label" style="    color: black;"><b>Contact Number : <b></th>
-        <td class="data">		<php 	echo $vendorInfo->getContactNumber(); ?></td>
-      </tr>
-      <tr>
-        <th class="label" style="    color: black;"><b>Address</b></th>
-        <td class="data">		<php 	echo $vendorInfo->getAddress(); ?></td>
-      </tr>
-    </tbody>
-</table -->
+?>

@@ -19,12 +19,25 @@ class Productlog_Viewer_IndexController extends Mage_Core_Controller_Front_Actio
 		$data = $this->getRequest()->getPost();
 		try
 		{
+				$currentDate =  Mage::getModel('core/date')->date('Y-m-d H:i:s');
+
 			if($data['customer_id']){
+					Mage::log(	'incheck 2' ,Zend_log::INFO,'layout.log',true);
+					$isexists = $this._isCustomerExists($data['product_id'],$data['customer_id'],$currentDate);
+						Mage::log('exists=='.$isexists ,Zend_log::INFO,'layout.log',true);
+				if($isexists){
+					return;
+				}
 				$data['isCustomerLoggedIn'] = 1;
+			}else{
+					Mage::log(	'incheck 3' ,Zend_log::INFO,'layout.log',true);
+				if($this._isGuestExists($data['product_id'],$data['contact_number'],$email,$currentDate)){
+					return;
+				}
 			}
 
 			$productlog = Mage::getModel('productlog_viewer/users');
-			$currentDate =  Mage::getModel('core/date')->date('Y-m-d H:i:s');
+
 				Mage::log(	$currentDate ,Zend_log::INFO,'layout.log',true);
 			$productlog = Mage::getModel('productlog_viewer/users')->setData(array(
 					'name' => $data['name'],
@@ -47,6 +60,35 @@ class Productlog_Viewer_IndexController extends Mage_Core_Controller_Front_Actio
 					$this->_redirect('*/*/register', array('_secure' => true));
 					return false;
 			}
+	}
+
+	public function _isGuestExists($productId,$contact,$email,$createdDate){
+		$viewers = Mage::getModel('productlog_viewer/users')->getCollection();
+		$viewers->addFieldToFilter('product_id',$productId)
+						->addFieldToFilter('contact',$contact)
+						->addFieldToFilter('email',$email)
+						->addFieldToFilter('created_time',$createdDate);
+
+			Mage::log(	$viewers ,Zend_log::INFO,'layout.log',true);
+		if(count($viewers)>0){
+				return true;
+		}else{
+				return false;
+		}
+	}
+
+	public function _isCustomerExists($productId,$customerId,$createdDate){
+			Mage::log(	'incheck4' ,Zend_log::INFO,'layout.log',true);
+		$viewers = Mage::getModel('productlog_viewer/users')->getCollection();
+		$viewers->addFieldToFilter('product_id',$productId)
+						->addFieldToFilter('customer_id',$customerId)
+						->addFieldToFilter('created_time',$createdDate);
+
+		if(count($viewers)>0){
+				return true;
+		}else{
+				return false;
+		}
 	}
 
 	public function modelAction()
