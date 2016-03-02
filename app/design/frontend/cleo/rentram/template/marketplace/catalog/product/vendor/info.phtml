@@ -18,17 +18,24 @@
  * @package     Medma_MarketPlace
 **/
 $isCustomerLoggedIn = Mage::getSingleton('customer/session')->isLoggedIn();
+if($isCustomerLoggedIn){
+   $customerData = Mage::getSingleton('customer/session')->getCustomer();
+   $customerId = $customerData->getId();
+}
+$currentDate =  Mage::getModel('core/date')->date('Y-m-d H:i:s');
+  Mage::log(	$currentDate ,Zend_log::INFO,'layout.log',true);
 $vendorRating = $this->getVendorRating();
 $vendorInfo = $this->getVendorInfo();
-$_product = $this->getProduct();
 
+$_product = $this->getProduct();
+$productId = $_product->getId();
    $categoryIds = $_product->getCategoryIds();
 	 if(count($categoryIds) ){
             $firstCategoryId = $categoryIds[1];
             $_category = Mage::getModel('catalog/category')->load($firstCategoryId);
         }
-  //  Mage::log("kul",Zend_log::INFO,'layout.log',true);
-//Mage::log(count($vendorRating),Zend_log::INFO,'layout.log',true);
+//    Mage::log($_product->getId(),Zend_log::INFO,'layout.log',true);
+
 
 ?>
 <?php   if($vendorInfo): ?>
@@ -114,24 +121,44 @@ $_product = $this->getProduct();
 					<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Information</h1>
 				</div>
 				<div class="modal-body">
-          <?php if($isCustomerLoggedIn): ?>
-          <table class="data-table" id="product-attribute-specs-table">
-                  <colgroup><col style="width: 25%">
-                  <col>
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th class="label" style="    color: black;"><b>Contact Number : <b></th>
-                      <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
-                    </tr>
-                    <tr>
-                      <th class="label" style="    color: black;"><b>Address</b></th>
-                      <td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
-                    </tr>
-                  </tbody>
-              </table>
-
+              <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customerId; ?>" />
+              <input type="hidden" name="product_id" id="product_id" value="<?php echo $productId; ?>" />
+            <table class="data-table" id="product-attribute-specs-table">
+                <colgroup><col style="width: 25%">
+                <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th class="label" style="    color: black;"><b>Name : <b></th>
+                    <td class="data">
+                      <input type="text" id="name" name="name" title="<?php echo $this->__('First Name'); ?>" maxlength="255" class="input-text required-entry">
+      					    </td>
+                  </tr>
+                  <tr>
+                    <th class="label" style="    color: black;"><b>Email :</b></th>
+                    <td class="data">	<input type="text" name="email" id="email" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="label" style="    color: black;"><b>Mobile :</b></th>
+                    <td class="data">	<input type="text" id="contact_number" name="contact_number" title="<?php echo $this->__('Contact Number'); ?>" maxlength="255" class="input-text required-entry validate-phoneLax" >
+      	             </td>
+                  </tr>
+                  <tr>
+                    <th class="label" style="    color: black;"><b>Address :</b></th>
+                    <td class="data">	<textarea id="address" name="address" title="<?php echo $this->__('Address'); ?>" maxlength="555" class="input-text required-entry" >
+                                      </textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="data" ><button type="submit" onclick="saveData()" class="btn btn-round btn-success">Show Contact</button></td>
+                  </tr>
+                </tbody>
+            </table>
+<?php if($isCustomerLoggedIn): ?>
             <?php else: ?><label>Please log in to view seller details.</label><?php endif; ?>
+
 
         </div>
 
@@ -139,3 +166,51 @@ $_product = $this->getProduct();
 		</div>
 	</div>
 <?php endif; ?>
+<script type="text/javascript">
+ function saveData(){
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var contact_number = document.getElementById('contact_number').value;
+    var address = document.getElementById('address').value;
+    var customer_id = document.getElementById('customer_id').value;
+    var product_id = document.getElementById('product_id').value;
+
+           new Ajax.Request("<?php echo $this->getUrl('createLog/index/save') ?>", {
+               method: 'Post',
+               parameters: {
+                  "name" : document.getElementById('name').value,
+                  "email" :document.getElementById('email').value,
+                  "contact_number" : document.getElementById('contact_number').value,
+                  "address" : document.getElementById('address').value,
+                  "customer_id" : document.getElementById('customer_id').value,
+                  "product_id" : document.getElementById('product_id').value
+                            },
+               onComplete: function(transport) {
+                 console.log(transport);
+                   alert(transport.responseText);
+
+               }
+           });
+       }
+</script>
+<!--script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+
+//]]>
+</script>
+<!--table class="data-table" id="product-attribute-specs-table">
+    <colgroup><col style="width: 25%">
+    <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th class="label" style="    color: black;"><b>Contact Number : <b></th>
+        <td class="data">		<php 	echo $vendorInfo->getContactNumber(); ?></td>
+      </tr>
+      <tr>
+        <th class="label" style="    color: black;"><b>Address</b></th>
+        <td class="data">		<php 	echo $vendorInfo->getAddress(); ?></td>
+      </tr>
+    </tbody>
+</table -->

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+* @author
+* @copyright   Copyright (c) 2014 rentram
+* @license
+*
+-->
+<config>
+  <modules>
+      <Productlog_Viewer>
+          <version>1.0.0</version>
+      </Productlog_Viewer>
+  </modules>
+  <global>
+    <blocks>
+      <productlog_viewer>
+        <class>Productlog_Viewer_Block</class>
+      </productlog_viewer>
+    </blocks>
+    <helpers>
+      <productlog_viewer>
+        <class>Productlog_Viewer_Helper</class>
+      </productlog_viewer>
+    </helpers>
+
+    <models>
+      <productlog_viewer>
+        <class>Productlog_Viewer_Model</class>
+        <resourceModel>productlog_viewer_resource</resourceModel>
+      </productlog_viewer>
+      <productlog_viewer_resource>
+        <class>Productlog_Viewer_Model_Resource</class>
+        <entities>
+          <users>
+            <table>productlog_viewer_users</table>
+          </users>
+        </entities>
+      </productlog_viewer_resource>
+    </models>
+
+    <resources>
+      <productlog_viewer_setup>
+        <setup>
+          <module>Productlog_Viewer</module>
+        </setup>
+      </productlog_viewer_setup>
+    </resources>
+  </global>
+
+  <frontend>
+      <routers>
+          <productlog_viewer>
+              <use>standard</use>
+              <args>
+                  <module>Productlog_Viewer</module>
+                  <frontName>createLog</frontName>
+              </args>
+          </productlog_viewer>
+      </routers>
+    </frontend>
+</config>
