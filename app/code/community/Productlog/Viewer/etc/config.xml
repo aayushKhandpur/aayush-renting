@@ -115,12 +115,6 @@
         </admin>
        </resources>
       </acl>
-      <layout>
-       <updates>
-        <viewer>
-         <file>viewer.xml</file>
-        </viewer>
-       </updates>
-      </layout>
+      
     </adminhtml>
 </config>

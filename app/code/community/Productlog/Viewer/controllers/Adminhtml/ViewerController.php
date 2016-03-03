@@ -1,19 +1,41 @@
 <?php
-class Medma_MarketPlace_Adminhtml_ViewerController extends Mage_Adminhtml_Controller_Action {
+class Productlog_Viewer_Adminhtml_ViewerController extends Mage_Adminhtml_Controller_Action {
 
-    protected function _initAction() {
-      	Mage::log(	'in it' ,Zend_log::INFO,'layout.log',true);
-       $this->loadLayout()
-        ->_setActiveMenu('viewer/items')
-        ->_addBreadcrumb(Mage::helper('adminhtml')->__('Items Manager'), Mage::helper('adminhtml')->__('Item Manager'));
+  public function indexAction()
+     {
+       Mage::log(	'incheck 2' ,Zend_log::INFO,'layout.log',true);
+         $this->_title($this->__('Viewer'))->_title($this->__('viewer'));
+         $this->loadLayout();
+         $this->_setActiveMenu('viewer/viewer');
+         $this->_addContent($this->getLayout()->createBlock('viewer/adminhtml_viewer_viewer'));
+         Mage::log(	'incheck 32' ,Zend_log::INFO,'layout.log',true);
+         $this->renderLayout();
+     }
 
-       return $this;
-      }
+     public function gridAction()
+     {
+        Mage::log(	'incheck 21' ,Zend_log::INFO,'layout.log',true);
+         $this->loadLayout();
+         $this->getResponse()->setBody(
+             $this->getLayout()->createBlock('viewer/adminhtml_viewer_viewer_grid')->toHtml()
+         );
+     }
 
-    public function indexAction() {
-      	Mage::log(	'in it  2' ,Zend_log::INFO,'layout.log',true);
-       $this->_initAction()->renderLayout();
-      }
+     public function exportInchooCsvAction()
+     {
+        Mage::log(	'incheck 22' ,Zend_log::INFO,'layout.log',true);
+         $fileName = 'orders_inchoo.csv';
+         $grid = $this->getLayout()->createBlock('viewer/adminhtml_viewer_viewer_grid');
+         $this->_prepareDownloadResponse($fileName, $grid->getCsvFile());
+     }
+
+     public function exportInchooExcelAction()
+     {
+        Mage::log(	'incheck 23' ,Zend_log::INFO,'layout.log',true);
+         $fileName = 'orders_inchoo.xml';
+         $grid = $this->getLayout()->createBlock('viewer/adminhtml_viewer_viewer_grid');
+         $this->_prepareDownloadResponse($fileName, $grid->getExcelFile($fileName));
+     }
 
 }
 ?>
