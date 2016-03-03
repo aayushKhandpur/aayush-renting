@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+    <viewer_adminhtml_viewer_index>
+        <reference name="content">
+            <block type="viewer/adminhtml_viewer" name="viewer" />
+        </reference>
+    </viewer_adminhtml_viewer_index>
+</layout>

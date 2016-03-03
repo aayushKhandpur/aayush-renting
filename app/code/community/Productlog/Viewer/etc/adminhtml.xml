@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <viewer module="viewer" translate="title">
+            <title>Viewer</title>
+            <sort_order>100</sort_order>
+        </viewer>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <viewer translate="title" module="viewer">
+                        <title>My Controller</title>
+                        <sort_order>-100</sort_order>
+                    </viewer>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

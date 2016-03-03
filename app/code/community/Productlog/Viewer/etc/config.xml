@@ -15,49 +15,112 @@
   </modules>
   <global>
     <blocks>
-      <productlog_viewer>
-        <class>Productlog_Viewer_Block</class>
-      </productlog_viewer>
-    </blocks>
+       <viewer>
+           <class>Productlog_Viewer_Block</class>
+       </viewer>
+   </blocks>
     <helpers>
-      <productlog_viewer>
-        <class>Productlog_Viewer_Helper</class>
-      </productlog_viewer>
+       <viewer>
+           <!-- Helper definition needed by Magento -->
+           <class>Productlog_Viewer_Helper</class>
+       </viewer>
     </helpers>
-
     <models>
-      <productlog_viewer>
+      <viewer>
         <class>Productlog_Viewer_Model</class>
-        <resourceModel>productlog_viewer_resource</resourceModel>
-      </productlog_viewer>
-      <productlog_viewer_resource>
+        <resourceModel>viewer_resource</resourceModel>
+      </viewer>
+      <viewer_resource>
         <class>Productlog_Viewer_Model_Resource</class>
         <entities>
-          <users>
-            <table>productlog_viewer_users</table>
-          </users>
+          <viewer>
+            <table>viewer</table>
+          </viewer>
         </entities>
-      </productlog_viewer_resource>
+      </viewer_resource>
     </models>
 
     <resources>
-      <productlog_viewer_setup>
+      <viewer_setup>
         <setup>
           <module>Productlog_Viewer</module>
         </setup>
-      </productlog_viewer_setup>
+        <connection>
+           <use>core_setup</use>
+       </connection>
+      </viewer_setup>
+        <viewer_write>
+         <connection>
+             <use>core_write</use>
+         </connection>
+       </viewer_write>
+       <viewer_read>
+           <connection>
+               <use>core_read</use>
+           </connection>
+       </viewer_read>
     </resources>
   </global>
 
   <frontend>
-      <routers>
-          <productlog_viewer>
-              <use>standard</use>
-              <args>
-                  <module>Productlog_Viewer</module>
-                  <frontName>createLog</frontName>
-              </args>
-          </productlog_viewer>
-      </routers>
-    </frontend>
+    <routers>
+        <viewer>
+            <use>standard</use>
+            <args>
+                <module>Productlog_Viewer</module>
+                <frontName>createLog</frontName>
+            </args>
+        </viewer>
+    </routers>
+  </frontend>
+
+    <admin>
+       <routers>
+        <viewer>
+         <use>admin</use>
+         <args>
+          <module>Productlog_Viewer</module>
+          <frontName>viewer</frontName>
+         </args>
+        </viewer>
+       </routers>
+   </admin>
+
+   <adminhtml>
+      <menu>
+       <viewer module="viewer">
+        <title>viewer</title>
+        <sort_order>71</sort_order>
+        <children>
+         <items module="viewer">
+          <title>Manage viewers</title>
+          <sort_order>0</sort_order>
+          <action>viewer/adminhtml_viewer</action>
+         </items>
+        </children>
+       </viewer>
+      </menu>
+      <acl>
+       <resources>
+        <all>
+         <title>Allow Everything</title>
+        </all>
+        <admin>
+         <children>
+          <Productlog_Viewer>
+           <title>viewer Module</title>
+           <sort_order>10</sort_order>
+          </Productlog_Viewer>
+         </children>
+        </admin>
+       </resources>
+      </acl>
+      <layout>
+       <updates>
+        <viewer>
+         <file>viewer.xml</file>
+        </viewer>
+       </updates>
+      </layout>
+    </adminhtml>
 </config>

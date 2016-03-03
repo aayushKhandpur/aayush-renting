@@ -5,13 +5,12 @@
  * @category    Contactdetaillog
  * @package     Contactdetaillog_Productviewer
 **/
-class Productlog_Viewer_IndexController extends Mage_Core_Controller_Front_Action
+class Productlog_Viewer_ViewerController extends Mage_Core_Controller_Front_Action
 {
 	public function indexAction()
 	{
-
-		// Mage::log(	'',Zend_log::INFO,'layout.log',true);
-				echo 'kuldeep here';
+	$this->loadLayout();
+	$this->renderLayout();
 	}
 
 	public function saveAction()
@@ -19,11 +18,11 @@ class Productlog_Viewer_IndexController extends Mage_Core_Controller_Front_Actio
 		$data = $this->getRequest()->getPost();
 		try
 		{
-				$currentDate =  Mage::getModel('core/date')->date('Y-m-d H:i:s');
+				$currentDate =  Mage::getModel('core/date')->date('Y-m-d');
 
 			if($data['customer_id']){
 					Mage::log(	'incheck 2' ,Zend_log::INFO,'layout.log',true);
-					$isexists = $this._isCustomerExists($data['product_id'],$data['customer_id'],$currentDate);
+					$isexists = $this->isCustomerExists($data['product_id'],$data['customer_id'],$currentDate);
 						Mage::log('exists=='.$isexists ,Zend_log::INFO,'layout.log',true);
 				if($isexists){
 					return;
@@ -31,15 +30,12 @@ class Productlog_Viewer_IndexController extends Mage_Core_Controller_Front_Actio
 				$data['isCustomerLoggedIn'] = 1;
 			}else{
 					Mage::log(	'incheck 3' ,Zend_log::INFO,'layout.log',true);
-				if($this._isGuestExists($data['product_id'],$data['contact_number'],$email,$currentDate)){
+				if($this->isGuestExists($data['product_id'],$data['contact_number'],$data['email'],$currentDate)){
 					return;
 				}
 			}
 
-			$productlog = Mage::getModel('productlog_viewer/users');
-
-				Mage::log(	$currentDate ,Zend_log::INFO,'layout.log',true);
-			$productlog = Mage::getModel('productlog_viewer/users')->setData(array(
+			$productlog = Mage::getModel('viewer/viewer')->setData(array(
 					'name' => $data['name'],
 					'email' => $data['email'],
 					'contact' => $data['contact_number'],
@@ -62,29 +58,27 @@ class Productlog_Viewer_IndexController extends Mage_Core_Controller_Front_Actio
 			}
 	}
 
-	public function _isGuestExists($productId,$contact,$email,$createdDate){
-		$viewers = Mage::getModel('productlog_viewer/users')->getCollection();
-		$viewers->addFieldToFilter('product_id',$productId)
+	public function isGuestExists($productId,$contact,$email,$createdDate){
+
+		$viewers = Mage::getModel('viewer/viewer')->getCollection()
+						->addFieldToFilter('product_id',$productId)
 						->addFieldToFilter('contact',$contact)
 						->addFieldToFilter('email',$email)
 						->addFieldToFilter('created_time',$createdDate);
-
-			Mage::log(	$viewers ,Zend_log::INFO,'layout.log',true);
-		if(count($viewers)>0){
+		if($viewers->count()>0){
 				return true;
 		}else{
 				return false;
 		}
 	}
 
-	public function _isCustomerExists($productId,$customerId,$createdDate){
-			Mage::log(	'incheck4' ,Zend_log::INFO,'layout.log',true);
-		$viewers = Mage::getModel('productlog_viewer/users')->getCollection();
-		$viewers->addFieldToFilter('product_id',$productId)
-						->addFieldToFilter('customer_id',$customerId)
-						->addFieldToFilter('created_time',$createdDate);
+	public function isCustomerExists($productId,$customerId,$createdDate){
 
-		if(count($viewers)>0){
+		$viewers = Mage::getModel('viewer/viewer')->getCollection()
+							->addFieldToFilter('product_id',$productId)
+							->addFieldToFilter('customer_id',$customerId)
+							->addFieldToFilter('created_time',$createdDate);
+		if($viewers->count()>0){
 				return true;
 		}else{
 				return false;
