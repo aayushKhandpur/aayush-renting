@@ -4,6 +4,7 @@ class Productlog_Viewer_Block_Adminhtml_Viewer_Viewer_Grid extends Mage_Adminhtm
 {
     public function __construct()
     {
+       Mage::log(	'incheck 42' ,Zend_log::INFO,'layout.log',true);
         parent::__construct();
         $this->setId('viewer_grid');
         $this->setDefaultSort('increment_id');
@@ -14,6 +15,7 @@ class Productlog_Viewer_Block_Adminhtml_Viewer_Viewer_Grid extends Mage_Adminhtm
 
     protected function _prepareCollection()
     {
+         Mage::log(	'incheck 421' ,Zend_log::INFO,'layout.log',true);
         $collection = Mage::getResourceModel('viewer/viewer')
             ->join(array('a' => 'sales/order_address'), 'main_table.entity_id = a.parent_id AND a.address_type != \'billing\'', array(
                 'city'       => 'city',
@@ -43,6 +45,7 @@ class Productlog_Viewer_Block_Adminhtml_Viewer_Viewer_Grid extends Mage_Adminhtm
 
     protected function _prepareColumns()
     {
+         Mage::log(	'incheck 422' ,Zend_log::INFO,'layout.log',true);
         $helper = Mage::helper('viewer');
         $currency = (string) Mage::getStoreConfig(Mage_Directory_Model_Currency::XML_PATH_CURRENCY_BASE);
 
@@ -112,6 +115,7 @@ class Productlog_Viewer_Block_Adminhtml_Viewer_Viewer_Grid extends Mage_Adminhtm
 
     public function getGridUrl()
     {
+         Mage::log(	'incheck 423' ,Zend_log::INFO,'layout.log',true);
         return $this->getUrl('*/*/grid', array('_current'=>true));
     }
 }
