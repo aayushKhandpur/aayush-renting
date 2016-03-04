@@ -1,19 +1,19 @@
 <?xml version="1.0" ?>
 <layout version="1.0.0">
     <default>
-        <reference name="head">			
+        <reference name="head">
             <action method="addCss">
                 <stylesheet>marketplace/css/styles.css</stylesheet>
-            </action>
+            </action>          
         </reference>
         <reference name="top.links">
-			<action method="addLink" ifconfig="marketplace/vendor_registration/request_seller_top_link" translate="Request Seller">
-				<label helper="marketplace/getSellerRegistrationLabelConfig"/>
-				<url>marketplace/vendor/register</url>
-				<title>Request Seller</title>
-				<prepare>true</prepare>
-			</action>
-		</reference>    
+  			<action method="addLink" ifconfig="marketplace/vendor_registration/request_seller_top_link" translate="Request Seller">
+  				<label helper="marketplace/getSellerRegistrationLabelConfig"/>
+  				<url>marketplace/vendor/register</url>
+  				<title>Request Seller</title>
+  				<prepare>true</prepare>
+  			</action>
+		</reference>
         <reference name="footer_links">
 			<action method="addLink" translate="label title">
 				<label helper="marketplace/getSellerRegistrationLabelConfig"/>
@@ -23,20 +23,20 @@
                 <urlParams helper="core/url/getHomeUrl"/>
                 <position>1</position>
 			</action>
-		</reference>	
+		</reference>
     </default>
     <catalog_product_view>
         <reference name="root">
             <action method="setTemplate">
                 <template helper="marketplace/switchTemplate" />
-            </action>            
-        </reference>       
-    </catalog_product_view>    
+            </action>
+        </reference>
+    </catalog_product_view>
     <customer_account>
         <reference name="customer_account_navigation">
             <action method="addLink" translate="label" module="marketplace">
                 <name>My Favourite Sellers</name>
-                <path>marketplace/favourite</path>					
+                <path>marketplace/favourite</path>
                 <label>My Favourite Sellers</label>
             </action>
         </reference>
@@ -70,7 +70,7 @@
             <block type="marketplace/vendor_profile_items" name="marketplace.vendor.profile.items" template="marketplace/vendor/profile/items.phtml">
 				<action method="setColumnCount"><count>5</count></action>
             </block>
-        </reference>        
+        </reference>
     </marketplace_vendor_items>
     <sales_order_view>
         <reference name="order_items">
@@ -91,7 +91,7 @@
         <reference name="root">
             <action method="setTemplate">
                 <template>page/1column.phtml</template>
-            </action>            
+            </action>
         </reference>
         <reference name="content">
             <block type="marketplace/vendor_register" name="marketplace.vendor.register" template="marketplace/vendor/register.phtml">
@@ -103,7 +103,7 @@
                     <action method="setImgWidth"><width>230</width></action>
                     <action method="setImgHeight"><width>50</width></action>
                 </block>
-			</block>          
+			</block>
         </reference>
     </marketplace_vendor_register>
 </layout>
