@@ -17,6 +17,7 @@
  * @category    Medma
  * @package     Medma_MarketPlace
 **/
+
 $isCustomerLoggedIn = Mage::getSingleton('customer/session')->isLoggedIn();
 if($isCustomerLoggedIn){
    $customerData = Mage::getSingleton('customer/session')->getCustomer();
@@ -84,7 +85,7 @@ $productId = $_product->getId();
 								<?php if($_category->getName()=="Construction Equipments"): ?>
 		            <tr >
 		                <th class="label">Contact</th>
-		                <td class="data">	<button  class="btn btn-default" data-toggle="modal" data-target="#detailModel">View contact</button>	</td>
+		                <td class="data">	<button  class="btn btn-default" onclick="informationPopup()">View contact</button>	</td>
 		            </tr>
 
 								<?php endif; ?>
@@ -98,7 +99,6 @@ $productId = $_product->getId();
 		            </tr>
 		        </tbody>
 		    </table>
-
 	</div>
 
 	<div class="add-to-box" style="text-align: center;  margin-top: 1%;">
@@ -109,7 +109,7 @@ $productId = $_product->getId();
 	</div>
 </div>
 
-
+<?php endif; ?>
 <div class="modal fade" id="detailModel" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -122,7 +122,6 @@ $productId = $_product->getId();
           <p class="modal-title"  style="text-align:center;">Please fill the form to get seller information.</p>
 				</div>
 				<div class="modal-body">
-
             <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customerId; ?>" />
             <input type="hidden" name="product_id" id="product_id" value="<?php echo $productId; ?>" />
             <table class="data-table" id="product-attribute-specs-table">
@@ -131,103 +130,182 @@ $productId = $_product->getId();
                 </colgroup>
                 <tbody>
                   <tr>
-                    <th class="label" style="    color: black;"><b>Your Name : <b></th>
+                    <th class="label" style="    color: black;"><b><sup>*</sup>Name : <b></th>
                     <td class="data">
-                      <input type="text" id="name" name="name" title="<?php echo $this->__('First Name'); ?>" maxlength="255" class="input-text required-entry">
+                      <input type="text" id="name" onblur="hideNameValidation()" name="name" placeholder="Please enter your name" title="<?php echo $this->__('First Name'); ?>" maxlength="255" class="input-text required-entry" />
+                      <div id="nameValidate" style="color:red;"></div>
       					    </td>
                   </tr>
                   <tr>
-                    <th class="label" style="    color: black;"><b>Email :</b></th>
-                    <td class="data">	<input type="text" name="email" id="email" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" />
+                    <th class="label" style="    color: black;"><b><sup>*</sup>Email :</b></th>
+                    <td class="data">
+                      <input type="text" onblur="hideEmailValidation()" placeholder="Please enter your email eg:- demo@example.com" name="email" id="email" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" />
+                      <div id="emailValidate" style="color:red;"></div>
                     </td>
                   </tr>
                   <tr>
-                    <th class="label" style="    color: black;"><b>Mobile :</b></th>
-                    <td class="data">	<input type="text" id="contact_number" name="contact_number" title="<?php echo $this->__('Contact Number'); ?>" maxlength="255" class="input-text required-entry validate-phoneLax" >
+                    <th class="label" style="color: black;"><b><sup>*</sup>Mobile :</b></th>
+                    <td class="data">
+                      <input type="text" onblur="hideContactValidation()" id="contact_number" placeholder="Please enter your contact eg:- 1234512345" name="contact_number" title="<?php echo $this->__('Contact Number'); ?>" maxlength="255" class="input-text required-entry validate-phoneLax" >
+                      <div id="contactValidate" style="color:red;"></div>
       	             </td>
                   </tr>
                   <tr>
                     <th class="label" style="    color: black;"><b>Address </b>(optional) :</th>
-                    <td class="data">	<textarea id="address" name="address" title="<?php echo $this->__('Address'); ?>" maxlength="555" class="input-text required-entry" >
+                    <td class="data">	<textarea id="address" name="address" placeholder="Please enter your address" title="<?php echo $this->__('Address'); ?>" maxlength="555" class="input-text required-entry" >
                                       </textarea>
                     </td>
                   </tr>
                   <tr>
                     <td></td>
-                    <td class="data" ><button type="submit" data-dismiss="modal" onclick="saveData()" data-toggle="modal" data-target="#informationModel" class="btn btn-round btn-success">Show Contact</button></td>
+                    <td class="data" ><button type="submit"  onclick="saveData()"  class="btn btn-round btn-success" id="showBtn">Show Contact</button></td>
                   </tr>
                 </tbody>
             </table>
-          
+
+
+<script type="text/javascript">
+  function informationPopup(){
+    if("<?php $isSaved = Mage::getSingleton('core/session')->getData('isSaved'); echo $isSaved ?>" == "true"){
+      jQuery("#informationModel").modal("show");
+    }else{
+        jQuery("#detailModel").modal("show");
+    }
+  }
+  function hideNameValidation(){
+      var name = document.getElementById('name').value;
+    if ( name == null ||  name == "") {
+      document.getElementById('nameValidate').innerHTML = "Name is required field";
+    }else{
+      document.getElementById('nameValidate').innerHTML = "";
+    }
+  }
+  function hideEmailValidation(){
+      var emailReg = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    var email = document.getElementById('email').value;
+    if(  email == null ||   email == "" ){
+        document.getElementById('emailValidate').innerHTML = "Email is required field";
+    }else if(!email.match(emailReg)){
+        document.getElementById('emailValidate').innerHTML = "Email must in proper format eg:- demo@example.com";
+    }else{
+        document.getElementById('emailValidate').innerHTML = "";
+    }
+
+  }
+  function hideContactValidation(){
+    var phonenoReg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    var contact  =  document.getElementById('contact_number').value;
+    if( contact == null ||   contact == "" ){
+        document.getElementById('contactValidate').innerHTML = "Contact is required field";
+    }else if(!contact.match(phonenoReg)){
+        document.getElementById('contactValidate').innerHTML = "Mobile number must be in proper format eg:- 1234512345";
+    }else{
+        document.getElementById('contactValidate').innerHTML = "";
+    }
+  }
+
+    document.getElementById('address').value='';
+    if("<?php echo $isCustomerLoggedIn ?>"){
+      document.getElementById('name').value = "<?php echo $customerData['firstname'].' '.$customerData['lastname']  ?>";
+      document.getElementById('email').value = "<?php echo $customerData['email'] ?>";
+      document.getElementById('contact_number').value = "<?php echo $customerData['email'] ?>";
+      document.getElementById('address').value = "<?php echo $customerData['email'] ?>";
+    }
+    function isValid(){
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var contact  =  document.getElementById('contact_number').value;
+      var address  =  document.getElementById('address').value;
+      var isValid = true ;
+      var emailReg = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+      var phonenoReg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+      if ( name == null ||  name == "") {
+        document.getElementById('nameValidate').innerHTML = "Name is required field";
+        isValid = false;
+      }
+      if(  email == null ||   email == "" ){
+          document.getElementById('emailValidate').innerHTML = "Email is required field";
+          isValid= false;
+      }else if(!email.match(emailReg)){
+          document.getElementById('emailValidate').innerHTML = "Email must in proper format eg:- demo@example.com";
+          isValid = false;
+      }
+      if( contact == null ||   contact == "" ){
+          document.getElementById('contactValidate').innerHTML = "Contact is required field";
+          isValid = false;
+      }else if(!contact.match(phonenoReg)){
+          document.getElementById('contactValidate').innerHTML = "Mobile number must be in proper format eg:- 1234512345";
+          isValid = false;
+      }
+
+      return isValid;
+    }
+
+   function saveData(){
+            if(!isValid()){
+              return;
+            }
+     console.log(dataForm);
+     document.getElementById('showBtn').innerHTML="Loading...";
+              new Ajax.Request("<?php echo $this->getUrl('createLog/viewer/save') ?>", {
+                  method: 'Post',
+                  parameters: {
+                     "name" : document.getElementById('name').value,
+                     "email" :document.getElementById('email').value,
+                     "contact_number" : document.getElementById('contact_number').value,
+                     "address" : document.getElementById('address').value,
+                     "customer_id" : document.getElementById('customer_id').value,
+                     "product_id" : document.getElementById('product_id').value
+                               },
+                  onComplete: function(response) {
+                    console.log(response);
+                     document.getElementById('name').value = '';
+                     document.getElementById('email').value = '';
+                     document.getElementById('contact_number').value = '';
+                     document.getElementById('address').value = '';
+                     jQuery("#detailModel").modal("hide");
+                      jQuery("#informationModel").modal("show");
+                      document.getElementById('showBtn').innerHTML="Show Contact";
+                      '<?php $isSaved ="true"; ?>';
+                  }
+              });
+          }
+
+</script>
+
         </div>
 			</div>
 		</div>
 	</div>
-<?php endif; ?>
-<div class="modal fade" id="informationModel" tabindex="-1" role="dialog"	aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" ng-click="deleteRow()">
-					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-				</button>
-				<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Detail</h1>
-			</div>
-			<div class="modal-body">
-        <table class="data-table" id="product-attribute-specs-table">
-            <colgroup><col style="width: 25%">
-            <col>
-            </colgroup>
-            <tbody>
-              <tr>
-                <th class="label" style="    color: black;"><b>Contact Number : <b></th>
-                <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
-              </tr>
-              <tr>
-                <th class="label" style="    color: black;"><b>Address</b></th>
-                <td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
-              </tr>
-            </tbody>
-        </table>
-      </div>
-		</div>
-	</div>
-  <script type="text/javascript">
-  //<![CDATA[
-      var dataForm = new VarienForm('form-validate', true);
-  //]]>
-  </script>
-</div>
 
 
-<script type="text/javascript">
- document.getElementById('address').value='';
- if("<?php echo $isCustomerLoggedIn ?>"){
-   document.getElementById('name').value = "<?php echo $customerData['firstname'].' '.$customerData['lastname']  ?>";
-   document.getElementById('email').value = "<?php echo $customerData['email'] ?>";
-   document.getElementById('contact_number').value = "<?php echo $customerData['email'] ?>";
-   document.getElementById('address').value = "<?php echo $customerData['email'] ?>";
- }
-
-function saveData(){
-           new Ajax.Request("<?php echo $this->getUrl('createLog/index/save') ?>", {
-               method: 'Post',
-               parameters: {
-                  "name" : document.getElementById('name').value,
-                  "email" :document.getElementById('email').value,
-                  "contact_number" : document.getElementById('contact_number').value,
-                  "address" : document.getElementById('address').value,
-                  "customer_id" : document.getElementById('customer_id').value,
-                  "product_id" : document.getElementById('product_id').value
-                            },
-               onComplete: function(transport) {
-                 console.log(transport);
-                  document.getElementById('name').value = '';
-                  document.getElementById('email').value = '';
-                  document.getElementById('contact_number').value = '';
-                  document.getElementById('address').value = '';
-               }
-           });
-       }
-</script>
-?>
+  <div class="modal fade" id="informationModel" tabindex="-1" role="dialog"	aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-dialog">
+  		<div class="modal-content">
+  			<div class="modal-header">
+  				<button type="button" class="close" data-dismiss="modal" ng-click="deleteRow()">
+  					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+  				</button>
+  				<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Detail</h1>
+  			</div>
+  			<div class="modal-body">
+          <table class="data-table" id="product-attribute-specs-table">
+              <colgroup><col style="width: 25%">
+              <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="label" style="    color: black;"><b>Contact Number : <b></th>
+                  <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
+                </tr>
+                <tr>
+                  <th class="label" style="    color: black;"><b>Address</b></th>
+                  <td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+  		</div>
+  	</div>
+  </div>
