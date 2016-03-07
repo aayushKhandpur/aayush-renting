@@ -38,10 +38,10 @@ class Productlog_Viewer_ViewerController extends Mage_Core_Controller_Front_Acti
 						'product_id' => $data['product_id'],
 						'address' => $data['address']
 					))->save();
-						Mage::getSingleton('core/session')->setData('isSaved', 'true');
+
 					$jsonData=json_encode(array('test', 'test', 'test'));
 			}
-
+	Mage::getSingleton('core/session')->setData('isSaved', 'true');
 				$this->getResponse()->setHeader('Content-type', 'application/json');
     		$this->getResponse()->setBody($jsonData);
 
