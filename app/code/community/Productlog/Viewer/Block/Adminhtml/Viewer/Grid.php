@@ -21,12 +21,7 @@ class Productlog_Viewer_Block_Adminhtml_Viewer_Grid extends Mage_Adminhtml_Block
     protected function _prepareColumns()
       {
            $helper = Mage::helper('viewer');
-          $this->addColumn('viewer_id', array(
-            'header'    => Mage::helper('viewer')->__('ID'),
-            'align'     =>'right',
-            'width'     => '10px',
-            'index'     => 'viewer_id',
-          ));
+
 
           $this->addColumn('name', array(
             'header'    => Mage::helper('viewer')->__('Name'),
@@ -34,8 +29,6 @@ class Productlog_Viewer_Block_Adminhtml_Viewer_Grid extends Mage_Adminhtml_Block
             'index'     => 'name',
             'width'     => '50px',
           ));
-
-
           $this->addColumn('email', array(
               'header'    => Mage::helper('viewer')->__('Email'),
               'width'     => '150px',
@@ -46,21 +39,37 @@ class Productlog_Viewer_Block_Adminhtml_Viewer_Grid extends Mage_Adminhtml_Block
               'width'     => '150px',
               'index'     => 'contact',
           ));
-          $this->addColumn('customer_id', array(
-              'header'    => Mage::helper('viewer')->__('Customer Id'),
-              'width'     => '150px',
-              'index'     => 'customer_id',
-          ));
-          $this->addColumn('product_id', array(
-              'header'    => Mage::helper('viewer')->__('product Id'),
-              'width'     => '150px',
-              'index'     => 'product_id',
-          ));
           $this->addColumn('address', array(
               'header'    => Mage::helper('viewer')->__('Address'),
               'width'     => '150px',
               'index'     => 'address',
           ));
+          $this->addColumn('product_name', array(
+              'header'    => Mage::helper('viewer')->__('Product Name'),
+              'width'     => '150px',
+              'index'     => 'product_name',
+          ));
+          $this->addColumn('product_sku', array(
+              'header'    => Mage::helper('viewer')->__('Product Sku'),
+              'width'     => '150px',
+              'index'     => 'product_sku',
+          ));
+          $this->addColumn('category_name', array(
+              'header'    => Mage::helper('viewer')->__('Category Name'),
+              'width'     => '150px',
+              'index'     => 'category_name',
+          ));
+          $this->addColumn('vendor_name', array(
+              'header'    => Mage::helper('viewer')->__('Renter Name'),
+              'width'     => '150px',
+              'index'     => 'vendor_name',
+          ));
+          $this->addColumn('city', array(
+              'header'    => Mage::helper('viewer')->__('City'),
+              'width'     => '150px',
+              'index'     => 'city',
+          ));
+
           $this->addColumn('created_time', array(
               'header'    => Mage::helper('viewer')->__('Created Date'),
               'width'     => '150px',

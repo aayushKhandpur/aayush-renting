@@ -16,6 +16,7 @@ class Productlog_Viewer_ViewerController extends Mage_Core_Controller_Front_Acti
 	public function saveAction()
 	{
 		$data = $this->getRequest()->getPost();
+
 		try
 		{
 				$currentDate =  Mage::getModel('core/date')->date('Y-m-d');
@@ -28,20 +29,14 @@ class Productlog_Viewer_ViewerController extends Mage_Core_Controller_Front_Acti
 			if($isexists){
 				$jsonData=json_encode(array('test', 'test', 'test'));
 			}else{
-				$productlog = Mage::getModel('viewer/viewer')->setData(array(
-						'name' => $data['name'],
-						'email' => $data['email'],
-						'contact' => $data['contact_number'],
-						'created_time' => $currentDate,
-						'isCustomerLoggedIn' => $data['isCustomerLoggedIn'],
-						'customer_id' => $data['customer_id'],
-						'product_id' => $data['product_id'],
-						'address' => $data['address']
-					))->save();
-
-					$jsonData=json_encode(array('test', 'test', 'test'));
+				// ---save story as city
+				$productlog = $this->getProductLogFromRequest($data,$currentDate);
+					Mage::log(	$productlog ,Zend_log::INFO,'layout.log',true);
+				$productlog->save();
+				$jsonData=json_encode(array('test', 'test', 'test'));
 			}
-	Mage::getSingleton('core/session')->setData('isSaved', 'true');
+			//---save session product id wise
+			Mage::getSingleton('core/session')->setData('isSaved', 'true');
 				$this->getResponse()->setHeader('Content-type', 'application/json');
     		$this->getResponse()->setBody($jsonData);
 
@@ -53,7 +48,26 @@ class Productlog_Viewer_ViewerController extends Mage_Core_Controller_Front_Acti
 					return false;
 			}
 	}
-
+	public function getProductLogFromRequest($data,$currentDate){
+			$productlog = Mage::getModel('viewer/viewer')->setData(array(
+				'name' => $data['name'],
+				'email' => $data['email'],
+				'contact' => $data['contact_number'],
+				'customer_id' => $data['customer_id'],
+				'product_id' => $data['product_id'],
+				'isCustomerLoggedIn' => $data['isCustomerLoggedIn'],
+				'city' => Mage::app()->getWebsite()->getName(),
+				'address' => $data['address'],
+				'created_time' => $currentDate,
+				'product_name'  => $data['product_name'],
+				'product_sku'  => $data['product_sku'],
+				'vendor_id' => $data['vendor_id'],
+				'vendor_name' => $data['vendor_name'],
+				'category_id' => $data['category_id'],
+				'category_name' => $data['category_name']
+			));
+			return $productlog;
+	}
 	public function isGuestExists($productId,$contact,$email,$createdDate){
 
 		$viewers = Mage::getModel('viewer/viewer')->getCollection()

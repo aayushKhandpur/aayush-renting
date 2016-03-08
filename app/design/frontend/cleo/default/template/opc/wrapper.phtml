@@ -7,7 +7,9 @@ $theme = Mage::getDesign()->getTheme('frontend');
 <div class="opc-wrapper-opc design_package_<?php echo $package;?> design_theme_<?php echo $theme;?>">
     <h2><?php echo $this->__('Checkout')?></h2>
 	<div class="opc-menu">
-        <?php echo $this->_getReviewHtml()?><br/>
+    <div class="hidden" >
+      <?php echo $this->_getReviewHtml()?>
+  </div>
 	    <?php echo $this->getChildHtml('paypal.button')?>
 
         <?php if (!Mage::getSingleton('customer/session')->isLoggedIn()):?>

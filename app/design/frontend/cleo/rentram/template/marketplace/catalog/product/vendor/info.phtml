@@ -35,8 +35,12 @@ $productId = $_product->getId();
    $categoryIds = $_product->getCategoryIds();
 	 if(count($categoryIds) ){
             $firstCategoryId = $categoryIds[1];
+            $secondCategoryId = $categoryIds[2];
+            $categoryData = Mage::getModel('catalog/category')->load($secondCategoryId);
             $_category = Mage::getModel('catalog/category')->load($firstCategoryId);
         }
+
+         Mage::log(	$categoryIds ,Zend_log::INFO,'layout.log',true);
 //    Mage::log($_product->getId(),Zend_log::INFO,'layout.log',true);
 
 
@@ -181,7 +185,7 @@ if('<?php echo $isCustomerLoggedIn ?>'){
   function informationPopup(){
 
     console.log("<?php $isSaved = Mage::getSingleton('core/session')->getData('isSaved'); echo $isSaved ?>");
-    if("<?php $isSaved = Mage::getSingleton('core/session')->getData('isSaved'); echo $isSaved ?>" || saveSuccess){
+    if(("<?php $isSaved = Mage::getSingleton('core/session')->getData('isSaved'); echo $isSaved ?>" || saveSuccess) && false){
       jQuery("#informationModel").modal("show");
     }else{
         jQuery("#detailModel").modal("show");
@@ -254,7 +258,7 @@ if('<?php echo $isCustomerLoggedIn ?>'){
             if(!isValid()){
               return;
             }
-     console.log(dataForm);
+
      document.getElementById('showBtn').innerHTML="Loading...";
               new Ajax.Request("<?php echo $this->getUrl('createLog/viewer/save') ?>", {
                   method: 'Post',
@@ -264,7 +268,14 @@ if('<?php echo $isCustomerLoggedIn ?>'){
                      "contact_number" : document.getElementById('contact_number').value,
                      "address" : document.getElementById('address').value,
                      "customer_id" : document.getElementById('customer_id').value,
-                     "product_id" : document.getElementById('product_id').value
+                     "product_id" : document.getElementById('product_id').value,
+                     'product_name':"<?php echo $_product['name'] ?>",
+                     'product_sku':"<?php echo $_product['sku'] ?>",
+                     'vendor_id':"<?php echo $vendorInfo['entity_id'] ?>",
+                     'vendor_name':"<?php echo $vendorInfo['shop_name'] ?>",
+                     'category_id':"<?php echo $categoryData['entity_id'] ?>",
+                     'category_name':"<?php echo $categoryData['name'] ?>"
+
                                },
                   onComplete: function(response) {
 
