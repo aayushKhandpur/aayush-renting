@@ -841,7 +841,8 @@ li.price-row-container input#pr_from, li.price-row-container input#pr_to {displa
 }
 
 #product-info .product-description {
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    font-weight: bold !important;
 }
 #product-info .product-sku {
     position: absolute;

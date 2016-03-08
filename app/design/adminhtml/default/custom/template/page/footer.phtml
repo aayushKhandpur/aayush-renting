@@ -25,15 +25,13 @@
  */
 ?>
 <p class="bug-report">
-    <a href="<?php echo $this->getBugreportUrl() ?>" id="footer_bug_tracking"><?php echo $this->__('Help Us Keep rentram Healthy - Report All Bugs') ?></a><br/>
     <?php echo $this->__('Interface Locale: %s', $this->getLanguageSelect()) ?>
 </p>
 <p class="legality">
-    <a href="<?php echo $this->getConnectWithMagentoUrl() ?>" id="footer_connect"><?php echo $this->__('Connect with the rentram Community') ?></a><br/>
-    <img src="<?php echo $this->getSkinUrl('images/varien_logo.gif') ?>" class="v-middle" alt="" />&nbsp;&nbsp;
+    <img src="<?php echo $this->getSkinUrl('images/fevicon_admin.png') ?>" class="v-middle" alt="" />&nbsp;&nbsp;
     <?php echo $this->__('Copyright © 2016 rentram internet pvt. ltd.<br/> All Rights Reserved.', date('Y')) ?>
 </p>
-<?php echo $this->__('rentram ver. %s', Mage::getVersion()) ?>
+<?php echo $this->__('ver. %s', Mage::getVersion()) ?>
 <script type="text/javascript">
     $('footer_bug_tracking').target = 'Varien_External';
     $('footer_connect').target = 'Varien_External';

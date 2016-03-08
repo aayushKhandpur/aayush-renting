@@ -90,7 +90,6 @@
                 <rewrite>
                     <system_account_edit_form>Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form</system_account_edit_form>
                     <catalog_product_grid>Medma_MarketPlace_Block_Adminhtml_Catalog_Product_Grid</catalog_product_grid>
-                  <!--  <catalog_product_edit_tabs>Medma_MarketPlace_Block_Adminhtml_Catalog_Product_Edit_Tabs</catalog_product_edit_tabs>  -->
                     <system_convert_gui>Medma_MarketPlace_Block_Adminhtml_System_Convert_Gui</system_convert_gui>
                     <system_convert_gui_grid>Medma_MarketPlace_Block_Adminhtml_System_Convert_Gui_Grid</system_convert_gui_grid>
                     <system_convert_gui_edit>Medma_MarketPlace_Block_Adminhtml_System_Convert_Gui_Edit</system_convert_gui_edit>

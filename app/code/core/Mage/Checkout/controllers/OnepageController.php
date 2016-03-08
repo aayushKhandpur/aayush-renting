@@ -274,7 +274,7 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
      */
     public function successAction()
     {
-        $session = $this->getOnepage()->getCheckout();
+        /*$session = $this->getOnepage()->getCheckout();
         if (!$session->getLastSuccessQuoteId()) {
             $this->_redirect('checkout/cart');
             return;
@@ -288,10 +288,10 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
             return;
         }
 
-        $session->clear();
+     //   $session->clear();*/
         $this->loadLayout();
         $this->_initLayoutMessages('checkout/session');
-        	Mage::log($lastOrderId,Zend_log::INFO,'layout.log',true);
+	Mage::log($lastOrderId,Zend_log::INFO,'layout.log',true);
         Mage::dispatchEvent('checkout_onepage_controller_success_action', array('order_ids' => array($lastOrderId)));
         $this->renderLayout();
     }

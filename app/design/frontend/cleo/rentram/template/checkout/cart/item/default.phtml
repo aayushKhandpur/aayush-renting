@@ -193,7 +193,9 @@ $_product= Mage::getSingleton('catalog/product')->load($_item->getProductId());
     <td class="product-cart-info" style="text-align:center;">
       <span class="cart-price"><?php
   $att = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
-$keywords = preg_split("/[\s,]+/", $att);
+     $keywords = preg_split("/[\s,]+/", $att);
+    
+
       echo number_format($_product->getData('renttime')).' '.$keywords[1];
   ?></span>
   </td>

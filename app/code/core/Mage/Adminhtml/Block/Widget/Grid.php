@@ -219,7 +219,6 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
 
     public function __construct($attributes=array())
     {
-      Mage::log(	'this',Zend_log::INFO,'layout.log',true);
         parent::__construct($attributes);
         $this->setTemplate('widget/grid.phtml');
         $this->setRowClickCallback('openGridRow');
@@ -228,8 +227,6 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
 
     protected function _prepareLayout()
     {
-
-
         $this->setChild('export_button',
             $this->getLayout()->createBlock('adminhtml/widget_button')
                 ->setData(array(

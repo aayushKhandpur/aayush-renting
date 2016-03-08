@@ -14,11 +14,22 @@ $_renttime = $_product->getData('renttime')*1;
         <input type="number" name="qty" id="qty" value="<?php echo $_qty; ?>" title="" class="input-text qty" />
         <a href="javascript: void(0);" class="qty-inc"><i class="icon-angle-right"></i></a>
         <?php endif; ?>
+      <!--  <div class="row">
+            <label for="mintime"><php echo $this->__('Min time:'); ?></label>
+                <label class="label pull-right"><php
+                $att = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
+                if($att=='Per Month'){
+                  $att=' Months';
+                }else{
+                  $att=' Days';
+                }
 
+                echo  $_product->getData('mintime').$att ?> </label>
+        </div> -->
         <div class="row" style="margin-bottom: 2%;">
                 <label for="renttime"><?php echo $this->__('Duration');
                 $att = $_product->getResource()->getAttribute('renttype')->getFrontend()->getValue($_product);
-                $keywords = preg_split("/[\s,]+/", $att);
+                 $keywords = preg_split("/[\s,]+/", $att);                 
 
                 echo  ' ('.$keywords[1].'):' ?></label>
                 <a href="javascript: void(0);" class="renttime-dec qty-disabled"><i class="icon-angle-left"></i></a>
@@ -36,7 +47,7 @@ $_renttime = $_product->getData('renttime')*1;
         </div>
         <div class="row">
             <label for="security"><?php echo $this->__('Security:'); ?></label>
-              <label style="font-weight: bold;" class="label pull-right"><?php echo  $_coreHelper->formatPrice($_product->getData('security'), false) ?> </label>
+               <label style="font-weight: bold;" class="label pull-right"><?php echo  $_coreHelper->formatPrice($_product->getData('security'), false) ?> </label>
         </div>
         <div class="row">
             <label for="notice"><?php echo $this->__('Notice Period:'); ?></label>

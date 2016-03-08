@@ -296,12 +296,36 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
 
         $customer = $this->_getCustomer();
 
+
+
+        $address = $this->_getModel('customer/address');
+        /* @var $addressForm Mage_Customer_Model_Form */
+        $addressForm = $this->_getModel('customer/form');
+        $addressForm->setFormCode('customer_address_edit')
+            ->setEntity($address);
+
+
+            $addressData    = $addressForm->extractData($this->getRequest());
+              $addressForm->compactData($addressData);
+
+
+
+
         try {
             $errors = $this->_getCustomerErrors($customer);
 
             if (empty($errors)) {
                 $customer->cleanPasswordsValidationData();
+
                 $customer->save();
+                $address->setCustomerId($customer->getId())
+                    ->setTelephone($this->getRequest()->getParam('telephone'))
+                    ->setIsDefaultBilling('1')
+              			->setIsDefaultShipping('1')
+              			->setSaveInAddressBook('1');
+
+                     $address->save();
+                //  Mage::log($address->debug(),Zend_log::INFO,'layout.log',true);
                 $this->_dispatchRegisterSuccess($customer);
                 $this->_successProcessRegistration($customer);
                 return;

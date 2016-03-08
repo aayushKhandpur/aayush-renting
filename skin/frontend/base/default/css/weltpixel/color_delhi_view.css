@@ -1,9 +1,10 @@
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin);
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400&subset=latin);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:600&subset=latin);
 
 
             .wp-ai-5  {   background: url() }
                         .wp-ai-6  {   background: url() }
+                        .wp-ai-7  {   background: url() }
             
     .product_swatch img { border-radius: 1px; -moz-border-radius: 1px; -webkit-border-radius: 1px; -ms-border-radius: 1px; }
     .product_swatch img { width: 20px; }
@@ -13,7 +14,7 @@
     .swatches .filter_checkbox .swatch-container{ height: 30px; }
 
     .customer-account-login #page-body-section-02, .customer-account-forgotpassword #page-body-section-02, .customer-account-create #page-body-section-02  {
-    background-image: url(http://localhost/rentram/media/cleo/default/rentram-home.jpg);
+    background-image: url(http://rentram.com/media/cleo/default/rentram-home.jpg);
     }
 
 
@@ -23,6 +24,10 @@
 
     #wrapper { max-width: 100%; margin:0 auto; }
 
+    body { color: #111111 !important;  }
+    h1 { color: #111111 !important;}
+    h2 { color: #111111 !important;}
+    h3 { color: #111111 !important;}
 
 
 
@@ -59,7 +64,7 @@
     #product-reviews p, #product-reviews label
     {
             font-family: 'Open Sans', sans-serif !important;
-                font-weight: 300 !important;
+                font-weight: 400 !important;
         }
 
     address, caption, cite, code, dfn, h1, h2, h3, h4, h5, h6, var,
@@ -72,7 +77,7 @@
     .add-to-cart .button span
     {
             font-family: 'Open Sans', sans-serif !important;
-                font-weight: 300 !important;
+                font-weight: 600 !important;
         }
 
     body, input, select, textarea, th, td, b, strong, caption, th, td,

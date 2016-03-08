@@ -299,7 +299,7 @@ if(count($categoryIds) ){
            if(count($vendors)>2){
              $shippingPrice = count($vendors) * 250;
            }else if(count($vendors)>0){
-    //          Mage::log('aray len:es.: '.count($vendors),Zend_log::INFO,'layout.log',true);
+              Mage::log('aray len:es.: '.count($vendors),Zend_log::INFO,'layout.log',true);
              foreach ($vendors as $vendorMap) {
                $shippingPrice += (float) $vendorMap;
              }
@@ -307,7 +307,7 @@ if(count($categoryIds) ){
              $shippingPrice =0;
            }
 
-//Mage::log('total shipping:: '.$shippingPrice,Zend_log::INFO,'layout.log',true);
+Mage::log('total shipping:: '.$shippingPrice,Zend_log::INFO,'layout.log',true);
       }//end if
      return $shippingPrice;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /**
  * Medma Marketplace
@@ -14,7 +14,7 @@
  * Contact us Support does not guarantee correct work of this package
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
- *
+ * 
  * @category    Medma
  * @package     Medma_MarketPlace
 **/
@@ -38,11 +38,8 @@ class Medma_MarketPlace_Model_Observer
 
 	public function notifyVendorAndSetCommissionAmount($observer)
 	{
-		/*
-		$orderIncrementId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
+		/*$orderIncrementId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
 		$orderObject = Mage::getModel('sales/order')->loadByIncrementId($orderIncrementId);
-			Mage::log('$orderObject->debug()' ,Zend_log::INFO,'layout.log',true);
-		Mage::log($orderObject->debug() ,Zend_log::INFO,'layout.log',true);
 		$vars['billing_address'] = $orderObject->getBillingAddress()->format('html');
 		$vars['shipping_address'] = ($orderObject->canShip() ? $orderObject->getShippingAddress()->format('html'): '');
 		$vars['get_is_not_virtual'] = $orderObject->getIsNotVirtual();
@@ -113,7 +110,7 @@ class Medma_MarketPlace_Model_Observer
 			}
 		}
 
-		foreach($orderDetails as $key => $value)
+		foreach($orderDetails as $key => $value) 
 		{
 			$vendorOrder = '<table cellspacing="0" cellpadding="0" border="0" width="650" style="border: 1px solid #EAEAEA;">';
 			$vendorOrder .= $head;
@@ -124,28 +121,28 @@ class Medma_MarketPlace_Model_Observer
 			$vars['vendor_name'] = $value['vendor_name'];
 			$this->sendTransactionalEmail($value['vendor_mail_id'], $vars);
 		}
-
-
-		 Set Commission Amount per Item
-
+		
+		
+		 Set Commission Amount per Item 
+		
 		$orderObject = Mage::getModel('sales/order')->loadByIncrementId($orderIncrementId);
-
+		
 		$orderItems = $orderObject->getAllItems();
-
+		
 		foreach($orderItems as $item)
 		{
 			$productObject = Mage::getModel('catalog/product')->load($item->getProductId());
-
+			
 			$userId = $productObject->getVendor();
-
+			
 			unset ($commissionAmount);
-
+			
 			$profileCollection = Mage::getModel('marketplace/profile')->getCollection()
 				->addFieldToFilter('user_id', $userId);
 			$profileObject = $profileCollection->getFirstItem();
-
+			
 			$commission_percentage = $profileObject->getAdminCommissionPercentage();
-
+			
 			$commissionAmount = (($item->getPriceInclTax() * $item->getQtyOrdered()) * $commission_percentage) / 100;
 
 			$orderItemModel = Mage::getModel('sales/order_item')->load($item->getId());
@@ -163,7 +160,7 @@ class Medma_MarketPlace_Model_Observer
 		$senderInfo = Mage::getStoreConfig('marketplace/email/email_sender');
 		$senderName = Mage::getStoreConfig('trans_email/ident_'.$senderInfo.'/name');
 		$senderEmail = Mage::getStoreConfig('trans_email/ident_'.$senderInfo.'/email');
-
+	  
 		$sender = array('name'  => $senderName,	'email' => $senderEmail);
 
 		// Set recepient information
@@ -186,7 +183,7 @@ class Medma_MarketPlace_Model_Observer
 		$action = $observer->getEvent()->getAction();
         $fullActionName = $action->getFullActionName();
         $position = Mage::helper('marketplace')->getConfig('general', 'shop_info_display');
-
+        
         if($position != 'product_info')
         {
 			$sub_position = 'before="-"';
@@ -203,17 +200,17 @@ class Medma_MarketPlace_Model_Observer
 		}
 
         $layout = $observer->getEvent()->getLayout();
-        if ($fullActionName=='catalog_product_view')
+        if ($fullActionName=='catalog_product_view') 
         {  //set any action name here
             $layout->getUpdate()->addUpdate($myXml);
             $layout->generateXml();
         }
     }
-
+    
     public function addOptionToOrder(Varien_Event_Observer $observer)
 	{
 		$quoteItem = $observer->getItem();
-		if ($additionalOptions = $quoteItem->getOptionByCode('additional_options'))
+		if ($additionalOptions = $quoteItem->getOptionByCode('additional_options')) 
 		{
 			$orderItem = $observer->getOrderItem();
 			$options = $orderItem->getProductOptions();
@@ -221,8 +218,8 @@ class Medma_MarketPlace_Model_Observer
 			$orderItem->setProductOptions($options);
 		}
 	}
-
-	public function addAttributeValue($observer)
+	
+	public function addAttributeValue($observer) 
 	{
 		$item = $observer->getQuoteItem();
 		$vendorId =  $item->getProduct()->getVendor();
