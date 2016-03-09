@@ -40,7 +40,7 @@ $productId = $_product->getId();
             $_category = Mage::getModel('catalog/category')->load($firstCategoryId);
         }
 
-         Mage::log(	$categoryIds ,Zend_log::INFO,'layout.log',true);
+     //    Mage::log(	$categoryIds ,Zend_log::INFO,'layout.log',true);
 //    Mage::log($_product->getId(),Zend_log::INFO,'layout.log',true);
 
 
@@ -125,7 +125,7 @@ $productId = $_product->getId();
 						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 					</button>
 					<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Enquiry</h1>
-          <p class="modal-title"  style="text-align:center;">Please fill the form to get seller information.</p>
+          <p class="modal-title"  style="text-align:center;">Please provide following details to help us serve you better.</p>
 				</div>
 				<div class="modal-body">
             <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customerId; ?>" />
