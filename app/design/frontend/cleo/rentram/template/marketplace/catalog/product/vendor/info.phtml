@@ -170,10 +170,12 @@ document.getElementById('address').value='';
     document.getElementById('name').value = "<?php echo $customerData['firstname'].' '.$customerData['lastname']  ?>";
     document.getElementById('email').value = "<?php echo $customerData['email'] ?>";
     document.getElementById('contact_number').value = "<?php echo $addressObject['telephone'] ?>";
-    document.getElementById('address').value = "<?php echo $addressObject['street'].' '.$addressObject['city'].' '.$addressObject['city'] ?>";
+    "<?php $address_cus = ($addressObject['street'].' '.$addressObject['city'].' '.$addressObject['city']); ?>";
+    document.getElementById('address').value = "<?php $address_cus ?>";
   }
   function informationPopup(){
     var array = "<?php $productViewedArray =  Mage::getSingleton('core/session' )->getData('productViewedArray'); echo implode($productViewedArray) ?>";
+    console.log(array);
     if(array.indexOf("<?php echo $productId ?>") != -1 || saveSuccess){
       jQuery("#informationModel").modal("show");
     }else{
