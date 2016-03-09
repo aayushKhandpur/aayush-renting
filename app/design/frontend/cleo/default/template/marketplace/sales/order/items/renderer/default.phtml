@@ -13,7 +13,7 @@
  * Contact us Support does not guarantee correct work of this package
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
- * 
+ *
  * @category    Medma
  * @package     Medma_MarketPlace
 **/
@@ -314,7 +314,7 @@
     <th class="a-right"><?php echo $this->getOrder()->formatPrice($this->helper('checkout')->getSubtotalInclTax($this->getItem())); ?></th>
     <?php endif; ?>
     -->
-    
+
     <td class="a-right">
         <a href="javascript: void(0);" onclick="showFeedbackForm(this, <?php echo $_item->getId() ?>);"><?php echo $this->__('Feedback'); ?></a>
     </td>
@@ -323,11 +323,11 @@
 <?php $vendorProfile = $this->getVendorProfile(); ?>
 <?php $invoiceItemId = $this->getInvoiceItemId(); ?>
 <tr class="feedback-row border" id="order-item-row-feedback-<?php echo $_item->getId() ?>">
-    <td colspan="6">		
-		<div class="feedback-collateral">			
+    <td colspan="6">
+		<div class="feedback-collateral">
 			<?php if($invoiceItemId > 0): ?>
 				<?php if(!is_null($vendorProfile->getId())): ?>
-					<form method="post" id="<?php echo $this->getFormId($invoiceItemId); ?>" action="<?php echo $this->getRatingSaveUrl($invoiceItemId, $_item->getOrderId()); ?>">			
+					<form method="post" id="<?php echo $this->getFormId($invoiceItemId); ?>" action="<?php echo $this->getRatingSaveUrl($invoiceItemId, $_item->getOrderId()); ?>">
 						<h2><?php echo $this->__('Write Your Own Review'); ?></h2>
 						<p><?php echo $this->__('You\'re reviewing: '); ?><a href="<?php echo $this->getVendorProfileUrl($vendorProfile->getId()); ?>"><b><?php echo $vendorProfile->getShopName(); ?></b></a></p>
 						<p><b><?php echo $this->__('How do you rate this product? *'); ?></b></p>
@@ -350,6 +350,6 @@
 			<?php else: ?>
 				<p><?php echo '<b>' . $this->__('NOTE: ') . '</b>' . $this->__('Item has not been shipped yet. You can give feedback after invoice generation.'); ?></p>
 			<?php endif; ?>
-		</div>		
+		</div>
     </td>
 </tr>

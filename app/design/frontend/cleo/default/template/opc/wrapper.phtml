@@ -7,9 +7,11 @@ $theme = Mage::getDesign()->getTheme('frontend');
 <div class="opc-wrapper-opc design_package_<?php echo $package;?> design_theme_<?php echo $theme;?>">
     <h2><?php echo $this->__('Checkout')?></h2>
 	<div class="opc-menu">
-    <div class="hidden" >
-      <?php echo $this->_getReviewHtml()?>
-  </div>
+
+      <div  id="opc-review-block" style="position: relative;width: 100%;top: 0px;margin-bottom: 1%;">
+        <?php echo $this->_getReviewHtml()?>
+      </div>
+
 	    <?php echo $this->getChildHtml('paypal.button')?>
 
         <?php if (!Mage::getSingleton('customer/session')->isLoggedIn()):?>
@@ -17,13 +19,7 @@ $theme = Mage::getDesign()->getTheme('frontend');
     	<?php endif;?>
 
 
-    	<div class="right review-menu-block">
-    	  <a class="review-total"><?php echo Mage::helper('opc')->getGrandTotal()?></a>
-    	  <span class="polygon"></span>
-    	  <div class="hidden" id="opc-review-block">
-		      <?php echo $this->_getReviewHtml()?>
-		  </div>
-		</div>
+
 	   <div class="clear move-columns"></div>
 	</div>
 

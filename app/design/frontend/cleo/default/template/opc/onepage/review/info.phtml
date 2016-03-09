@@ -34,6 +34,7 @@
         <col width="1" />
         <col width="1" />
         <col width="1" />
+        <col width="1" />
         <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
         <col width="1" />
         <col width="1" />
@@ -57,7 +58,7 @@
         <?php echo $this->getChildHtml('totals'); ?>
         <tbody>
         <?php foreach($this->getItems() as $_item): ?>
-            <?php echo $this->getItemHtml($_item)?>
+            <?php 	echo $this->getItemHtml($_item) ?>
         <?php endforeach ?>
         </tbody>
     </table>
