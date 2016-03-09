@@ -25,6 +25,7 @@ if($isCustomerLoggedIn){
     $customerData = Mage::getModel('customer/customer')->load($customerId);
     $addressObject = $customerData->getPrimaryBillingAddress();
 }
+
 $currentDate =  Mage::getModel('core/date')->date('Y-m-d H:i:s');
  //Mage::log(	$customerData->getPrimaryBillingAddress() ,Zend_log::INFO,'layout.log',true);
 $vendorRating = $this->getVendorRating();
@@ -39,10 +40,6 @@ $productId = $_product->getId();
             $categoryData = Mage::getModel('catalog/category')->load($secondCategoryId);
             $_category = Mage::getModel('catalog/category')->load($firstCategoryId);
         }
-
-         Mage::log(	$categoryIds ,Zend_log::INFO,'layout.log',true);
-//    Mage::log($_product->getId(),Zend_log::INFO,'layout.log',true);
-
 
 ?>
 <?php   if($vendorInfo): ?>
@@ -63,30 +60,7 @@ $productId = $_product->getId();
 												<php endif; ?>  -->
 												<?php echo $vendorInfo->getShopName(); ?>
 										</td>
-                    <td class="data" rowspan="5">
-                      <?php if(count($vendorRating)): ?>
-                      <table class="data-table" id="product-attribute-specs-table" style="margin-left: 20%;">
-                        	<tbody>
-                            <tr>
-                                  </tr>
-                				<?php foreach($vendorRating as $rating): ?>
-                            <tr>
-                              <th class="label" style="border-style: none;text-align: center;"><?php echo $rating['name']; ?>:-</th>
-                                <td class="data" style="border-style: none;text-align: center;">
-                        					<div class="rating-container">
-                        						<div class="rating-graphics-container">
-                        							<div class="rating-blank"></div>
-                        							<div class="rating-filled" style="width: <?php echo $rating['value'] ?>%"></div>
-                        						</div>
-                        					<!--	<div class="rating-totals"><php echo str_pad($rating['records'], 3, "0", STR_PAD_LEFT); ?></div>  -->
-                        					</div>
-                                </td>
-                            </tr>
-                				<?php endforeach; ?>
-                        </tbody>
-                      </table>
-                			<?php endif; ?>
-                    </td>
+
 		            </tr>
 								<?php if($_category->getName()=="Construction Equipments"): ?>
 		            <tr >
@@ -99,6 +73,22 @@ $productId = $_product->getId();
 										<th class="label">City</th>
 										<td class="data">		<?php 	echo $vendorInfo->getCity(); ?></td>
 								</tr>
+                <?php if(count($vendorRating)): ?>
+                  <?php foreach($vendorRating as $rating): ?>
+                      <tr>
+                        <th class="label" ><?php echo $rating['name']; ?></th>
+                          <td class="data" style="border-style: none;text-align: center;">
+                            <div class="rating-container">
+                              <div class="rating-graphics-container">
+                                <div class="rating-blank"></div>
+                                <div class="rating-filled" style="width: <?php echo $rating['value'] ?>%"></div>
+                              </div>
+                            <!--	<div class="rating-totals"><php echo str_pad($rating['records'], 3, "0", STR_PAD_LEFT); ?></div>  -->
+                            </div>
+                          </td>
+                      </tr>
+                  <?php endforeach; ?>
+                <?php endif; ?>
 		            <tr>
 		                <th class="label">Description</th>
 		                <td class="data">	<?php 	echo $vendorInfo->getMessage(); ?></td>
@@ -176,21 +166,21 @@ var saveSuccess = false;
 
 document.getElementById('address').value='';
 
-if('<?php echo $isCustomerLoggedIn ?>'){
-  document.getElementById('name').value = "<?php echo $customerData['firstname'].' '.$customerData['lastname']  ?>";
-  document.getElementById('email').value = "<?php echo $customerData['email'] ?>";
-  document.getElementById('contact_number').value = "<?php echo $addressObject['telephone'] ?>";
-  document.getElementById('address').value = "<?php echo $addressObject['street'].' '.$addressObject['city'].' '.$addressObject['city'] ?>";
-}
+  if('<?php echo $isCustomerLoggedIn ?>'){
+    document.getElementById('name').value = "<?php echo $customerData['firstname'].' '.$customerData['lastname']  ?>";
+    document.getElementById('email').value = "<?php echo $customerData['email'] ?>";
+    document.getElementById('contact_number').value = "<?php echo $addressObject['telephone'] ?>";
+    document.getElementById('address').value = "<?php echo $addressObject['street'].' '.$addressObject['city'].' '.$addressObject['city'] ?>";
+  }
   function informationPopup(){
-
-    console.log("<?php $isSaved = Mage::getSingleton('core/session')->getData('isSaved'); echo $isSaved ?>");
-    if(("<?php $isSaved = Mage::getSingleton('core/session')->getData('isSaved'); echo $isSaved ?>" || saveSuccess) && false){
+    var array = "<?php $productViewedArray =  Mage::getSingleton('core/session' )->getData('productViewedArray'); echo implode($productViewedArray) ?>";
+    if(array.indexOf("<?php echo $productId ?>") != -1 || saveSuccess){
       jQuery("#informationModel").modal("show");
     }else{
         jQuery("#detailModel").modal("show");
     }
   }
+
   function hideNameValidation(){
       var name = document.getElementById('name').value;
     if ( name == null ||  name == "") {
@@ -288,7 +278,7 @@ if('<?php echo $isCustomerLoggedIn ?>'){
                      jQuery("#detailModel").modal("hide");
                       jQuery("#informationModel").modal("show");
                       document.getElementById('showBtn').innerHTML="Show Contact";
-                      '<?php $isSaved ="true"; ?>';
+
                   }
               });
           }

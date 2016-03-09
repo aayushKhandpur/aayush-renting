@@ -29,14 +29,20 @@ class Productlog_Viewer_ViewerController extends Mage_Core_Controller_Front_Acti
 			if($isexists){
 				$jsonData=json_encode(array('test', 'test', 'test'));
 			}else{
-				// ---save story as city
+
 				$productlog = $this->getProductLogFromRequest($data,$currentDate);
-					Mage::log(	$productlog ,Zend_log::INFO,'layout.log',true);
+
 				$productlog->save();
 				$jsonData=json_encode(array('test', 'test', 'test'));
 			}
 			//---save session product id wise
-			Mage::getSingleton('core/session')->setData('isSaved', 'true');
+			$productViewedArray =  Mage::getSingleton('core/session' )->getData('productViewedArray');
+			if ( !is_array($productViewedArray) ) $productViewedArray= array();
+			if(!in_array($productViewedArray, $data['product_id']))		array_push($productViewedArray, $data['product_id']);
+
+			Mage::log($productViewedArray ,Zend_log::INFO,'layout.log',true);
+
+			Mage::getSingleton('core/session')->setData('productViewedArray', $productViewedArray);
 				$this->getResponse()->setHeader('Content-type', 'application/json');
     		$this->getResponse()->setBody($jsonData);
 
