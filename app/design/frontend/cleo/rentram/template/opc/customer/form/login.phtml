@@ -83,6 +83,12 @@
                                     <input type="password" name="confirmation" id="confirmation" placeholder="<?php echo strtoupper($this->__('Confirm Password')); ?>" title="<?php echo $this->__('Confirm Password'); ?>" class="input-text required-entry validate-cpassword" />
                                 </div>
                             </li>
+                            <li>
+                                <div class="input-box">
+                                  <?php echo $this->getChildHtml('studioforty9.recaptcha.explicit'); ?>
+                                </div>
+                            </li>
+
                             <li class="utils">
                                 <div class="clear" style="height: 14px;"></div>
                                 <input type="checkbox" name="is_subscribed" id="is_subscribed" value="1" title="<?php echo $this->__('Sign Up for Newsletter'); ?>" class="checkbox" />

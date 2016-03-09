@@ -9,6 +9,7 @@
 <!--[if gt IE 9]>   <html class="ie">                           <![endif]-->
 <!--!(IE)]><!-->    <html>                                      <!--<![endif]-->
     <head>
+      <script src='https://www.google.com/recaptcha/api.js'></script>
         <?php echo $this->getChildHtml('head'); ?>
     </head>
     <body<?php echo $_bodyClass; ?>><div id="wrapper">
@@ -17,7 +18,7 @@
         <div class="page layout-3columns" id="page">
             <?php echo $this->getChildHtml('global_notices'); ?>
             <?php echo $this->getChildHtml('header'); ?>
-            <div id="page-body" class="body">                
+            <div id="page-body" class="body">
                 <div id="page-body-section-01">
                     <?php echo $this->getChildHtml('intro'); ?>
                 </div>

@@ -303,6 +303,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
                 $customer->cleanPasswordsValidationData();
                 $customer->save();
                 $this->_dispatchRegisterSuccess($customer);
+
                 $this->_successProcessRegistration($customer);
                 return;
             } else {
@@ -345,6 +346,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
                 $store->getId()
             );
             $customerHelper = $this->_getHelper('customer');
+            Mage::log($customer->debug(),Zend_log::INFO,'layout.log',true);
             $session->addSuccess($this->__('Account confirmation is required. Please, check your email for the confirmation link. To resend the confirmation email please <a href="%s">click here</a>.',
                 $customerHelper->getEmailConfirmationUrl($customer->getEmail())));
             $url = $this->_getUrl('*/*/index', array('_secure' => true));
@@ -666,6 +668,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
                     throw new Exception('');
                 }
                 if ($customer->getConfirmation()) {
+              
                     $customer->sendNewAccountEmail('confirmation', '', Mage::app()->getStore()->getId());
                     $this->_getSession()->addSuccess($this->__('Please, check your email for confirmation key.'));
                 } else {

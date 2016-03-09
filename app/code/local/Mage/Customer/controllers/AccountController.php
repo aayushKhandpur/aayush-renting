@@ -339,11 +339,13 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             $app = $this->_getApp();
             /** @var $store  Mage_Core_Model_Store*/
             $store = $app->getStore();
+
             $customer->sendNewAccountEmail(
                 'confirmation',
                 $session->getBeforeAuthUrl(),
                 $store->getId()
             );
+              Mage::log('in error--',Zend_log::INFO,'layout.log',true);
             $customerHelper = $this->_getHelper('customer');
             $session->addSuccess($this->__('Account confirmation is required. Please, check your email for the confirmation link. To resend the confirmation email please <a href="%s">click here</a>.',
                 $customerHelper->getEmailConfirmationUrl($customer->getEmail())));

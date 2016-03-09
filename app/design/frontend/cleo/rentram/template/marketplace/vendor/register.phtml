@@ -133,6 +133,7 @@ $baseUrl = Mage::getBaseUrl();
         <div class="fieldset">
             <h2 class="legend"><?php echo $this->__('Login Information') ?></h2>
             <ul class="form-list">
+
 				<li class="wide">
 					<label for="username" class="required"><em>*</em><?php echo $this->__('User Name') ?></label>
 					<div class="input-box">
@@ -153,8 +154,14 @@ $baseUrl = Mage::getBaseUrl();
                         </div>
                     </div>
                 </li>
+                <li class="fields">
+                    <div class="field" style="margin-left: 39%;">
+                        <div class="g-recaptcha" data-sitekey="6LeWFxoTAAAAAOtdrQJIpC_2XUKce1VAhF4tIkcU"></div>
+                    </div>
+                </li>
             </ul>
         </div>
+
         <div class="buttons-set">
             <p class="required"><?php echo $this->__('* Required Fields') ?></p>
             <button type="submit" title="<?php echo $this->__('Submit') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>

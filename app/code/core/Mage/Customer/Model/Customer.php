@@ -664,10 +664,13 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * @param int|null $storeId
      * @return Mage_Customer_Model_Customer
      */
+
+         const XML_PATH_PRODUCT_EMAIL_TEMPLATE    = 'template/email/product_update_email';
     protected function _sendEmailTemplate($template, $sender, $templateParams = array(), $storeId = null)
     {
+        Mage::log(' temp:: '.$template,Zend_log::INFO,'layout.log',true);
         /** @var $mailer Mage_Core_Model_Email_Template_Mailer */
-        $mailer = Mage::getModel('core/email_template_mailer');
+      /*  $mailer = Mage::getModel('core/email_template_mailer');
         $emailInfo = Mage::getModel('core/email_info');
         $emailInfo->addTo($this->getEmail(), $this->getName());
         $mailer->addEmailInfo($emailInfo);
@@ -677,10 +680,31 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
         $mailer->setStoreId($storeId);
         $mailer->setTemplateId(Mage::getStoreConfig($template, $storeId));
         $mailer->setTemplateParams($templateParams);
+        Mage::log(' templateid : '.  $mailer->getTemplateId().' sender : '.$mailer->getSender(),Zend_log::INFO,'layout.log',true);
+        $mailer->send();
+        return $this; */
+        $mailer = Mage::getModel('core/email_template_mailer');
+        $emailInfo = Mage::getModel('core/email_info');
+        $emailInfo->addTo('kuldeep.joshi@metacube.com', 'rentram support');
+        $mailer->addEmailInfo($emailInfo);
+
+        //     Mage::log($this->debug(),Zend_log::INFO,'layout.log',true);
+        // Set all required params and send emails
+        $mailer->setSender('kkuldeepjoshi5@gmail.com');
+        $mailer->setStoreId(0);
+        $emailTemplate  = Mage::getModel('core/email_template')->loadByCode('product email update template');
+        Mage::log(Mage::getStoreConfig('trans_email/ident_sales/email'),Zend_log::INFO,'layout.log',true);
+        $mailer->setTemplateId($emailTemplate['template_id']);
+        $mailer->setTemplateParams(array(
+            'firstname' => 'kul',
+            'lastname' => 'jo',
+            'product_name' => '1122' ,
+            'product_id' => 'ku',
+            'category_name' => 'kul'
+        ));
         $mailer->send();
         return $this;
     }
-
     /**
      * Send email with reset password confirmation link
      *
