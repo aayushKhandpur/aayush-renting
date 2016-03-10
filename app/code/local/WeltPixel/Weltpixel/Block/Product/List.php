@@ -22,7 +22,7 @@ class WeltPixel_Weltpixel_Block_Product_List extends Mage_Catalog_Block_Product_
     {
 
         $this->_itemCollection = Mage::getModel('catalog/category')->load($this->getData('category_id'))->getProductCollection();
-Mage::log('in prepARE',Zend_log::INFO,'layout.log',true);
+
         if (Mage::helper('catalog')->isModuleEnabled('Mage_Checkout')) {
             Mage::getResourceSingleton('checkout/cart')->addExcludeProductFilter($this->_itemCollection,
                 Mage::getSingleton('checkout/session')->getQuoteId()

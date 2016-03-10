@@ -29,22 +29,14 @@
 <div id="checkout-review-table-wrapper">
     <h3 class="review-title"><?php echo $this->__('Review Your Order')?></h3>
     <table class="opc-data-table" id="checkout-review-table">
-        <?php if ($this->helper('tax')->displayCartBothPrices()): $colspan = $rowspan = 2; else: $colspan = $rowspan = 1; endif; ?>
-        <col />
-        <col width="1" />
-        <col width="1" />
-        <col width="1" />
-        <col width="1" />
-        <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
-        <col width="1" />
-        <col width="1" />
-        <?php endif; ?>
+        <?php if ($this->helper('tax')->displayCartBothPrices()): $colspan = $rowspan = 1; else: $colspan = $rowspan = 1; endif; ?>
+        
         <thead>
             <tr>
-                <th rowspan="<?php echo $rowspan ?>"><?php echo $this->__('Product Name') ?></th>
-                <th colspan="<?php echo $colspan ?>" class="a-center"><?php echo $this->__('Price') ?></th>
+                <th rowspan="<?php echo $rowspan ?>" class="a-center"><?php echo $this->__('Product Name') ?></th>
+                <th rowspan="<?php echo $rowspan ?>" class="a-center"><?php echo $this->__('Price') ?></th>
                 <th rowspan="<?php echo $rowspan ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
-                <th colspan="<?php echo $colspan ?>" class="a-center"><?php echo $this->__('Subtotal') ?></th>
+                <th rowspan="<?php echo $rowspan ?>" class="a-center"><?php echo $this->__('Subtotal') ?></th>
             </tr>
             <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
                 <tr>
