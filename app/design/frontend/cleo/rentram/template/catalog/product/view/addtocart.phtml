@@ -2,8 +2,8 @@
 $_coreHelper = $this->helper('core');
 $_product = $this->getProduct();
 $_qty = $this->getProductDefaultQty() * 1;
-$_renttime = $_product->getData('renttime')*1;
-//Mage::log($_product->debug(),Zend_log::INFO,'layout.log',true);
+$_renttime = $_product->getData('mintime')*1;
+Mage::log($_product->debug(),Zend_log::INFO,'layout.log',true);
 ?>
 
 <?php if ($_product->isSaleable()): ?>
