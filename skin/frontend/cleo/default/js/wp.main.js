@@ -61,6 +61,36 @@ var WeltPixel = {};
                     return (currentVal == 1);
                 }
             }
+            function decreaseDuration(elem, allowZero)
+            {
+                var currentVal = parseInt(elem.val());
+
+                if (currentVal == 'NaN') {
+                    currentVal = elem[0].min;
+                } else if (currentVal > elem[0].min) {
+                    currentVal--;
+                } else {
+                    currentVal = 0;
+                }
+
+                if ( ! allowZero && (currentVal == 0)) {
+                    currentVal = elem[0].min;
+                }
+
+                elem.val(currentVal);
+
+                if (currentVal == 0) {
+                    elem.attr('disabled', true);
+                } else {
+                    elem.removeAttr('disabled');
+                }
+
+                if (allowZero) {
+                    return (currentVal == 0);
+                } else {
+                    return (currentVal == 1);
+                }
+            }
 
             var qty = jQuery('#qty'),
                 parent = jQuery(this).parents('.quantity'),
@@ -120,7 +150,7 @@ var WeltPixel = {};
             jQuery('.renttime-dec').on('click', function() {
                 if (renttime.size())
                 {
-                    if (decreaseQuantity(renttime, false)) {
+                    if (decreaseDuration(renttime, false)) {
                         jQuery(this).addClass('qty-disabled');
                     };
                 }
