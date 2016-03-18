@@ -14,7 +14,7 @@
     .swatches .filter_checkbox .swatch-container{ height: 30px; }
 
     .customer-account-login #page-body-section-02, .customer-account-forgotpassword #page-body-section-02, .customer-account-create #page-body-section-02  {
-    background-image: url(http://rentram.com/media/cleo/default/rentram-home.jpg);
+    background-image: url(http://localhost/rentram/media/cleo/default/rentram-home.jpg);
     }
 
 

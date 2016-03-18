@@ -140,10 +140,10 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
      */
     public function loginPostAction()
     {
-        if (!$this->_validateFormKey()) {
-            $this->_redirect('*/*/');
+        /*if (!$this->_validateFormKey()) {
+            $this->_redirect('');
             return;
-        }
+        }*/
 
         if ($this->_getSession()->isLoggedIn()) {
             $this->_redirect('*/*/');
@@ -270,7 +270,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
     /**
      * Create customer account action
      */
-    public function createPostAction()
+    public function createpostAction()
     {
 
         $errUrl = $this->_getUrl('*/*/create', array('_secure' => true));
