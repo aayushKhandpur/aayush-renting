@@ -38,7 +38,7 @@ class Medma_MarketPlace_Model_Observer
 
 	public function notifyVendorAndSetCommissionAmount($observer)
 	{
-		/*
+
 		$orderIncrementId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
 		$orderObject = Mage::getModel('sales/order')->loadByIncrementId($orderIncrementId);
 			Mage::log('$orderObject->debug()' ,Zend_log::INFO,'layout.log',true);
@@ -126,7 +126,7 @@ class Medma_MarketPlace_Model_Observer
 		}
 
 
-		 Set Commission Amount per Item
+		 //Set Commission Amount per Item
 
 		$orderObject = Mage::getModel('sales/order')->loadByIncrementId($orderIncrementId);
 
@@ -151,7 +151,7 @@ class Medma_MarketPlace_Model_Observer
 			$orderItemModel = Mage::getModel('sales/order_item')->load($item->getId());
 			$orderItemModel->setCommissionAmount($commissionAmount)
 				->save();
-		} */
+		}
 	}
 
 	public function sendTransactionalEmail($email, $vars)
