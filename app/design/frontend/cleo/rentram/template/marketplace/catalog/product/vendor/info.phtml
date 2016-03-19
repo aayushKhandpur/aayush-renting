@@ -21,8 +21,10 @@ $isCustomerLoggedIn = Mage::getSingleton('customer/session')->isLoggedIn();
 $vendorRating = $this->getVendorRating();
 $vendorInfo = $this->getVendorInfo();
 $_product = $this->getProduct();
+$productId = $_product->getId();
 $isConstructor = false;
 $categoryIds = $_product->getCategoryIds();
+
 foreach($categoryIds as $catID  ){
 
     if($catID == 2){
@@ -30,7 +32,7 @@ foreach($categoryIds as $catID  ){
       $categoryData = Mage::getModel('catalog/category')->load($secondCategoryId);
     }
     $_category = Mage::getModel('catalog/category')->load($catID);
-    Mage::log(	$_category->getName() ,Zend_log::INFO,'layout.log',true);
+
     if($_category->getName()=="Construction Equipments"){
       $isConstructor = true;
     }
@@ -172,8 +174,10 @@ if('<?php echo $isCustomerLoggedIn ?>'){
   document.getElementById('address').value = "<?php echo $addressObject['street'].' '.$addressObject['city'].' '.$addressObject['city'] ?>";
 }
   function informationPopup(){
-        var array = "<?php $productViewedArray =  Mage::getSingleton('core/session' )->getData('productViewedArray'); echo implode($productViewedArray) ?>";
-    if(array.indexOf("<?php echo $productId ?>") != -1 || saveSuccess){
+        var arrayValue = "<?php $productViewedArray =  Mage::getSingleton('core/session' )->getData('productViewedArray'); echo implode($productViewedArray) ?>";
+          console.log("log::"+arrayValue+"contain :: "+arrayValue.indexOf("<?php echo $productId ?>")+"<?php echo $productId ?>");
+
+    if(arrayValue.indexOf("<?php echo $productId ?>") != -1 ){
       jQuery("#informationModel").modal("show");
     }else{
         jQuery("#detailModel").modal("show");
