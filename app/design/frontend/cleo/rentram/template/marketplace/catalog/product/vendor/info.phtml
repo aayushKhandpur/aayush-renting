@@ -21,19 +21,27 @@ $isCustomerLoggedIn = Mage::getSingleton('customer/session')->isLoggedIn();
 $vendorRating = $this->getVendorRating();
 $vendorInfo = $this->getVendorInfo();
 $_product = $this->getProduct();
+$isConstructor = false;
+$categoryIds = $_product->getCategoryIds();
+foreach($categoryIds as $catID  ){
 
-   $categoryIds = $_product->getCategoryIds();
-	 if(count($categoryIds) ){
-            $firstCategoryId = $categoryIds[1];
-            $secondCategoryId = $categoryIds[2];
-            $categoryData = Mage::getModel('catalog/category')->load($secondCategoryId);
-            $_category = Mage::getModel('catalog/category')->load($firstCategoryId);
-        }
+    if($catID == 2){
+      $secondCategoryId = $categoryIds[2];
+      $categoryData = Mage::getModel('catalog/category')->load($secondCategoryId);
+    }
+    $_category = Mage::getModel('catalog/category')->load($catID);
+    Mage::log(	$_category->getName() ,Zend_log::INFO,'layout.log',true);
+    if($_category->getName()=="Construction Equipments"){
+      $isConstructor = true;
+    }
 
-     //    Mage::log(	$categoryIds ,Zend_log::INFO,'layout.log',true);
+}
+
+
 //    Mage::log($_product->getId(),Zend_log::INFO,'layout.log',true);
 
 ?>
+
 <?php   if($vendorInfo): ?>
 <div class="box-collateral box-description">
 	<div class="std">
@@ -52,35 +60,12 @@ $_product = $this->getProduct();
 												<php endif; ?>  -->
 												<?php echo $vendorInfo->getShopName(); ?>
 										</td>
-                    <td class="data" rowspan="5">
-                      <?php if(count($vendorRating)): ?>
-                      <table class="data-table" id="product-attribute-specs-table" style="margin-left: 20%;">
-                        	<tbody>
-                            <tr>
-                                  </tr>
-                				<?php foreach($vendorRating as $rating): ?>
-                            <tr>
-                              <th class="label" style="border-style: none;text-align: center;"><?php echo $rating['name']; ?>:-</th>
-                                <td class="data" style="border-style: none;text-align: center;">
-                        					<div class="rating-container">
-                        						<div class="rating-graphics-container">
-                        							<div class="rating-blank"></div>
-                        							<div class="rating-filled" style="width: <?php echo $rating['value'] ?>%"></div>
-                        						</div>
-                        					<!--	<div class="rating-totals"><php echo str_pad($rating['records'], 3, "0", STR_PAD_LEFT); ?></div>  -->
-                        					</div>
-                                </td>
-                            </tr>
-                				<?php endforeach; ?>
-                        </tbody>
-                      </table>
-                			<?php endif; ?>
-                    </td>
+
 		            </tr>
-								<?php if($_category->getName()=="Construction Equipments"): ?>
+								<?php if($isConstructor): ?>
 		            <tr >
 		                <th class="label">Contact</th>
-		                <td class="data">	<button  class="btn btn-default" data-toggle="modal" data-target="#deletePaperModel">View contact</button>	</td>
+		                <td class="data">	<button  class="btn btn-default" onclick="informationPopup()">View contact</button>	</td>
 		            </tr>
 
 								<?php endif; ?>
@@ -92,9 +77,24 @@ $_product = $this->getProduct();
 		                <th class="label">Description</th>
 		                <td class="data">	<?php 	echo $vendorInfo->getMessage(); ?></td>
 		            </tr>
+                <?php if(count($vendorRating)): ?>
+                    <?php foreach($vendorRating as $rating): ?>
+		            <tr>
+                    <th class="label"><?php echo $rating['name']; ?></th>
+                  <td class="data">
+                        <div class="rating-container">
+                          <div class="rating-graphics-container">
+                            <div class="rating-blank"></div>
+                            <div class="rating-filled" style="width: <?php echo $rating['value'] ?>%"></div>
+                          </div>
+                        <!--	<div class="rating-totals"><php echo str_pad($rating['records'], 3, "0", STR_PAD_LEFT); ?></div>  -->
+                        </div>
+                  </td>
+		            </tr>
+                  <?php endforeach; ?>
+                <?php endif; ?>
 		        </tbody>
 		    </table>
-
 	</div>
 
 	<div class="add-to-box" style="text-align: center;  margin-top: 1%;">
@@ -105,8 +105,8 @@ $_product = $this->getProduct();
 	</div>
 </div>
 
-
-<div class="modal fade" id="deletePaperModel" tabindex="-1" role="dialog"
+<?php endif; ?>
+<div class="modal fade" id="detailModel" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -118,29 +118,53 @@ $_product = $this->getProduct();
           <p class="modal-title"  style="text-align:center;">Please provide following details to help us serve you better.</p>
 				</div>
 				<div class="modal-body">
-          <?php if($isCustomerLoggedIn): ?>
-          <table class="data-table" id="product-attribute-specs-table">
-                  <colgroup><col style="width: 25%">
-                  <col>
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th class="label" style="    color: black;"><b>Contact Number : <b></th>
-                      <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
-                    </tr>
-                    <tr>
-                      <th class="label" style="    color: black;"><b>Address</b></th>
-                      <td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
-                    </tr>
-                  </tbody>
-              </table>
+            <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $customerId; ?>" />
+            <input type="hidden" name="product_id" id="product_id" value="<?php echo $productId; ?>" />
+            <table class="data-table" id="product-attribute-specs-table">
+                <colgroup><col style="width: 25%">
+                <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th class="label" style="    color: black;"><b><sup>*</sup>Name : <b></th>
+                    <td class="data">
+                      <input type="text" id="name" onblur="hideNameValidation()" name="name" placeholder="Please enter your name" title="<?php echo $this->__('First Name'); ?>" maxlength="255" class="input-text required-entry" />
+                      <div id="nameValidate" style="color:red;"></div>
+      					    </td>
+                  </tr>
+                  <tr>
+                    <th class="label" style="    color: black;"><b><sup>*</sup>Email :</b></th>
+                    <td class="data">
+                      <input type="text" onblur="hideEmailValidation()" placeholder="Please enter your email eg:- demo@example.com" name="email" id="email" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" />
+                      <div id="emailValidate" style="color:red;"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="label" style="color: black;"><b><sup>*</sup>Mobile :</b></th>
+                    <td class="data">
+                      <input type="text" onblur="hideContactValidation()" id="contact_number" placeholder="Please enter your contact eg:- 1234512345" name="contact_number" title="<?php echo $this->__('Contact Number'); ?>" maxlength="255" class="input-text required-entry validate-phoneLax" >
+                      <div id="contactValidate" style="color:red;"></div>
+      	             </td>
+                  </tr>
+                  <tr>
+                    <th class="label" style="    color: black;"><b>Address </b>(optional) :</th>
+                    <td class="data">	<textarea id="address" name="address" placeholder="Please enter your address" title="<?php echo $this->__('Address'); ?>" maxlength="555" class="input-text required-entry" >
+                                      </textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="data" ><button type="submit"  onclick="saveData()"  class="btn btn-round btn-success" id="showBtn">Show Contact</button></td>
+                  </tr>
+                </tbody>
+            </table>
 
-            <?php else: ?><label>Please log in to view seller details.</label><?php endif; ?>
 
-        </div>
+<script type="text/javascript">
+var emailReg =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+var saveSuccess = false;
 
 document.getElementById('address').value='';
-
 if('<?php echo $isCustomerLoggedIn ?>'){
   document.getElementById('name').value = "<?php echo $customerData['firstname'].' '.$customerData['lastname']  ?>";
   document.getElementById('email').value = "<?php echo $customerData['email'] ?>";
@@ -148,9 +172,8 @@ if('<?php echo $isCustomerLoggedIn ?>'){
   document.getElementById('address').value = "<?php echo $addressObject['street'].' '.$addressObject['city'].' '.$addressObject['city'] ?>";
 }
   function informationPopup(){
-
-    console.log("<?php $isSaved = Mage::getSingleton('core/session')->getData('isSaved'); echo $isSaved ?>");
-    if(("<?php $isSaved = Mage::getSingleton('core/session')->getData('isSaved'); echo $isSaved ?>" || saveSuccess) && false){
+        var array = "<?php $productViewedArray =  Mage::getSingleton('core/session' )->getData('productViewedArray'); echo implode($productViewedArray) ?>";
+    if(array.indexOf("<?php echo $productId ?>") != -1 || saveSuccess){
       jQuery("#informationModel").modal("show");
     }else{
         jQuery("#detailModel").modal("show");
@@ -165,7 +188,6 @@ if('<?php echo $isCustomerLoggedIn ?>'){
     }
   }
   function hideEmailValidation(){
-
     var email = document.getElementById('email').value;
     if(  email == null ||   email == "" ){
         document.getElementById('emailValidate').innerHTML = "Email is required field";
@@ -174,7 +196,6 @@ if('<?php echo $isCustomerLoggedIn ?>'){
     }else{
         document.getElementById('emailValidate').innerHTML = "";
     }
-
   }
   function hideContactValidation(){
     var phonenoReg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
@@ -187,8 +208,6 @@ if('<?php echo $isCustomerLoggedIn ?>'){
         document.getElementById('contactValidate').innerHTML = "";
     }
   }
-
-
     function isValid(){
       var name = document.getElementById('name').value;
       var email = document.getElementById('email').value;
@@ -196,7 +215,6 @@ if('<?php echo $isCustomerLoggedIn ?>'){
       var address  =  document.getElementById('address').value;
       var isValid = true ;
       var phonenoReg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-
       if ( name == null ||  name == "") {
         document.getElementById('nameValidate').innerHTML = "Name is required field";
         isValid = false;
@@ -215,15 +233,12 @@ if('<?php echo $isCustomerLoggedIn ?>'){
           document.getElementById('contactValidate').innerHTML = "Mobile number must be in proper format eg:- 1234512345";
           isValid = false;
       }
-
       return isValid;
     }
-
    function saveData(){
             if(!isValid()){
               return;
             }
-
      document.getElementById('showBtn').innerHTML="Loading...";
               new Ajax.Request("<?php echo $this->getUrl('createLog/viewer/save') ?>", {
                   method: 'Post',
@@ -240,10 +255,8 @@ if('<?php echo $isCustomerLoggedIn ?>'){
                      'vendor_name':"<?php echo $vendorInfo['shop_name'] ?>",
                      'category_id':"<?php echo $categoryData['entity_id'] ?>",
                      'category_name':"<?php echo $categoryData['name'] ?>"
-
                                },
                   onComplete: function(response) {
-
                     console.log(response);
                     saveSuccess= true;
                      document.getElementById('name').value = '';
@@ -257,11 +270,40 @@ if('<?php echo $isCustomerLoggedIn ?>'){
                   }
               });
           }
-
 </script>
 
         </div>
 			</div>
 		</div>
 	</div>
-<?php endif; ?>
+
+
+  <div class="modal fade" id="informationModel" tabindex="-1" role="dialog"	aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-dialog">
+  		<div class="modal-content">
+  			<div class="modal-header">
+  				<button type="button" class="close" data-dismiss="modal" ng-click="deleteRow()">
+  					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+  				</button>
+  				<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Detail</h1>
+  			</div>
+  			<div class="modal-body">
+          <table class="data-table" id="product-attribute-specs-table">
+              <colgroup><col style="width: 25%">
+              <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="label" style="    color: black;"><b>Contact Number : <b></th>
+                  <td class="data">		<?php 	echo $vendorInfo->getContactNumber(); ?></td>
+                </tr>
+                <tr>
+                  <th class="label" style="    color: black;"><b>Address</b></th>
+                  <td class="data">		<?php 	echo $vendorInfo->getAddress(); ?></td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+  		</div>
+  	</div>
+  </div>
