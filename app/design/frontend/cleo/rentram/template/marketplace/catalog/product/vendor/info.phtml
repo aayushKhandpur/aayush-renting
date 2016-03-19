@@ -25,10 +25,13 @@ $_product = $this->getProduct();
    $categoryIds = $_product->getCategoryIds();
 	 if(count($categoryIds) ){
             $firstCategoryId = $categoryIds[1];
+            $secondCategoryId = $categoryIds[2];
+            $categoryData = Mage::getModel('catalog/category')->load($secondCategoryId);
             $_category = Mage::getModel('catalog/category')->load($firstCategoryId);
         }
-  //  Mage::log("kul",Zend_log::INFO,'layout.log',true);
-//Mage::log(count($vendorRating),Zend_log::INFO,'layout.log',true);
+
+     //    Mage::log(	$categoryIds ,Zend_log::INFO,'layout.log',true);
+//    Mage::log($_product->getId(),Zend_log::INFO,'layout.log',true);
 
 ?>
 <?php   if($vendorInfo): ?>
@@ -111,7 +114,8 @@ $_product = $this->getProduct();
 					<button type="button" class="close" data-dismiss="modal" ng-click="deleteRow()">
 						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 					</button>
-					<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Information</h1>
+					<h1 class="modal-title" id="myModalLabel" style="text-align:center;">Seller Enquiry</h1>
+          <p class="modal-title"  style="text-align:center;">Please provide following details to help us serve you better.</p>
 				</div>
 				<div class="modal-body">
           <?php if($isCustomerLoggedIn): ?>
@@ -135,6 +139,128 @@ $_product = $this->getProduct();
 
         </div>
 
+document.getElementById('address').value='';
+
+if('<?php echo $isCustomerLoggedIn ?>'){
+  document.getElementById('name').value = "<?php echo $customerData['firstname'].' '.$customerData['lastname']  ?>";
+  document.getElementById('email').value = "<?php echo $customerData['email'] ?>";
+  document.getElementById('contact_number').value = "<?php echo $addressObject['telephone'] ?>";
+  document.getElementById('address').value = "<?php echo $addressObject['street'].' '.$addressObject['city'].' '.$addressObject['city'] ?>";
+}
+  function informationPopup(){
+
+    console.log("<?php $isSaved = Mage::getSingleton('core/session')->getData('isSaved'); echo $isSaved ?>");
+    if(("<?php $isSaved = Mage::getSingleton('core/session')->getData('isSaved'); echo $isSaved ?>" || saveSuccess) && false){
+      jQuery("#informationModel").modal("show");
+    }else{
+        jQuery("#detailModel").modal("show");
+    }
+  }
+  function hideNameValidation(){
+      var name = document.getElementById('name').value;
+    if ( name == null ||  name == "") {
+      document.getElementById('nameValidate').innerHTML = "Name is required field";
+    }else{
+      document.getElementById('nameValidate').innerHTML = "";
+    }
+  }
+  function hideEmailValidation(){
+
+    var email = document.getElementById('email').value;
+    if(  email == null ||   email == "" ){
+        document.getElementById('emailValidate').innerHTML = "Email is required field";
+    }else if(!email.match(emailReg)){
+        document.getElementById('emailValidate').innerHTML = "Email must in proper format eg:- demo@example.com";
+    }else{
+        document.getElementById('emailValidate').innerHTML = "";
+    }
+
+  }
+  function hideContactValidation(){
+    var phonenoReg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    var contact  =  document.getElementById('contact_number').value;
+    if( contact == null ||   contact == "" ){
+        document.getElementById('contactValidate').innerHTML = "Contact is required field";
+    }else if(!contact.match(phonenoReg)){
+        document.getElementById('contactValidate').innerHTML = "Mobile number must be in proper format eg:- 1234512345";
+    }else{
+        document.getElementById('contactValidate').innerHTML = "";
+    }
+  }
+
+
+    function isValid(){
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var contact  =  document.getElementById('contact_number').value;
+      var address  =  document.getElementById('address').value;
+      var isValid = true ;
+      var phonenoReg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+      if ( name == null ||  name == "") {
+        document.getElementById('nameValidate').innerHTML = "Name is required field";
+        isValid = false;
+      }
+      if(  email == null ||   email == "" ){
+          document.getElementById('emailValidate').innerHTML = "Email is required field";
+          isValid= false;
+      }else if(!email.match(emailReg)){
+          document.getElementById('emailValidate').innerHTML = "Email must in proper format eg:- demo@example.com";
+          isValid = false;
+      }
+      if( contact == null ||   contact == "" ){
+          document.getElementById('contactValidate').innerHTML = "Contact is required field";
+          isValid = false;
+      }else if(!contact.match(phonenoReg)){
+          document.getElementById('contactValidate').innerHTML = "Mobile number must be in proper format eg:- 1234512345";
+          isValid = false;
+      }
+
+      return isValid;
+    }
+
+   function saveData(){
+            if(!isValid()){
+              return;
+            }
+
+     document.getElementById('showBtn').innerHTML="Loading...";
+              new Ajax.Request("<?php echo $this->getUrl('createLog/viewer/save') ?>", {
+                  method: 'Post',
+                  parameters: {
+                     "name" : document.getElementById('name').value,
+                     "email" :document.getElementById('email').value,
+                     "contact_number" : document.getElementById('contact_number').value,
+                     "address" : document.getElementById('address').value,
+                     "customer_id" : document.getElementById('customer_id').value,
+                     "product_id" : document.getElementById('product_id').value,
+                     'product_name':"<?php echo $_product['name'] ?>",
+                     'product_sku':"<?php echo $_product['sku'] ?>",
+                     'vendor_id':"<?php echo $vendorInfo['entity_id'] ?>",
+                     'vendor_name':"<?php echo $vendorInfo['shop_name'] ?>",
+                     'category_id':"<?php echo $categoryData['entity_id'] ?>",
+                     'category_name':"<?php echo $categoryData['name'] ?>"
+
+                               },
+                  onComplete: function(response) {
+
+                    console.log(response);
+                    saveSuccess= true;
+                     document.getElementById('name').value = '';
+                     document.getElementById('email').value = '';
+                     document.getElementById('contact_number').value = '';
+                     document.getElementById('address').value = '';
+                     jQuery("#detailModel").modal("hide");
+                      jQuery("#informationModel").modal("show");
+                      document.getElementById('showBtn').innerHTML="Show Contact";
+                      '<?php $isSaved ="true"; ?>';
+                  }
+              });
+          }
+
+</script>
+
+        </div>
 			</div>
 		</div>
 	</div>
